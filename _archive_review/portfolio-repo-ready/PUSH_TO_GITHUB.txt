@@ -1,0 +1,10 @@
+Repository target:
+https://github.com/fzzzzzlix/portfolio.git
+
+This package is already committed locally on branch main.
+
+From the repository directory:
+  git remote set-url origin https://github.com/fzzzzzlix/portfolio.git
+  git push -u origin main
+
+If the remote already has unrelated history and this repository is intentionally replacing it, first inspect the remote before using any force option.
