@@ -26,10 +26,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <article className={`case-page${project.feature ? " feature-case" : " capsule-case"}`}>
           <header className="case-hero section-shell">
             <div>
-              <p className="eyebrow"><StarMark size={18} /> {project.feature ? "Feature case" : "Supporting case"} · {project.id}</p>
+              <p className="eyebrow"><StarMark size={18} /> {project.feature ? "Feature case" : "Supporting case"}</p>
               <h1>{project.title}</h1>
               <p className="case-role">{project.role}</p>
-              <div className="case-meta"><span>{project.year}</span><span>{project.publicType}</span>{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              <div className="case-meta"><span>{project.id}</span><span>{project.year}</span><span>{project.publicType}</span>{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             </div>
             {REAL_IMAGES[project.id] ? (
               <div className="case-img-wrap">
@@ -59,7 +59,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     ))}
                   </div>
                 ) : null}
-                <details><summary>Source basis</summary><p>{project.source}</p></details>
               </section>
             </div>
           </section>

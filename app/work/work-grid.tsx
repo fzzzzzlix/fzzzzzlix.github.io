@@ -7,16 +7,27 @@ import { MediaPlaceholder } from "../site-shell";
 import { REAL_IMAGES } from "../project-images";
 
 const roleToFilter: Record<string, string> = {
+  // Homepage proposition routes
+  "Shape the strategy": "Strategy & Research",
+  "Build the story": "Script & Story",
+  "Lead the delivery": "Project Management",
+  // Legacy / alternate labels
   "Creative Scriptwriting": "Script & Story",
   "Strategic Planning": "Strategy & Research",
   "Communication & Sustainability": "Sustainability & Advocacy",
-  "Project Management": "Project Management",
   "Communication Events": "Events & Leadership",
   "Content Roles": "Content & Channels",
 };
 
+function resolveRole(initialRole?: string): string {
+  if (!initialRole) return "All";
+  if (roleToFilter[initialRole]) return roleToFilter[initialRole];
+  if (filters.includes(initialRole)) return initialRole;
+  return "All";
+}
+
 export default function WorkGrid({ initialRole }: { initialRole?: string }) {
-  const [active, setActive] = useState(initialRole && roleToFilter[initialRole] ? roleToFilter[initialRole] : "All");
+  const [active, setActive] = useState(resolveRole(initialRole));
 
   const visible = useMemo(() => active === "All" ? projects : projects.filter((project) => project.tags.includes(active)), [active]);
 
@@ -34,10 +45,10 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
                 <img src={REAL_IMAGES[project.id].src} alt={project.alt} style={{ objectFit: REAL_IMAGES[project.id].fit }} />
               </div>
             ) : (
-              <MediaPlaceholder label={`${project.id} evidence placeholder`} filename={project.assetFilename} ratio="16:9 · 1600 × 900 px" note="Crop to Fill, never stretch" index={index + 1} />
+              <MediaPlaceholder label={`${project.id} evidence placeholder`} filename={project.assetFilename} ratio="16:9, 1600 by 900 px" note="Crop to Fill, never stretch" index={index + 1} />
             )}
             <div className="work-card-copy">
-              <p className="project-meta"><span>{project.id}</span>{project.year} · {project.publicType}</p>
+              <p className="project-meta"><span>{project.year}</span><span className="meta-last">{project.publicType}</span></p>
               <h2>{project.title}</h2>
               <p>{project.tension}</p>
               <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>

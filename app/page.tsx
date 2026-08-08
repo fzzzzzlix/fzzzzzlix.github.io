@@ -51,18 +51,15 @@ const featured = [
     title: "Mùa Hạ Của Chúng Tôi",
     lane: "Scriptwriting & Direction",
     role: "Writer, director and editor",
-    proof: "A coming-of-age short film that earned First Prize in a graduation-season competition.",
+    proof: "A coming-of-age short film that won a First Prize for audience engagement in a graduation showcase.",
     route: "/work/mua-ha-cua-chung-toi",
   },
 ];
 
 const routes = [
-  ["Creative Scriptwriting", "Treatments, scripts and story systems", "P01 · P05 · P02"],
-  ["Strategic Planning", "Evidence, human tension and channel logic", "P13 · P20 · P21"],
-  ["Communication & Sustainability", "Social subjects made human and usable", "P30 · P25 · P22"],
-  ["Project Management", "Systems, stakeholders and delivery", "P25 · P24 · P22"],
-  ["Communication Events", "Inclusive experiences with operational control", "P22 · P29 · P24"],
-  ["Content Roles", "Format-aware content and channel thinking", "P28 · P23 · P01"],
+  ["Shape the strategy", "Research, insight and planning that points to a decision", "Strategy & Research", "MAGGI, TRESemmé, Scienceporium"],
+  ["Build the story", "Scriptwriting, creative development and content that carries the idea", "Script & Story", "Mùa Hạ, BUV TVC, TH true Tea"],
+  ["Lead the delivery", "Projects, events and operations that actually ship", "Project Management", "EMPACTS, Be Local, Little Me"],
 ];
 
 export default function Home() {
@@ -74,43 +71,37 @@ export default function Home() {
           <div className="hero-copy reveal reveal-1">
             <p className="eyebrow"><StarMark size={18} /> Creative Strategist &amp; Storyteller</p>
             <h1 id="hero-title">Felix Phan.</h1>
+            <p className="hero-prop">A creative strategist who carries ideas all the way into execution.</p>
+            <p className="hero-sub">From evidence and insight, to story and system, to a result that ships and can be measured.</p>
+            <ul className="hero-chips" aria-label="Core capabilities">
+              <li>Strategy</li>
+              <li>Storytelling</li>
+              <li>Project delivery</li>
+            </ul>
             <div className="hero-actions">
               <Link className="button button-primary" href="/work">Explore selected work</Link>
-              <Link className="button button-quiet" href="/contact#cv">View CV <span className="button-note">link pending</span></Link>
+              <Link className="button button-quiet" href="/contact#cv">View CV</Link>
             </div>
+            <ul className="hero-facts" aria-label="Availability">
+              <li>Available now for full-time</li>
+              <li>Ho Chi Minh City</li>
+            </ul>
           </div>
           <div className="hero-visual reveal reveal-2">
-            <MediaPlaceholder
-              label="Portrait placeholder"
-              filename="felix-global-hero-portrait-4x5-v01.jpg"
-              ratio="4:5 · 1600 × 2000 px"
-              note="Crop to Fill, preserve eyes and hands in the central safe zone"
-              portrait
-            />
-            <div className="orbit-note" aria-hidden="true"><StarMark size={42} /> insight · story · impact</div>
+            <div className="hero-portrait-wrap">
+              <img src="/images/hero-portrait.jpg" alt="Portrait of Felix Phan" width={1600} height={2000} />
+            </div>
+            <div className="orbit-note" aria-hidden="true"><StarMark size={42} /> insight → story → impact</div>
           </div>
         </section>
 
-        <section className="proof-band" aria-label="Portfolio proof summary">
+        <section className="proof-band" aria-label="Selected evidence">
           <div className="section-shell proof-grid">
-            <p><strong>{projects.length}</strong><span>project records</span></p>
-            <p><strong>{featured.length}</strong><span>featured cases</span></p>
-            <p><strong>6</strong><span>recruiter paths, one candidate</span></p>
-            <p><strong>01</strong><span>method: tension to impact</span></p>
+            <p><strong>54</strong><span>person organisation founded</span></p>
+            <p><strong>27</strong><span>person team led</span></p>
+            <p><strong>755</strong><span>research comments coded</span></p>
+            <p><strong>30</strong><span>risk register, full delivery plan</span></p>
           </div>
-        </section>
-
-        <section className="method section-shell" aria-labelledby="method-title">
-          <div className="section-intro">
-            <p className="eyebrow">The operating method</p>
-            <h2 id="method-title">Range is useful.<br />A repeatable method is better.</h2>
-          </div>
-          <ol className="method-list">
-            <li><span>01</span><div><h3>Find the tension</h3><p>Locate the human, cultural or operational contradiction inside the brief.</p></div></li>
-            <li><span>02</span><div><h3>Give it structure</h3><p>Turn evidence into a story, system, treatment, plan or experience people can follow.</p></div></li>
-            <li><span>03</span><div><h3>Make it real</h3><p>Write, coordinate, produce and protect the idea across the work.</p></div></li>
-            <li><span>04</span><div><h3>Stay for the outcome</h3><p>Track what happened, state the limitation and leave the next person a clean handover.</p></div></li>
-          </ol>
         </section>
 
         <section className="work-preview section-shell" aria-labelledby="featured-title">
@@ -132,13 +123,13 @@ export default function Home() {
                     <MediaPlaceholder
                       label={`${project.id} evidence placeholder`}
                       filename={`felix-${project.id.toLowerCase()}-cover-16x9-v01.jpg`}
-                      ratio="16:9 · 1600 × 900 px"
+                      ratio="16:9, 1600 by 900 px"
                       note="Crop to Fill, never stretch"
                       index={index + 1}
                     />
                   )}
                   <div className="project-card-copy">
-                    <p className="project-meta"><span>{project.id}</span>{project.lane}</p>
+                    <p className="project-meta">{project.lane}</p>
                     <h3>{project.title}</h3>
                     <p>{project.proof}</p>
                     <p className="project-role">Role: {project.role}</p>
@@ -149,6 +140,19 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="method section-shell" aria-labelledby="method-title">
+          <div className="section-intro">
+            <p className="eyebrow">The operating method</p>
+            <h2 id="method-title">Range is useful.<br />A repeatable method is better.</h2>
+          </div>
+          <ol className="method-list">
+            <li><span>01</span><div><h3>Find the tension</h3><p>Locate the human, cultural or operational contradiction inside the brief.</p></div></li>
+            <li><span>02</span><div><h3>Give it structure</h3><p>Turn evidence into a story, system, treatment, plan or experience people can follow.</p></div></li>
+            <li><span>03</span><div><h3>Make it real</h3><p>Write, coordinate, produce and protect the idea across the work.</p></div></li>
+            <li><span>04</span><div><h3>Stay for the outcome</h3><p>Track what happened, state the limitation and leave the next person a clean handover.</p></div></li>
+          </ol>
+        </section>
+
         <section className="routes section-shell" aria-labelledby="routes-title">
           <div className="section-intro">
             <p className="eyebrow">Choose your route</p>
@@ -156,11 +160,11 @@ export default function Home() {
             <p className="section-deck">Tailoring changes the reading order, never the facts.</p>
           </div>
           <div className="route-list">
-            {routes.map(([title, text, projects], index) => (
-              <Link href={`/work?role=${encodeURIComponent(title)}`} key={title} className="route-row">
+            {routes.map(([title, text, filter, proof], index) => (
+              <Link href={`/work?role=${encodeURIComponent(filter)}`} key={title} className="route-row">
                 <span className="route-index">0{index + 1}</span>
                 <span><strong>{title}</strong><small>{text}</small></span>
-                <span className="route-proof">{projects}</span>
+                <span className="route-proof">{proof}</span>
                 <span className="route-arrow">↗</span>
               </Link>
             ))}
@@ -169,14 +173,14 @@ export default function Home() {
 
         <section className="interest-callout section-shell" aria-labelledby="interest-title">
           <div className="star-field" aria-hidden="true"><StarMark size={160} /></div>
-          <p className="eyebrow">What the work is for</p>
+          <p className="eyebrow">Focus areas</p>
           <h2 id="interest-title">Culture with context.<br />Impact with receipts.</h2>
-          <p>Projects concerning sustainability development, ESG, CSR and social enterprise support, alongside Vietnamese culture and social advocacy.</p>
-          <Link className="button button-primary" href="/interests">Explore the interests</Link>
+          <p>Work across sustainable development, ESG, CSR and social enterprise support, alongside Vietnamese culture and social advocacy.</p>
+          <Link className="button button-primary" href="/interests">Explore the focus areas</Link>
         </section>
 
         <section className="closing section-shell">
-          <p className="eyebrow">Full-time availability, immediate</p>
+          <p className="eyebrow">Available now for full-time</p>
           <h2>Bring me the brief<br />that refuses to behave.</h2>
           <div className="hero-actions">
             <a className="button button-primary" href="mailto:felixphan.contact@gmail.com">Email Felix</a>

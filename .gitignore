@@ -40,3 +40,8 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# tooling / session artifacts
+.claude/
+.openai/
+Dfelix-phan-portfolio-wip.claude/

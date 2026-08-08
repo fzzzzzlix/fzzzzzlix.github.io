@@ -16,7 +16,7 @@ export function SiteHeader() {
         <Link href="/work">Work</Link>
         <Link href="/about">About</Link>
         <Link href="/experience">Experience</Link>
-        <Link href="/interests">Interests</Link>
+        <Link href="/interests">Focus Areas</Link>
         <Link href="/contact">Contact</Link>
       </nav>
       <details className="mobile-menu">
@@ -25,7 +25,7 @@ export function SiteHeader() {
           <Link href="/work">Work</Link>
           <Link href="/about">About</Link>
           <Link href="/experience">Experience</Link>
-          <Link href="/interests">Interests</Link>
+          <Link href="/interests">Focus Areas</Link>
           <Link href="/contact">Contact</Link>
         </div>
       </details>
@@ -55,8 +55,8 @@ export function SiteFooter() {
   return (
     <footer className="site-footer section-shell">
       <div className="footer-brand"><StarMark size={26} /><span>Follow the North Star.</span></div>
-      <div><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><span> · </span><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
-      <p>Felix Phan · they/them · Ho Chi Minh City · Availability: Full-time, Immediate</p>
+      <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
+      <ul className="footer-facts"><li>Felix Phan</li><li>they/them</li><li>Ho Chi Minh City</li><li>Full-time, available now</li></ul>
     </footer>
   );
 }
