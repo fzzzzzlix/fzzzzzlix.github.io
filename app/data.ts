@@ -190,29 +190,6 @@ export const projects: Project[] =
     "alt": "Project evidence for Cleaning Frenzy Tết Campaign"
   },
   {
-    "id": "P08",
-    "title": "MAGGI Tết 2026 TVC",
-    "slug": "maggi-tet-2026",
-    "year": "2025",
-    "publicType": "FMCG campaign proposal",
-    "role": "Script writer and storyboard creator.",
-    "tension": "Differentiate a Tet FMCG story amid a highly saturated seasonal category.",
-    "approach": "The master content pack groups this with Cleaning Frenzy and says the script used a more specific moment than the generic ‘family reunion’ territory.",
-    "output": "Proposed TVC script and illustrated storyboard.",
-    "significance": "Must be kept separate from the 2025 MAGGI Recipe Solution research case.",
-    "evidence": "A proposed Tết TVC script and illustrated storyboard, kept distinct from the 2025 MAGGI Recipe Solution research case.",
-    "source": "felixphan.portfolio2026/index.html; felix-portfolio/content/content-pack.md",
-    "priority": "B: Supporting proof",
-    "feature": false,
-    "tags": [
-      "Script & Story"
-    ],
-    "assetFilename": "felix-p08-maggi-tet-2026-tvc-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for MAGGI Tết 2026 TVC"
-  },
-  {
     "id": "P09",
     "title": "TH true Tea TVC",
     "slug": "th-true-tea-tvc",
@@ -310,26 +287,27 @@ export const projects: Project[] =
   },
   {
     "id": "P13",
-    "title": "MAGGI Recipe Solution Competitive & Consumer Analysis",
+    "title": "MAGGI Recipe Solution: Research to Execution",
     "slug": "maggi-recipe-solution",
     "year": "2025",
     "publicType": "Client project",
-    "role": "Researcher and strategist.",
-    "tension": "Diagnose why MAGGI had awareness but weak affinity compared with Barona and Cholimex.",
-    "approach": "Analyzed 74 posts, coded 755 comments in NVivo, reviewed 82 e-commerce product reviews, built keyword comparisons and a customer journey, then proposed ‘Authentic Convenience’ and a two-tier influencer strategy.",
-    "output": "Competitive/consumer analysis, charts, positioning direction, #MaggiNhanhMaNgon concept, and influencer recommendations.",
-    "significance": "The analysis surfaced a weak-affinity signal, for example 364 MAGGI Facebook comments with only 73 positive, pointing to an authentic-convenience direction.",
+    "role": "Researcher and strategist in the research phase; script writer and storyboard creator in the execution phase.",
+    "tension": "Diagnose why MAGGI had awareness but weak affinity compared with Barona and Cholimex, then turn that insight into a seasonal campaign that stands out in a saturated Tết category.",
+    "approach": "Phase one, research: analysed 74 posts, coded 755 comments in NVivo, reviewed 82 e-commerce product reviews, built keyword comparisons and a customer journey, then proposed ‘Authentic Convenience’ and a two-tier influencer strategy. Phase two, execution: developed the MAGGI Tết 2026 TVC script and illustrated storyboard, applying the authentic-convenience direction around a specific seasonal moment rather than a generic family-reunion trope.",
+    "output": "Research phase: competitive and consumer analysis, charts, positioning direction, the #MaggiNhanhMaNgon concept and a two-tier influencer strategy. Execution phase: a MAGGI Tết 2026 TVC script and illustrated storyboard.",
+    "significance": "The analysis surfaced a weak-affinity signal, for example 364 MAGGI Facebook comments with only 73 positive, pointing to an authentic-convenience direction that then shaped the Tết creative.",
     "evidence": "An academic client-brief research project. The figures come from Felix's own analysis of 74 posts, 755 NVivo-coded comments and 82 product reviews.",
     "source": "felixphan-bsc/index.html; felixphan-muse/index.html; felix-portfolio/content/content-pack.md",
     "priority": "A: Flagship candidate",
     "feature": true,
     "tags": [
-      "Strategy & Research"
+      "Strategy & Research",
+      "Script & Story"
     ],
-    "assetFilename": "felix-p13-maggi-recipe-solution-competitive-cons-evidence-3x2-v01.jpg",
-    "assetRatio": "Web: 3:2, 1800 × 1200 px. PDF: Fit inside a 3:2 frame, minimum 1800 × 1200 px.",
-    "assetRule": "Evidence exception: Fit/contain inside the frame with wine or ivory padding. Do not crop text, charts, logos, dates, or source labels. Never stretch.",
-    "alt": "Report or data proof for MAGGI Recipe Solution Competitive & Consumer Analysis"
+    "assetFilename": "felix-p13-maggi-recipe-solution-cover-16x9-v01.jpg",
+    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum.",
+    "assetRule": "Photography and campaign key visual: Crop to Fill with preserved proportions. Never stretch.",
+    "alt": "MAGGI Recipe Solution campaign key visual, from research to Tết execution"
   },
   {
     "id": "P14",

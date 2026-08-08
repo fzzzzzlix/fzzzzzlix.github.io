@@ -32,10 +32,10 @@ const featured = [
   },
   {
     id: "P13",
-    title: "MAGGI Recipe Solution Analysis",
-    lane: "Research & Planning",
-    role: "Researcher and strategist",
-    proof: "74 posts, 755 coded comments and 82 reviews translated into an authentic-convenience direction.",
+    title: "MAGGI Recipe Solution: Research to Execution",
+    lane: "Research & Execution",
+    role: "Researcher, strategist and scriptwriter",
+    proof: "74 posts and 755 coded comments turned into an authentic-convenience direction, then a Tết TVC script and storyboard.",
     route: "/work/maggi-recipe-solution",
   },
   {
