@@ -1,0 +1,20 @@
+Recommended target from the prior repository plan:
+https://github.com/fzzzzzlix/portfolio.git
+
+If you are starting a fresh remote:
+
+  git init
+  git add .
+  git commit -m "Portfolio baseline: 6 featured cases, 31 projects, recruiter states"
+  git branch -M main
+  git remote add origin https://github.com/fzzzzzlix/portfolio.git
+  git push -u origin main
+
+If the remote already has history you want to preserve:
+1. Clone the remote first.
+2. Create a new branch.
+3. Copy this baseline into that branch.
+4. Review the diff.
+5. Merge only after previewing the site.
+
+Do not force-push over useful existing history.
