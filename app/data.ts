@@ -46,7 +46,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p01-bep-nha-haha-gap-bep-cung-inh-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Bếp Nhà Haha Gặp Bếp Cung Đình"
+    "alt": "Cover for the self-initiated Bếp Nhà Haha Gặp Bếp Cung Đình entertainment-format concept"
   },
   {
     "id": "P02",
@@ -70,7 +70,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p02-mua-ha-cua-chung-toi-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Mùa Hạ Của Chúng Tôi"
+    "alt": "Still from the coming-of-age short film Mùa Hạ Của Chúng Tôi"
   },
   {
     "id": "P03",
@@ -93,7 +93,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p03-pnj-mua-cuoi-2024-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for PNJ Mùa Cưới 2024"
+    "alt": "Cover for the PNJ Mùa Cưới 2024 branded wedding screenplay"
   },
   {
     "id": "P04",
@@ -103,7 +103,7 @@ export const projects: Project[] =
     "publicType": "Academic podcast",
     "role": "Researcher and scriptwriter, team academic podcast.",
     "tension": "Maintain narrative clarity and engagement across a long-form audio format without visual support.",
-    "approach": "Structured each episode around one closed question and three open questions, with segments arranged as an emotional/editorial arc.",
+    "approach": "Structured each segment around one closed question and three open questions, arranged as an emotional and editorial arc across the podcast.",
     "output": "Podcast scripts and final audio for a team academic series on sustainable energy in a global context.",
     "significance": "Evidence of long-form audio structure and editorial discipline.",
     "evidence": "A team academic podcast on sustainable energy. Felix is credited as researcher and scriptwriter; exact runtime, episode count and full team credits are not all documented here.",
@@ -117,7 +117,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p04-sustainable-energy-series-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Sustainable Energy Series"
+    "alt": "Cover artwork for the Sustainable Energy Series academic podcast"
   },
   {
     "id": "P05",
@@ -141,7 +141,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p05-buv-new-programs-introduction-tvc-data-evidence-3x2-v01.jpg",
     "assetRatio": "Web: 3:2, 1800 × 1200 px. PDF: Fit inside a 3:2 frame, minimum 1800 × 1200 px.",
     "assetRule": "Evidence exception: Fit/contain inside the frame with wine or ivory padding. Do not crop text, charts, logos, dates, or source labels. Never stretch.",
-    "alt": "Video or keyframe for BUV New Programs Introduction TVC: Data Science & Artificial Intelligence"
+    "alt": "Cover for the BUV Data Science and AI programme TVC proposal"
   },
   {
     "id": "P06",
@@ -164,14 +164,14 @@ export const projects: Project[] =
     "assetFilename": "felix-p06-hapacol-itvc-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for Hapacol iTVC"
+    "alt": "Cover for the Hapacol iTVC proposal"
   },
   {
     "id": "P07",
     "title": "Cleaning Frenzy Tết Campaign",
     "slug": "cleaning-frenzy-tet",
     "year": "2024-2025",
-    "publicType": "Academic capstone campaign proposal",
+    "publicType": "Academic board-game renovation campaign",
     "role": "Production Director; script writer and storyboard contributor.",
     "tension": "Find a distinctive Tết moment in a crowded seasonal communications environment.",
     "approach": "Moved away from the overused family-reunion trope toward a more specific playable/behavioral moment built around the board game itself.",
@@ -187,7 +187,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p07-cleaning-frenzy-tet-campaign-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Cleaning Frenzy Tết Campaign"
+    "alt": "Key visual for the Cleaning Frenzy board-game Tết campaign proposal"
   },
   {
     "id": "P09",
@@ -246,7 +246,7 @@ export const projects: Project[] =
     "role": "Solo researcher and analyst.",
     "tension": "Explain how a prime-time entertainment programme can critique power through comedy.",
     "approach": "Applied semiotics and Stuart Hall’s encoding/decoding framework to the ‘Education Reform’ segment from the 2016 programme.",
-    "output": "Full analytical case-study report.",
+    "output": "An analytical case-study report, presented here as a summary.",
     "significance": "Demonstrates the ability to explain audience interpretation rather than merely describe content.",
     "evidence": "An academic critical case study applying semiotics and encoding/decoding analysis to a prime-time entertainment segment.",
     "source": "felix-portfolio/content/content-pack.md; felixphan.portfolio2026/index.html",
@@ -259,7 +259,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p11-gap-nhau-cuoi-nam-critical-case-study-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Gặp Nhau Cuối Năm: Critical Case Study"
+    "alt": "Cover for the Gặp Nhau Cuối Năm critical media case study"
   },
   {
     "id": "P12",
@@ -283,7 +283,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p12-folk-western-elements-in-v-pop-music-v-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Folk × Western Elements in V-Pop Music Videos"
+    "alt": "Cover for the research on folk and Western elements in V-Pop music videos"
   },
   {
     "id": "P13",
@@ -331,7 +331,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p14-equal-in-ao-dai-gender-equality-magazi-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Equal in Ao Dai / Gender Equality Magazine"
+    "alt": "Spread from the Equal in Ao Dai gender-equality magazine"
   },
   {
     "id": "P16",
@@ -355,7 +355,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p16-patriotic-rap-as-new-red-music-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Patriotic Rap as New Red Music"
+    "alt": "Cover for the patriotic-rap as new red music research proposal"
   },
   {
     "id": "P17",
@@ -363,12 +363,12 @@ export const projects: Project[] =
     "slug": "education-inequality",
     "year": "2023–2024",
     "publicType": "Academic policy research & editorial communication",
-    "role": "Co-researcher.",
+    "role": "Co-researcher on the white paper; sole author of the accompanying editorial feature.",
     "tension": "Address education inequality between urban and rural Vietnam for Teach For Viet Nam and align recommendations with SDG 4.",
     "approach": "Developed a multi-stakeholder, cross-sector solution framework.",
     "output": "Policy white paper, plus an eMagazine-format editorial feature authored by Felix that translates the same research for a general audience.",
     "significance": "Adds policy research and structured recommendation writing, plus the ability to translate that research into a public-facing editorial narrative.",
-    "evidence": "A client-brief policy white paper on education inequality aligned to SDG 4, completed with a co-researcher.",
+    "evidence": "An academic client-brief policy-research project on education inequality aligned to SDG 4, co-researched, plus an editorial feature authored solely by Felix. No official VTV publication is implied.",
     "source": "felixphan.portfolio2026/index.html",
     "priority": "B: Supporting proof",
     "feature": false,
@@ -379,7 +379,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p17-education-inequality-white-paper-evidence-3x2-v01.jpg",
     "assetRatio": "Web: 3:2, 1800 × 1200 px. PDF: Fit inside a 3:2 frame, minimum 1800 × 1200 px.",
     "assetRule": "Evidence exception: Fit/contain inside the frame with wine or ivory padding. Do not crop text, charts, logos, dates, or source labels. Never stretch.",
-    "alt": "Report or data proof for Education Inequality White Paper"
+    "alt": "Cover of the education-inequality white paper and its editorial feature"
   },
   {
     "id": "P18",
@@ -402,7 +402,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p18-google-doodle-vietnam-s-50th-reunifica-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for Google Doodle: Vietnam’s 50th Reunification Anniversary (A50)"
+    "alt": "Animated concept for a Google Doodle marking Vietnam's 50th reunification anniversary"
   },
   {
     "id": "P19",
@@ -426,7 +426,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p19-ikea-fanta-lume-creative-concepts-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for IKEA, FANTA, LUME Creative Concepts"
+    "alt": "IKEA brief artifact, from a set of three grouped academic brand concepts (IKEA, FANTA, LUME)"
   },
   {
     "id": "P20",
@@ -472,7 +472,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p21-vinamilk-brand-bonding-investigation-evidence-3x2-v01.jpg",
     "assetRatio": "Web: 3:2, 1800 × 1200 px. PDF: Fit inside a 3:2 frame, minimum 1800 × 1200 px.",
     "assetRule": "Evidence exception: Fit/contain inside the frame with wine or ivory padding. Do not crop text, charts, logos, dates, or source labels. Never stretch.",
-    "alt": "Report or data proof for Vinamilk Brand Bonding Investigation"
+    "alt": "Cover of the Vinamilk brand-bonding research-design proposal"
   },
   {
     "id": "P22",
@@ -496,7 +496,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p22-little-me-rmit-mental-wellness-exhibit-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Event evidence for Little Me: Mental-Wellness Interactive Exhibition"
+    "alt": "The Little Me mental-wellness interactive exhibition space"
   },
   {
     "id": "P23",
@@ -507,7 +507,7 @@ export const projects: Project[] =
     "role": "Content Creator → Media Planner → Director of Content (TikTok & Instagram), before election as Student Rights & Welfare Officer.",
     "tension": "Move the channels beyond announcement-only content and establish a recognizable voice.",
     "approach": "Reorganized content by format across long-form YouTube and short-form TikTok/Reels, with a handover/playbook mindset.",
-    "output": "TikTok and short-form social content, including the organisation's first viral TikTok videos.",
+    "output": "TikTok and short-form social content, including some of the organisation's early short-form TikTok and Reels videos.",
     "significance": "Content-leadership work that moved the channels beyond announcement-only posting toward a recognisable voice across long-form and short-form formats.",
     "evidence": "Role progression confirmed by Felix. Presented as content-leadership work; specific channel performance figures are not published here.",
     "source": "felix-portfolio/content/content-pack.md; felixphan-zeit/index.html; felixphan.portfolio2026/index.html",
@@ -520,7 +520,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p23-rmit-student-council-social-channels-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for RMIT Student Council Social Channels"
+    "alt": "Short-form social content for the RMIT Student Council channels"
   },
   {
     "id": "P24",
@@ -531,7 +531,7 @@ export const projects: Project[] =
     "role": "Assistant to Director and logistics coordinator.",
     "tension": "Deliver seven corporate events for 50-400 attendees while reducing executive preparation load and coordinating vendors/construction.",
     "approach": "Felix built SOP and checklist systems and took over preparation coordination, and coordinated a 270-person touring day across six logistics workstreams.",
-    "output": "Seven events delivered; 270-person Hanoi touring day; four executive-support event cycles.",
+    "output": "Portfolio records list seven events delivered, a 270-person Hanoi touring day and four executive-support event cycles.",
     "significance": "Standardised meeting preparation and action-item follow-up through SOPs and checklists, reducing executive preparation load.",
     "evidence": "Event-operations and director-support work from Felix's MBE internship, including SOP and checklist systems and a 270-person touring day.",
     "source": "Felix_Phan_Yeah1_CV.pdf; felix-portfolio/content/content-pack.md; felixphan-zeit/index.html",
@@ -544,7 +544,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p24-mbe-corporate-events-and-touring-day-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Event evidence for MBE Corporate Events and Touring Day"
+    "alt": "An MBE corporate event and touring-day production"
   },
   {
     "id": "P25",
@@ -557,7 +557,7 @@ export const projects: Project[] =
     "approach": "Designed six departments, 21 roles, 40+ SOPs, strategic plans, cross-functional tracking, and performance review for a 54-member organization.",
     "output": "Organisation structure, cross-functional operating system, and leadership handover. Detailed organisational documentation is confidential.",
     "significance": "Demonstrates organisation design and systems thinking, showing the operating architecture while internal documents stay confidential.",
-    "evidence": "Founder status and the six-department structure confirmed by Felix. Internal organisational documents are kept confidential.",
+    "evidence": "Co-founder and Vice-President role and the six-department structure confirmed by Felix. Internal organisational documents are kept confidential.",
     "source": "felix-portfolio/content/content-pack.md; CV files",
     "priority": "A: Flagship candidate",
     "feature": true,
@@ -569,7 +569,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p25-empacts-startup-ecosystem-for-sdgs-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Project evidence for EMPACTS: Startup Ecosystem for SDGs"
+    "alt": "EMPACTS, a startup-ecosystem organisation for the SDGs"
   },
   {
     "id": "P26",
@@ -580,7 +580,7 @@ export const projects: Project[] =
     "role": "Assistant to Vice President; operations and marketing team lead.",
     "tension": "Deliver workshops/panel talks and a short charity fundraiser with large student teams.",
     "approach": "Led a 42-person operations team and a 12-person marketing team.",
-    "output": "Workshops/panels with about 200 attendees and five speakers; fundraiser sold 97 products and reportedly raised VND 20 million in two weeks.",
+    "output": "Portfolio records report workshops and panels with about 200 attendees and five speakers, and a fundraiser that sold 97 products and reportedly raised VND 20 million in two weeks.",
     "significance": "Reported roughly 30,000 engagements per cycle and 20,000 social reach for the fundraiser, from the club's own records.",
     "evidence": "Workshops, panel talks and a student fundraiser delivered with large operations and marketing teams. Figures come from the club's own records.",
     "source": "felixphan.portfolio2026/files/Felix_Phan_CV.pdf (ZIP package containing 1.txt)",
@@ -641,7 +641,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p28-vinfast-kim-yoo-jung-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for VinFast × Kim Yoo-jung"
+    "alt": "Behind-the-scenes still from the VinFast x Kim Yoo-jung production"
   },
   {
     "id": "P29",
@@ -674,7 +674,7 @@ export const projects: Project[] =
     "year": "2023",
     "publicType": "Top 15, Map the System 2023",
     "role": "Researcher and Analyst within a five-person team.",
-    "tension": "How can Vietnamese SMEs strengthen cybersecurity resilience during a COVID-19-driven cybercrime surge when budgets, specialist skills, awareness, policy support, and access to tailored solutions are all constrained?",
+    "tension": "How can Vietnamese SMEs strengthen cybersecurity resilience amid a rise in cybercrime during the COVID-19 period, when budgets, specialist skills, awareness, policy support, and access to tailored solutions are all constrained?",
     "approach": "Mapped visible incidents and underlying mental models through an iceberg model, located stakeholders by interest and influence, and used a causal-loop model to connect awareness, investment, skills, regulation, service providers, and cyberattack exposure. The team also compared local and global solution landscapes before identifying impact gaps and leverage points.",
     "output": "A four-page visual systems map, a 16-page written analysis, a 17-slide presentation, an iceberg model, a stakeholder map, a causal-loop model, five impact-gap themes, and four levers of change.",
     "significance": "A Top 15 project in the 2023 Map the System competition hosted at National Economics University in partnership with the Skoll Centre for Social Entrepreneurship. The work demonstrates systems thinking, evidence synthesis, stakeholder analysis, and the translation of a complex social and economic risk into intervention logic.",

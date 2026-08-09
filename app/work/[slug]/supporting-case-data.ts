@@ -111,7 +111,6 @@ const P14_MAGAZINE = "https://heyzine.com/flip-book/b9a49ece03.html";
 export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   P01: {
     density: "D1",
-    context: "Self-initiated",
     deck:
       "An independent episode-development case about how research, cast mechanics and sponsor logic can coexist without flattening cultural material.",
     capability: "Entertainment development, cultural research and treatment writing.",
@@ -131,7 +130,8 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     density: "D3",
     deck: "A capstone screenplay exercise in making branded wedding storytelling feel human before it feels promotional.",
     capability: "Branded scriptwriting.",
-    evidenceStatus: "Academic capstone work. The final script exists; client approval is not documented and is not claimed.",
+    ownership: "Four-person academic pitch team. Felix's direct contribution: scriptwriting.",
+    evidenceStatus: "Academic capstone work by a four-person pitch team. The final script exists; client approval is not documented and is not claimed.",
     evidenceNeeds: "The tutor or client feedback would upgrade this from concept to verified delivery.",
     embeds: [
       {
@@ -149,8 +149,8 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     deck: "A long-form audio project focused on keeping sustainable-energy discussion structured when there is no visual layer to carry attention.",
     capability: "Long-form audio storytelling and sustainability communication.",
     ownership: "Felix's role: researcher and scriptwriter. Team context: a group academic podcast.",
-    evidenceStatus: "A team academic podcast. Felix is credited as researcher and scriptwriter.",
-    evidenceNeeds: "The final audio, episode list, exact runtime and full team credits.",
+    evidenceStatus: "A team academic podcast, with the audio and script embedded below. Felix is credited as researcher and scriptwriter.",
+    evidenceNeeds: "The episode list, exact runtime and full team credits.",
     embeds: [
       {
         title: "Sustainable Energy Series, audio",
@@ -173,8 +173,8 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     deck: "A professional proposal showing how a technical university programme can be translated from recruitment brief into a human, pitchable TVC story.",
     capability: "Lead creative on commercial proposal development.",
     evidenceStatus:
-      "A professional proposal from Felix's ForArt internship. The lead-creative role is confirmed; the production status is not verified.",
-    evidenceNeeds: "A redacted proposal or script, the final output or a public link, and supervisor credit.",
+      "A professional proposal from Felix's ForArt internship, embedded below. The lead-creative role is confirmed; the production status is not verified.",
+    evidenceNeeds: "The final production status or a public output link, and supervisor or team credit.",
     embeds: [
       {
         title: "BUV new-programmes TVC proposal",
@@ -191,8 +191,8 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     deck: "Collaborative commercial writing: developing a leader-owned pharmaceutical direction into a clearer script and client-ready proposal.",
     capability: "Collaborative commercial scriptwriting.",
     ownership: "Felix's role: creative support, writing from an approved lead direction. Team context: a ForArt creative team.",
-    evidenceStatus: "A professional proposal from Felix's ForArt internship, developing an approved internal direction.",
-    evidenceNeeds: "A redacted script or proposal, the production or approval status, and credits.",
+    evidenceStatus: "A professional proposal from Felix's ForArt internship, embedded below, developing an approved internal direction.",
+    evidenceNeeds: "The production or approval status, and team credits.",
     embeds: [
       {
         title: "Hapacol iTVC proposal",
@@ -208,10 +208,10 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     deck: "A Tết capstone concept built around finding a specific behavioural moment instead of defaulting to the season's most familiar storytelling tropes.",
     capability: "Seasonal campaign storytelling.",
     ownership:
-      "Felix's role: Production Director, plus script and storyboard contribution, credited on the team page. Team context: a student campaign team.",
+      "Felix's formal team-page credit is Production Director. Felix has additionally clarified script and storyboard contribution. Team context: a student campaign team.",
     evidenceStatus:
-      "An academic capstone Tết campaign for a board game. The supplied team-credit page lists Felix as Production Director.",
-    evidenceNeeds: "The full deck and confirmation of brand and category detail.",
+      "An academic board-game renovation Tết campaign. The supplied team-credit page lists Felix as Production Director.",
+    evidenceNeeds: "The full campaign deck.",
     embeds: [
       {
         title: "Cleaning Frenzy campaign proposal",
@@ -274,10 +274,10 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     density: "D2",
     deck: "An editorial concept that used áo dài to turn gender-equality research into a magazine system, with a photo series shot to fill it.",
     capability: "Editorial direction and gender-equality communication.",
-    ownership: "Felix's role: creative director, editorial researcher and photo-direction lead. Team context: an academic editorial project.",
+    ownership: "Felix's role: Creative Director, with editorial concept and research contribution and photo direction. The magazine and photo series are team-produced academic outputs under Felix's direction.",
     evidenceStatus:
-      "An academic editorial project. The magazine and its photo series are Felix's; commercial publication or distribution is not claimed.",
-    evidenceNeeds: "The final layout, publication status and a contribution statement.",
+      "An academic editorial project. The flipbook embedded below is the final magazine; commercial publication or distribution is not claimed.",
+    evidenceNeeds: "The publication status and a per-member contribution statement.",
     embeds: [
       {
         title: "Equal in Ao Dai magazine",
@@ -301,8 +301,8 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     density: "D3",
     deck: "A research proposal exploring patriotic rap through generational audience framing; it proves research design and conceptual thinking, not completed findings.",
     capability: "Research framing for culture and Gen Z.",
-    evidenceStatus: "An academic research proposal only. No study was conducted, so there are no findings.",
-    evidenceNeeds: "The complete proposal, research questions, method and instructor feedback.",
+    evidenceStatus: "An academic research proposal only, linked below. No study was conducted, so there are no findings.",
+    evidenceNeeds: "The research questions, method detail and instructor feedback.",
     proofLinks: [{ label: "Read the proposal (Google Drive)", url: p16Report.view }],
   },
 
@@ -442,7 +442,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   },
 
   P33: {
-    density: "D2",
+    density: "D1",
     context: "COMM2892",
     deck: "A four-person academic study that turned media transparency from an abstract debate into a bounded analysis across online news, social media and television/video coverage.",
     capability: "Framing a researchable question, operationalising a concept, constructing a sample and keeping interpretation bounded by the study.",
@@ -468,17 +468,32 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     ],
     sections: [
       {
+        eyebrow: "Operationalisation",
+        title: "Turning transparency into observable criteria",
+        body: [
+          "Rather than debate transparency in the abstract, the team defined it as a set of observable criteria, then read the corpus against them: how many distinct information sources a report drew on, how credible and diverse those sources were, and how openly each publisher disclosed its own ownership and stance.",
+          "The Soviet Communist Theory of the Press supplied the framing lens the assignment required, used to interpret the pattern rather than to pre-judge it.",
+        ],
+      },
+      {
+        eyebrow: "Analytical framework",
+        title: "Two axes: source diversity and publisher transparency",
+        body: [
+          "Analysis ran on two axes in parallel. The first assessed the 131 citations across 68 primary information sources for diversity and credibility. The second assessed publisher transparency across the 39-item cross-platform sample of online news, social-media news and television/video.",
+        ],
+      },
+      {
         eyebrow: "Limitations",
         title: "What the study does and does not claim",
         body: [
-          "The 39-item sample is a bounded academic dataset, not a representative measurement of all Vietnamese media, and the analysis stops short of causal claims.",
+          "The 39-item sample is a bounded academic dataset, not a representative measurement of all Vietnamese media, and the analysis stops short of causal claims. The artifact proves team membership and the study's stated method and sample, not individual task allocation.",
         ],
       },
     ],
   },
 
   P34: {
-    density: "D2",
+    density: "D1",
     context: "MKTG1459",
     deck: "A research project that began as an individual literature and problem-framing study and grew into a four-person mixed-methods investigation combining quantitative analysis, social listening and social-network analysis.",
     capability: "Decomposing a difficult problem into research questions, choosing a method for each, triangulating evidence and communicating limitations.",
@@ -508,6 +523,14 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
         title: "A solo start before the team stage",
         body: [
           "Assignment 1, the annotated bibliography, literature review and problem framing, was submitted solely by Felix. The mixed-methods stages that followed were a four-person team.",
+        ],
+      },
+      {
+        eyebrow: "Method architecture",
+        title: "One problem, three matched methods, triangulated",
+        body: [
+          "The team stage decomposed the problem into three research questions and matched a method to each: a 22-country secondary quantitative analysis for the macro relationship, social listening (Google Trends, BuzzSumo, NVivo) for public discourse, and YouTube social-network analysis in NodeXL for how the conversation propagated (1,749 users across 83 videos).",
+          "The value is in the architecture: choosing distinct methods for distinct questions and reading the three evidence streams against each other rather than leaning on any single number.",
         ],
       },
       {

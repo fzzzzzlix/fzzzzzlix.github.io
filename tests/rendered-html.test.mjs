@@ -4,7 +4,7 @@ import test from "node:test";
 const developmentPreviewMeta =
   /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
 
-test("renders development preview metadata", async () => {
+async function fetchHomeHtml() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
@@ -23,11 +23,28 @@ test("renders development preview metadata", async () => {
       passThroughOnException() {},
     },
   );
+  return response;
+}
 
+test("home page renders as HTML", async () => {
+  const response = await fetchHomeHtml();
   assert.equal(response.status, 200);
-  assert.match(
-    response.headers.get("content-type") ?? "",
-    /^text\/html\b/i,
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+});
+
+test("production HTML carries no development preview marker", async () => {
+  const response = await fetchHomeHtml();
+  const html = await response.text();
+  assert.doesNotMatch(
+    html,
+    developmentPreviewMeta,
+    "codex-preview=development must never ship to production",
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+});
+
+test("production HTML carries canonical portfolio metadata", async () => {
+  const response = await fetchHomeHtml();
+  const html = await response.text();
+  assert.match(html, /<title>[^<]*Felix Phan[^<]*<\/title>/i);
+  assert.match(html, /property=["']og:title["']/i);
 });

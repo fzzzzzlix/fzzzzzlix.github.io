@@ -35,8 +35,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # QA gate: lint, cross-file data validation, and tests must all pass
+      # before we build and deploy. No continue-on-error: any failure blocks
+      # the deploy job (which `needs: build`).
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate portfolio data
+        run: npm run validate:portfolio
+
       - name: Build static export
         run: npm run build:pages
+
+      # Run the rendered-HTML tests against the export output built above
+      # (dist/server/index.js). Equivalent to `npm test` without rebuilding.
+      - name: Test
+        run: npm run test:only
 
       # GitHub Pages runs Jekyll by default, which drops files/dirs beginning
       # with an underscore. Disable it so every built asset is served as-is.

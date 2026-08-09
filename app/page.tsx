@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteFooter, SiteHeader, StarMark, MediaPlaceholder } from "./site-shell";
+import { SiteFooter, SiteHeader, StarMark, MediaPlaceholder, CoverImage } from "./site-shell";
 import { projects } from "./data";
 import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
@@ -27,7 +27,7 @@ const featured = [
     id: "P31",
     title: "Be Local",
     lane: "Project Management",
-    role: "Founder, Project Manager",
+    role: "Project Manager",
     proof: "A community-based tourism venture planned as a real project: a 30-risk register, five phases from scope to launch, and delegated ownership under weekly review.",
     route: "/work/be-local",
   },
@@ -58,7 +58,7 @@ const featured = [
 ];
 
 const routes = [
-  ["Shape the strategy", "Research, insight and planning that points to a decision", "Strategy & Research", "MAGGI, TRESemmé, Scienceporium"],
+  ["Shape the strategy", "Mixed-methods research, insight and planning that points to a decision", "Strategy & Research", "MAGGI, TRESemmé, Scienceporium, Việt Á and Pakistan studies"],
   ["Build the story", "Scriptwriting, creative development and content that carries the idea", "Script & Story", "Mùa Hạ Của Chúng Tôi, BUV TVC, TH true Tea"],
   ["Lead the delivery", "Projects, events and operations that actually ship", "Project Management", "EMPACTS, Be Local, Little Me"],
 ];
@@ -80,7 +80,7 @@ export default function Home() {
             </ul>
             <div className="hero-actions">
               <Link className="button button-primary" href="/work">Explore selected work</Link>
-              <Link className="button button-quiet" href="/contact#cv">View CV</Link>
+              <Link className="button button-quiet" href="/contact#cv">Request CV</Link>
             </div>
             <ul className="hero-facts" aria-label="Availability">
               <li>Available for full-time role</li>
@@ -100,7 +100,7 @@ export default function Home() {
             <p><strong>54</strong><span>person organisation founded</span></p>
             <p><strong>27</strong><span>person team led</span></p>
             <p><strong>755</strong><span>research comments coded</span></p>
-            <p><strong>30</strong><span>risk register, full delivery plan</span></p>
+            <p><strong>30</strong><span>risks mapped in a full delivery plan</span></p>
           </div>
         </section>
 
@@ -117,16 +117,10 @@ export default function Home() {
                 <Link className="project-card" href={project.route} key={project.id}>
                   {imgInfo ? (
                     <div className="project-img-wrap">
-                      <img src={imgInfo.src} alt={pAlt} style={{ objectFit: imgInfo.fit }} />
+                      <CoverImage src={imgInfo.src} fit={imgInfo.fit} poster={imgInfo.poster} alt={pAlt} />
                     </div>
                   ) : (
-                    <MediaPlaceholder
-                      label={`${project.id} evidence placeholder`}
-                      filename={`felix-${project.id.toLowerCase()}-cover-16x9-v01.jpg`}
-                      ratio="16:9, 1600 by 900 px"
-                      note="Crop to Fill, never stretch"
-                      index={index + 1}
-                    />
+                    <MediaPlaceholder projectId={project.id} discipline={project.lane} index={index + 1} />
                   )}
                   <div className="project-card-copy">
                     <p className="project-meta">{project.lane}</p>
@@ -174,7 +168,7 @@ export default function Home() {
           <div className="star-field" aria-hidden="true"><StarMark size={160} /></div>
           <p className="eyebrow">Focus areas</p>
           <h2 id="interest-title">The Impact-maker</h2>
-          <p>Work across sustainable development, ESG, CSR and social enterprise support, alongside Vietnamese culture and social advocacy.</p>
+          <p>Work across sustainable development, ESG, CSR and social-enterprise support, mixed-methods research and systems thinking, alongside Vietnamese culture, media and social advocacy.</p>
           <Link className="button button-primary" href="/interests">Explore the focus areas</Link>
         </section>
 

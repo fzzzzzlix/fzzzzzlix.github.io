@@ -1,5 +1,5 @@
 import type { Project } from "../../data";
-import { MediaPlaceholder, StarMark } from "../../site-shell";
+import { CoverImage, MediaPlaceholder, StarMark } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
 import {
   CaseArticle,
@@ -31,6 +31,17 @@ type CaseProps = { project: Project; previous: Project; next: Project };
  * they read as research (question → method → sample/data → findings →
  * limitations → ownership → capability), not as advertising case studies.
  */
+
+// Public classification for the hero eyebrow. Internal density (D1/D2/D3) is an
+// implementation detail and must not leak; this maps it to a meaningful,
+// presentation-forward label so enhanced/research cases never read as generic
+// "supporting" work.
+function caseLabel(project: Project, density: string): string {
+  const isResearch = /research/i.test(project.publicType);
+  if (density === "D1") return isResearch ? "Research case" : "Enhanced case";
+  if (density === "D2") return isResearch ? "Research case" : "Evidence case";
+  return "Supporting case";
+}
 
 function renderEmbeds(embeds: CaseEmbed[]) {
   if (!embeds.length) return null;
@@ -74,7 +85,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
       <header className="p31-hero section-shell">
         <div className="p31-hero-head">
           <p className="eyebrow">
-            <StarMark size={18} /> Supporting case
+            <StarMark size={18} /> {caseLabel(project, density)}
           </p>
           <h1>{project.title}</h1>
           <p className="case-role">{project.role}</p>
@@ -96,20 +107,11 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
             rel="noreferrer"
             aria-label={`${project.alt}. Opens full size in a new tab.`}
           >
-            <img
-              src={image.src}
-              alt={project.alt}
-              style={{ objectFit: image.fit, ...(image.fit === "contain" ? { objectPosition: "50% 50%" } : {}) }}
-            />
+            <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
           </a>
         ) : (
           <div style={{ marginTop: 46 }}>
-            <MediaPlaceholder
-              label={`${project.id} case-study evidence`}
-              filename={project.assetFilename}
-              ratio={project.assetRatio}
-              note={project.assetRule}
-            />
+            <MediaPlaceholder projectId={project.id} discipline={project.publicType} />
           </div>
         )}
       </header>
