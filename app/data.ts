@@ -758,7 +758,7 @@ export const projects: Project[] =
     "slug": "hust-food-safety-crisis-response",
     "year": "2025",
     "publicType": "Academic capstone simulation",
-    "role": "Communication Manager — simulation role.",
+    "role": "Communication Manager, simulation role.",
     "tension": "How should an institution communicate accountability when student safety and public trust are both under pressure?",
     "approach": "Built a crisis-response communication scenario around a real 2024 HUST food-safety controversy. Felix directly authored the press release; the broader media-kit and press-conference materials are shown only as team context.",
     "output": "Felix-authored crisis press release within a team media-preparedness package developed for an academic simulation.",

@@ -39,7 +39,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         strip={[
           { value: "Sole", label: "script writer (credited)" },
           { value: "Co-", label: "director and editor" },
-          { value: "1st", label: "prize — class collective D5 K60" },
+          { value: "1st", label: "prize, class collective D5 K60" },
           { value: "3-act", label: "structure with perspective shift" },
         ]}
       />
@@ -52,7 +52,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
           original Facebook post, with a direct link as a fallback.
         </Lede>
         <ResponsiveEmbed
-          title="Mùa Hạ Của Chúng Tôi — original short film"
+          title="Mùa Hạ Của Chúng Tôi, original short film"
           src={FILM_EMBED}
           fallbackUrl={FILM_URL}
           fallbackLabel="Watch the film on Facebook"
@@ -67,7 +67,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         </Lede>
         <Lede>
           Felix&rsquo;s clearest individual ownership was the script. The original production credits list Felix as the
-          sole script writer, with direction and editing shared across the team &mdash; both authorship and the ability
+          sole script writer, with direction and editing shared across the team, both authorship and the ability
           to translate an authored narrative through collaborative production.
         </Lede>
       </CaseSection>
@@ -81,7 +81,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         <EvidenceFigure
           src={SCRIPT}
           alt="First page of the original Mùa Hạ Của Chúng Tôi script, text shown in full and uncropped."
-          caption="The original script&rsquo;s opening page — Felix&rsquo;s sole-credited authorship, shown uncropped."
+          caption="The original script&rsquo;s opening page, Felix&rsquo;s sole-credited authorship, shown uncropped."
           tag="Script evidence"
           href={SCRIPT_SOURCE}
         />
@@ -90,7 +90,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
       <CaseSection eyebrow="Into production" title="Taking authorship into a shared production">
         <Lede>
           Felix then worked as a co-director and co-editor within the production team. Script intention had to survive
-          performance, coverage, pacing and the final edit. This stage was collaborative execution &mdash; not sole
+          performance, coverage, pacing and the final edit. This stage was collaborative execution, not sole
           direction or sole post-production.
         </Lede>
       </CaseSection>
@@ -111,7 +111,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
           <EvidenceFigure
             src={AWARD}
             alt="Award-ceremony photograph for the First Prize for audience engagement awarded to class collective D5 K60."
-            caption="First Prize for audience engagement — awarded to the class collective D5 K60, not to Felix individually."
+            caption="First Prize for audience engagement, awarded to the class collective D5 K60, not to Felix individually."
             tag="Outcome proof"
           />
         </MediaPair>

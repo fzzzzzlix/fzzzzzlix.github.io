@@ -48,11 +48,11 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
       <CaseSection eyebrow="The research question" title="When awareness does not become affinity">
         <Lede>
           The question was not whether people knew MAGGI. It was why a familiar brand could still generate a weaker kind
-          of conversation than competitors &mdash; and what that gap should change in the creative work.
+          of conversation than competitors, and what that gap should change in the creative work.
         </Lede>
         <Lede>
           The team analysed <strong>74 Facebook posts</strong>, coded <strong>755 comments with NVivo</strong>, and
-          reviewed <strong>82 e-commerce reviews</strong> from 15 top-selling MAGGI Recipe Solution products &mdash;
+          reviewed <strong>82 e-commerce reviews</strong> from 15 top-selling MAGGI Recipe Solution products,
           moving from social signals to a strategic decision, then testing whether that decision could survive
           translation into a seasonal campaign.
         </Lede>
@@ -71,7 +71,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
         <Lede>
           The useful distinction was more specific than &ldquo;one brand is rational, another emotional.&rdquo; In the
           analysed material, MAGGI discussion skewed toward product attributes, price, delivery and other transactional
-          concerns. Barona generated more language around ease, recipes, usage and what consumers could make &mdash; and
+          concerns. Barona generated more language around ease, recipes, usage and what consumers could make, and
           achieved stronger engagement in the compared set.
         </Lede>
         <Lede>
@@ -124,7 +124,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
         <EvidenceFigure
           src={STORYBOARD}
           alt="Illustrated storyboard for the proposed MAGGI Tết 2026 TVC, panels shown in full."
-          caption="The illustrated storyboard — the strategy carried into a concrete, structured seasonal narrative."
+          caption="The illustrated storyboard, the strategy carried into a concrete, structured seasonal narrative."
           tag="Proposed academic campaign"
         />
         <ResponsiveEmbed
@@ -142,7 +142,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
       <CaseSection eyebrow="What this demonstrates" title="Research that points to a creative decision">
         <Lede>
           The case connects an explicit research method, an interpretable consumer-language gap, a strategic direction
-          and a tangible script and storyboard output &mdash; without claiming campaign launch or commercial performance
+          and a tangible script and storyboard output, without claiming campaign launch or commercial performance
           that did not occur.
         </Lede>
         <EvidencePanel links={[{ label: "View the research report", url: RESEARCH_REPORT }]}>

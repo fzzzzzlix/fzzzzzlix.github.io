@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Project } from "../../data";
-import { EvidenceLabel, StarMark } from "../../site-shell";
+import { StarMark } from "../../site-shell";
 import { asset } from "../../base-path";
 import { CanvaEmbed } from "./canva-embed";
 
@@ -182,7 +182,6 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
           <a href="https://www.canva.com/design/DAGlkXNbHM4/OTW2amJs3KP1o6_sYLBelQ/view" target="_blank" rel="noreferrer">Open the presentation in a new tab</a>
         </div>
         <section className="evidence-panel" style={{ marginTop: 40 }}>
-          <EvidenceLabel>Evidence and publication rule</EvidenceLabel>
           <p>{project.evidence}</p>
         </section>
       </section>

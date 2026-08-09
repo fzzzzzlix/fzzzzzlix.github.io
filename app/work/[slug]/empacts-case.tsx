@@ -54,7 +54,7 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
       <CaseSection eyebrow="The verified role" title="Build the organisation, not only the idea">
         <Lede>
           EMPACTS began with an ambitious premise: create a youth-led ecosystem around SDG-focused social enterprise and
-          entrepreneurship. The portfolio value is not the ambition alone &mdash; it is how the organisation was
+          entrepreneurship. The portfolio value is not the ambition alone, it is how the organisation was
           translated into roles, systems, templates, routines and public programming that other people could actually
           operate.
         </Lede>
@@ -71,7 +71,7 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
 
       <CaseSection eyebrow="From concept to operating model" title="Turn an idea into artefacts people can run">
         <Lede>
-          The business model canvas below shows the initial structuring work &mdash; how the venture was framed before it
+          The business model canvas below shows the initial structuring work, how the venture was framed before it
           became an operating organisation. It then shifts from ideas to operational artefacts: bilingual general
           presentation templates that made consistency a designed property of how EMPACTS communicated.
         </Lede>
@@ -87,14 +87,14 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
         </p>
         <MediaPair>
           <ResponsiveEmbed
-            title="EMPACTS general presentation template — English"
+            title="EMPACTS general presentation template, English"
             src={TEMPLATE_EN_EMBED}
             fallbackUrl={TEMPLATE_EN_LINK}
             fallbackLabel="Open English template"
             inPair
           />
           <ResponsiveEmbed
-            title="EMPACTS general presentation template — Vietnamese"
+            title="EMPACTS general presentation template, Vietnamese"
             src={TEMPLATE_VI_EMBED}
             fallbackUrl={TEMPLATE_VI_LINK}
             fallbackLabel="Open Vietnamese template"
@@ -121,7 +121,7 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
           <EvidenceFigure
             src={EVENT}
             alt="Photograph from an EMPACTS public webinar on brand-building for sustainable startups."
-            caption="The webinar reached an external audience — evidence that the operating system supported public programming."
+            caption="The webinar reached an external audience, evidence that the operating system supported public programming."
             tag="Event photo"
             variant="photo"
             ratio="16 / 9"
@@ -146,7 +146,7 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
           <EvidenceFigure
             src={ONEPAGER_2}
             alt="Second EMPACTS public one-pager describing programme structure."
-            caption="A second public one-pager — outward-facing, not internal planning material."
+            caption="A second public one-pager, outward-facing, not internal planning material."
             tag="Public context"
           />
         </MediaPair>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import type { ComponentType } from "react";
 import { notFound } from "next/navigation";
 import { projectBySlug, projects, type Project } from "../../data";
-import { EvidenceLabel, MediaPlaceholder, SiteFooter, SiteHeader, StarMark } from "../../site-shell";
+import { MediaPlaceholder, SiteFooter, SiteHeader, StarMark } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
 import { BeLocalCase } from "./be-local-case";
 import { MuaHaCase } from "./mua-ha-case";
@@ -89,7 +89,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <section><p className="eyebrow">The significance</p><h2>State what the work can prove</h2><p>{project.significance}</p></section>
               <section><p className="eyebrow">Role boundary</p><h2>Say exactly what Felix owned</h2><p>{project.role}</p></section>
               <section className="evidence-panel">
-                <EvidenceLabel>Evidence and publication rule</EvidenceLabel>
                 <p>{project.evidence}</p>
                 {project.proofLinks?.length ? (
                   <div className="proof-links" aria-label="Project evidence links">

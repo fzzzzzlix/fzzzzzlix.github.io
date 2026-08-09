@@ -48,20 +48,20 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         </Lede>
         <Lede>
           The professional problem was still realistic: when student safety, institutional accountability and media
-          scrutiny collide, what can an organisation say credibly &mdash; and what must it be prepared to answer next?
+          scrutiny collide, what can an organisation say credibly, and what must it be prepared to answer next?
         </Lede>
       </CaseSection>
 
       <CaseSection eyebrow="Keep the boundary clean" title="Separate the incident from the response scenario">
         <Cards>
-          <Card tag="Verified — 2024" title="The real incident">
+          <Card tag="Verified, 2024" title="The real incident">
             <ul>
               <li>A 2024 food-safety controversy concerning meals served in a HUST programme.</li>
               <li>VTV reported the university ended its meal-provider contract after the controversy.</li>
               <li>Established here only as the historical trigger, linked to public reporting.</li>
             </ul>
           </Card>
-          <Card tag="Simulation — 2025" title="The academic response">
+          <Card tag="Simulation, 2025" title="The academic response">
             <ul>
               <li>A 2025 classroom simulation built on that trigger.</li>
               <li>Felix&rsquo;s assigned simulation role was Communication Manager.</li>
@@ -85,7 +85,7 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         <EvidenceFigure
           src={PRESS_RELEASE}
           alt="First page of the simulation press release authored by Felix Phan for the 2025 HUST food-safety crisis-communication capstone."
-          caption="2025 academic simulation artefact — the Felix-authored press release, shown uncropped. Not a real HUST communication."
+          caption="2025 academic simulation artefact, the Felix-authored press release, shown uncropped. Not a real HUST communication."
           tag="Team simulation · Felix-authored"
           href={PRESS_RELEASE_LINK}
         />
@@ -119,15 +119,15 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         </Card>
         <Lede>
           The wider team package included a backgrounder, fact sheet, FAQ, media contacts and press-conference planning.
-          These are shown only as <strong>team context</strong> &mdash; the environment the press release had to work
-          within &mdash; and are not attributed to Felix.
+          These are shown only as <strong>team context</strong>, the environment the press release had to work
+          within, and are not attributed to Felix.
         </Lede>
       </CaseSection>
 
       <CaseSection eyebrow="Preparedness, not just a statement" title="A statement is not enough if the next question can&rsquo;t be answered">
         <Lede>
           The team FAQ and media-kit structure illustrate a core communications principle: a crisis statement fails if
-          spokespeople cannot answer the follow-up. The scale of the team package &mdash; not any single graphic &mdash;
+          spokespeople cannot answer the follow-up. The scale of the team package, not any single graphic,
           is the point.
         </Lede>
         <Cards>
@@ -143,7 +143,7 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
             <ul>
               <li>Felix-authored: the press release only.</li>
               <li>Team context: every other component above.</li>
-              <li>Some team artefacts use a fictional &ldquo;Dr. Felix Phan&rdquo; label — not a real credential, and not shown here.</li>
+              <li>Some team artefacts use a fictional &ldquo;Dr. Felix Phan&rdquo; label, not a real credential, and not shown here.</li>
             </ul>
           </Card>
         </Cards>
@@ -152,14 +152,14 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
       <CaseSection eyebrow="What this demonstrates" title="Professional crisis writing under accountability constraints">
         <Lede>
           The case adds a distinct PR capability to the portfolio: translating an issue into institutional language that
-          must be clear, defensible and usable under media scrutiny &mdash; while maintaining strict boundaries between
+          must be clear, defensible and usable under media scrutiny, while maintaining strict boundaries between
           verified history, simulation and individual ownership.
         </Lede>
         <EvidencePanel
           links={[
             { label: "Real 2024 incident context (VTV)", url: VTV },
             { label: "Felix-authored press release (Canva)", url: PRESS_RELEASE_LINK },
-            { label: "Team crisis plan — team simulation material", url: TEAM_PLAN_LINK },
+            { label: "Team crisis plan, team simulation material", url: TEAM_PLAN_LINK },
           ]}
         >
           {project.evidence}

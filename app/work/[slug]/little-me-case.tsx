@@ -43,7 +43,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
         <Lede>
           Little Me was designed around a simple participation problem: students can need space to reflect during a
           stressful semester without wanting a formal intervention. The response was a self-paced interactive
-          exhibition &mdash; more invitation than instruction &mdash; where participants moved through small activities at
+          exhibition, more invitation than instruction, where participants moved through small activities at
           their own pace.
         </Lede>
         <Lede>
@@ -55,7 +55,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
 
       <CaseSection eyebrow="Experience design" title="Design a journey, not just an event schedule">
         <Lede>
-          The experience combined exhibition prompts and hands-on activities &mdash; Childhood Core Memories, Drawing
+          The experience combined exhibition prompts and hands-on activities: Childhood Core Memories, Drawing
           Little Me, Shower Thoughts, Accept Your Differences, Calm Jar Decoration, a Supportive Booklet and Buddy
           Pick-up. The floor plan below shows that the participant journey was spatially designed, not improvised; the
           photographs that follow show how individual zones felt on the day.
@@ -70,7 +70,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
           <EvidenceFigure
             src={ZONE_1}
             alt="Participants at the Childhood Core Memories zone of the Little Me exhibition."
-            caption="Childhood Core Memories — a low-pressure entry activity that set the reflective tone."
+            caption="Childhood Core Memories, a low-pressure entry activity that set the reflective tone."
             tag="Event photo"
             variant="photo"
             ratio="4 / 3"
@@ -78,7 +78,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
           <EvidenceFigure
             src={CALM_JAR}
             alt="A participant decorating a jar at the Calm Jar activity."
-            caption="Calm Jar Decoration — a hands-on activity participants completed at their own pace."
+            caption="Calm Jar Decoration, a hands-on activity participants completed at their own pace."
             tag="Event photo"
             variant="photo"
             ratio="4 / 3"
@@ -108,8 +108,8 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
 
       <CaseSection eyebrow="Results against the plan" title="Measured against explicit KPIs">
         <Lede>
-          The event report records <strong>316 visits</strong> across three days &mdash; 97 on Day 1, 115 on Day 2 and 104
-          on Day 3 &mdash; with <strong>22 return visits (6.96%)</strong> and <strong>34,588 organic reach</strong> across
+          The event report records <strong>316 visits</strong> across three days: 97 on Day 1, 115 on Day 2 and 104
+          on Day 3, with <strong>22 return visits (6.96%)</strong> and <strong>34,588 organic reach</strong> across
           Facebook, Instagram and TikTok. Both stated KPIs, 300+ visits and 15,000+ organic reach, were exceeded by the
           end of the event.
         </Lede>
@@ -133,7 +133,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
         />
         <OwnershipNote label="Evidence boundary">
           Attendance and reach figures come from the event&rsquo;s own reporting. The 300+ visit KPI was reached by the
-          close of the three-day event, not on Day 2 &mdash; after two days the total was 212. Any fundraising total is
+          close of the three-day event, not on Day 2, after two days the total was 212. Any fundraising total is
           omitted here because the supplied event report does not evidence it.
         </OwnershipNote>
       </CaseSection>
@@ -141,7 +141,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
       <CaseSection eyebrow="What this demonstrates" title="Experience design plus operational leadership">
         <Lede>
           Little Me shows how Felix can turn a sensitive communication objective into a participatory format, coordinate
-          a large student team, and evaluate delivery against explicit attendance and communication KPIs &mdash; stating
+          a large student team, and evaluate delivery against explicit attendance and communication KPIs, stating
           the result and the limitation with equal precision.
         </Lede>
         <EvidencePanel>{project.evidence}</EvidencePanel>

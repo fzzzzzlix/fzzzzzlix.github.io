@@ -6,7 +6,7 @@
 // If the site is ever moved to a project page served under a sub-path
 // (e.g. /portfolio/), set BASE_PATH to that prefix. NOTE: vinext's static
 // exporter does not support Next's `basePath`, so a sub-path deploy also needs
-// a post-build URL-rewrite step for framework asset/link URLs — this constant
+// a post-build URL-rewrite step for framework asset/link URLs, this constant
 // alone only covers plain <img>/favicon, not `next/link` or JS chunks.
 export const BASE_PATH = "";
 

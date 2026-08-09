@@ -10,7 +10,7 @@ export function CanvaEmbed() {
     <div className="p31-embed-frame">
       {loaded ? (
         <iframe
-          title="Be Local — original final project presentation"
+          title="Be Local, original final project presentation"
           src={EMBED_URL}
           allow="fullscreen"
           allowFullScreen

@@ -68,7 +68,7 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
           <EvidenceFigure
             src={PLATFORM_TABLE}
             alt="Platform metric table listing fan counts, interaction rates and growth for TRESemmé and competitors."
-            caption="The underlying platform metric table — figures also stated in text above."
+            caption="The underlying platform metric table, figures also stated in text above."
             tag="Insights report"
           />
         </MediaPair>
@@ -81,8 +81,8 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
 
       <CaseSection eyebrow="Creator system" title="Rebuild the creator system around roles">
         <Lede>
-          The proposed plan reorganised creators by what they were meant to do in the funnel &mdash; reach, credibility
-          and trust &mdash; rather than treating every KOL post as the same media unit. Different platforms received
+          The proposed plan reorganised creators by what they were meant to do in the funnel, reach, credibility
+          and trust, rather than treating every KOL post as the same media unit. Different platforms received
           different formats: demonstration and challenge mechanics on TikTok, review and storytelling roles elsewhere,
           and creator or stylist participation that made product use more visible.
         </Lede>
@@ -104,7 +104,7 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
           <EvidenceFigure
             src={DOOH}
             alt="Interactive AI DOOH concept board for the TRESemmé media plan proposal."
-            caption="The interactive AI DOOH concept — a proposal element, not executed media."
+            caption="The interactive AI DOOH concept, a proposal element, not executed media."
             tag="Concept (proposal)"
           />
           <EvidenceFigure
@@ -116,7 +116,7 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
         </MediaPair>
       </CaseSection>
 
-      <CaseSection eyebrow="The budget" title="Put a number on the proposal — without pretending it was spend">
+      <CaseSection eyebrow="The budget" title="Put a number on the proposal, without pretending it was spend">
         <Lede>
           The detailed budget totals <strong>VND 7,333,618,824 inclusive of GST</strong>. This is useful planning proof:
           it shows the strategy was translated into line items and timing. It is a modelled media-plan budget, not money

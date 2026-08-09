@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Project } from "../../data";
-import { EvidenceLabel, StarMark } from "../../site-shell";
+import { StarMark } from "../../site-shell";
 
 /*
  * Shared feature-case primitives.
@@ -96,7 +96,7 @@ export function Lede({ children }: { children: ReactNode }) {
 }
 
 /**
- * Evidence figure. Default (`evidence`) shows the whole image uncropped — the
+ * Evidence figure. Default (`evidence`) shows the whole image uncropped, the
  * correct behaviour for reports, charts, credits and documents. `photo` crops to
  * a 16:9 (or given) frame for photography where subjects stay intact.
  */
@@ -240,7 +240,6 @@ export function OwnershipNote({ label = "Ownership", children }: { label?: strin
 export function EvidencePanel({ children, links }: { children: ReactNode; links?: ProofLink[] }) {
   return (
     <section className="evidence-panel" style={{ marginTop: 40 }}>
-      <EvidenceLabel>Evidence and publication rule</EvidenceLabel>
       <p>{children}</p>
       {links?.length ? <ProofLinks links={links} label="Project evidence links" /> : null}
     </section>
