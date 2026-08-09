@@ -11,7 +11,14 @@ const CHALLENGES = asset("/images/p31-challenges.jpg");
 const RISK = asset("/images/p31-risk-heatmap.jpg");
 const LESSONS = asset("/images/p31-lessons.jpg");
 const MPP = asset("/evidence/p31/Be-Local-Project-Schedule.mpp");
-const WBS = asset("/evidence/p31/Be-Local-WBS.xlsm");
+
+// User-supplied Google Drive / Docs sources for the original artefacts.
+const DOC_FULL = "https://drive.google.com/drive/folders/1zRxWWsF-R-pd_CGuzm4t4BGafbpmmOyj?usp=drive_link";
+const DOC_HERO = "https://docs.google.com/document/d/1XYw36yG82g9Mudshnd44wLnvunbelMxO/edit#heading=h.9n4gw3so4f4a";
+const DOC_WORKFLOW = "https://docs.google.com/spreadsheets/d/1B-C0Q1D20ajA1ocKKG4b3AtKs-Kk_hp0/edit?gid=1047462299#gid=1047462299";
+const DOC_CHALLENGES = "https://docs.google.com/document/d/1EZs2BxIpLp-O6PrQ8ieF-OhGd_dnfK4o/edit?usp=drive_link&ouid=109182277280764745882&rtpof=true&sd=true";
+const DOC_RISK_LESSONS = "https://docs.google.com/spreadsheets/d/1_tyJyO9m6R3JjUxfj5LVqMnXqiQhUifC/edit?usp=drive_link&ouid=109182277280764745882&rtpof=true&sd=true";
+const SHEET_WBS = "https://docs.google.com/spreadsheets/d/1GGklI_CtEaHduSP0g39i6mEjB-5b9NDT/edit?usp=drive_link&ouid=109182277280764745882&rtpof=true&sd=true";
 
 const CRITERIA: [string, number][] = [
   ["Attendance", 4.71],
@@ -31,13 +38,21 @@ const CHALLENGE_PAIRS: [string, string][] = [
   ["Weakening coordination", "restore regular weekly update and reflection meetings"],
 ];
 
-function Figure({ src, alt, caption, tag, full = false }: { src: string; alt: string; caption: string; tag: string; full?: boolean }) {
+function Figure({ src, alt, caption, tag, href }: { src: string; alt: string; caption: string; tag: string; href?: string }) {
+  const target = href ?? src;
+  const external = href != null;
   return (
     <figure className="p31-figure">
-      <a href={src} target="_blank" rel="noreferrer" aria-label={`${alt}. Opens full size in a new tab.`}>
-        <img src={src} alt={alt} style={full ? { maxHeight: "none" } : undefined} loading="lazy" />
+      <a href={target} target="_blank" rel="noreferrer" aria-label={external ? `${alt}. Opens the original source in a new tab.` : `${alt}. Opens full size in a new tab.`}>
+        <img src={src} alt={alt} loading="lazy" />
       </a>
-      <figcaption><span>{caption}</span><em>{tag}</em></figcaption>
+      <figcaption>
+        <span>{caption}</span>
+        <span className="p31-fig-meta">
+          <em>{tag}</em>
+          <a className="p31-open" href={target} target="_blank" rel="noreferrer">{external ? "Open source" : "Full size"} ↗</a>
+        </span>
+      </figcaption>
     </figure>
   );
 }
@@ -58,7 +73,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
             {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
           </div>
         </div>
-        <a className="p31-hero-media" href={HERO} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
+        <a className="p31-hero-media" href={DOC_HERO} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens the original document in a new tab.`}>
           <img src={HERO} alt={project.alt} />
         </a>
         <ul className="p31-strip" aria-label="Fast evidence">
@@ -81,7 +96,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
         <h2>Project Manager of a seven-person team.</h2>
         <p className="p31-lede">Be Local was an academic project for Project Management Fundamentals at National Economics University (class EBBA 14.2, Team 5). Felix was the Project Manager. The team had seven members spanning finance and administration, tour experience, customer experience, logistics and operations, sales and partnerships, marketing, and project management.</p>
         <p className="p31-lede">That role meant owning the operating system, not writing every document. Felix set the workflow, held the schedule and integrated the team&rsquo;s work, while individual deliverables stayed with their named owners.</p>
-        <Figure src={WORKFLOW} alt="Original Be Local workflow showing the Project Manager coordinating deliverable PICs, team members, double-review and weekly meetings." caption="Project Manager to deliverable PICs to team members, with double-review and weekly meetings across the system." tag="Presentation artefact" />
+        <Figure src={WORKFLOW} alt="Original Be Local workflow showing the Project Manager coordinating deliverable PICs, team members, double-review and weekly meetings." caption="Project Manager to deliverable PICs to team members, with double-review and weekly meetings across the system." tag="Presentation artefact" href={DOC_WORKFLOW} />
       </section>
 
       {/* Trello */}
@@ -165,7 +180,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
             </div>
           ))}
         </div>
-        <Figure src={CHALLENGES} alt="Four Be Local management problems mapped to process adjustments covering quality, communication, dependencies and weekly reflection." caption="Problems mapped to process adjustments: quality, communication, dependencies and weekly reflection." tag="Presentation artefact" />
+        <Figure src={CHALLENGES} alt="Four Be Local management problems mapped to process adjustments covering quality, communication, dependencies and weekly reflection." caption="Problems mapped to process adjustments: quality, communication, dependencies and weekly reflection." tag="Presentation artefact" href={DOC_CHALLENGES} />
       </section>
 
       {/* Schedule / WBS */}
@@ -194,9 +209,10 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
           <div className="p31-card">
             <span className="p31-tag">Native source files</span>
             <h3>Open the originals.</h3>
-            <div className="proof-links" aria-label="Schedule source downloads">
+            <div className="proof-links" aria-label="Schedule sources">
               <a href={MPP} download>Download Microsoft Project schedule (.mpp)</a>
-              <a href={WBS} download>Open / download WBS source (.xlsm)</a>
+              <a href={SHEET_WBS} target="_blank" rel="noreferrer">Open WBS source (Google Sheets) ↗</a>
+              <a href={DOC_FULL} target="_blank" rel="noreferrer">Open the full project document (Drive) ↗</a>
             </div>
           </div>
         </div>
@@ -214,7 +230,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
           <li><strong>4</strong><span>accepted</span></li>
           <li><strong>1</strong><span>transferred</span></li>
         </ul>
-        <Figure src={RISK} alt="Be Local risk-management visual showing risk-category distribution and an impact-by-likelihood heatmap." caption="Risk-category distribution and an impact-by-likelihood heatmap." tag="Presentation artefact" />
+        <Figure src={RISK} alt="Be Local risk-management visual showing risk-category distribution and an impact-by-likelihood heatmap." caption="Risk-category distribution and an impact-by-likelihood heatmap." tag="Presentation artefact" href={DOC_RISK_LESSONS} />
         <ul className="p31-stats" aria-label="Risk categories">
           <li><strong>36.67<small>%</small></strong><span>Organisational</span></li>
           <li><strong>36.67<small>%</small></strong><span>Customer</span></li>
@@ -255,7 +271,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
         <p className="eyebrow">What the project taught</p>
         <h2>Ten lessons, grouped into three habits.</h2>
         <p className="p31-lede">The team formalised ten management lessons across quality and planning, tools and processes, and communication and teamwork.</p>
-        <Figure src={LESSONS} alt="Be Local lessons learned grouped into quality and planning, tools and processes, and communication and teamwork." caption="Lessons grouped into quality and planning, tools and processes, and communication and teamwork." tag="Presentation artefact" />
+        <Figure src={LESSONS} alt="Be Local lessons learned grouped into quality and planning, tools and processes, and communication and teamwork." caption="Lessons grouped into quality and planning, tools and processes, and communication and teamwork." tag="Presentation artefact" href={DOC_RISK_LESSONS} />
       </section>
 
       {/* Original presentation embed */}

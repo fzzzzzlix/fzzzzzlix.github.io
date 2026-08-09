@@ -362,8 +362,11 @@ a:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
 .p31-figure { margin: 42px 0 0; }
 .p31-figure > a { display: block; overflow: hidden; border: 1px solid var(--line-strong); background: var(--bg-soft); }
 .p31-figure img { width: 100%; height: auto; display: block; }
-.p31-figure figcaption { margin-top: 12px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+.p31-figure figcaption { margin-top: 12px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px 20px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
 .p31-figure figcaption em { font-style: normal; color: var(--rose); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.p31-fig-meta { display: inline-flex; align-items: baseline; gap: 16px; white-space: nowrap; }
+.p31-open { color: var(--ivory); font-size: 10px; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; transition: color .2s ease, border-color .2s ease; }
+.p31-open:hover, .p31-open:focus-visible { color: var(--rose); border-color: var(--rose); }
 
 .p31-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 36px; }
 .p31-card { border: 1px solid var(--line); background: var(--bg-soft); padding: 30px; }
