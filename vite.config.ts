@@ -1,12 +1,26 @@
+import fs from "node:fs";
+import path from "node:path";
 import vinext from "vinext";
 import { defineConfig } from "vite";
-import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   "00000000-0000-4000-8000-000000000000";
 
-const { d1, r2 } = hostingConfig;
+// `.openai/hosting.json` holds the Cloudflare Sites bindings for local dev, but
+// it is gitignored and therefore absent on a fresh checkout (e.g. the GitHub
+// Pages CI build). The static export doesn't need those bindings, so fall back
+// to empty config when the file is missing instead of crashing config load.
+function loadHostingConfig(): { d1: string | null; r2: string | null } {
+  try {
+    const file = path.join(process.cwd(), ".openai", "hosting.json");
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return { d1: null, r2: null };
+  }
+}
+
+const { d1, r2 } = loadHostingConfig();
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
