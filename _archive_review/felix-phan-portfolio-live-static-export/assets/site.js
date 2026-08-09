@@ -1,1 +1,0 @@
-document.addEventListener('click',e=>{if(e.target.matches('[data-filter]')){document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');const f=e.target.dataset.filter;document.querySelectorAll('.work-card').forEach(c=>c.hidden=f!=='all'&&!c.dataset.tags.includes(f));}});
