@@ -38,7 +38,7 @@
       focus = '';
       original.forEach(c => grid.appendChild(c));
       title.textContent = 'Default portfolio view';
-      desc.textContent = 'Featured work first, followed by all 31 projects in project-ID order.';
+      desc.textContent = 'Featured work first, followed by all 32 projects in project-ID order.';
       clear.hidden = true;
     }
   }

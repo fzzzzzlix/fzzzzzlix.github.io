@@ -71,7 +71,7 @@ portfolio/
 ├── package.json
 ├── package-lock.json
 ├── app/                    Next.js source — edit here
-│   ├── data.ts             Single source of truth for all 31 projects
+│   ├── data.ts             Single source of truth for all 32 projects
 │   ├── globals.css         Full design system
 │   ├── layout.tsx          Root layout + metadata
 │   ├── page.tsx            Homepage

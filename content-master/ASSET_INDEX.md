@@ -46,6 +46,23 @@
 
 ---
 
+## Feature-case evidence assets (`public/images/cases/pXX/`)
+
+Curated evidence/photography for the bespoke feature cases (added 2026-08-09 from the featured-cases handoff pack). These are referenced directly by the case components in `app/work/[slug]/*-case.tsx`, not by `project-images.ts`. Raw sources and confidential material were deliberately **not** shipped.
+
+| Case | Files | Fit | Evidentiary use |
+|------|-------|-----|-----------------|
+| P02 | cases/p02/p02-script-cover.png, p02-credits.jpg, p02-award.jpg | contain | Sole script credit, shared direction/edit, class-collective (D5 K60) award |
+| P13 | cases/p13/p13-comment-themes.png, p13-sentiment-volume.png, p13-campaign-framework.png, p13-big-idea.png, p13-storyboard.png | contain | Research method, insight, proposed direction, proposed Tết creative |
+| P20 | cases/p20/p20-platform-analysis.png, p20-platform-table.png, p20-kol-diagnosis.png, p20-interactive-dooh.png, p20-plan-pulsing.png | contain | Platform diagnosis, creator-role design, DOOH concept, pulsing plan |
+| P22 | cases/p22/p22-key-visual.jpg (hero), p22-floor-plan.png, p22-zone-1.jpg, p22-calm-jar.jpg, p22-buddy-pickup.jpg | cover (photos) / contain (plan) | Hero, participant-journey floor plan, activity photos |
+| P25 | cases/p25/p25-key-visual.jpg (hero), p25-business-model-canvas.png, p25-event.jpg, p25-onepager-1.png, p25-onepager-2.png, p25-felix.jpg | cover (photos) / contain (docs) | Public-safe organisation/system evidence only |
+| P32 | cases/p32/p32-press-release-p1.png | contain | Felix-authored simulation press release (primary individual proof) |
+
+**Withheld on purpose:** the EMPACTS EPIC proposal (classified Confidential) and the P32 HUST-branded press-conference backdrop (`p32-press-conference-background-team-context.png`, brand-impersonation risk) were **not** copied into `public/`.
+
+---
+
 ## Fonts
 
 | Asset | Location | Format | Size | Usage |
@@ -79,8 +96,9 @@
 | P25 | p25-empacts.jpg | cover |
 | P28 | p28-vinfast.jpg | cover |
 | P31 | p31-be-local-web.jpg | cover |
+| P32 | cases/p32/p32-press-release-p1.png | contain |
 
-Remaining 22 projects (P03–P04, P06–P12, P14–P19, P21, P23–P24, P26–P27, P29–P30) still show `MediaPlaceholder` because no real image exists for them yet. To add a new project image: add the file to `public/images/`, then add its entry to `app/project-images.ts`.
+Remaining projects (P03–P04, P06–P12, P14–P19, P21, P23–P24, P26–P27, P29–P30) still show `MediaPlaceholder` because no real grid image exists for them yet. The six bespoke feature cases (P02, P13, P20, P22, P25, P32) additionally load evidence assets from `public/images/cases/pXX/` inside their `*-case.tsx` components. To add a new project image: add the file to `public/images/`, then add its entry to `app/project-images.ts`.
 
 ---
 
