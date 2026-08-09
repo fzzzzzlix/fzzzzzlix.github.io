@@ -71,7 +71,7 @@ portfolio/
 ├── package.json
 ├── package-lock.json
 ├── app/                    Next.js source — edit here
-│   ├── data.ts             Single source of truth for all 32 projects
+│   ├── data.ts             Single source of truth (32 active projects, P01–P34; P08 absorbed into P13, P15 merged into P14)
 │   ├── globals.css         Full design system
 │   ├── layout.tsx          Root layout + metadata
 │   ├── page.tsx            Homepage
@@ -123,7 +123,7 @@ To edit page copy (About, Experience, Interests, Contact), edit the correspondin
 ## How to add a new project
 
 1. Add a new `Project` object to the array in `app/data.ts`.
-2. Use the next sequential ID (currently P32 would be next).
+2. Use the next sequential ID. IDs run P01–P34 with P08 (absorbed into P13) and P15 (merged into P14) retired, so **the next genuinely new ID is P35**.
 3. Set a unique, URL-safe `slug`.
 4. Set `feature: true` if it should appear in the featured section. Update the homepage `featured` array in `app/page.tsx` if you change the featured set.
 5. Place the cover image in `public/images/` following the `pNN-name.ext` naming convention.

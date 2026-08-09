@@ -63,6 +63,22 @@ Curated evidence/photography for the bespoke feature cases (added 2026-08-09 fro
 
 ---
 
+## Supporting-case evidence assets (shared renderer)
+
+Referenced by the shared `app/work/[slug]/supporting-case.tsx` via `supporting-case-data.ts`. Authentic figures only; everything else uses `project-images.ts` heroes or intentional placeholders.
+
+| Case | Files | Fit | Evidentiary use |
+|------|-------|-----|-----------------|
+| P07 | cases/p07/p07-storyboard.jpg (added 2026-08-09 from `9 Next Projects`) | contain | Storyboard page from the Cleaning Frenzy Tết board-game proposal |
+| P14 | p15-photoshoots.jpg (repurposed after P15 merge) | cover | Three-shoot photo series that supplies the magazine's imagery |
+| P30 | cases/p30/p30-map-the-system.jpg (hero, added 2026-08-09 v3) | cover | Map the System 2023 presentation cover |
+| P33 | cases/p33/p33-media-research.jpg (hero, added 2026-08-09 v3) | cover | COMM2892 team research-deck slide |
+| P34 | cases/p34/p34-prre-infographic.png (hero, added 2026-08-09 v3) | contain | MKTG1459 research-system infographic |
+
+**Authentic embeds (no local asset):** P01 live case (GitHub Pages), P03 Canva deck + Drive script, P04 Drive audio + script, P05/P06 Drive proposals, P07 Canva proposal, P14 Heyzine flipbook, P16 Drive report, P17 Canva white paper + Drive eMagazine feature, P33 Canva deck, P34 Canva presentation. All lazy-loaded with an external-link fallback; none autoplay.
+
+---
+
 ## Fonts
 
 | Asset | Location | Format | Size | Usage |

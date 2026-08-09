@@ -12,7 +12,6 @@ const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
   P12: { src: "/images/p12-folk-western.jpg", fit: "cover" },
   P13: { src: "/images/p13-maggi.jpg", fit: "cover" },
   P14: { src: "/images/p14-magazine.jpg", fit: "cover" },
-  P15: { src: "/images/p15-photoshoots.jpg", fit: "cover" },
   P16: { src: "/images/p16-patriotic-rap.jpg", fit: "cover" },
   P17: { src: "/images/p17-flowor.jpg", fit: "contain" },
   P18: { src: "/images/p18-google-doodle.gif", fit: "cover" },
@@ -24,8 +23,11 @@ const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
   P24: { src: "/images/p24-mbe.jpg", fit: "cover" },
   P25: { src: "/images/p25-empacts.jpg", fit: "cover" },
   P28: { src: "/images/p28-vinfast.jpg", fit: "cover" },
+  P30: { src: "/images/cases/p30/p30-map-the-system.jpg", fit: "cover" },
   P31: { src: "/images/p31-hero.jpg", fit: "cover" },
   P32: { src: "/images/cases/p32/p32-press-release-p1.png", fit: "contain" },
+  P33: { src: "/images/cases/p33/p33-media-research.jpg", fit: "cover" },
+  P34: { src: "/images/cases/p34/p34-prre-infographic.png", fit: "contain" },
 };
 
 // Prefix every image src with the deploy base path so plain <img> tags resolve
