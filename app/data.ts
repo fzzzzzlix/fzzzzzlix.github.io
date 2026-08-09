@@ -500,11 +500,11 @@ export const projects: Project[] =
   },
   {
     "id": "P22",
-    "title": "Little Me: RMIT Mental-Wellness Exhibition",
+    "title": "Little Me: Mental-Wellness Interactive Exhibition",
     "slug": "little-me",
     "year": "3-5 April 2024",
     "publicType": "Event & experience",
-    "role": "Head Organiser as RMIT Student Council Student Rights & Welfare Officer; led a 27-person team.",
+    "role": "Head Organiser; led a 27-person team.",
     "tension": "Create an accessible mental-wellness experience during a high-stress semester without making it feel like a formal intervention.",
     "approach": "Designed a self-paced interactive exhibition with Draw Little Me, DIY Calm Jar, and a shared gallery; coordinated RMIT’s Diversity & Inclusion Office, Wellbeing Department, Student Life Department, RMIT Current Media Club, and independent RMIT artists.",
     "output": "Three-day exhibition, fundraising, operations, partner coordination, and cross-platform promotion.",
@@ -520,7 +520,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p22-little-me-rmit-mental-wellness-exhibit-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Event evidence for Little Me: RMIT Mental-Wellness Exhibition"
+    "alt": "Event evidence for Little Me: Mental-Wellness Interactive Exhibition"
   },
   {
     "id": "P23",

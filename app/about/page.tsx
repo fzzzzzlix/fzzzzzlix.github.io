@@ -17,7 +17,7 @@ export default function AboutPage() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <PageHero eyebrow="About Felix" title="Curious enough to ask why. Practical enough to make it work." deck="Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world." />
+        <PageHero eyebrow="About Felix" title="Curious enough to ask why. Practical enough to make it work" deck="Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world." />
         <section className="about-intro section-shell split-copy">
           <p className="pull-quote">“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer.”</p>
           <div className="long-copy">
@@ -38,7 +38,7 @@ export default function AboutPage() {
           <div><StarMark size={34} /><h2>Creative Strategist &amp; Storyteller</h2></div>
           <dl><div><dt>Professional name</dt><dd>Felix Phan</dd></div><div><dt>Legal-name note</dt><dd>Thuc Huong</dd></div><div><dt>Pronouns</dt><dd>they/them</dd></div><div><dt>Graduation</dt><dd>April 2027</dd></div><div><dt>Availability</dt><dd>Full-time, available now</dd></div><div><dt>Base</dt><dd>Ho Chi Minh City</dd></div></dl>
         </section>
-        <section className="page-cta section-shell"><p className="eyebrow">See the method in motion</p><h2>Good claims need good proof.</h2><Link className="button button-primary" href="/work">Explore the work</Link></section>
+        <section className="page-cta section-shell"><p className="eyebrow">See the method in motion</p><h2>Good claims need good proof</h2><Link className="button button-primary" href="/work">Explore the work</Link></section>
       </main>
       <SiteFooter />
     </div>

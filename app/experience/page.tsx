@@ -17,16 +17,16 @@ export default function ExperiencePage() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <PageHero eyebrow="Experience" title="Work, leadership, and delivery." deck="Felix moved from making content, to planning it, to directing teams, organising experiences and building systems that other people could use." />
+        <PageHero eyebrow="Experience" title="Work, leadership, and delivery" deck="Felix moved from making content, to planning it, to directing teams, organising experiences and building systems that other people could use." />
         <section className="timeline section-shell">
           {experience.map((item, index) => <article key={item.org}><span className="timeline-index">0{index + 1}</span><div><p className="timeline-date">{item.dates}</p><h2>{item.org}</h2><h3>{item.role}</h3><p>{item.scope}</p><EvidenceLabel>Related projects: {item.projects}</EvidenceLabel></div></article>)}
         </section>
         <section className="education section-shell">
-          <div className="section-intro"><p className="eyebrow">Education</p><h2>Education.</h2></div>
+          <div className="section-intro"><p className="eyebrow">Education</p><h2>Education</h2></div>
           <div className="education-grid"><article><span>2022 - April 2027</span><h3>National Economics University</h3><p>Bachelor of Business Administration in English</p></article><article><span>2022 - April 2027</span><h3>RMIT University</h3><p>Bachelor of Professional Communication</p></article></div>
         </section>
         <section className="education section-shell">
-          <div className="section-intro"><p className="eyebrow">Selected credentials</p><h2>Certified skills, plainly stated.</h2></div>
+          <div className="section-intro"><p className="eyebrow">Selected credentials</p><h2>Certified skills, plainly stated</h2></div>
           <div className="education-grid"><article><span>2020 - 2022</span><h3>Microsoft Office Specialist</h3><p>Word 2013, PowerPoint 2013, Excel 2016 and PowerPoint 2016.</p></article><article><span>2022</span><h3>National Consolation Prize</h3><p>Microsoft Office Specialist World Championship, Viettel 2022.</p></article></div>
           <p className="source-note">Certificates are issued to Nguyen Phan Thuc Huong, Felix Phan&apos;s legal name.</p>
         </section>

@@ -403,8 +403,12 @@ a:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
 .p31-embed-poster strong { font-family: var(--display); font-size: 22px; font-weight: 600; }
 .p31-embed-poster span { color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 
+.p31-media-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 42px; align-items: start; }
+.p31-media-pair .p31-figure { margin: 0; }
+.p31-media-pair .p31-embed-frame { margin: 0; }
+
 @media (max-width: 900px) {
-  .p31-cols, .p31-peer, .p31-timelines { grid-template-columns: 1fr; }
+  .p31-cols, .p31-peer, .p31-timelines, .p31-media-pair { grid-template-columns: 1fr; }
   .p31-strip, .p31-stats { grid-template-columns: 1fr 1fr; }
   .p31-peer { gap: 30px; }
 }

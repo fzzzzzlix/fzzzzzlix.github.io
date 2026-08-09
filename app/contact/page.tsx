@@ -8,7 +8,7 @@ export default function ContactPage() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <PageHero eyebrow="Contact" title="A good brief deserves a proper conversation." deck="Felix is available now for full-time roles across strategy, storytelling and project delivery, plus adjacent communication and content work." />
+        <PageHero eyebrow="Contact" title="A good brief deserves a proper conversation" deck="Felix is available now for full-time roles across strategy, storytelling and project delivery, plus adjacent communication and content work." />
         <section className="contact-grid section-shell">
           <a href="mailto:felixphan.contact@gmail.com"><span>Email</span><strong>felixphan.contact@gmail.com</strong><b>↗</b></a>
           <a href="tel:+84936647704"><span>Phone</span><strong>+84 936 647 704</strong><b>↗</b></a>

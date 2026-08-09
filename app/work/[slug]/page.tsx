@@ -62,10 +62,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <section className="case-body section-shell">
             <div className="case-rail"><p>{project.id}</p><span>{project.feature ? "Deep case" : "Capsule case"}</span></div>
             <div className="case-sections">
-              <section><p className="eyebrow">The approach</p><h2>Turn the problem into a structure.</h2><p>{project.approach}</p></section>
-              <section><p className="eyebrow">The output</p><h2>Make the idea concrete.</h2><p>{project.output}</p></section>
-              <section><p className="eyebrow">The significance</p><h2>State what the work can prove.</h2><p>{project.significance}</p></section>
-              <section><p className="eyebrow">Role boundary</p><h2>Say exactly what Felix owned.</h2><p>{project.role}</p></section>
+              <section><p className="eyebrow">The approach</p><h2>Turn the problem into a structure</h2><p>{project.approach}</p></section>
+              <section><p className="eyebrow">The output</p><h2>Make the idea concrete</h2><p>{project.output}</p></section>
+              <section><p className="eyebrow">The significance</p><h2>State what the work can prove</h2><p>{project.significance}</p></section>
+              <section><p className="eyebrow">Role boundary</p><h2>Say exactly what Felix owned</h2><p>{project.role}</p></section>
               <section className="evidence-panel">
                 <EvidenceLabel>Evidence and publication rule</EvidenceLabel>
                 <p>{project.evidence}</p>
