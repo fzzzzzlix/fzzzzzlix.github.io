@@ -1,7 +1,7 @@
 # Felix Phan — Portfolio 2026
 
 Personal portfolio for Felix Phan: Creative Strategist & Storyteller.  
-Live deployment: <https://felix-phan-portfolio.anh022145.chatgpt.site/>
+Live deployment: <https://fzzzzzlix.github.io/>
 
 ---
 
@@ -15,7 +15,7 @@ Live deployment: <https://felix-phan-portfolio.anh022145.chatgpt.site/>
 | UI library | React | 19.2.6 |
 | CSS | Tailwind CSS 4 (PostCSS) | 4.2.1 |
 | Language | TypeScript | 5.9.3 |
-| Hosting | ChatGPT Sites (OpenAI) | — |
+| Hosting | GitHub Pages (static export) | — |
 | Node | ≥ 22.13.0 | — |
 
 ---
@@ -144,17 +144,45 @@ To edit page copy (About, Experience, Interests, Contact), edit the correspondin
 
 ## Deployment notes
 
-The app is deployed to ChatGPT Sites under project ID in `.openai/hosting.json`.  
-The build output is in `dist/`. The Sites builder runs `npm run build` against committed source.
+The site is deployed to **GitHub Pages** as a static export. It is a *user* Pages
+site: the repository is named `fzzzzzlix.github.io`, so the site is served at the
+domain root (`https://fzzzzzlix.github.io/`) with no path prefix.
 
-For a static GitHub Pages fallback, see `source-materials/felix-portfolio-github-baseline-2026-08-07/`.
+Deployment is automated by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml):
+on every push to `main` it runs `npm run build:pages` (which sets
+`output: "export"` in [`next.config.ts`](next.config.ts)), then publishes the
+generated `dist/client/` directory to Pages.
+
+### One-time setup
+
+1. Rename the GitHub repo to `fzzzzzlix.github.io` (Settings → General → Repository name).
+2. In Settings → Pages, set **Source** to **GitHub Actions**.
+3. Push to `main` — the workflow builds and deploys automatically.
+
+### Static-export constraints
+
+- All routes are prerendered to HTML. Dynamic app-router routes must export
+  `generateStaticParams()` (see [`app/work/[slug]/page.tsx`](app/work/[slug]/page.tsx)).
+- There is no server image optimizer, so `images.unoptimized` is set and images
+  are served directly from `public/images/`.
+- vinext's exporter does **not** support Next's `basePath`; hence the root-domain
+  (user-site) hosting above. If the site ever moves to a sub-path, see
+  [`app/base-path.ts`](app/base-path.ts).
+
+To build the static site locally:
+
+```bash
+npm run build:pages   # outputs dist/client/
+npx serve dist/client # or: python -m http.server -d dist/client 8000
+```
 
 ---
 
 ## Known limitations
 
-- All project images in the Next.js app currently use `MediaPlaceholder` components.  
-  The 34 real images are in `public/images/` ready to be wired up.
+- Projects listed in [`app/project-images.ts`](app/project-images.ts) render their real
+  cover image; any project not in that map still uses a `MediaPlaceholder`.
 - The CV URL on the contact page is a placeholder (`/contact#cv`). Felix will supply the final URL.
 - The `db/` and `drizzle/` directories are framework stubs; no database is currently active.
-- Build and install scripts (`scripts/`) require Linux or WSL — they do not run natively on Windows.
+- The legacy Cloudflare Sites scripts in `scripts/` require Linux or WSL. The GitHub
+  Pages build (`npm run build:pages`) does **not** use them and runs on any platform.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteFooter, SiteHeader, StarMark, MediaPlaceholder } from "./site-shell";
 import { projects } from "./data";
+import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
@@ -26,8 +27,8 @@ const featured = [
     id: "P31",
     title: "Be Local",
     lane: "Project Management",
-    role: "Project Manager and pitch team lead",
-    proof: "30 risks, VND 2.59B modelled cost, and five key deliverables across scope to launch.",
+    role: "Project Manager, seven-person team",
+    proof: "A community-based tourism venture planned as a real project: a 30-risk register, five phases from scope to launch, and delegated ownership under weekly review.",
     route: "/work/be-local",
   },
   {
@@ -89,7 +90,7 @@ export default function Home() {
           </div>
           <div className="hero-visual reveal reveal-2">
             <div className="hero-portrait-wrap">
-              <img src="/images/hero-portrait.jpg" alt="Portrait of Felix Phan" width={1600} height={2000} />
+              <img src={asset("/images/hero-portrait.jpg")} alt="Portrait of Felix Phan" width={1600} height={2000} />
             </div>
             <div className="orbit-note" aria-hidden="true"><StarMark size={42} /> insight → story → impact</div>
           </div>
