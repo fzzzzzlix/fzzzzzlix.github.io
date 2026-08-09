@@ -51,7 +51,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
           of conversation than competitors, and what that gap should change in the creative work.
         </Lede>
         <Lede>
-          The team analysed <strong>74 Facebook posts</strong>, coded <strong>755 comments with NVivo</strong>, and
+          In the research phase, Felix analysed <strong>74 Facebook posts</strong>, coded <strong>755 comments with NVivo</strong>, and
           reviewed <strong>82 e-commerce reviews</strong> from 15 top-selling MAGGI Recipe Solution products,
           moving from social signals to a strategic decision, then testing whether that decision could survive
           translation into a seasonal campaign.

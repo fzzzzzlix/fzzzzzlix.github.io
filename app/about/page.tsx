@@ -2,10 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 
-export const metadata: Metadata = { title: "About Felix Phan | Creative Strategist & Storyteller", description: "Meet Felix Phan and the method connecting research, story, production and impact." };
+export const metadata: Metadata = { title: "About", description: "Meet Felix Phan and the method connecting research, story, production and impact.", alternates: { canonical: "/about" } };
 
 const capabilities = [
-  ["Shape the strategy", "Research & planning", "Social listening, thematic coding, consumer insight, interviews, media planning and channel strategy."],
+  ["Shape the strategy", "Research & planning", "Consumer insight, social listening, thematic and sentiment coding, interviews, media planning and channel strategy."],
+  ["Shape the strategy", "Research methods", "Academic research experience includes research-question framing, literature review, qualitative and mixed-methods design, secondary quantitative analysis (correlation and regression), NVivo, social-network analysis (NodeXL), operationalisation, triangulation, systems mapping and research-to-editorial translation."],
   ["Build the story", "Creative development", "Concepts, treatments, story structure, cast functions, sponsor integration and short-form systems."],
   ["Build the story", "Writing & editorial", "TVC scripts, short films, podcasts, proposals, copy, scenes and editorial direction."],
   ["Lead the delivery", "Production & operations", "On-set support, source tracking, event logistics, vendor coordination, budgets, SOPs and quality control."],
@@ -36,7 +37,7 @@ export default function AboutPage() {
         </section>
         <section className="identity-strip section-shell">
           <div><StarMark size={34} /><h2>Creative Strategist &amp; Storyteller</h2></div>
-          <dl><div><dt>Professional name</dt><dd>Felix Phan</dd></div><div><dt>Legal-name note</dt><dd>Thuc Huong</dd></div><div><dt>Pronouns</dt><dd>they/them</dd></div><div><dt>Graduation</dt><dd>April 2027</dd></div><div><dt>Availability</dt><dd>Full-time, available now</dd></div><div><dt>Base</dt><dd>Ho Chi Minh City</dd></div></dl>
+          <dl><div><dt>Professional name</dt><dd>Felix Phan</dd></div><div><dt>Legal name</dt><dd>Nguyen Phan Thuc Huong</dd></div><div><dt>Pronouns</dt><dd>they/them</dd></div><div><dt>Graduation</dt><dd>April 2027</dd></div><div><dt>Availability</dt><dd>Full-time, available now</dd></div><div><dt>Base</dt><dd>Ho Chi Minh City</dd></div></dl>
         </section>
         <section className="page-cta section-shell"><p className="eyebrow">See the method in motion</p><h2>Good claims need good proof</h2><Link className="button button-primary" href="/work">Explore the work</Link></section>
       </main>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 
-export const metadata: Metadata = { title: "Contact | Felix Phan", description: "Contact Felix Phan for creative, strategy, communication, sustainability, project, event and content roles." };
+export const metadata: Metadata = { title: "Contact", description: "Contact Felix Phan for creative, strategy, communication, sustainability, project, event and content roles.", alternates: { canonical: "/contact" } };
 
 export default function ContactPage() {
   return (

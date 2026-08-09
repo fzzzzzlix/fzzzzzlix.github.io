@@ -1,6 +1,8 @@
 import { asset } from "./base-path";
 
-const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
+type ImageInfo = { src: string; fit: "cover" | "contain"; poster?: string };
+
+const RAW_IMAGES: Record<string, ImageInfo> = {
   P01: { src: "/images/p01-qnh.jpg", fit: "cover" },
   P02: { src: "/images/p02-summer.jpg", fit: "cover" },
   P03: { src: "/images/p03-pnj.jpg", fit: "cover" },
@@ -14,7 +16,7 @@ const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
   P14: { src: "/images/p14-magazine.jpg", fit: "cover" },
   P16: { src: "/images/p16-patriotic-rap.jpg", fit: "cover" },
   P17: { src: "/images/p17-flowor.jpg", fit: "contain" },
-  P18: { src: "/images/p18-google-doodle.gif", fit: "cover" },
+  P18: { src: "/images/p18-google-doodle.gif", fit: "cover", poster: "/images/p18-google-doodle-poster.jpg" },
   P19: { src: "/images/p19-ikea.jpg", fit: "cover" },
   P20: { src: "/images/p20-chart.jpg", fit: "contain" },
   P21: { src: "/images/p21-vinamilk.jpg", fit: "cover" },
@@ -23,7 +25,7 @@ const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
   P24: { src: "/images/p24-mbe.jpg", fit: "cover" },
   P25: { src: "/images/p25-empacts.jpg", fit: "cover" },
   P28: { src: "/images/p28-vinfast.jpg", fit: "cover" },
-  P30: { src: "/images/cases/p30/p30-map-the-system.jpg", fit: "cover" },
+  P30: { src: "/images/cases/p30/p30-map-the-system.jpg", fit: "contain" },
   P31: { src: "/images/p31-hero.jpg", fit: "cover" },
   P32: { src: "/images/cases/p32/p32-press-release-p1.png", fit: "contain" },
   P33: { src: "/images/cases/p33/p33-media-research.jpg", fit: "cover" },
@@ -32,7 +34,10 @@ const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
 
 // Prefix every image src with the deploy base path so plain <img> tags resolve
 // correctly on GitHub Pages. BASE_PATH is empty for the root user-site.
-export const REAL_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> =
+export const REAL_IMAGES: Record<string, ImageInfo> =
   Object.fromEntries(
-    Object.entries(RAW_IMAGES).map(([id, info]) => [id, { ...info, src: asset(info.src) }]),
+    Object.entries(RAW_IMAGES).map(([id, info]) => [
+      id,
+      { ...info, src: asset(info.src), ...(info.poster ? { poster: asset(info.poster) } : {}) },
+    ]),
   );

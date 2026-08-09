@@ -132,9 +132,13 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
       <section className="p31-section section-shell">
         <p className="eyebrow">Risk and uncertainty</p>
         <h2>A 30-risk register, categorised and handled</h2>
-        <p className="p31-lede">Risk was managed as a system. Each risk was scored on likelihood and impact, then assigned a handling strategy. In the report&rsquo;s status summary, 21 risks were mitigated, 6 stayed open and 3 were mitigated but occurred.</p>
-        <ul className="p31-stats" aria-label="Risk handling">
-          <li><strong>30</strong><span>risks in the register</span></li>
+        <p className="p31-lede">Risk was managed as a system: each risk was scored on likelihood and impact, then given a response treatment. The 30-risk register can be read on two separate dimensions, current status and the treatment assigned.</p>
+        <ul className="p31-stats" aria-label="Risk by status">
+          <li><strong>21</strong><span>mitigated</span></li>
+          <li><strong>6</strong><span>still open</span></li>
+          <li><strong>3</strong><span>occurred despite mitigation</span></li>
+        </ul>
+        <ul className="p31-stats" aria-label="Risk by response treatment">
           <li><strong>25</strong><span>controlled</span></li>
           <li><strong>4</strong><span>accepted</span></li>
           <li><strong>1</strong><span>transferred</span></li>

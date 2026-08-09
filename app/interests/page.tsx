@@ -2,12 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 
-export const metadata: Metadata = { title: "Focus Areas | Felix Phan", description: "Felix Phan's work across sustainable development, ESG, CSR, culture and social advocacy." };
+export const metadata: Metadata = { title: "Focus Areas", description: "Felix Phan's work across sustainable development, ESG, CSR, culture and social advocacy.", alternates: { canonical: "/interests" } };
 
 const interests = [
-  { title: "Sustainable Development", text: "Projects concerning sustainable development, ESG, CSR and social enterprise support.", filter: "Sustainability & Advocacy" },
-  { title: "Culture", text: "Vietnamese heritage, contemporary culture, identity, collective memory and generational change.", filter: "Culture & Editorial" },
-  { title: "Social Advocacy", text: "Inclusion, diversity, student rights, well-being and meaningful participation.", filter: "Sustainability & Advocacy" },
+  { title: "Sustainable Development", text: "Sustainable development, ESG, CSR and social-enterprise support, from EMPACTS to the education-inequality white paper.", filter: "Sustainability & Advocacy" },
+  { title: "Culture & Media", text: "Vietnamese heritage, contemporary culture, identity, collective memory and how media represents them.", filter: "Culture & Editorial" },
+  { title: "Research & Systems", text: "Mixed-methods research, operationalisation, social listening, network analysis and systems thinking, from Scienceporium to the Việt Á and Pakistan studies.", filter: "Strategy & Research" },
+  { title: "Social Advocacy", text: "Inclusion, diversity, student rights and wellbeing, delivered through events and student-leadership roles.", filter: "Events & Leadership" },
 ];
 
 export default function InterestsPage() {

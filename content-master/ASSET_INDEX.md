@@ -1,6 +1,15 @@
 # ASSET INDEX — Felix Phan Portfolio
 **Last verified:** 2026-08-09  
-**All 34 real images now located at:** `public/images/`
+**Real images located at:** `public/images/`
+
+> **2026-08-09 optimisation pass:** every served raster over 500 KB was resized
+> to a max 1800 px width and recompressed in place (`npm run optimize:images`),
+> saving ~23.6 MB with no change to filenames or references. `p13-storyboard.png`
+> is now ~428 KB (was 1.42 MB); the largest P20 charts dropped from ~5 MB to
+> under 1 MB each. 27 project ids map to a rendered cover in
+> `app/project-images.ts`; the remaining active projects (P09, P10, P26, P27,
+> P29) intentionally use the evidence-state placeholder until a real asset
+> exists.
 
 ---
 
@@ -14,7 +23,7 @@
 | A04 | p05-buv.jpg | P05 | JPEG | 36 KB | Cover image for P05 | — | |
 | A05 | p13-chart.jpg | P13 | JPEG | 28 KB | Evidence chart for P13 | — | |
 | A06 | p13-maggi.jpg | P13 | JPEG | 73 KB | Cover image for P13 | — | |
-| A07 | p13-storyboard.png | P13 | PNG | 1,422 KB | Storyboard evidence for P13 | — | Large file; may need web optimisation |
+| A07 | p13-storyboard.png | P13 | PNG | ~428 KB | Storyboard evidence for P13 | — | Optimised 2026-08-09 (was 1,422 KB) |
 | A08 | p20-chart.jpg | P20 | JPEG | 27 KB | Evidence chart for P20 | — | |
 | A09 | p20-concept.jpg | P20 | JPEG | 233 KB | Concept image for P20 | — | |
 | A10 | p20-tres.jpg | P20 | JPEG | 258 KB | Cover image for P20 | — | |
