@@ -146,7 +146,8 @@ h3 { margin: 0; font-size: 31px; letter-spacing: -.02em; }
 .page-aside-stat { display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; align-items: baseline; }
 .page-aside-stat strong { font-family: var(--display); color: var(--rose); font-size: 46px; line-height: 1; }
 .page-aside-stat span { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.evidence-label { display: inline-flex; align-items: center; min-height: 28px; padding: 5px 10px; border: 1px solid var(--line-strong); color: var(--rose); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.related-projects { margin-top: 14px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
+.related-projects a { color: var(--rose); }
 
 .work-index { padding-block: 60px 140px; }
 .filter-bar-wrap { position: relative; }

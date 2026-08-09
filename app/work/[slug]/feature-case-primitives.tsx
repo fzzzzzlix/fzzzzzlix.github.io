@@ -229,19 +229,26 @@ export function ProofLinks({ links, label = "Sources and proof" }: { links: Proo
   );
 }
 
-/** Left-ruled note for ownership / data / limitation caveats. */
-export function OwnershipNote({ label = "Ownership", children }: { label?: string; children: ReactNode }) {
-  return (
-    <p className="p31-note"><strong>{label}:</strong> {children}</p>
-  );
+/**
+ * Ownership / evidence / limitation boundary note.
+ * Intentionally not displayed (per portfolio owner's request to remove all
+ * evidence-boundary displays). Kept as a no-op so call sites remain intact and
+ * the notes can be restored later without rewiring every case.
+ */
+export function OwnershipNote(_props: { label?: string; children: ReactNode }) {
+  return null;
 }
 
-/** Evidence-and-publication-rule panel. */
-export function EvidencePanel({ children, links }: { children: ReactNode; links?: ProofLink[] }) {
+/**
+ * Evidence panel. The evidence-status sentence is intentionally not displayed
+ * (per portfolio owner). Any positive artifact links it carried are still
+ * surfaced under a neutral "Links" heading.
+ */
+export function EvidencePanel({ links }: { children?: ReactNode; links?: ProofLink[] }) {
+  if (!links?.length) return null;
   return (
     <section className="evidence-panel" style={{ marginTop: 40 }}>
-      <p>{children}</p>
-      {links?.length ? <ProofLinks links={links} label="Project evidence links" /> : null}
+      <ProofLinks links={links} label="Links" />
     </section>
   );
 }

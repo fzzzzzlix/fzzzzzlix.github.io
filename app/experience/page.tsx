@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { EvidenceLabel, PageHero, SiteFooter, SiteHeader } from "../site-shell";
+import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
 import { projects } from "../data";
 
 export const metadata: Metadata = { title: "Experience", description: "Felix Phan's progression through content, production, events, leadership and organisation design.", alternates: { canonical: "/experience" } };
@@ -17,7 +17,7 @@ const experience = [
 
 function RelatedProjects({ ids }: { ids: string[] }) {
   return (
-    <EvidenceLabel>
+    <p className="related-projects">
       Related projects:{" "}
       {ids.map((id, i) => {
         const p = projectById[id];
@@ -29,7 +29,7 @@ function RelatedProjects({ ids }: { ids: string[] }) {
           </span>
         );
       })}
-    </EvidenceLabel>
+    </p>
   );
 }
 

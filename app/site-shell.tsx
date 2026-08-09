@@ -70,10 +70,6 @@ export function PageHero({ eyebrow, title, deck, aside }: { eyebrow: string; tit
   );
 }
 
-export function EvidenceLabel({ children }: { children: React.ReactNode }) {
-  return <span className="evidence-label">{children}</span>;
-}
-
 export function SiteFooter() {
   return (
     <footer className="site-footer section-shell">
