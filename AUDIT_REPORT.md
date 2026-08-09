@@ -18,7 +18,7 @@
 | CSS | Tailwind CSS 4 (PostCSS) | 4.2.1 |
 | Language | TypeScript | 5.9.3 |
 | Database ORM | Drizzle ORM (schema currently empty) | 0.45.2 |
-| Hosting platform | ChatGPT Sites (OpenAI), Cloudflare Workers | — |
+| Hosting platform | GitHub Pages (static export) | — |
 | Node requirement | ≥ 22.13.0 | — |
 | Static fallback | Vanilla HTML / CSS / minimal JS | — |
 | Fonts | EB Garamond Variable, Montserrat Variable | Self-hosted |
@@ -56,10 +56,10 @@
 
 ### Existing deployment configuration
 
-- **Platform:** ChatGPT Sites (OpenAI), project ID `appgprj_6a7278c75318819195c50198964595f3` (`.openai/hosting.json`)
-- **Live URL:** `https://felix-phan-portfolio.anh022145.chatgpt.site/`
+- **Platform:** GitHub Pages (static export via `vinext build` with `output: "export"`)
+- **Live URL:** `https://fzzzzzlix.github.io/`
 - **No D1 or R2 bindings currently active** (`"d1": null, "r2": null`)
-- **GitHub Pages fallback** targeted via `felix-portfolio-github-baseline-2026-08-07/`
+- **Deploy automation:** `.github/workflows/deploy-pages.yml` publishes `dist/client/`
 
 ### Whether there are multiple separate websites or codebases
 
@@ -81,7 +81,7 @@
 - Has a complete build system with verified production build in `dist/`
 - Has an active OpenAI hosting project ID
 - Has a proper component architecture (reusable header, footer, media placeholder, etc.)
-- Is the source of the live deployment at `felix-phan-portfolio.anh022145.chatgpt.site`
+- Is the source of the GitHub Pages deployment at `fzzzzzlix.github.io`
 - The `EXPORT_README.md` confirms it as "the current work-in-progress portfolio"
 
 **However, codebase 2 (github-baseline) contains critical content and assets not yet in codebase 1:**
@@ -204,7 +204,7 @@
 
 | Path | Status | Recommended action | Notes |
 |------|--------|--------------------|-------|
-| Entire directory | GENERATED | Keep as reference snapshot; do not edit | Reconstructed from live chatgpt.site crawl; not original source. 17 of 30 project pages fully recovered (`full: true` in manifest); 13 are partial |
+| Entire directory | REMOVED | Deleted in Phase 2 | Was a crawled reconstruction of the old public deployment; superseded by the current source and removed |
 
 ### `portfolio-repo-ready/` — Earlier static HTML version (superseded)
 
@@ -236,8 +236,8 @@
 | Responsiveness | CSS shows mobile breakpoints; mobile menu implemented |
 | Accessibility | Skip link, ARIA labels, semantic HTML, `lang="en"` |
 | Build status | Verified production build present in `dist/` |
-| Deployment readiness | Deployed at `felix-phan-portfolio.anh022145.chatgpt.site/` |
-| Unique features | Dynamic filterable work grid, data-driven case pages, Cloudflare Workers runtime |
+| Deployment readiness | Deployed to GitHub Pages at `fzzzzzlix.github.io/` |
+| Unique features | Dynamic filterable work grid, data-driven case pages, static export |
 | Missing assets | All project images are `MediaPlaceholder` — no real photographs loaded |
 | Missing content | P31 Be Local not in data.ts |
 | Missing content | CV URL not resolved (placeholder in contact page) |

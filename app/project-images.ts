@@ -1,4 +1,6 @@
-export const REAL_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
+import { asset } from "./base-path";
+
+const RAW_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> = {
   P01: { src: "/images/p01-qnh.jpg", fit: "cover" },
   P02: { src: "/images/p02-summer.jpg", fit: "cover" },
   P03: { src: "/images/p03-pnj.jpg", fit: "cover" },
@@ -22,5 +24,12 @@ export const REAL_IMAGES: Record<string, { src: string; fit: "cover" | "contain"
   P24: { src: "/images/p24-mbe.jpg", fit: "cover" },
   P25: { src: "/images/p25-empacts.jpg", fit: "cover" },
   P28: { src: "/images/p28-vinfast.jpg", fit: "cover" },
-  P31: { src: "/images/p31-be-local-web.jpg", fit: "cover" },
+  P31: { src: "/images/p31-hero.jpg", fit: "cover" },
 };
+
+// Prefix every image src with the deploy base path so plain <img> tags resolve
+// correctly on GitHub Pages. BASE_PATH is empty for the root user-site.
+export const REAL_IMAGES: Record<string, { src: string; fit: "cover" | "contain" }> =
+  Object.fromEntries(
+    Object.entries(RAW_IMAGES).map(([id, info]) => [id, { ...info, src: asset(info.src) }]),
+  );

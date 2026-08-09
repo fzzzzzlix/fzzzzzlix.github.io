@@ -727,18 +727,18 @@ export const projects: Project[] =
     "title": "Be Local",
     "slug": "be-local",
     "year": "2025",
-    "publicType": "Project management capstone",
-    "role": "Project Manager; Individual Report Author; Five-Person Pitch Team Lead.",
-    "tension": "Design a community-based tourism venture that creates cultural connection without turning culture into a commodity.",
-    "approach": "Developed a full project management system covering scope, deliverables, people, finance, stakeholder governance, risk, quality and schedule. The workflow moved from Project Manager to deliverable PICs to team members with double review and weekly meetings across the system.",
-    "output": "Project management report covering scope to launch; modelled financial plan of approximately VND 2.594 billion; risk register with 30 identified risks; project schedule; pitch deck developed by a five-person team. Official launch date in project plan: 4 October 2025.",
-    "significance": "Demonstrates structured project management — managing the work, not just describing the idea. Financial figures are planning calculations, not actual commercial results.",
-    "evidence": "An academic project-management capstone. The financial figures (~VND 2.594B) are planning models rather than commercial results; the pitch deck was developed with the full five-person team.",
-    "source": "source-materials/felix-portfolio-github-baseline-2026-08-07/case-be-local.html; MIGRATION_BASELINE.md",
+    "publicType": "Academic project-management capstone",
+    "role": "Project Manager of a seven-person academic team, with direct ownership of selected deliverables and cross-functional review of the rest.",
+    "tension": "Run a seven-person team through a full project-management cycle while planning a community-based tourism venture in Hà Giang that connects visitors to local culture without turning that culture into a commodity.",
+    "approach": "Set up the operating system rather than authoring every part: Project Manager to deliverable PICs to team members, with double review and weekly meetings across the cycle. Felix directly owned selected deliverables and reviewed the rest, tracking work in Trello and running seven weekly peer-evaluation rounds.",
+    "output": "A modelled project-management system for the proposed venture, covering scope, people, budget, stakeholder governance, a 30-risk register, quality gates and a schedule. Felix was the listed PIC for the Project Charter, Human Resources Plan, presentation video and Peer Evaluation, and appears as reviewer on 15 allocated work items. The soft launch (20 September 2025) and official launch (4 October 2025) are planned milestones in the venture schedule, not realised events.",
+    "significance": "Shows structured project management: managing the work, not just describing the idea. The venture plan, its roughly VND 2.594 billion cost model and the launch dates are planning scenarios, not commercial outcomes.",
+    "evidence": "An academic project-management capstone. Financial and launch figures are planning models, not realised results. Peer-evaluation scores come from anonymous academic-team evaluation, not client or professional review. Felix did not personally author every deliverable.",
+    "source": "P31_Claude_Handoff_Pack (factual context ledger, source-data workbooks, original presentation artefacts)",
     "proofLinks": [
       {
-        "label": "View pitch deck (Canva)",
-        "url": "https://www.canva.com/design/DAGlkXNbHM4/OTW2amJs3KP1o6_sYLBelQ/view?embed"
+        "label": "View original presentation (Canva)",
+        "url": "https://www.canva.com/design/DAGlkXNbHM4/OTW2amJs3KP1o6_sYLBelQ/view"
       }
     ],
     "priority": "A: Flagship candidate",
@@ -747,10 +747,10 @@ export const projects: Project[] =
       "Project Management",
       "Sustainability & Advocacy"
     ],
-    "assetFilename": "p31-be-local-web.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9. Original source: PNG at 4.24 MB (p31-be-local.png). Web copy: p31-be-local-web.jpg (~379 KB JPEG).",
-    "assetRule": "Photography and evidence: Crop to Fill with preserved proportions. Keep the project title legible inside the central safe zone. Never stretch or set independent X/Y scale.",
-    "alt": "Be Local community-based tourism project cover — project management capstone, Hà Giang, Vietnam"
+    "assetFilename": "p31-hero.jpg",
+    "assetRatio": "Web and PDF landscape: 16:9, 1920 x 1080 px. Web copy: p31-hero.jpg (~316 KB JPEG).",
+    "assetRule": "Original presentation cover: Crop to Fill with preserved proportions. Keep the BE LOCAL title and Hà Giang landscape legible inside the central safe zone. Never stretch or set independent X/Y scale.",
+    "alt": "Be Local project-management presentation cover over a Hà Giang mountain landscape"
   }
 ];
 

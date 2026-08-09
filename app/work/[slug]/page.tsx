@@ -4,6 +4,11 @@ import { notFound } from "next/navigation";
 import { projectBySlug, projects } from "../../data";
 import { EvidenceLabel, MediaPlaceholder, SiteFooter, SiteHeader, StarMark } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
+import { BeLocalCase } from "./be-local-case";
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -18,6 +23,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const index = projects.findIndex((item) => item.id === project.id);
   const previous = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
+
+  if (project.id === "P31") {
+    return (
+      <div className="site-frame">
+        <SiteHeader />
+        <main id="main-content">
+          <BeLocalCase project={project} previous={previous} next={next} />
+        </main>
+        <SiteFooter />
+      </div>
+    );
+  }
 
   return (
     <div className="site-frame">
