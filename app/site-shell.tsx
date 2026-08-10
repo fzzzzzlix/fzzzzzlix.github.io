@@ -73,9 +73,8 @@ export function PageHero({ eyebrow, title, deck, aside }: { eyebrow: string; tit
 export function SiteFooter() {
   return (
     <footer className="site-footer section-shell">
-      <div className="footer-brand"><StarMark size={26} /><span>Follow the North Star.</span></div>
+      <div className="footer-brand"><StarMark size={26} /><span>Follow the North Star</span></div>
       <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
-      <ul className="footer-facts"><li>Felix Phan</li><li>they/them</li><li>Ho Chi Minh City</li><li>Full-time, available now</li></ul>
     </footer>
   );
 }

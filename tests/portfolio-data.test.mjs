@@ -75,6 +75,11 @@ test("P33 and P34 are D1 research cases", () => {
   assert.equal(densityOf("P34"), "D1");
 });
 
+test("P17 embeds the rural-students editorial article via the exact Drive id", () => {
+  // The article iframe/fallback must use the supplied Drive file id.
+  assert.match(scSrc, /13MC1iP8GQYWd3L-Kvwu9fF2V0adka2c_/);
+});
+
 // ---- Claim-safety regressions ---------------------------------------------
 test("no unsupported 'viral' claim anywhere in project data", () => {
   assert.doesNotMatch(dataSrc, /\bviral\b/i);
@@ -110,6 +115,31 @@ test("every mapped project image exists on disk", () => {
     if (!existsSync(join(ROOT, "public", m[2]))) missing.push(`${m[1]} ${m[2]}`);
   }
   assert.deepEqual(missing, []);
+});
+
+test("every native evidence figure referenced in supporting cases exists on disk", () => {
+  // Each asset("/images/cases/...") figure/embed poster must be a real file.
+  const missing = [];
+  for (const m of scSrc.matchAll(/asset\("(\/images\/cases\/[^"]+)"\)/g)) {
+    if (!existsSync(join(ROOT, "public", m[1]))) missing.push(m[1]);
+  }
+  assert.deepEqual(missing, []);
+});
+
+test("P33 and P34 carry native evidence figures, not only Canva embeds", () => {
+  // Required native figures must be wired into the case data.
+  for (const f of [
+    "/images/cases/p33/p33-research-question.jpg",
+    "/images/cases/p33/p33-data-collection.jpg",
+    "/images/cases/p33/p33-analysis-method.jpg",
+    "/images/cases/p34/p34-assignment1-cover.png",
+    "/images/cases/p34/p34-regression.jpg",
+    "/images/cases/p34/p34-nvivo-themes.jpg",
+    "/images/cases/p34/p34-nodexl-network.jpg",
+  ]) {
+    assert.ok(scSrc.includes(f), `${f} should be referenced`);
+    assert.ok(existsSync(join(ROOT, "public", f)), `${f} should exist on disk`);
+  }
 });
 
 // ---- Routing --------------------------------------------------------------

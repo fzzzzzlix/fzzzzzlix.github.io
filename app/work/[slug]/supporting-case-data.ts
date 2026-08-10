@@ -112,18 +112,65 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   P01: {
     density: "D1",
     deck:
-      "An independent episode-development case about how research, cast mechanics and sponsor logic can coexist without flattening cultural material.",
+      "An independent, speculative episode treatment for the entertainment show Quán Nhà Haha, worked out as a full case: how research, cast mechanics and sponsor logic can coexist without flattening cultural material.",
     capability: "Entertainment development, cultural research and treatment writing.",
+    ownership:
+      "Self-initiated portfolio work by Felix. The cast (Jun Phạm, Rhymastic, Bùi Công Nam, Ngọc Thanh Tâm, Duy Khánh) and VCB DigiBank are named speculatively; none is attached to this concept.",
     evidenceStatus:
       "Supported as a self-initiated concept. This is independent, speculative development, not a Yeah1, VCB, VTV, Mango+ or Quán Nhà Haha commission.",
-    embeds: [
+    approachEyebrow: "The build",
+    approachTitle: "How the episode was engineered",
+    outputEyebrow: "The output",
+    outputTitle: "What the treatment delivers",
+    sections: [
       {
-        title: "Bếp Nhà Haha Gặp Bếp Cung Đình, full case study",
-        src: P01_CASE,
-        fallbackUrl: P01_CASE,
-        fallbackLabel: "Open the full case study",
+        eyebrow: "Research and guardrails",
+        title: "Reading Huế before writing a single scene",
+        body: [
+          "The treatment starts from cultural research, not a set-piece. Nhã nhạc cung đình, Vietnam's first UNESCO intangible-heritage listing (2003), is treated as a living discipline of timing and restraint rather than a backdrop, and the Perfume River, dragon boats and imperial setting are used because Huế offers a visual space no other city can.",
+          "The core guardrail is written in as a production risk: heritage and its artisans must never read as props. Artisans are credited on screen, their dialogue is unscripted, and the design allows them to push back on the cast on camera, so the cultural material keeps its authority.",
+        ],
+      },
+      {
+        eyebrow: "Episode engine",
+        title: "One engine, three acts, escalating friction",
+        body: [
+          "The spine is an engine, not a fixed plot: a modern, loud, slightly undisciplined cast tries to host one ceremonial night on the river and discovers that keeping a tradition means protecting the gesture that gives it meaning. The cast improvises around the engine instead of reading lines.",
+          "It runs across three acts in a single day. Act 1, the wrong rhythm: the cast arrives with street-level energy and learns the day is a test, not a tour. Act 2, learning to host not perform: cooking and Nhã nhạc become mirrors of the same lesson, restraint and patience, and the first sponsor idea is tried and rejected. Act 3, a new gesture not a gimmick: a ceremonial dinner and a flower-offering moment resolve the tension.",
+        ],
+      },
+      {
+        eyebrow: "Cast functions",
+        title: "Five people, five designed scenes",
+        body: [
+          "Each cast member gets a designed scene with real stakes, not a personality label. Jun Phạm anchors the kitchen and learns that restraint is trust; Ngọc Thanh Tâm learns by hand across a wordless, cross-generational moment with a culinary artisan; Rhymastic, a technical musician, is taught in reverse when an artisan answers his search for a hook with 'my music waits'.",
+          "Bùi Công Nam is the emotional bridge, learning one phrase on the đàn tranh and writing a short thank-you song that becomes the episode's payoff, and Duy Khánh hosts without a script, held to a fail, practice-fail, recovery arc that also yields three distinct short-form cuts.",
+        ],
+      },
+      {
+        eyebrow: "Sponsor integration",
+        title: "VCB DigiBank as an arc, not an end tag",
+        body: [
+          "The sponsor moves through a full arc rather than a closing logo. Problem: the cast wants to help guests thank the artisans. Bad solution: a QR standee at the boat door, which an artisan quietly notes 'feels like paying a bill'. Pushback: an elder reframes the historical flower-offering, where money was secondary to the gesture.",
+          "Better solution: a physical flower with a small QR tag on the back, so the hand-to-hand gesture is kept and the payment is digitised only after it. The brand becomes infrastructure between two people, and the logo appears only at the moment of scanning, never before. The integration works because the cast finds it after a failure, rather than being handed it.",
+        ],
+      },
+      {
+        eyebrow: "Short-form plan",
+        title: "Six cutdowns designed with the episode",
+        body: [
+          "Six short-form cuts are designed in parallel with the episode, not salvaged afterwards: a cold-open 'when a rapper meets Nhã nhạc', a food-fail cut in the kitchen, a no-script MC behind-the-scenes cut, a heart cut of Bùi Công Nam learning from a 70-year-old artisan, a cultural cut on the historical flower ritual, and the payoff cut of the first flower being handed over before the scan.",
+        ],
+      },
+      {
+        eyebrow: "Production risks",
+        title: "Naming what could break, and the fix",
+        body: [
+          "The treatment closes on risks and fixes rather than avoiding the hard parts: cultural sensitivity (artisans credited, unscripted, allowed to push back), sponsor overexposure (logo only at the scan, brand-safe line written), Act 2 pacing (edit on the mirror structure, not the chaos), over-acting (the ambassadors are simply the first guests, no imperial cosplay), and weather and audio on the night river (an indoor heritage-house backup, with wind noted in the audio plan).",
+        ],
       },
     ],
+    proofLinks: [{ label: "Open the full self-initiated case study", url: P01_CASE }],
   },
 
   P03: {
@@ -173,14 +220,50 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     deck: "A professional proposal showing how a technical university programme can be translated from recruitment brief into a human, pitchable TVC story.",
     capability: "Lead creative on commercial proposal development.",
     evidenceStatus:
-      "A professional proposal from Felix's ForArt internship, embedded below. The lead-creative role is confirmed; the production status is not verified.",
+      "A professional proposal from Felix's ForArt internship, with representative slides shown below and the full proposal embedded. The lead-creative role is confirmed; the production status is not verified.",
     evidenceNeeds: "The final production status or a public output link, and supervisor or team credit.",
+    approachEyebrow: "The idea",
+    approachTitle: "From recruitment brief to a human story",
+    outputEyebrow: "The work",
+    outputTitle: "Idea, script and pitch, slide by slide",
+    figures: [
+      {
+        src: asset("/images/cases/p05/p05-creative-idea.jpg"),
+        alt: "BUV Data Science and AI proposal slide 'The Futuristic Wave', setting out the key message, concept and key visual for the programme TVC.",
+        caption: "The creative idea: 'The Futuristic Wave', built from a key message, a concept and a recurring wave metaphor for the Data Science and AI programme.",
+        tag: "Creative idea",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p05/p05-character.jpg"),
+        alt: "BUV proposal character slide describing the protagonist: a curious, confident male high-school student aged 16 to 18 in Hanoi.",
+        caption: "The human entry point: a 16 to 18-year-old prospective student, chosen so a technical programme reads as a personal journey rather than a spec sheet.",
+        tag: "Human entry point",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p05/p05-storyline.jpg"),
+        alt: "BUV proposal storyline slide breaking the TVC into scene clusters with shot-by-shot direction.",
+        caption: "Script architecture: the TVC broken into scene clusters with shot-level direction, tracing the student from classroom to BUV to a project stage.",
+        tag: "Script architecture",
+        fit: "contain",
+      },
+    ],
     embeds: [
       {
         title: "BUV new-programmes TVC proposal",
         src: p05Proposal.preview,
         fallbackUrl: p05Proposal.view,
         fallbackLabel: "Open the proposal (Google Drive)",
+      },
+    ],
+    sections: [
+      {
+        eyebrow: "Production status",
+        title: "Where the work stops",
+        body: [
+          "This is a pitch-stage proposal from the internship: a decoded brief, a creative idea, a scripted TVC and pitch-ready packaging. It is not presented as a produced or client-approved commercial, and no broadcast output is claimed.",
+        ],
       },
     ],
   },
@@ -221,6 +304,13 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
       },
     ],
     figures: [
+      {
+        src: asset("/images/cases/p07/p07-boardgame.jpg"),
+        alt: "The Cleaning Frenzy board game, the product the academic Tết renovation campaign was built around.",
+        caption: "Cleaning Frenzy, the board game the campaign set out to renovate for Tết, the brand and category the concept works from.",
+        tag: "Board game",
+        fit: "cover",
+      },
       {
         src: asset("/images/cases/p07/p07-storyboard.jpg"),
         alt: "A storyboard page from the Cleaning Frenzy Tết campaign proposal.",
@@ -277,9 +367,16 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     ],
     figures: [
       {
-        src: asset("/images/p15-photoshoots.jpg"),
+        src: asset("/images/cases/p14/p14-magazine-cover.jpg"),
+        alt: "A spread from the Equal in Ao Dai gender-equality magazine, using áo dài as the visual anchor.",
+        caption: "The Equal in Ao Dai editorial, which used áo dài as the visual anchor and inverted conventional gender-expression cues. A team-produced academic output under Felix's creative direction.",
+        tag: "Editorial",
+        fit: "cover",
+      },
+      {
+        src: asset("/images/cases/p14/p14-photoshoots.jpg"),
         alt: "Photography from the gender-equality magazine's own photo shoots.",
-        caption: "The three-shoot photo series, directed by Felix to supply the magazine's imagery.",
+        caption: "The three-shoot photo series, directed by Felix to supply the magazine's own imagery.",
         tag: "Photo direction",
         fit: "cover",
       },
@@ -287,11 +384,21 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   },
 
   P16: {
-    density: "D3",
+    density: "D2",
+    context: "COMM2497",
     deck: "A research proposal exploring patriotic rap through generational audience framing; it proves research design and conceptual thinking, not completed findings.",
     capability: "Research framing for culture and Gen Z.",
-    evidenceStatus: "An academic research proposal only, linked below. No study was conducted, so there are no findings.",
-    evidenceNeeds: "The research questions, method detail and instructor feedback.",
+    evidenceStatus: "A complete academic research proposal, with its cover and framing shown below and the full document linked. It is a proposal: no study was conducted, so there are no findings.",
+    evidenceNeeds: "Instructor feedback on the proposal.",
+    figures: [
+      {
+        src: asset("/images/cases/p16/p16-proposal-cover.png"),
+        alt: "RMIT assignment cover and first page of the patriotic-rap research proposal for COMM2497, authored by Nguyen Phan Thuc Huong, titled 'Investigating the Potential of Patriotic Rap as the New Red Music in Vietnam'.",
+        caption: "The completed proposal (COMM2497): cover, background and framing for 'patriotic rap as the new red music'. This is a research proposal, not an executed study.",
+        tag: "Research proposal",
+        fit: "contain",
+      },
+    ],
     proofLinks: [{ label: "Read the proposal (Google Drive)", url: p16Report.view }],
   },
 
@@ -406,12 +513,27 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     outputTitle: "What was collected and analysed",
     significanceEyebrow: "Findings",
     significanceTitle: "What the study reported",
-    embeds: [
+    figures: [
       {
-        title: "Vietnam media transparency research deck",
-        src: p33Deck.embed,
-        fallbackUrl: p33Deck.view,
-        fallbackLabel: "Open the research deck (Canva)",
+        src: asset("/images/cases/p33/p33-research-question.jpg"),
+        alt: "Research-question slide from the COMM2892 team deck: 'How transparent is the Vietnamese media in reporting corruption from 2021 to 2023?', shown against prior studies and the identified knowledge gap.",
+        caption: "The study's research question and knowledge gap, framing media transparency as the object of analysis. From the four-person COMM2892 team deck.",
+        tag: "Research question",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p33/p33-data-collection.jpg"),
+        alt: "Data-collection slide: three transparency criteria (Tsetsura and Kruckeberg 2009), a July 2021 to July 2023 timeframe, and the final 39-item sample of 26 online newspaper, 8 social-media and 5 television/video items refined from 50 collected items.",
+        caption: "The operationalised criteria and the final 39-item cross-platform sample (26 online, 8 social-media news, 5 television/video), refined down from 50 collected items.",
+        tag: "Sample and method",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p33/p33-analysis-method.jpg"),
+        alt: "Data-analysis slide splitting the quantitative work into Information Source Analysis and News Publisher Analysis, each with its own analysis focus.",
+        caption: "The two analytical axes the team ran in parallel: information-source diversity and credibility, and news-publisher accessibility and ownership.",
+        tag: "Analysis framework",
+        fit: "contain",
       },
     ],
     sections: [
@@ -437,6 +559,19 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
           "The 39-item sample is a bounded academic dataset, not a representative measurement of all Vietnamese media, and the analysis stops short of causal claims. The artifact proves team membership and the study's stated method and sample, not individual task allocation.",
         ],
       },
+      {
+        eyebrow: "The full deck",
+        title: "The complete research presentation",
+        body: [
+          "The full COMM2892 team deck follows, covering the Vietnamese media context, the Soviet Communist Theory of the Press lens, and the finding and discussion sections in the team's own words.",
+        ],
+        embed: {
+          title: "Vietnam media transparency research deck",
+          src: p33Deck.embed,
+          fallbackUrl: p33Deck.view,
+          fallbackLabel: "Open the research deck (Canva)",
+        },
+      },
     ],
   },
 
@@ -457,12 +592,27 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     outputTitle: "What was collected and analysed",
     significanceEyebrow: "Findings",
     significanceTitle: "What the study reported",
-    embeds: [
+    figures: [
       {
-        title: "Pakistan cybersecurity and SME-loans research presentation",
-        src: p34Deck.embed,
-        fallbackUrl: p34Deck.view,
-        fallbackLabel: "Open the presentation (Canva)",
+        src: asset("/images/cases/p34/p34-regression.jpg"),
+        alt: "Inferential-analysis slide: a scatter plot of cybersecurity capacity development against access to bank loans across 22 countries, with trendline y = 1.8342x + 5.449, R squared 0.2385, and p = 0.02.",
+        caption: "The 22-country quantitative result: a statistically significant but weak positive correlation (Multiple R = 0.48, p = 0.02), reported by the team as an association, not causation.",
+        tag: "Quantitative analysis",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p34/p34-nvivo-themes.jpg"),
+        alt: "NVivo AutoCode treemaps of 18 major positive and 16 major negative themes coded from 30 collected articles, with 7 themes selected for discourse analysis.",
+        caption: "Social-listening analysis in NVivo: positive and negative theme hierarchies coded from the 30-article sample, with seven themes taken forward for discourse analysis.",
+        tag: "Social listening (NVivo)",
+        fit: "contain",
+      },
+      {
+        src: asset("/images/cases/p34/p34-nodexl-network.jpg"),
+        alt: "NodeXL social-network graph of the YouTube discussion, alongside a top-10 ranking of accounts by eigenvector centrality, created with NodeXL Pro.",
+        caption: "Social-network analysis in NodeXL: the YouTube conversation graph and its most central accounts by eigenvector centrality.",
+        tag: "Network analysis (NodeXL)",
+        fit: "contain",
       },
     ],
     sections: [
@@ -472,6 +622,13 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
         body: [
           "Assignment 1, the annotated bibliography, literature review and problem framing, was submitted solely by Felix. The mixed-methods stages that followed were a four-person team.",
         ],
+        figure: {
+          src: asset("/images/cases/p34/p34-assignment1-cover.png"),
+          alt: "RMIT assignment cover page for MKTG1459 Assignment 1, Annotated Bibliography and Literature Review, listing a single student, Nguyen Phan Thuc Huong (S3978588), submitted 27 August 2023.",
+          caption: "Assignment 1 was submitted solely by Felix (Nguyen Phan Thuc Huong, S3978588): the individual literature-review and problem-framing foundation before the team stage.",
+          tag: "Individual ownership",
+          fit: "contain",
+        },
       },
       {
         eyebrow: "Method architecture",
@@ -487,6 +644,19 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
         body: [
           "The 22-country quantitative analysis returned a weak positive correlation (Multiple R = 0.48, p = 0.02). It is reported as an association, not proof of causation, and the listening and network samples are bounded academic datasets.",
         ],
+      },
+      {
+        eyebrow: "The full presentation",
+        title: "The complete mixed-methods presentation",
+        body: [
+          "The full MKTG1459 team presentation follows, carrying the background, the three method stages and the recommendations in the team's own words.",
+        ],
+        embed: {
+          title: "Pakistan cybersecurity and SME-loans research presentation",
+          src: p34Deck.embed,
+          fallbackUrl: p34Deck.view,
+          fallbackLabel: "Open the presentation (Canva)",
+        },
       },
     ],
   },

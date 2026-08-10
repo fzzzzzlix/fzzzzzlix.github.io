@@ -45,9 +45,8 @@ export default function Home() {
         </section>
 
         <section className="work-preview section-shell" aria-label="Featured works">
-          <div className="section-intro section-intro-row">
-            <div><p className="eyebrow">{home.featuredEyebrow}</p></div>
-            <Link className="text-link" href="/work">{home.featuredLink} <span>↗</span></Link>
+          <div className="section-intro">
+            <p className="eyebrow">{home.featuredEyebrow}</p>
           </div>
           <div className="project-grid">
             {home.featured.map((project, index) => {
@@ -72,6 +71,9 @@ export default function Home() {
               );
             })}
           </div>
+          <div className="work-preview-more">
+            <Link className="text-link" href="/work">{home.featuredLink} <span>↗</span></Link>
+          </div>
         </section>
 
         <section className="method section-shell" aria-labelledby="method-title">
@@ -88,7 +90,7 @@ export default function Home() {
 
         <section className="routes section-shell" aria-labelledby="routes-title">
           <div className="section-intro">
-            <p className="eyebrow">{home.routes.eyebrow}</p>
+            <p className="routes-lead">{home.routes.eyebrow}</p>
             <h2 id="routes-title">{home.routes.title}</h2>
           </div>
           <div className="route-list">

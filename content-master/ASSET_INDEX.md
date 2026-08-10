@@ -1,5 +1,5 @@
 # ASSET INDEX — Felix Phan Portfolio
-**Last verified:** 2026-08-09  
+**Last verified:** 2026-08-10  
 **Real images located at:** `public/images/`
 
 > **2026-08-09 optimisation pass:** every served raster over 500 KB was resized
@@ -76,15 +76,29 @@ Curated evidence/photography for the bespoke feature cases (added 2026-08-09 fro
 
 Referenced by the shared `app/work/[slug]/supporting-case.tsx` via `supporting-case-data.ts`. Authentic figures only; everything else uses `project-images.ts` heroes or intentional placeholders.
 
+All native figures added **2026-08-10** were rendered from the primary source
+files in the two evidence packs (`9 Next Projects.zip`, `9 next next project.zip`)
+at up to 1800 px wide and shipped as `contain` evidence (or `cover` for
+photography). No slide, chart, axis, label, citation, date, credit or
+contribution table was cropped; no screenshot was fabricated. Full decks stay
+available via the authentic embeds below.
+
 | Case | Files | Fit | Evidentiary use |
 |------|-------|-----|-----------------|
-| P07 | cases/p07/p07-storyboard.jpg (added 2026-08-09 from `9 Next Projects`) | contain | Storyboard page from the Cleaning Frenzy Tết board-game proposal |
-| P14 | p15-photoshoots.jpg (repurposed after P15 merge) | cover | Three-shoot photo series that supplies the magazine's imagery |
+| P05 | cases/p05/p05-creative-idea.jpg, p05-character.jpg, p05-storyline.jpg (added 2026-08-10 from `9 Next Projects` BUV proposal PDF) | contain | Creative idea ("The Futuristic Wave"), human entry point (16–18 student), script architecture (scene clusters) from Felix's ForArt lead-creative proposal |
+| P07 | cases/p07/p07-boardgame.jpg (added 2026-08-10), p07-storyboard.jpg (added 2026-08-09 from `9 Next Projects`) | cover (board game) / contain (storyboard) | The Cleaning Frenzy board game (brand/category) and a storyboard page from the Tết proposal |
+| P14 | cases/p14/p14-magazine-cover.jpg, p14-photoshoots.jpg (added 2026-08-10 from `9 Next Projects`) | cover | Equal in Ao Dai editorial spread and the three-shoot photo series (ex-P15), team-produced under Felix's direction |
+| P16 | cases/p16/p16-proposal-cover.png (added 2026-08-10 from `9 next next project`) | contain | RMIT COMM2497 cover + first page of the completed patriotic-rap research proposal (proposal only, no findings) |
 | P30 | cases/p30/p30-map-the-system.jpg (hero, added 2026-08-09 v3) | cover | Map the System 2023 presentation cover |
-| P33 | cases/p33/p33-media-research.jpg (hero, added 2026-08-09 v3) | cover | COMM2892 team research-deck slide |
-| P34 | cases/p34/p34-prre-infographic.png (hero, added 2026-08-09 v3) | contain | MKTG1459 research-system infographic |
+| P33 | cases/p33/p33-media-research.jpg (hero), p33-research-question.jpg, p33-data-collection.jpg, p33-analysis-method.jpg (3 native slides added 2026-08-10 from the COMM2892 team deck PDF) | cover (hero) / contain (slides) | Research question + knowledge gap, operationalised criteria and the 39-item sample (26/8/5), and the source/publisher analysis framework |
+| P34 | cases/p34/p34-prre-infographic.png (hero), p34-assignment1-cover.png, p34-regression.jpg, p34-nvivo-themes.jpg, p34-nodexl-network.jpg (4 native figures added 2026-08-10 from the MKTG1459 individual + team PDFs) | contain | Sole-authored Assignment 1 cover (individual ownership), the 22-country regression (p=0.02, Multiple R=0.48), NVivo social-listening themes (30 articles), and the NodeXL network graph |
 
-**Authentic embeds (no local asset):** P01 live case (GitHub Pages), P03 Canva deck + Drive script, P04 Drive audio + script, P05/P06 Drive proposals, P07 Canva proposal, P14 Heyzine flipbook, P16 Drive report, P17 Canva white paper + Drive eMagazine feature, P33 Canva deck, P34 Canva presentation. All lazy-loaded with an external-link fallback; none autoplay.
+**Withheld on purpose (P34):** the source slides that surface the conflicting raw
+YouTube comment total (2,377 vs 2,535) were **not** shipped; the NodeXL figure
+uses the network graph and eigenvector ranking instead, and the case copy reports
+only users (1,749) and videos (83).
+
+**Authentic embeds (no local asset):** P01 live case (GitHub Pages, kept as a secondary link under the native sections), P03 Canva deck + Drive script, P04 Drive audio + script, P05/P06 Drive proposals, P07 Canva proposal, P14 Heyzine flipbook, P16 Drive report, P17 Canva white paper + Drive eMagazine feature (Drive id 13MC1iP8GQYWd3L-Kvwu9fF2V0adka2c_), P33 Canva deck (closing section), P34 Canva presentation (closing section). All lazy-loaded with an external-link fallback; none autoplay.
 
 ---
 

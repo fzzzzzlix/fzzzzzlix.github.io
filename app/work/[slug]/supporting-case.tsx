@@ -36,8 +36,16 @@ type CaseProps = { project: Project; previous: Project; next: Project };
 // presentation-forward label so enhanced/research cases never read as generic
 // "supporting" work.
 function caseLabel(project: Project, density: string): string {
-  const isResearch = /research/i.test(project.publicType);
-  if (density === "D1") return isResearch ? "Research case" : "Enhanced case";
+  const type = project.publicType.toLowerCase();
+  const isResearch = /research/.test(type);
+  const isSelfInitiated = /self-initiated|concept/.test(type);
+  const isProfessional = /professional/.test(type);
+  if (density === "D1") {
+    if (isResearch) return "Research case";
+    if (isSelfInitiated) return "Concept development case";
+    if (isProfessional) return "Enhanced professional case";
+    return "Enhanced case";
+  }
   if (density === "D2") return isResearch ? "Research case" : "Evidence case";
   return "Supporting case";
 }
