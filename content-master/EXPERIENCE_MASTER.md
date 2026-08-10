@@ -29,8 +29,8 @@
 |-------|-------|
 | Dates | March – July 2024 |
 | Role | Creative Intern |
-| Scope | Contributed to six campaigns and productions across lead creative, collaborative scriptwriting, proposal and pitch work, on-set assistance and BTS content. |
-| Related projects | P05 · P06 · P09 · P10 · P27 · P28 |
+| Scope | Contributed across commercial proposals and productions covering lead creative, collaborative scriptwriting, proposal and pitch work, on-set assistance and BTS content. |
+| Related projects | P05 · P06 · P10 (VinFast Campaign Series, merging ex-P27/P28; ex-P09 TH true Tea removed) |
 
 ### 04 — RMIT Innovation & Entrepreneurship Club Hanoi
 | Field | Value |

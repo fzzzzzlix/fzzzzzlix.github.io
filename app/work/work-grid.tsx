@@ -9,30 +9,33 @@ import { REAL_IMAGES } from "../project-images";
 const roleToFilter: Record<string, string> = {
   // Homepage proposition routes
   "Shape the strategy": "Strategy & Research",
-  "Build the story": "Script & Story",
+  "Build the story": "Creative Content",
   "Lead the delivery": "Project Management",
   // Legacy / alternate labels
-  "Creative Scriptwriting": "Script & Story",
+  "Creative Scriptwriting": "Creative Content",
   "Strategic Planning": "Strategy & Research",
   "Communication & Sustainability": "Sustainability & Advocacy",
-  "Communication Events": "Events & Leadership",
-  "Content Roles": "Content & Channels",
+  "Communication Events": "Event & Production",
+  "Content Roles": "Creative Content",
 };
 
 // Short, shareable slugs for the URL (e.g. /work?filter=research).
 const FILTER_SLUGS: Record<string, string> = {
-  "Script & Story": "story",
+  "Creative Content": "creative",
   "Strategy & Research": "research",
-  "Production": "production",
-  "Events & Leadership": "events",
+  "Event & Production": "production",
   "Project Management": "delivery",
   "Sustainability & Advocacy": "sustainability",
   "Culture & Editorial": "culture",
-  "Content & Channels": "content",
 };
-const SLUG_TO_FILTER: Record<string, string> = Object.fromEntries(
-  Object.entries(FILTER_SLUGS).map(([label, slug]) => [slug, label]),
-);
+const SLUG_TO_FILTER: Record<string, string> = {
+  ...Object.fromEntries(Object.entries(FILTER_SLUGS).map(([label, slug]) => [slug, label])),
+  // Legacy slug aliases so older shared links still resolve after the
+  // Creative Content and Event & Production category merges.
+  story: "Creative Content",
+  content: "Creative Content",
+  events: "Event & Production",
+};
 
 function resolveRole(initialRole?: string): string {
   if (!initialRole) return "All";

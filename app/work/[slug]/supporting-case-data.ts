@@ -231,26 +231,15 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     ],
   },
 
-  P09: {
-    density: "D2",
-    context: "ForArt internship",
-    deck: "A cross-stage production-support case spanning proposal work, set assistance and BTS content rather than a single isolated deliverable.",
-    capability: "Cross-stage production support.",
-    ownership: "Felix's role: creative and production support. Team context: a ForArt production led by others.",
-    evidenceStatus:
-      "Professional production support from Felix's ForArt internship, spanning script contribution, proposal, on-set assistance and BTS content.",
-    evidenceNeeds: "The final TVC link, a redacted proposal, BTS selects and a responsibility breakdown.",
-  },
-
   P10: {
     density: "D2",
     context: "ForArt internship",
-    deck: "Creative and production support inside a talent-led automotive campaign, with responsibility scoped to script and proposal, set assistance and BTS.",
-    capability: "Automotive production support and BTS.",
-    ownership: "Felix's role: creative and production support. Team context: a ForArt production led by others.",
+    deck: "Creative and production support across three talent-led VinFast campaigns (VF7, VF5 and Kim Yoo-jung), with responsibility scoped to script and proposal, set assistance and BTS, and a BTS workstream led on the Kim Yoo-jung production.",
+    capability: "Multi-campaign automotive production support and BTS.",
+    ownership: "Felix's role: creative and production support across the three campaigns, and BTS content lead on the Kim Yoo-jung production. Team context: ForArt productions led by others.",
     evidenceStatus:
-      "Professional production support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content.",
-    evidenceNeeds: "The final campaign link, a redacted proposal, BTS selects and team credits.",
+      "Professional production support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content for three VinFast productions.",
+    evidenceNeeds: "The final campaign links, a redacted proposal, BTS selects and team credits.",
   },
 
   P11: {
@@ -397,27 +386,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     evidenceStatus:
       "Student-organisation work. The quantitative outcomes come from a single portfolio and club record, so they are treated as reported, not independently verified.",
     evidenceNeeds: "Official role confirmation, event reports, fundraising records and analytics.",
-  },
-
-  P27: {
-    density: "D2",
-    context: "ForArt internship",
-    deck: "Creative and production support across a multi-talent VinFast campaign, with emphasis on coordination rather than inflated creative ownership.",
-    capability: "Multi-talent production support.",
-    ownership: "Felix's role: creative and production support. Team context: a ForArt production led by others.",
-    evidenceStatus: "Professional production support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content.",
-    evidenceNeeds: "Final campaign links, a redacted proposal, BTS selects and team credits.",
-  },
-
-  P28: {
-    density: "D1",
-    context: "ForArt internship",
-    deck: "A focused commercial-production case about making BTS content useful as editorial output, with Felix leading that BTS workstream rather than the main production.",
-    capability: "BTS content lead and on-set production.",
-    ownership: "Felix's role: BTS content lead and on-set assistance. Team context: the main commercial production was led by others.",
-    evidenceStatus:
-      "Professional production from Felix's ForArt internship. Felix led the BTS content and assisted on set, not the main commercial production or talent direction.",
-    evidenceNeeds: "The BTS outputs, the final campaign link and supervisor or team credit.",
   },
 
   P29: {

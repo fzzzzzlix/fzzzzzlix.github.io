@@ -8,7 +8,6 @@ import {
   EvidenceFigure,
   Lede,
   MediaPair,
-  OwnershipNote,
   ProofLinks,
   ResponsiveEmbed,
 } from "./feature-case-primitives";
@@ -18,7 +17,7 @@ type CaseProps = { project: Project; previous: Project; next: Project };
 
 /*
  * Shared supporting-case renderer for every non-flagship project (P01, P03–P07,
- * P09–P12, P14, P16–P19, P21, P23, P24, P26–P30, P33, P34). It reuses the P31
+ * P10–P12, P14, P16–P19, P21, P23, P24, P26, P29, P30, P33, P34). It reuses the P31
  * feature-case primitives so the visual language matches the flagship set, and
  * reads the evidence/embed layer from supporting-case-data.ts.
  *
@@ -156,27 +155,17 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
         </CaseSection>
       ))}
 
-      <CaseSection eyebrow="Role boundary" title="Exactly what Felix owned">
-        <Lede>{project.role}</Lede>
-        {ext?.ownership ? <OwnershipNote label="Ownership">{ext.ownership}</OwnershipNote> : null}
-      </CaseSection>
-
       {ext?.capability ? (
         <CaseSection eyebrow="What this demonstrates" title="The capability this proves">
           <Lede>{ext.capability}</Lede>
         </CaseSection>
       ) : null}
 
-      <section className="p31-section section-shell">
-        <p className="eyebrow">Evidence status</p>
-        <h2>How strong the proof is</h2>
-        <Lede>{project.evidence}</Lede>
-        {ext?.evidenceStatus ? <OwnershipNote label="Status">{ext.evidenceStatus}</OwnershipNote> : null}
-        {ext?.evidenceNeeds ? (
-          <OwnershipNote label="What would strengthen this">{ext.evidenceNeeds}</OwnershipNote>
-        ) : null}
-        {proofLinks.length ? <ProofLinks links={proofLinks} label="Project evidence links" /> : null}
-      </section>
+      {proofLinks.length ? (
+        <section className="p31-section section-shell">
+          <ProofLinks links={proofLinks} label="Links" />
+        </section>
+      ) : null}
 
       <CaseNav previous={previous} next={next} />
     </CaseArticle>

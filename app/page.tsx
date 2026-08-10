@@ -59,7 +59,7 @@ const featured = [
 
 const routes = [
   ["Shape the strategy", "Mixed-methods research, insight and planning that points to a decision", "Strategy & Research", "MAGGI, TRESemmé, Scienceporium, Việt Á and Pakistan studies"],
-  ["Build the story", "Scriptwriting, creative development and content that carries the idea", "Script & Story", "Mùa Hạ Của Chúng Tôi, BUV TVC, TH true Tea"],
+  ["Build the story", "Scriptwriting, creative development and content that carries the idea", "Creative Content", "Mùa Hạ Của Chúng Tôi, BUV TVC, VinFast campaign series"],
   ["Lead the delivery", "Projects, events and operations that actually ship", "Project Management", "EMPACTS, Be Local, Little Me"],
 ];
 
