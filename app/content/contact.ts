@@ -10,9 +10,7 @@ export const contact = {
   },
   hero: {
     eyebrow: "Contact",
-    title: "A good brief deserves a proper conversation",
-    deck: "Felix is available now for full-time roles across strategy, storytelling and project delivery, plus adjacent communication and content work.",
-  },
+    deck: "A good brief deserves a proper conversation",
   channels: [
     { kind: "Email", value: "felixphan.contact@gmail.com", href: "mailto:felixphan.contact@gmail.com" },
     { kind: "Phone", value: "+84 936 647 704", href: "tel:+84936647704" },
@@ -20,8 +18,7 @@ export const contact = {
   ],
   cv: {
     label: "Curriculum Vitae",
-    title: "Request the latest CV",
-    text: "Email Felix for the current one-page PDF.",
-    href: "mailto:felixphan.contact@gmail.com?subject=CV%20request",
+    title: "View CV",
+    href: "xxx",
   },
 };
