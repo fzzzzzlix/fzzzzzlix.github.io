@@ -20,8 +20,8 @@ export const contact = {
   ],
   cv: {
     label: "Curriculum Vitae",
-    title: "Request the latest CV",
-    text: "Email Felix for the current one-page PDF.",
-    href: "mailto:felixphan.contact@gmail.com?subject=CV%20request",
+    title: "View CV",
+    text: "",
+    href: "xxx",
   },
 };

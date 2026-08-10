@@ -38,8 +38,8 @@ export default function Home() {
 
         <section className="proof-band" aria-label="Selected evidence">
           <div className="section-shell proof-grid">
-            {home.proofBand.map((item) => (
-              <p key={item.label}><strong>{item.value}</strong><span>{item.label}</span></p>
+            {home.proofBand.map((item, index) => (
+              <p key={index}><strong>{item.value}</strong><span>{item.label}</span></p>
             ))}
           </div>
         </section>

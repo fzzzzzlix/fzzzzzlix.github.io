@@ -196,6 +196,9 @@ h3 { margin: 0; font-size: 31px; letter-spacing: -.02em; }
 .timeline h2 { font-size: clamp(38px, 4.5vw, 64px); }
 .timeline h3 { margin-top: 12px; font-family: var(--body); font-size: 15px; line-height: 1.5; letter-spacing: .02em; }
 .timeline article p:not(.timeline-date) { max-width: 830px; color: var(--muted); }
+.timeline-scope { margin: 16px 0 0; padding-left: 20px; max-width: 830px; list-style: disc; color: var(--muted); }
+.timeline-scope li { margin-top: 8px; line-height: 1.55; }
+.timeline-scope li:first-child { margin-top: 0; }
 .education { padding-block: 120px; border-block: 1px solid var(--line); }
 .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .education-grid article { min-height: 260px; padding: 35px; border: 1px solid var(--line); background: var(--bg-soft); }
@@ -203,6 +206,9 @@ h3 { margin: 0; font-size: 31px; letter-spacing: -.02em; }
 .education-grid h3 { margin-top: 45px; font-size: 39px; }
 .education-grid p, .source-note { color: var(--muted); }
 .source-note { margin-top: 18px; font-size: 11px; }
+.credentials-list { margin: 0; padding-left: 20px; list-style: disc; color: var(--muted); max-width: 830px; }
+.credentials-list li { margin-top: 10px; line-height: 1.55; }
+.credentials-list li:first-child { margin-top: 0; }
 
 .interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; padding-block: 120px; }
 .interest-grid article { position: relative; min-height: 570px; padding: 35px; overflow: hidden; border: 1px solid var(--line); }

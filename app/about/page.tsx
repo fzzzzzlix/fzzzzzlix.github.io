@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 import { about } from "../content/about";
+import { inline } from "../content/render-inline";
 
 export const metadata: Metadata = { title: about.meta.title, description: about.meta.description, alternates: { canonical: "/about" } };
 
@@ -14,12 +15,11 @@ export default function AboutPage() {
         <section className="about-intro section-shell split-copy">
           <p className="pull-quote">{about.pullQuote}</p>
           <div className="long-copy">
-            {about.longCopy.map((para, i) => <p key={i}>{para}</p>)}
+            {about.longCopy.map((para, i) => <p key={i}>{inline(para)}</p>)}
           </div>
         </section>
         <section className="capability-section section-shell">
           <p className="eyebrow">{about.capability.eyebrow}</p>
-          <p className="capability-deck">{about.capability.deck}</p>
           <div className="capability-list">
             {about.capability.items.map(([tier, title, text]) => <article key={title}><span className="capability-tier">{tier}</span><h2>{title}</h2><p>{text}</p></article>)}
           </div>
