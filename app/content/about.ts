@@ -8,19 +8,19 @@ export const about = {
   },
   hero: {
     eyebrow: "About Felix",
-    title: "Curious enough to ask why. Practical enough to make it work",
+    title: "Curious enough to ask why, Practical enough to make it work",
     deck: "Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world.",
+    "Suffering from being too adaptive, exceeding resourceful, and have insanely ownership attitude - therefore, whenever a brief landed on my hand, I would likely to heartfully fight to deliver it from start to finish with everything I have and in highest quality I approve. My portfolio showcase many projects from too many fields, this might cause confusion on what actually does Felix specialize? Well, **my expertise is to get the job done**, whatever the job is. If you also have a job need to be done, feel free to reach out. <br> <br> Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world.",
   },
-  pullQuote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer.”",
+  pullQuote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",
   longCopy: [
-    "Felix moves meaningful ideas from insight, to story, to impact: through research, writing, production and systems that survive the handover.",
-    "Felix works across strategy, story and delivery so an idea keeps its intent from the first insight to the final handover. That means fewer gaps between the people who plan, make and ship the work: one person can diagnose the problem, frame it, design the response, align the team and stay accountable for the result.",
-    "Their work begins with evidence, but it does not end with a spreadsheet. Research is translated into a human tension. The tension becomes a structure. The structure becomes a script, treatment, plan, event or operating system. Then the result is described with its limitations still attached.",
-    "That combination suits roles where communication must be culturally aware, operationally realistic and accountable to an outcome.",
+    "Felix works across strategy, story, and delivery - in order for an idea to keep its intent from the first insight to the final handover. That means fewer gaps between the people who plan, make, and ship the work: one person can diagnose the problem, frame it, design the response, align the team, and stay accountable for the result.",
+    "Felix moves meaningful ideas from insight - to story - to impact.
+    "Their work begins with evidence, but it does not end with a spreadsheet. Research is translated into a **human tension**. The tension becomes a **structure**. The structure becomes a **script, treatment, plan, event** or **operating system**.",
+    "That combination suits roles where communication must be **culturally aware**, **operationally realistic**, and **accountable to an outcome**.",
   ],
   capability: {
-    eyebrow: "Capability map",
-    deck: "Grouped by the three ways Felix contributes, not as five equal skills.",
+    eyebrow: "Capability",
     // [tier, title, text]
     items: [
       ["Shape the strategy", "Research & planning", "Consumer insight, social listening, thematic and sentiment coding, interviews, media planning and channel strategy."],
@@ -38,8 +38,8 @@ export const about = {
       { term: "Legal name", detail: "Nguyen Phan Thuc Huong" },
       { term: "Pronouns", detail: "they/them" },
       { term: "Graduation", detail: "April 2027" },
-      { term: "Availability", detail: "Full-time, available now" },
-      { term: "Base", detail: "Ho Chi Minh City" },
+      { term: "Availability", detail: "Full-time" },
+      { term: "Base", detail: "Ho Chi Minh City & Hanoi" },
     ],
   },
   cta: {
