@@ -24,8 +24,8 @@ const densityOf = (id) => {
 };
 
 // ---- Project integrity ----------------------------------------------------
-test("exactly 32 active projects", () => {
-  assert.equal(projects.length, 32);
+test("exactly 29 active projects", () => {
+  assert.equal(projects.length, 29);
 });
 
 test("retired ids P08 and P15 are absent", () => {

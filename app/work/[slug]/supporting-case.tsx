@@ -17,7 +17,7 @@ type CaseProps = { project: Project; previous: Project; next: Project };
 
 /*
  * Shared supporting-case renderer for every non-flagship project (P01, P03–P07,
- * P09–P12, P14, P16–P19, P21, P23, P24, P26–P30, P33, P34). It reuses the P31
+ * P10–P12, P14, P16–P19, P21, P23, P24, P26, P29, P30, P33, P34). It reuses the P31
  * feature-case primitives so the visual language matches the flagship set, and
  * reads the evidence/embed layer from supporting-case-data.ts.
  *

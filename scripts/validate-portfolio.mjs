@@ -16,11 +16,11 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => readFileSync(join(ROOT, rel), "utf8");
 
 const EXPECTED = {
-  activeCount: 32,
+  activeCount: 29,
   absentIds: ["P08", "P15"],
   requiredIds: ["P01", "P30", "P31", "P32", "P33", "P34"],
   featured: ["P02", "P13", "P20", "P22", "P25", "P31"],
-  d1Ids: ["P01", "P05", "P28", "P30", "P33", "P34"],
+  d1Ids: ["P01", "P05", "P30", "P33", "P34"],
 };
 
 const errors = [];
@@ -92,7 +92,7 @@ for (const m of rawBlock.matchAll(/(P\d{2}):\s*\{\s*src:\s*"([^"]+)"/g)) {
 // ---- Documentation reflects the canonical count and new cases -------------
 for (const doc of ["content-master/PROJECT_INDEX.md", "content-master/ASSET_INDEX.md"]) {
   const text = read(doc);
-  if (!text.includes("32")) fail(`${doc} does not reference the 32 active-project count.`);
+  if (!text.includes("29")) fail(`${doc} does not reference the 29 active-project count.`);
   for (const id of ["P33", "P34"])
     if (!text.includes(id)) fail(`${doc} does not document ${id}.`);
 }

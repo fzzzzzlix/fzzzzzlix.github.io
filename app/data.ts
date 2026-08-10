@@ -39,7 +39,7 @@ export const projects: Project[] =
     "priority": "A: Flagship candidate",
     "feature": false,
     "tags": [
-      "Script & Story",
+      "Creative Content",
       "Culture & Editorial",
       "Strategy & Research"
     ],
@@ -64,8 +64,8 @@ export const projects: Project[] =
     "priority": "A: Flagship candidate",
     "feature": true,
     "tags": [
-      "Script & Story",
-      "Production"
+      "Creative Content",
+      "Event & Production"
     ],
     "assetFilename": "felix-p02-mua-ha-cua-chung-toi-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -88,7 +88,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p03-pnj-mua-cuoi-2024-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -112,7 +112,7 @@ export const projects: Project[] =
     "feature": false,
     "tags": [
       "Sustainability & Advocacy",
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p04-sustainable-energy-series-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -135,8 +135,8 @@ export const projects: Project[] =
     "priority": "A: Flagship candidate",
     "feature": false,
     "tags": [
-      "Script & Story",
-      "Production"
+      "Creative Content",
+      "Event & Production"
     ],
     "assetFilename": "felix-p05-buv-new-programs-introduction-tvc-data-evidence-3x2-v01.jpg",
     "assetRatio": "Web: 3:2, 1800 × 1200 px. PDF: Fit inside a 3:2 frame, minimum 1800 × 1200 px.",
@@ -159,7 +159,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p06-hapacol-itvc-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -182,7 +182,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p07-cleaning-frenzy-tet-campaign-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -190,52 +190,28 @@ export const projects: Project[] =
     "alt": "Key visual for the Cleaning Frenzy board-game Tết campaign proposal"
   },
   {
-    "id": "P09",
-    "title": "TH true Tea TVC",
-    "slug": "th-true-tea-tvc",
-    "year": "2024",
-    "publicType": "Professional production",
-    "role": "Creative and production support: script writing based on the leader’s idea and approach, proposal creation, pitch preparation, on-set assistance, and BTS content creation.",
-    "tension": "Carry a campaign direction consistently from proposal language into production-day support and useful behind-the-scenes content.",
-    "approach": "Supported narrative development and pitch packaging, then stayed involved on set to assist delivery and document production meaningfully.",
-    "output": "Script contribution, proposal materials, on-set support, and BTS content.",
-    "significance": "Demonstrates continuity across pre-production, production, and supporting content.",
-    "evidence": "Confirmed cross-stage support from Felix's ForArt internship, spanning script contribution, proposal, on-set assistance and BTS content.",
-    "source": "felix-portfolio/content/content-pack.md; Felix_Phan_Yeah1_CV.pdf; felixphan.portfolio2026/index.html",
-    "priority": "B: Supporting proof",
-    "feature": false,
-    "tags": [
-      "Production",
-      "Script & Story"
-    ],
-    "assetFilename": "felix-p09-th-true-tea-tvc-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for TH true Tea TVC"
-  },
-  {
     "id": "P10",
-    "title": "VinFast VF7 × Touliver & Lương Thùy Linh: #ĐểĐamMêDẫnLối",
-    "slug": "vinfast-vf7",
+    "title": "VinFast Campaign Series: VF7, VF5 & Kim Yoo-jung",
+    "slug": "vinfast-campaign-series",
     "year": "2024",
     "publicType": "Professional production",
-    "role": "Creative and production support: script writing based on the leader’s idea and approach, proposal creation, pitch preparation, on-set assistance, and BTS content creation.",
-    "tension": "Support an automotive campaign with named talent while keeping the creative direction, production requirements, and BTS narrative aligned.",
-    "approach": "Built script and proposal material from the leader’s direction, supported the set, and captured BTS content with a clear editorial purpose.",
-    "output": "Script contribution, proposal materials, on-set support, and BTS content.",
-    "significance": "Evidence of dependable cross-stage campaign support in a high-visibility production context.",
-    "evidence": "Confirmed campaign support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content for a high-visibility production.",
-    "source": "felix-portfolio/content/content-pack.md; Felix_Phan_Yeah1_CV.pdf; felixphan.portfolio2026/index.html",
-    "priority": "B: Supporting proof",
+    "role": "Creative and production support across three VinFast campaigns: script writing based on the leader’s idea and approach, proposal creation, pitch preparation, on-set assistance, and BTS content creation, with the BTS workstream led on the Kim Yoo-jung production.",
+    "tension": "Support a run of high-visibility VinFast campaigns with named talent while keeping creative direction, production requirements, and BTS storytelling aligned across each one.",
+    "approach": "Across VF7 (Touliver & Lương Thùy Linh, #ĐểĐamMêDẫnLối), VF5 (Grey D, Hoàng Hà, AMEE, Kaity Nguyễn & Sơn Soho), and the Kim Yoo-jung production, built script and proposal material from the lead direction, supported the set, and captured BTS content with a clear editorial purpose. On the Kim Yoo-jung production, Felix led the BTS content plan and capture priorities.",
+    "output": "Script contributions, proposal materials, on-set support, and BTS content packages across three campaigns.",
+    "significance": "Evidence of dependable, repeatable cross-stage campaign support across a complex cast and campaign ecosystem, including ownership of a dedicated BTS workstream.",
+    "evidence": "Confirmed campaign support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content for three high-visibility VinFast productions. On the Kim Yoo-jung production Felix led the BTS content and assisted on set, not the main commercial production or talent direction.",
+    "source": "felix-portfolio/content/content-pack.md; Felix_Phan_Yeah1_CV.pdf; direct clarification from Felix; ForArt portfolio sources",
+    "priority": "A: Flagship candidate",
     "feature": false,
     "tags": [
-      "Production",
-      "Script & Story"
+      "Creative Content",
+      "Event & Production"
     ],
-    "assetFilename": "felix-p10-vinfast-vf7-touliver-luong-thuy-linh-e-cover-16x9-v01.jpg",
+    "assetFilename": "felix-p10-vinfast-campaign-series-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for VinFast VF7 × Touliver & Lương Thùy Linh: #ĐểĐamMêDẫnLối"
+    "alt": "Behind-the-scenes still from the VinFast campaign series (VF7, VF5 and Kim Yoo-jung)"
   },
   {
     "id": "P11",
@@ -302,7 +278,7 @@ export const projects: Project[] =
     "feature": true,
     "tags": [
       "Strategy & Research",
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p13-maggi-recipe-solution-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum.",
@@ -397,7 +373,8 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Culture & Editorial"
+      "Culture & Editorial",
+      "Creative Content"
     ],
     "assetFilename": "felix-p18-google-doodle-vietnam-s-50th-reunifica-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -420,8 +397,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Culture & Editorial",
-      "Script & Story"
+      "Creative Content"
     ],
     "assetFilename": "felix-p19-ikea-fanta-lume-creative-concepts-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -490,7 +466,7 @@ export const projects: Project[] =
     "priority": "A: Flagship candidate",
     "feature": true,
     "tags": [
-      "Events & Leadership",
+      "Event & Production",
       "Sustainability & Advocacy"
     ],
     "assetFilename": "felix-p22-little-me-rmit-mental-wellness-exhibit-cover-16x9-v01.jpg",
@@ -514,8 +490,8 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Content & Channels",
-      "Events & Leadership"
+      "Creative Content",
+      "Event & Production"
     ],
     "assetFilename": "felix-p23-rmit-student-council-social-channels-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
@@ -538,7 +514,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Events & Leadership",
+      "Event & Production",
       "Project Management"
     ],
     "assetFilename": "felix-p24-mbe-corporate-events-and-touring-day-cover-16x9-v01.jpg",
@@ -563,7 +539,7 @@ export const projects: Project[] =
     "feature": true,
     "tags": [
       "Sustainability & Advocacy",
-      "Events & Leadership",
+      "Event & Production",
       "Project Management"
     ],
     "assetFilename": "felix-p25-empacts-startup-ecosystem-for-sdgs-cover-16x9-v01.jpg",
@@ -587,61 +563,13 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Events & Leadership",
+      "Event & Production",
       "Project Management"
     ],
     "assetFilename": "felix-p26-rmit-innovation-entrepreneurship-club--cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
     "alt": "Event evidence for RMIT Innovation & Entrepreneurship Club Workshops and Fundraiser"
-  },
-  {
-    "id": "P27",
-    "title": "VinFast VF5 × Grey D, Hoàng Hà, AMEE, Kaity Nguyễn & Sơn Soho",
-    "slug": "vinfast-vf5",
-    "year": "2024",
-    "publicType": "Professional production",
-    "role": "Creative and production support: script writing based on the leader’s idea and approach, proposal creation, pitch preparation, on-set assistance, and BTS content creation.",
-    "tension": "Support a multi-talent campaign while keeping the creative proposition coherent across scripts, set activity, and BTS storytelling.",
-    "approach": "Developed script and proposal material from the lead direction, supported on-set execution, and created BTS content anchored to the campaign idea.",
-    "output": "Script contribution, proposal materials, on-set support, and BTS content.",
-    "significance": "Shows coordination and editorial judgement across a complex cast and campaign ecosystem.",
-    "evidence": "Confirmed campaign support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content.",
-    "source": "Direct clarification from Felix; ForArt portfolio sources",
-    "priority": "B: Supporting proof",
-    "feature": false,
-    "tags": [
-      "Production",
-      "Script & Story"
-    ],
-    "assetFilename": "felix-p27-vinfast-vf5-grey-d-hoang-ha-amee-kaity-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Video or keyframe for VinFast VF5 × Grey D, Hoàng Hà, AMEE, Kaity Nguyễn & Sơn Soho"
-  },
-  {
-    "id": "P28",
-    "title": "VinFast × Kim Yoo-jung",
-    "slug": "vinfast-kim-yoojung",
-    "year": "2024",
-    "publicType": "Professional production",
-    "role": "Lead for BTS content creation; on-set assistance.",
-    "tension": "Create BTS material that adds editorial value around an international-talent production instead of functioning as generic set coverage.",
-    "approach": "Led the BTS content plan and capture priorities, while assisting the main production on set.",
-    "output": "BTS content package and on-set production support.",
-    "significance": "A focused example of Felix taking ownership within a larger commercial-production system.",
-    "evidence": "Confirmed BTS-content lead and on-set support from Felix's ForArt internship on an international-talent production.",
-    "source": "Direct clarification from Felix; ForArt portfolio sources",
-    "priority": "A: Flagship candidate",
-    "feature": false,
-    "tags": [
-      "Production",
-      "Content & Channels"
-    ],
-    "assetFilename": "felix-p28-vinfast-kim-yoo-jung-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Behind-the-scenes still from the VinFast x Kim Yoo-jung production"
   },
   {
     "id": "P29",
@@ -659,7 +587,7 @@ export const projects: Project[] =
     "priority": "B: Supporting proof",
     "feature": false,
     "tags": [
-      "Events & Leadership",
+      "Event & Production",
       "Sustainability & Advocacy"
     ],
     "assetFilename": "felix-p29-relax-recharge-cover-16x9-v01.jpg",
@@ -750,8 +678,7 @@ export const projects: Project[] =
     "priority": "A: Specialist proof",
     "feature": false,
     "tags": [
-      "Strategy & Research",
-      "Culture & Editorial"
+      "Strategy & Research"
     ],
     "assetFilename": "p32-press-release-p1.png",
     "assetRatio": "Evidence portrait: fit/contain; never crop document text.",
@@ -809,4 +736,4 @@ export const projects: Project[] =
 
 export const projectBySlug = Object.fromEntries(projects.map((project) => [project.slug, project]));
 export const featureProjects = projects.filter((project) => project.feature);
-export const filters = ["All", "Script & Story", "Strategy & Research", "Production", "Events & Leadership", "Project Management", "Sustainability & Advocacy", "Culture & Editorial", "Content & Channels"];
+export const filters = ["All", "Creative Content", "Strategy & Research", "Event & Production", "Project Management", "Sustainability & Advocacy", "Culture & Editorial"];
