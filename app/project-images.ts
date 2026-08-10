@@ -22,7 +22,6 @@ const RAW_IMAGES: Record<string, ImageInfo> = {
   P20: { src: "/images/p20-chart.jpg", fit: "contain" },
   P21: { src: "/images/p21-vinamilk.jpg", fit: "cover" },
   P22: { src: "/images/p22-accept-differences.jpg", fit: "cover" },
-  P23: { src: "/images/p23-rmit-social.jpg", fit: "cover" },
   P24: { src: "/images/p24-mbe.jpg", fit: "cover" },
   P25: { src: "/images/p25-empacts.jpg", fit: "cover" },
   P30: { src: "/images/cases/p30/p30-map-the-system.jpg", fit: "contain" },

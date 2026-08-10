@@ -16,7 +16,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => readFileSync(join(ROOT, rel), "utf8");
 
 const EXPECTED = {
-  activeCount: 29,
+  activeCount: 27,
   absentIds: ["P08", "P15"],
   requiredIds: ["P01", "P30", "P31", "P32", "P33", "P34"],
   featured: ["P02", "P13", "P20", "P22", "P25", "P31"],
@@ -90,9 +90,13 @@ for (const m of rawBlock.matchAll(/(P\d{2}):\s*\{\s*src:\s*"([^"]+)"/g)) {
 }
 
 // ---- Documentation reflects the canonical count and new cases -------------
+// PROJECT_INDEX.md is the canonical count doc; ASSET_INDEX.md tracks assets, not
+// the active-project count, so only the case-presence check applies to it.
+const projectIndex = read("content-master/PROJECT_INDEX.md");
+if (!projectIndex.includes(String(EXPECTED.activeCount)))
+  fail(`PROJECT_INDEX.md does not reference the ${EXPECTED.activeCount} active-project count.`);
 for (const doc of ["content-master/PROJECT_INDEX.md", "content-master/ASSET_INDEX.md"]) {
   const text = read(doc);
-  if (!text.includes("29")) fail(`${doc} does not reference the 29 active-project count.`);
   for (const id of ["P33", "P34"])
     if (!text.includes(id)) fail(`${doc} does not document ${id}.`);
 }

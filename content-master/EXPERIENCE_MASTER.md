@@ -46,7 +46,7 @@
 | Dates | October 2022 – June 2024 |
 | Role progression | Content Creator → Media Planner → Director of Content → Student Rights & Welfare Officer |
 | Scope | Progressed through content leadership before election. As Student Rights & Welfare Officer, served as Head Organiser for Little Me and Relax & Recharge. |
-| Related projects | P22 · P23 · P29 |
+| Related projects | P22 |
 
 ---
 

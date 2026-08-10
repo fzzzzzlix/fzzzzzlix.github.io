@@ -121,7 +121,7 @@ Source: `app/about/page.tsx`.
 |---------|-------------|
 | Sustainable Development | P30 · P04 · P17 · P22 · P25 |
 | Culture | P01 · P11 · P12 · P14 · P16 · P18 |
-| Social Advocacy | P14 · P17 · P22 · P29 |
+| Social Advocacy | P14 · P17 · P22 |
 
 ---
 

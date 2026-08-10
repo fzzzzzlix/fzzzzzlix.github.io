@@ -6,8 +6,8 @@
 > to a max 1800 px width and recompressed in place (`npm run optimize:images`),
 > saving ~23.6 MB with no change to filenames or references. `p13-storyboard.png`
 > is now ~428 KB (was 1.42 MB); the largest P20 charts dropped from ~5 MB to
-> under 1 MB each. 27 project ids map to a rendered cover in
-> `app/project-images.ts`; the remaining active projects (P26, P29)
+> under 1 MB each. 26 project ids map to a rendered cover in
+> `app/project-images.ts`; the remaining active projects (P26)
 > intentionally use the evidence-state placeholder until a real asset
 > exists.
 
@@ -123,7 +123,7 @@ Referenced by the shared `app/work/[slug]/supporting-case.tsx` via `supporting-c
 | P31 | p31-be-local-web.jpg | cover |
 | P32 | cases/p32/p32-press-release-p1.png | contain |
 
-Remaining projects (P03–P04, P06–P07, P11–P12, P14–P19, P21, P23–P24, P26, P29–P30) still show `MediaPlaceholder` because no real grid image exists for them yet. The six bespoke feature cases (P02, P13, P20, P22, P25, P32) additionally load evidence assets from `public/images/cases/pXX/` inside their `*-case.tsx` components. To add a new project image: add the file to `public/images/`, then add its entry to `app/project-images.ts`.
+Remaining projects (P03–P04, P06–P07, P11–P12, P14–P19, P21, P24, P26, P30) still show `MediaPlaceholder` because no real grid image exists for them yet. The six bespoke feature cases (P02, P13, P20, P22, P25, P32) additionally load evidence assets from `public/images/cases/pXX/` inside their `*-case.tsx` components. To add a new project image: add the file to `public/images/`, then add its entry to `app/project-images.ts`.
 
 ---
 

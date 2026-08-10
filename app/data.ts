@@ -475,30 +475,6 @@ export const projects: Project[] =
     "alt": "The Little Me mental-wellness interactive exhibition space"
   },
   {
-    "id": "P23",
-    "title": "RMIT Student Council Social Channels",
-    "slug": "rmit-student-council-social",
-    "year": "2022-2023",
-    "publicType": "Real social-content work",
-    "role": "Content Creator → Media Planner → Director of Content (TikTok & Instagram), before election as Student Rights & Welfare Officer.",
-    "tension": "Move the channels beyond announcement-only content and establish a recognizable voice.",
-    "approach": "Reorganized content by format across long-form YouTube and short-form TikTok/Reels, with a handover/playbook mindset.",
-    "output": "TikTok and short-form social content, including some of the organisation's early short-form TikTok and Reels videos.",
-    "significance": "Content-leadership work that moved the channels beyond announcement-only posting toward a recognisable voice across long-form and short-form formats.",
-    "evidence": "Role progression confirmed by Felix. Presented as content-leadership work; specific channel performance figures are not published here.",
-    "source": "felix-portfolio/content/content-pack.md; felixphan-zeit/index.html; felixphan.portfolio2026/index.html",
-    "priority": "B: Supporting proof",
-    "feature": false,
-    "tags": [
-      "Creative Content",
-      "Event & Production"
-    ],
-    "assetFilename": "felix-p23-rmit-student-council-social-channels-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Short-form social content for the RMIT Student Council channels"
-  },
-  {
     "id": "P24",
     "title": "MBE Corporate Events and Touring Day",
     "slug": "mbe-events",
@@ -570,30 +546,6 @@ export const projects: Project[] =
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
     "alt": "Event evidence for RMIT Innovation & Entrepreneurship Club Workshops and Fundraiser"
-  },
-  {
-    "id": "P29",
-    "title": "Relax & Recharge",
-    "slug": "relax-and-recharge",
-    "year": "2023–2024",
-    "publicType": "Event & experience",
-    "role": "Head Organiser as elected Student Rights & Welfare Officer.",
-    "tension": "Create an inclusive Christmas and New Year recreation series that supported student connection across different identities and backgrounds.",
-    "approach": "Built the event around recreation, connection, inclusion, and diversity; coordinated RMIT’s Diversity & Inclusion Office and Student Life.",
-    "output": "Student event series and partner coordination.",
-    "significance": "Extends Felix’s social-advocacy work from a focused exhibition into seasonal community programming.",
-    "evidence": "Role and partner offices confirmed by Felix, presented as inclusive event programming under the Student Council.",
-    "source": "Direct clarification from Felix",
-    "priority": "B: Supporting proof",
-    "feature": false,
-    "tags": [
-      "Event & Production",
-      "Sustainability & Advocacy"
-    ],
-    "assetFilename": "felix-p29-relax-recharge-cover-16x9-v01.jpg",
-    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
-    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Event evidence for Relax & Recharge"
   },
   {
     "id": "P30",

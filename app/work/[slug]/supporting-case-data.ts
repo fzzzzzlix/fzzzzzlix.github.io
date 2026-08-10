@@ -358,16 +358,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     evidenceNeeds: "The full proposal, cited literature and interview guide.",
   },
 
-  P23: {
-    density: "D2",
-    context: "RMIT Student Council",
-    deck: "A student-content leadership case showing progression from creating posts to designing channel formats, planning and handover.",
-    capability: "Social-content leadership and channel operations.",
-    evidenceStatus:
-      "Real student-council content work. The role progression is confirmed; specific channel-performance figures are not published here.",
-    evidenceNeeds: "Appointment records, analytics exports and a few post-level contribution links.",
-  },
-
   P24: {
     density: "D2",
     context: "MBE internship",
@@ -386,16 +376,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     evidenceStatus:
       "Student-organisation work. The quantitative outcomes come from a single portfolio and club record, so they are treated as reported, not independently verified.",
     evidenceNeeds: "Official role confirmation, event reports, fundraising records and analytics.",
-  },
-
-  P29: {
-    density: "D2",
-    context: "RMIT Student Council",
-    deck: "Inclusive student-event programming that treated recreation and connection as a design problem rather than only an event theme.",
-    capability: "Inclusive event design and student wellbeing.",
-    evidenceStatus:
-      "A student wellbeing event series. The role and partner offices are confirmed by Felix; attendance and reach records are pending, and no therapeutic outcome is claimed.",
-    evidenceNeeds: "The programme, attendance or outcome records, and partner confirmation.",
   },
 
   P30: {

@@ -13,11 +13,11 @@ export const experience = {
     deck: "Felix moved from making content, to planning it, to directing teams, organising experiences and building systems that other people could use.",
   },
   timeline: [
-    { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", role: "Assistant to Director, Internship", scope: "Supported seven corporate events and a 270-person touring day through preparation, logistics, vendor and construction coordination, plus SOP and checklist systems.", projects: ["P24"] },
+    { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", url: "https://sukienmienbac.vn/", role: "Assistant to Director, Internship", scope: "Supported seven corporate events and a 270-person touring day through preparation, logistics, vendor and construction coordination, plus SOP and checklist systems.", projects: ["P24"] },
     { dates: "May - Dec 2024", org: "EMPACTS: Startup Ecosystem for SDGs", role: "Co-founder and Vice-President", scope: "Co-founded an organisation with six departments and built its public architecture, operating logic and leadership handover. Internal organisational documents remain confidential.", projects: ["P25"] },
     { dates: "Mar - Jul 2024", org: "ForArt Film Production", role: "Creative Intern", scope: "Contributed across commercial proposals and production projects, spanning lead creative, collaborative scriptwriting, proposal and pitch work, on-set assistance and BTS content. Some outputs were proposal-stage; others reached production.", projects: ["P05", "P06", "P10"] },
     { dates: "Sep 2023 - Jun 2024", org: "RMIT Innovation & Entrepreneurship Club Hanoi", role: "Assistant to Vice President, Operations and Marketing Lead", scope: "Supported workshops, panel talks and a student fundraiser through team leadership, operations and marketing.", projects: ["P26"] },
-    { dates: "Oct 2022 - Jun 2024", org: "RMIT Vietnam Student Council Hanoi", role: "Content Creator → Media Planner → Director of Content → Student Rights & Welfare Officer", scope: "Progressed through content leadership before election. As Student Rights & Welfare Officer, served as Head Organiser for Little Me and Relax & Recharge.", projects: ["P22", "P23", "P29"] },
+    { dates: "Oct 2022 - Jun 2024", org: "RMIT Vietnam Student Council Hanoi", role: "Content Creator → Media Planner → Director of Content → Student Rights & Welfare Officer", scope: "Progressed through content leadership before election. As Student Rights & Welfare Officer, served as Head Organiser for Little Me.", projects: ["P22"] },
   ],
   education: {
     eyebrow: "Education",

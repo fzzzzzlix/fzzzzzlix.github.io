@@ -33,7 +33,7 @@ export default function ExperiencePage() {
       <main id="main-content">
         <PageHero eyebrow={experience.hero.eyebrow} title={experience.hero.title} deck={experience.hero.deck} />
         <section className="timeline section-shell">
-          {experience.timeline.map((item, index) => <article key={item.org}><span className="timeline-index">{String(index + 1).padStart(2, "0")}</span><div><p className="timeline-date">{item.dates}</p><h2>{item.org}</h2><h3>{item.role}</h3><p>{item.scope}</p><RelatedProjects ids={item.projects} /></div></article>)}
+          {experience.timeline.map((item, index) => <article key={item.org}><span className="timeline-index">{String(index + 1).padStart(2, "0")}</span><div><p className="timeline-date">{item.dates}</p><h2>{"url" in item && item.url ? <a href={item.url} target="_blank" rel="noreferrer">{item.org}</a> : item.org}</h2><h3>{item.role}</h3><p>{item.scope}</p><RelatedProjects ids={item.projects} /></div></article>)}
         </section>
         <section className="education section-shell">
           <div className="section-intro"><p className="eyebrow">{experience.education.eyebrow}</p><h2>{experience.education.title}</h2></div>
