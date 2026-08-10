@@ -71,7 +71,7 @@ portfolio/
 ├── package.json
 ├── package-lock.json
 ├── app/                    Next.js source — edit here
-│   ├── data.ts             Single source of truth (32 active projects, P01–P34; P08 absorbed into P13, P15 merged into P14)
+│   ├── data.ts             Single source of truth (27 active projects, IDs P01–P34; P08→P13, P15→P14, P09/P23/P29 deleted, P27/P28→P10)
 │   ├── globals.css         Full design system
 │   ├── layout.tsx          Root layout + metadata
 │   ├── page.tsx            Homepage

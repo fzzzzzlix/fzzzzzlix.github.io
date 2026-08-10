@@ -175,7 +175,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P03: {
     density: "D3",
-    deck: "A capstone screenplay exercise in making branded wedding storytelling feel human before it feels promotional.",
+    deck: "A four-person academic pitch team's capstone response to a PNJ brand brief. Felix's contribution was scriptwriting: making branded wedding storytelling feel human before it feels promotional. The script exists; client approval and any produced film are not claimed.",
     capability: "Branded scriptwriting.",
     ownership: "Four-person academic pitch team. Felix's direct contribution: scriptwriting.",
     evidenceStatus: "Academic capstone work by a four-person pitch team. The final script exists; client approval is not documented and is not claimed.",
