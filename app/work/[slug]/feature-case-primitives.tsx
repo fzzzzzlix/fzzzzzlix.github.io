@@ -17,7 +17,7 @@ export function CaseArticle({ children }: { children: ReactNode }) {
   return <article className="case-page feature-case p31-case">{children}</article>;
 }
 
-type StripItem = { value: ReactNode; label: string };
+type StripItem = { value: ReactNode; unit?: string; label: string };
 
 /** Hero: eyebrow, title, role, meta chips, optional cover image and fast-evidence strip. */
 export function CaseHero({
@@ -61,7 +61,7 @@ export function CaseHero({
       {strip?.length ? (
         <ul className="p31-strip" aria-label="Fast evidence">
           {strip.map((item, i) => (
-            <li key={i}><strong>{item.value}</strong><span>{item.label}</span></li>
+            <li key={i}><strong>{item.value}{item.unit ? <small>{item.unit}</small> : null}</strong><span>{item.label}</span></li>
           ))}
         </ul>
       ) : null}
