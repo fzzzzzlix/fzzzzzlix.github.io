@@ -26,18 +26,22 @@ export function CaseHero({
   title,
   descriptor,
   image,
+  imageHref,
   imageFit = "cover",
   imagePosition,
   strip,
+  hideType = false,
 }: {
   project: Project;
   eyebrow?: string;
   title: string;
   descriptor?: string;
   image?: string;
+  imageHref?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   strip?: StripItem[];
+  hideType?: boolean;
 }) {
   return (
     <header className="p31-hero section-shell">
@@ -48,13 +52,13 @@ export function CaseHero({
         <div className="case-meta">
           <span>{project.id}</span>
           <span>{project.year}</span>
-          <span>{project.publicType}</span>
+          {hideType ? null : <span>{project.publicType}</span>}
           {descriptor ? <span>{descriptor}</span> : null}
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
       </div>
       {image ? (
-        <a className="p31-hero-media" href={image} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
+        <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
           <img src={image} alt={project.alt} style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
         </a>
       ) : null}
@@ -80,10 +84,10 @@ export function CaseTension({ children }: { children: ReactNode }) {
 }
 
 /** A titled content section. */
-export function CaseSection({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
+export function CaseSection({ eyebrow, title, children }: { eyebrow?: string; title: string; children: ReactNode }) {
   return (
     <section className="p31-section section-shell">
-      <p className="eyebrow">{eyebrow}</p>
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       <h2>{title}</h2>
       {children}
     </section>
@@ -137,7 +141,27 @@ export function EvidenceFigure({
           style={isPhoto ? { width: "100%", height: "100%", objectFit: "cover", objectPosition: position ?? "50% 50%" } : undefined}
         />
       </a>
-      <figcaption><span>{caption}</span><em>{tag}</em></figcaption>
+      <figcaption><span>{caption}</span>{tag ? <em>{tag}</em> : null}</figcaption>
+    </figure>
+  );
+}
+
+/** Inline, controls-only video (no autoplay). Sizes to its natural aspect; pass a poster if available. */
+export function CaseVideo({
+  src,
+  poster,
+  caption,
+  tag,
+}: {
+  src: string;
+  poster?: string;
+  caption: string;
+  tag?: string;
+}) {
+  return (
+    <figure className="p31-figure">
+      <video className="p31-video" src={src} poster={poster} controls preload="metadata" playsInline />
+      <figcaption><span>{caption}</span>{tag ? <em>{tag}</em> : null}</figcaption>
     </figure>
   );
 }
@@ -188,6 +212,7 @@ export function ResponsiveEmbed({
   aspect,
   portrait = false,
   inPair = false,
+  extraLinks = [],
 }: {
   title: string;
   src: string;
@@ -196,6 +221,7 @@ export function ResponsiveEmbed({
   aspect?: string;
   portrait?: boolean;
   inPair?: boolean;
+  extraLinks?: { label: string; url: string }[];
 }) {
   const aspectRatio = aspect ?? (portrait ? "3 / 4" : "16 / 9");
   const body = (
@@ -205,6 +231,9 @@ export function ResponsiveEmbed({
       </div>
       <div className="proof-links" aria-label={`${title} link`}>
         <a href={fallbackUrl} target="_blank" rel="noreferrer">{fallbackLabel}</a>
+        {extraLinks.map((link) => (
+          <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}</a>
+        ))}
       </div>
     </>
   );

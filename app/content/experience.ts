@@ -18,7 +18,7 @@ export const experience = {
       "Streamlined executive operations for the Director across 4 events, reducing meeting prep time by 60% and enabling same-day action item resolution across all stakeholder follow-ups.",
       "Delivered end-to-end logistics for 7 corporate events (50-400 attendees), managing timelines, vendor coordination, and construction supervision.",
       "Coordinated a 270-guest client touring day in Hanoi, delivering on-time across 6 logistical workstreams.",
-    ], projects: ["P24"] },
+    ], projects: [] },
     { dates: "May - Dec 2024", org: "EMPACTS: Startup Ecosystem for SDGs", role: "Founder and Vice-President", scope: [
       "Designed 40+ SOPs and defined 21 roles across 6 departments, establishing clear workflows and decision making authority and enabling seamless handover to the next leadership cohort.",
       "Managed the full project lifecycle for a 54-member organization including strategic planning, role design, cross functional delivery tracking, and performance review.",

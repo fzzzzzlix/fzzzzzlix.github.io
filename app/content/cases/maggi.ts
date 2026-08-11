@@ -9,10 +9,14 @@ import { asset } from "../../base-path";
 const PROPOSAL_EMBED = "https://www.canva.com/design/DAGunqNlgh8/JNnKHfJfNM_5HLCapg8JMA/view?embed";
 const PROPOSAL_LINK = "https://www.canva.com/design/DAGunqNlgh8/JNnKHfJfNM_5HLCapg8JMA/view";
 const RESEARCH_REPORT = "https://drive.google.com/file/d/1yUiWotDrdeJ1-MhJaZdhPNcjmvd7VJB6/view?usp=drive_link";
+// Shared link target: every image on this case opens the project's Drive folder.
+const IMAGES_FOLDER = "https://drive.google.com/drive/folders/1kkAVvXH7BbVC1XvEaSmt6q9WWWQh_zAk?usp=drive_link";
 
 export const maggi = {
+  imagesFolder: IMAGES_FOLDER,
   hero: {
     image: asset("/images/p13-maggi.jpg"),
+    imageHref: IMAGES_FOLDER,
     title: "MAGGI Recipe Solution",
     descriptor: "Research to execution",
     strip: [
@@ -90,6 +94,12 @@ export const maggi = {
       caption: "The illustrated storyboard, the strategy carried into a concrete, structured seasonal narrative.",
       tag: "Proposed academic campaign",
     },
+    briefFigure: {
+      src: asset("/images/cases/p13/p13-brief.jpg"),
+      alt: "Visual brainstorm board for the MAGGI Tết 2026 campaign, collecting layout, colour and reference directions.",
+      caption: "The visual brainstorm behind the deck: references, layout and colour directions explored before the idea locked.",
+      tag: "Brainstorm",
+    },
     embed: {
       title: "MAGGI Tết 2026 campaign proposal deck",
       src: PROPOSAL_EMBED,
@@ -105,7 +115,7 @@ export const maggi = {
     eyebrow: "What this demonstrates",
     title: "Research that points to a creative decision",
     body: [
-      "The case connects an explicit research method, an interpretable consumer-language gap, a strategic direction and a tangible script and storyboard output, without claiming campaign launch or commercial performance that did not occur.",
+      "What stayed with me from this one is how satisfying it is when research actually earns a creative decision, instead of sitting in a deck no one reopens. Carrying my own analysis from 755 coded comments all the way to a storyboard taught me to keep asking, at every step, so what does this change? I also learned to be honest about where the work stops: a strong proposed concept, not a launched campaign.",
     ],
     links: [{ label: "View the research report", url: RESEARCH_REPORT }],
   },

@@ -24,13 +24,13 @@ const densityOf = (id) => {
 };
 
 // ---- Project integrity ----------------------------------------------------
-test("exactly 27 active projects", () => {
-  assert.equal(projects.length, 27);
+test("exactly 25 active projects", () => {
+  assert.equal(projects.length, 25);
 });
 
 test("retired ids are absent", () => {
-  // P08/P15 retired earlier; P09 (TH true Tea) deleted and P27/P28 merged into P10.
-  for (const id of ["P08", "P15", "P09", "P27", "P28"]) {
+  // P08/P15 retired earlier; P09 (TH true Tea), P19 (IKEA/FANTA/LUME) and P24 (MBE) deleted; P27/P28 merged into P10.
+  for (const id of ["P08", "P15", "P09", "P19", "P24", "P27", "P28"]) {
     assert.ok(!ids.includes(id), `${id} should be absent`);
   }
 });

@@ -418,6 +418,8 @@ a:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
 .p31-media-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 42px; align-items: start; }
 .p31-media-pair .p31-figure { margin: 0; }
 .p31-media-pair .p31-embed-frame { margin: 0; }
+.p02-evidence-stack { display: flex; flex-direction: column; gap: 26px; }
+.p31-video { width: 100%; height: auto; display: block; border: 1px solid var(--line-strong); background: #000; }
 
 @media (max-width: 900px) {
   .p31-cols, .p31-peer, .p31-timelines, .p31-media-pair { grid-template-columns: 1fr; }

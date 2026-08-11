@@ -11,7 +11,6 @@ import {
   EvidencePanel,
   Lede,
   MediaPair,
-  OwnershipNote,
   ResponsiveEmbed,
 } from "./feature-case-primitives";
 
@@ -21,10 +20,11 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
       <CaseHero
         project={project}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
+        imageHref={c.hero.imageHref}
         imageFit="cover"
         strip={c.hero.strip}
+        hideType
       />
 
       <CaseTension>{project.tension}</CaseTension>
@@ -36,6 +36,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
           src={c.film.embed.src}
           fallbackUrl={c.film.embed.fallbackUrl}
           fallbackLabel={c.film.embed.fallbackLabel}
+          extraLinks={c.film.embed.extraLinks}
         />
       </CaseSection>
 
@@ -43,38 +44,40 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         {c.authorship.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
       </CaseSection>
 
-      <CaseSection eyebrow={c.structure.eyebrow} title={c.structure.title}>
-        {c.structure.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidenceFigure
-          src={c.structure.figure.src}
-          alt={c.structure.figure.alt}
-          caption={c.structure.figure.caption}
-          tag={c.structure.figure.tag}
-          href={c.structure.figure.href}
-        />
-      </CaseSection>
-
-      <CaseSection eyebrow={c.production.eyebrow} title={c.production.title}>
-        {c.production.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.recognition.eyebrow} title={c.recognition.title}>
-        {c.recognition.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      <CaseSection title={c.script.title}>
+        {c.script.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
         <MediaPair>
-          <EvidenceFigure
-            src={c.recognition.creditsFigure.src}
-            alt={c.recognition.creditsFigure.alt}
-            caption={c.recognition.creditsFigure.caption}
-            tag={c.recognition.creditsFigure.tag}
+          <ResponsiveEmbed
+            inPair
+            title={c.script.embed.title}
+            src={c.script.embed.src}
+            fallbackUrl={c.script.embed.fallbackUrl}
+            fallbackLabel={c.script.embed.fallbackLabel}
+            aspect="1 / 1.3"
           />
-          <EvidenceFigure
-            src={c.recognition.awardFigure.src}
-            alt={c.recognition.awardFigure.alt}
-            caption={c.recognition.awardFigure.caption}
-            tag={c.recognition.awardFigure.tag}
-          />
+          <div className="p02-evidence-stack">
+            <EvidenceFigure
+              src={c.script.creditsFigure.src}
+              alt={c.script.creditsFigure.alt}
+              caption={c.script.creditsFigure.caption}
+              tag={c.script.creditsFigure.tag}
+            />
+            <EvidenceFigure
+              src={c.script.awardFigure.src}
+              alt={c.script.awardFigure.alt}
+              caption={c.script.awardFigure.caption}
+              tag={c.script.awardFigure.tag}
+            />
+            {c.script.cameoFigure ? (
+              <EvidenceFigure
+                src={c.script.cameoFigure.src}
+                alt={c.script.cameoFigure.alt}
+                caption={c.script.cameoFigure.caption}
+                tag={c.script.cameoFigure.tag}
+              />
+            ) : null}
+          </div>
         </MediaPair>
-        <OwnershipNote label={c.recognition.note.label}>{inline(c.recognition.note.body)}</OwnershipNote>
       </CaseSection>
 
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>

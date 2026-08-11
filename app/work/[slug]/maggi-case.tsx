@@ -24,6 +24,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
         title={c.hero.title}
         descriptor={c.hero.descriptor}
         image={c.hero.image}
+        imageHref={c.hero.imageHref}
         imageFit="cover"
         strip={c.hero.strip}
       />
@@ -43,12 +44,14 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
             alt={c.insight.commentThemesFigure.alt}
             caption={c.insight.commentThemesFigure.caption}
             tag={c.insight.commentThemesFigure.tag}
+            href={c.imagesFolder}
           />
           <EvidenceFigure
             src={c.insight.sentimentFigure.src}
             alt={c.insight.sentimentFigure.alt}
             caption={c.insight.sentimentFigure.caption}
             tag={c.insight.sentimentFigure.tag}
+            href={c.imagesFolder}
           />
         </MediaPair>
       </CaseSection>
@@ -60,6 +63,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
           alt={c.direction.figure.alt}
           caption={c.direction.figure.caption}
           tag={c.direction.figure.tag}
+          href={c.imagesFolder}
         />
       </CaseSection>
 
@@ -70,12 +74,21 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
           alt={c.creative.bigIdeaFigure.alt}
           caption={c.creative.bigIdeaFigure.caption}
           tag={c.creative.bigIdeaFigure.tag}
+          href={c.imagesFolder}
         />
         <EvidenceFigure
           src={c.creative.storyboardFigure.src}
           alt={c.creative.storyboardFigure.alt}
           caption={c.creative.storyboardFigure.caption}
           tag={c.creative.storyboardFigure.tag}
+          href={c.imagesFolder}
+        />
+        <EvidenceFigure
+          src={c.creative.briefFigure.src}
+          alt={c.creative.briefFigure.alt}
+          caption={c.creative.briefFigure.caption}
+          tag={c.creative.briefFigure.tag}
+          href={c.imagesFolder}
         />
         <ResponsiveEmbed
           title={c.creative.embed.title}

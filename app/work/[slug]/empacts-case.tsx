@@ -37,12 +37,35 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
 
       <CaseSection eyebrow={c.operatingModel.eyebrow} title={c.operatingModel.title}>
         {c.operatingModel.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidenceFigure
-          src={c.operatingModel.canvasFigure.src}
-          alt={c.operatingModel.canvasFigure.alt}
-          caption={c.operatingModel.canvasFigure.caption}
-          tag={c.operatingModel.canvasFigure.tag}
-        />
+        <MediaPair>
+          <EvidenceFigure
+            src={c.operatingModel.onePager1Figure.src}
+            alt={c.operatingModel.onePager1Figure.alt}
+            caption={c.operatingModel.onePager1Figure.caption}
+            tag={c.operatingModel.onePager1Figure.tag}
+          />
+          <EvidenceFigure
+            src={c.operatingModel.onePager2Figure.src}
+            alt={c.operatingModel.onePager2Figure.alt}
+            caption={c.operatingModel.onePager2Figure.caption}
+            tag={c.operatingModel.onePager2Figure.tag}
+          />
+        </MediaPair>
+        <MediaPair>
+          <EvidenceFigure
+            src={c.operatingModel.canvasFigure.src}
+            alt={c.operatingModel.canvasFigure.alt}
+            caption={c.operatingModel.canvasFigure.caption}
+            tag={c.operatingModel.canvasFigure.tag}
+          />
+          <ResponsiveEmbed
+            title={c.operatingModel.commProposalEmbed.title}
+            src={c.operatingModel.commProposalEmbed.src}
+            fallbackUrl={c.operatingModel.commProposalEmbed.fallbackUrl}
+            fallbackLabel={c.operatingModel.commProposalEmbed.fallbackLabel}
+            inPair
+          />
+        </MediaPair>
         <p className="p31-lede" style={{ marginTop: 42 }}>
           {inline(c.operatingModel.templatesIntro)}
         </p>
@@ -85,20 +108,30 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
         </MediaPair>
       </CaseSection>
 
-      <CaseSection eyebrow={c.infoDiscipline.eyebrow} title={c.infoDiscipline.title}>
-        {c.infoDiscipline.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      <CaseSection eyebrow={c.epic.eyebrow} title={c.epic.title}>
+        {c.epic.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <ResponsiveEmbed
+          title={c.epic.proposalEmbed.title}
+          src={c.epic.proposalEmbed.src}
+          fallbackUrl={c.epic.proposalEmbed.fallbackUrl}
+          fallbackLabel={c.epic.proposalEmbed.fallbackLabel}
+        />
+      </CaseSection>
+
+      <CaseSection eyebrow={c.visibility.eyebrow} title={c.visibility.title}>
+        {c.visibility.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
         <MediaPair>
           <EvidenceFigure
-            src={c.infoDiscipline.onePager1Figure.src}
-            alt={c.infoDiscipline.onePager1Figure.alt}
-            caption={c.infoDiscipline.onePager1Figure.caption}
-            tag={c.infoDiscipline.onePager1Figure.tag}
+            src={c.visibility.felixFigure.src}
+            alt={c.visibility.felixFigure.alt}
+            caption={c.visibility.felixFigure.caption}
+            tag={c.visibility.felixFigure.tag}
           />
           <EvidenceFigure
-            src={c.infoDiscipline.onePager2Figure.src}
-            alt={c.infoDiscipline.onePager2Figure.alt}
-            caption={c.infoDiscipline.onePager2Figure.caption}
-            tag={c.infoDiscipline.onePager2Figure.tag}
+            src={c.visibility.teamFigure.src}
+            alt={c.visibility.teamFigure.alt}
+            caption={c.visibility.teamFigure.caption}
+            tag={c.visibility.teamFigure.tag}
           />
         </MediaPair>
       </CaseSection>

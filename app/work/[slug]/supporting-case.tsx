@@ -1,4 +1,5 @@
 import type { Project } from "../../data";
+import { inline } from "../../content/render-inline";
 import { CoverImage, MediaPlaceholder, StarMark } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
 import {
@@ -17,7 +18,7 @@ type CaseProps = { project: Project; previous: Project; next: Project };
 
 /*
  * Shared supporting-case renderer for every non-flagship project (P01, P03–P07,
- * P10–P12, P14, P16–P19, P21, P24, P26, P30, P33, P34). It reuses the P31
+ * P10–P12, P14, P16–P18, P21, P26, P30, P33, P34). It reuses the P31
  * feature-case primitives so the visual language matches the flagship set, and
  * reads the evidence/embed layer from supporting-case-data.ts.
  *
@@ -80,12 +81,17 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
   const ext = SUPPORTING_CASES[project.id];
   const image = REAL_IMAGES[project.id];
   const density = ext?.density ?? "D3";
-  const showSignificance = density !== "D3";
+  const showTension = !ext?.hideTension;
+  const showApproach = !ext?.hideApproach;
+  const showOutput = !ext?.hideOutput;
+  const showSignificance = density !== "D3" && !ext?.hideSignificance;
 
   const proofLinks = [...(ext?.proofLinks ?? []), ...(project.proofLinks ?? [])];
   const embeds = ext?.embeds ?? [];
   const figures = ext?.figures ?? [];
   const sections = ext?.sections ?? [];
+  const hasMedia = embeds.length > 0 || figures.length > 0;
+  const heroHref = ext?.heroHref ?? image?.src;
 
   return (
     <CaseArticle>
@@ -109,10 +115,10 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
         {image ? (
           <a
             className="p31-hero-media"
-            href={image.src}
+            href={heroHref}
             target="_blank"
             rel="noreferrer"
-            aria-label={`${project.alt}. Opens full size in a new tab.`}
+            aria-label={ext?.heroHref ? `${project.title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}
           >
             <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
           </a>
@@ -125,24 +131,35 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
 
       {ext?.deck ? (
         <section className="p31-section section-shell">
-          <Lede>{ext.deck}</Lede>
+          <Lede>{inline(ext.deck)}</Lede>
         </section>
       ) : null}
 
-      <section className="case-tension section-shell">
-        <p className="eyebrow">{ext?.tensionLabel ?? "The tension"}</p>
-        <h2>{project.tension}</h2>
-      </section>
+      {showTension ? (
+        <section className="case-tension section-shell">
+          <p className="eyebrow">{ext?.tensionLabel ?? "The tension"}</p>
+          <h2>{project.tension}</h2>
+        </section>
+      ) : null}
 
-      <CaseSection eyebrow={ext?.approachEyebrow ?? "The approach"} title={ext?.approachTitle ?? "Turn the problem into a structure"}>
-        <Lede>{project.approach}</Lede>
-      </CaseSection>
+      {showApproach ? (
+        <CaseSection eyebrow={ext?.approachEyebrow ?? "The approach"} title={ext?.approachTitle ?? "Turn the problem into a structure"}>
+          <Lede>{project.approach}</Lede>
+        </CaseSection>
+      ) : null}
 
-      <CaseSection eyebrow={ext?.outputEyebrow ?? "The output"} title={ext?.outputTitle ?? "Make the idea concrete"}>
-        <Lede>{project.output}</Lede>
-        {renderEmbeds(embeds)}
-        {figures.map(renderFigure)}
-      </CaseSection>
+      {showOutput ? (
+        <CaseSection eyebrow={ext?.outputEyebrow ?? "The output"} title={ext?.outputTitle ?? "Make the idea concrete"}>
+          <Lede>{project.output}</Lede>
+          {renderEmbeds(embeds)}
+          {figures.map(renderFigure)}
+        </CaseSection>
+      ) : hasMedia ? (
+        <section className="p31-section section-shell">
+          {renderEmbeds(embeds)}
+          {figures.map(renderFigure)}
+        </section>
+      ) : null}
 
       {showSignificance ? (
         <CaseSection
@@ -153,19 +170,40 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
         </CaseSection>
       ) : null}
 
-      {sections.map((block) => (
-        <CaseSection key={block.title} eyebrow={block.eyebrow} title={block.title}>
-          {block.body.map((paragraph, i) => (
-            <Lede key={i}>{paragraph}</Lede>
-          ))}
-          {block.embed ? renderEmbeds([block.embed]) : null}
-          {block.figure ? renderFigure(block.figure) : null}
-        </CaseSection>
-      ))}
+      {sections.map((block) =>
+        block.split && block.embed ? (
+          <CaseSection key={block.title} eyebrow={block.eyebrow} title={block.title}>
+            <MediaPair>
+              <div>
+                {block.body.map((paragraph, i) => (
+                  <Lede key={i}>{inline(paragraph)}</Lede>
+                ))}
+              </div>
+              <ResponsiveEmbed inPair {...block.embed} />
+            </MediaPair>
+          </CaseSection>
+        ) : (
+          <CaseSection key={block.title} eyebrow={block.eyebrow} title={block.title}>
+            {block.body.map((paragraph, i) => (
+              <Lede key={i}>{inline(paragraph)}</Lede>
+            ))}
+            {block.figure ? renderFigure(block.figure) : null}
+            {block.figures?.length
+              ? block.pairFigures
+                ? Array.from({ length: Math.ceil(block.figures.length / 2) }, (_, i) => (
+                    <MediaPair key={i}>{block.figures!.slice(i * 2, i * 2 + 2).map(renderFigure)}</MediaPair>
+                  ))
+                : block.figures.map(renderFigure)
+              : null}
+            {block.embed ? renderEmbeds([block.embed]) : null}
+            {block.embeds?.length ? renderEmbeds(block.embeds) : null}
+          </CaseSection>
+        ),
+      )}
 
       {ext?.capability ? (
         <CaseSection eyebrow="What this demonstrates" title="The capability this proves">
-          <Lede>{ext.capability}</Lede>
+          <Lede>{inline(ext.capability)}</Lede>
         </CaseSection>
       ) : null}
 

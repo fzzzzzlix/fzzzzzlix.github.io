@@ -6,9 +6,13 @@ import { asset } from "../../base-path";
  * them. Use **bold** for emphasis. In strip/stat items, `unit` becomes the
  * small superscript (e.g. value "6.96" + unit "%").
  */
+const IMAGES_FOLDER = "https://drive.google.com/drive/folders/1FiBLLSjVYBPSGc2WvJgVemFod2fg4s49?usp=drive_link";
+
 export const littleMe = {
+  imagesFolder: IMAGES_FOLDER,
   hero: {
     image: asset("/images/cases/p22/p22-key-visual.jpg"),
+    imageHref: IMAGES_FOLDER,
     title: "Little Me",
     descriptor: "RMIT Hanoi · 3–5 April 2024",
     strip: [
@@ -62,6 +66,32 @@ export const littleMe = {
       variant: "photo" as const,
       ratio: "16 / 9",
     },
+    artworkFigure: {
+      src: asset("/images/cases/p22/p22-artwork.jpg"),
+      alt: "Illustrated Little Me exhibition panels displayed at the RMIT Innovation Hub.",
+      caption: "The exhibition panels: artist-illustrated pieces on identity and difference that anchored the space.",
+      tag: "Event photo",
+      variant: "photo" as const,
+      ratio: "4 / 3",
+    },
+    bookletFigure: {
+      src: asset("/images/cases/p22/p22-booklet.jpg"),
+      alt: "Stacks of the Little Special U supportive booklet handed out at the exhibition.",
+      caption: "“Little Special U”, the take-home supportive booklet, so the reflection travelled home with participants.",
+      tag: "Event photo",
+      variant: "photo" as const,
+      ratio: "4 / 3",
+    },
+    jarVideo: {
+      src: asset("/videos/p22/p22-calm-jar.mp4"),
+      caption: "The Calm Jar activity in motion, a hands-on moment participants completed at their own pace.",
+      tag: "Event footage",
+    },
+    setupVideo: {
+      src: asset("/videos/p22/p22-setup.mp4"),
+      caption: "Setting up the space before doors opened, the back-end work behind the calm surface.",
+      tag: "Event footage",
+    },
   },
   leadership: {
     eyebrow: "Operational leadership",
@@ -70,6 +100,22 @@ export const littleMe = {
       "As Head Organiser, Felix led the operating system behind the exhibition rather than authoring every activation. A participant-facing experience depended on back-end work: task allocation across a 27-person team, paperwork and approvals, partner coordination, cross-platform promotion and event-day delivery.",
       "The strongest management story is that the calm, self-paced surface only worked because the coordination underneath it was planned and delegated.",
     ],
+    teamFigure: {
+      src: asset("/images/cases/p22/p22-team.jpg"),
+      alt: "The Little Me core organising team at the RMIT Innovation Hub.",
+      caption: "Part of the 27-person team behind Little Me, the coordination that made a calm exhibition possible.",
+      tag: "The team",
+      variant: "photo" as const,
+      ratio: "4 / 3",
+    },
+    onSiteFigure: {
+      src: asset("/images/cases/p22/p22-led-promo.jpg"),
+      alt: "Felix in front of the Little Me exhibition signage at the RMIT Hanoi Innovation Hub.",
+      caption: "On site as Head Organiser during the three-day run.",
+      tag: "On site",
+      variant: "photo" as const,
+      ratio: "3 / 4",
+    },
   },
   results: {
     eyebrow: "Results against the plan",
@@ -95,9 +141,27 @@ export const littleMe = {
         { value: "300+", label: "visit KPI, met by event close" },
       ],
     },
+    reachFigure: {
+      src: asset("/images/cases/p22/p22-reach.jpg"),
+      alt: "Instagram insights screenshot showing 3,221 accounts reached and 38,948 impressions, up 85.9%, over 30 days.",
+      caption: "Instagram reach in the campaign window: 3,221 accounts reached and impressions up 85.9%.",
+      tag: "Analytics",
+    },
+    tiktokFigure: {
+      src: asset("/images/cases/p22/p22-tiktok.jpg"),
+      alt: "TikTok screenshot of a Little Me 2024 post prompting viewers with a 805-plus response sticker.",
+      caption: "TikTok carried the invitation too, prompting viewers to reflect and respond.",
+      tag: "Social",
+    },
+    awardFigure: {
+      src: asset("/images/cases/p22/p22-inclusion-award.jpg"),
+      alt: "RMIT Hanoi Student Council 2023 Inclusion Award trophy and certificate of recognition.",
+      caption: "The organising body's 2023 Inclusion Award, the wider recognition the work sat within.",
+      tag: "Recognition",
+    },
     note: {
       label: "Evidence boundary",
-      body: "Attendance and reach figures come from the event’s own reporting. The 300+ visit KPI was reached by the close of the three-day event, not on Day 2, after two days the total was 212. Any fundraising total is omitted here because the supplied event report does not evidence it.",
+      body: "Attendance and reach figures come from the event’s own reporting. The 300+ visit KPI was reached by the close of the three-day event, not on Day 2, after two days the total was 212. Any fundraising total is omitted here because the supplied event report does not evidence it. The Inclusion Award recognised the RMIT Hanoi Student Council, the organising body, not Felix individually.",
     },
   },
   demonstrates: {

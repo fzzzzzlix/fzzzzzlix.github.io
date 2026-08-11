@@ -10,12 +10,17 @@ const PLAN_EMBED = "https://www.canva.com/design/DAGQebAsdjM/zwy3uAUGaSUTPJ_qI9O
 const PLAN_LINK = "https://www.canva.com/design/DAGQebAsdjM/zwy3uAUGaSUTPJ_qI9O3vg/view";
 const INSIGHTS_REPORT = "https://drive.google.com/file/d/13akEXftRwsaDr0BlVrLgMSywo7eybJIg/view?usp=drive_link";
 const WORKBOOK = "https://drive.google.com/file/d/1kbujPsEZT0PKqxSghcEAfsbtFY27KTQR/view?usp=drive_link";
+const MEDIA_PLAN_SHEET = "https://docs.google.com/spreadsheets/d/1qfJ5ivFgxO4r1zXSduyEXXnEz4LBOAgQ/preview";
+const MEDIA_PLAN_LINK = "https://docs.google.com/spreadsheets/d/1qfJ5ivFgxO4r1zXSduyEXXnEz4LBOAgQ/edit?usp=drive_link";
+// Shared link target: every image on this case opens the project's Drive folder.
+const IMAGES_FOLDER = "https://drive.google.com/drive/folders/1t3kemcVrO8DzPhv0xVs8V9fyOw5Q_Q9c?usp=drive_link";
 
 export const tresemme = {
+  imagesFolder: IMAGES_FOLDER,
   hero: {
     image: asset("/images/p20-tres.jpg"),
+    imageHref: IMAGES_FOLDER,
     title: "TRESemmé Vietnam",
-    descriptor: "Insights to media system · July 2024",
     strip: [
       { value: "~60k", label: "TikTok fans (analysed snapshot)" },
       { value: "3.3", unit: "%", label: "TikTok post interaction rate" },
@@ -70,18 +75,18 @@ export const tresemme = {
       src: asset("/images/cases/p20/p20-interactive-dooh.png"),
       alt: "Interactive AI DOOH concept board for the TRESemmé media plan proposal.",
       caption: "The interactive AI DOOH concept, a proposal element, not executed media.",
-      tag: "Concept (proposal)",
+      tag: "",
     },
     pulsingFigure: {
       src: asset("/images/cases/p20/p20-plan-pulsing.png"),
       alt: "Pulsing and phasing media calendar showing bursts of activity across the plan period.",
       caption: "The pulsing schedule concentrated activity in phases across the plan period.",
-      tag: "Planning artefact",
+      tag: "",
     },
   },
   budget: {
-    eyebrow: "The budget",
-    title: "Put a number on the proposal, without pretending it was spend",
+    eyebrow: "",
+    title: "The budget",
     body: [
       "The detailed budget totals **VND 7,333,618,824 inclusive of GST**. This is useful planning proof: it shows the strategy was translated into line items and timing. It is a modelled media-plan budget, not money Felix managed and not a campaign that was executed.",
     ],
@@ -105,11 +110,21 @@ export const tresemme = {
       body: "The VND 7.3B figure is a modelled proposal. Felix did not manage, spend or control this budget.",
     },
   },
+  mediaPlan: {
+    eyebrow: "",
+    title: "The media plan, in full",
+    embed: {
+      title: "TRESemmé Vietnam media plan workbook",
+      src: MEDIA_PLAN_SHEET,
+      fallbackUrl: MEDIA_PLAN_LINK,
+      fallbackLabel: "Open the media plan (Google Sheets)",
+    },
+  },
   demonstrates: {
     eyebrow: "What this demonstrates",
     title: "Strategic media planning from evidence to allocation",
     body: [
-      "The project combines platform diagnosis, creator-role design, format selection, activation logic, scheduling and a detailed modelled budget while keeping the boundary between academic proposal and real-world execution explicit.",
+      "Looking back, this is the project that taught me to think in systems rather than posts: to start from what the data actually says and follow it all the way through to who does what, when, and for how much. It also taught me a kind of honesty, that a budget worked out to the last đồng is proof of planning, not of spend, and saying that plainly matters more than sounding impressive.",
     ],
     links: [
       { label: "View the insights report", url: INSIGHTS_REPORT },

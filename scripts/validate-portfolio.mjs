@@ -16,8 +16,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => readFileSync(join(ROOT, rel), "utf8");
 
 const EXPECTED = {
-  activeCount: 27,
-  absentIds: ["P08", "P15"],
+  activeCount: 25,
+  absentIds: ["P08", "P15", "P19", "P24"],
   requiredIds: ["P01", "P30", "P31", "P32", "P33", "P34"],
   featured: ["P02", "P13", "P20", "P22", "P25", "P31"],
   d1Ids: ["P01", "P05", "P30", "P33", "P34"],

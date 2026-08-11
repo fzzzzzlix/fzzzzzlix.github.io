@@ -12,6 +12,10 @@ const TEMPLATE_EN_EMBED = "https://www.canva.com/design/DAGNHbeWmWc/_IW5gH1vwxOA
 const TEMPLATE_EN_LINK = "https://www.canva.com/design/DAGNHbeWmWc/_IW5gH1vwxOAEwPKJtrD9g/view";
 const TEMPLATE_VI_EMBED = "https://www.canva.com/design/DAGNHv7bktw/XcdKrfRZemdSuXr9Pbbqug/view?embed";
 const TEMPLATE_VI_LINK = "https://www.canva.com/design/DAGNHv7bktw/XcdKrfRZemdSuXr9Pbbqug/view";
+const COMM_PROPOSAL_EMBED = "https://www.canva.com/design/DAGIe3K1SlA/WSwp0L-U-PK7KBjVkxE90g/view?embed";
+const COMM_PROPOSAL_LINK = "https://www.canva.com/design/DAGIe3K1SlA/WSwp0L-U-PK7KBjVkxE90g/view";
+const EPIC_EMBED = "https://www.canva.com/design/DAGSsKLTbbc/8haYHHWKEzd-H7II5ZVT_A/view?embed";
+const EPIC_LINK = "https://www.canva.com/design/DAGSsKLTbbc/8haYHHWKEzd-H7II5ZVT_A/view";
 
 const FB = "https://www.facebook.com/empacts.org";
 const LINKEDIN = "https://www.linkedin.com/company/empacts/";
@@ -45,13 +49,32 @@ export const empacts = {
     eyebrow: "From concept to operating model",
     title: "Turn an idea into artefacts people can run",
     body: [
-      "The business model canvas below shows the initial structuring work, how the venture was framed before it became an operating organisation. It then shifts from ideas to operational artefacts: bilingual general presentation templates that made consistency a designed property of how EMPACTS communicated.",
+      "EMPACTS had to be structured and explained before it could run. The public one-pagers below distilled the venture for outreach, the business model canvas captured the framing underneath, and a communication proposal set out how the brand would actually speak, from brainstorm phases to the first ideas.",
+      "From there it shifted to operational artefacts: bilingual general presentation templates that made consistency a designed property of how EMPACTS communicated.",
     ],
+    onePager1Figure: {
+      src: asset("/images/cases/p25/p25-onepager-1.png"),
+      alt: "EMPACTS public one-pager describing the organisation and its programmes.",
+      caption: "Public-safe organisation one-pager used for outreach.",
+      tag: "Public context",
+    },
+    onePager2Figure: {
+      src: asset("/images/cases/p25/p25-onepager-2.png"),
+      alt: "Second EMPACTS public one-pager describing programme structure.",
+      caption: "A second public one-pager, outward-facing, not internal planning material.",
+      tag: "Public context",
+    },
     canvasFigure: {
       src: asset("/images/cases/p25/p25-business-model-canvas.png"),
       alt: "EMPACTS business model canvas laying out value proposition, partners, activities, channels and cost structure.",
       caption: "The business model canvas framed the venture before it became an operating organisation.",
       tag: "Early system artefact",
+    },
+    commProposalEmbed: {
+      title: "EMPACTS communication proposal",
+      src: COMM_PROPOSAL_EMBED,
+      fallbackUrl: COMM_PROPOSAL_LINK,
+      fallbackLabel: "Open the communication proposal (Canva)",
     },
     templatesIntro: "The English and Vietnamese general templates are small but concrete SOP evidence: a shared visual system so that anyone in the organisation could present consistently.",
     templateEnEmbed: {
@@ -88,23 +111,38 @@ export const empacts = {
       ratio: "16 / 9",
     },
   },
-  infoDiscipline: {
-    eyebrow: "Information discipline",
-    title: "Confidentiality is part of professional practice",
+  epic: {
+    eyebrow: "Key initiative",
+    title: "EMPACTS Innovation Challenge (EPIC)",
     body: [
-      "Some of EMPACTS’ strongest internal planning material is explicitly classified confidential. That limitation is not solved by publishing it. Detailed organisational documentation exists but is withheld; the capability is proven instead through public-safe templates, one-pagers and programme evidence. That decision itself signals information discipline.",
+      "One initiative I led was **EPIC**, the EMPACTS Innovation Challenge: a programme built to push youth toward energy innovation and entrepreneurship rather than the usual rush to the fancier industries. It is scoped to **SDG 7** (affordable, reliable, sustainable energy for all) and **SDG 13** (urgent climate action), and designed to grow creativity, collaboration and entrepreneurship in the people who will lead sustainability-focused industries.",
+      "It runs for two audiences at once: a **user group** of Vietnamese university students and recent graduates aged 18 to 24, and an **expert group** of mentors, industry leaders, investors and guest speakers. Participants leave with three things, **knowledge** of sustainability, innovation and entrepreneurship; a **network** of peers, mentors and leaders; and **funding** to pilot a real project.",
+      "The premise is blunt on purpose: *a billion-dollar fintech startup will not last if climate change persists.* Vietnam needs more of its brightest young people building in energy, not only in the industries that look impressive today.",
     ],
-    onePager1Figure: {
-      src: asset("/images/cases/p25/p25-onepager-1.png"),
-      alt: "EMPACTS public one-pager describing the organisation and its programmes.",
-      caption: "Public-safe organisation one-pager used for outreach.",
-      tag: "Public context",
+    proposalEmbed: {
+      title: "EMPACTS Innovation Challenge (EPIC) proposal",
+      src: EPIC_EMBED,
+      fallbackUrl: EPIC_LINK,
+      fallbackLabel: "Open the EPIC proposal (Canva)",
     },
-    onePager2Figure: {
-      src: asset("/images/cases/p25/p25-onepager-2.png"),
-      alt: "Second EMPACTS public one-pager describing programme structure.",
-      caption: "A second public one-pager, outward-facing, not internal planning material.",
-      tag: "Public context",
+  },
+  visibility: {
+    eyebrow: "In the organisation",
+    title: "Not just the org chart",
+    body: [
+      "Beyond the systems and decks, this was hands-on: co-founding the organisation, showing up, and helping lead the team in person.",
+    ],
+    felixFigure: {
+      src: asset("/images/cases/p25/p25-felix.jpg"),
+      alt: "Felix at an EMPACTS activity.",
+      caption: "On the ground with EMPACTS as Co-founder and Vice-President.",
+      tag: "In the org",
+    },
+    teamFigure: {
+      src: asset("/images/cases/p25/p25-core-team.jpg"),
+      alt: "The EMPACTS core team.",
+      caption: "Part of the EMPACTS core team behind the organisation.",
+      tag: "The team",
     },
   },
   demonstrates: {

@@ -22,8 +22,8 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
       <CaseHero
         project={project}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
+        imageHref={c.hero.imageHref}
         imageFit="cover"
         strip={c.hero.strip}
       />
@@ -38,12 +38,14 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
             alt={c.diagnosis.platformAnalysisFigure.alt}
             caption={c.diagnosis.platformAnalysisFigure.caption}
             tag={c.diagnosis.platformAnalysisFigure.tag}
+            href={c.imagesFolder}
           />
           <EvidenceFigure
             src={c.diagnosis.platformTableFigure.src}
             alt={c.diagnosis.platformTableFigure.alt}
             caption={c.diagnosis.platformTableFigure.caption}
             tag={c.diagnosis.platformTableFigure.tag}
+            href={c.imagesFolder}
           />
         </MediaPair>
         <OwnershipNote label={c.diagnosis.note.label}>{inline(c.diagnosis.note.body)}</OwnershipNote>
@@ -56,6 +58,7 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
           alt={c.creatorSystem.figure.alt}
           caption={c.creatorSystem.figure.caption}
           tag={c.creatorSystem.figure.tag}
+          href={c.imagesFolder}
         />
       </CaseSection>
 
@@ -67,12 +70,14 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
             alt={c.integratedPlan.doohFigure.alt}
             caption={c.integratedPlan.doohFigure.caption}
             tag={c.integratedPlan.doohFigure.tag}
+            href={c.imagesFolder}
           />
           <EvidenceFigure
             src={c.integratedPlan.pulsingFigure.src}
             alt={c.integratedPlan.pulsingFigure.alt}
             caption={c.integratedPlan.pulsingFigure.caption}
             tag={c.integratedPlan.pulsingFigure.tag}
+            href={c.imagesFolder}
           />
         </MediaPair>
       </CaseSection>
@@ -87,6 +92,15 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
           fallbackLabel={c.budget.embed.fallbackLabel}
         />
         <OwnershipNote label={c.budget.note.label}>{inline(c.budget.note.body)}</OwnershipNote>
+      </CaseSection>
+
+      <CaseSection eyebrow={c.mediaPlan.eyebrow} title={c.mediaPlan.title}>
+        <ResponsiveEmbed
+          title={c.mediaPlan.embed.title}
+          src={c.mediaPlan.embed.src}
+          fallbackUrl={c.mediaPlan.embed.fallbackUrl}
+          fallbackLabel={c.mediaPlan.embed.fallbackLabel}
+        />
       </CaseSection>
 
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
