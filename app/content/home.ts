@@ -35,20 +35,11 @@ export const home = {
     { id: "P02", title: "Mùa Hạ Của Chúng Tôi", lane: "Scriptwriting & Production", role: "Director, Writer, and Co-editor", proof: "A coming-of-age short film that won First Prize in the graduation showcase.", route: "/work/mua-ha-cua-chung-toi" },
   ],
 
-  method: {
-    eyebrow: "The operating method",
-    title: "Felix’s approach to every brief",
-    steps: [
-      { title: "Find the tension", text: "Locate the human, cultural or operational contradiction inside the brief." },
-      { title: "Give it structure", text: "Turn evidence into a story, system, treatment, plan or experience people can follow." },
-      { title: "Make it real", text: "Write, coordinate, produce and protect the idea across the work." },
-      { title: "Stay for the outcome", text: "Track what happened, state the limitation and leave the next person a clean handover." },
-    ],
-  },
-
   routes: {
+    aboutCta: "More about Felix",
     eyebrow: "Range is my strength. I'm adaptive, resourceful, and have insanely ownership attitude - therefore, whenever a brief landed on my hand, I would likely to heartfully fight to deliver it from start to finish with everything I have and in highest quality I approve. My portfolio showcase many projects from too many fields, this might cause confusion on what actually does Felix specialize? Well, my expertise is to get the job done, whatever the job is. If you also have a job need to be done, feel free to reach out.",
     title: "A one-man army",
+    image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end", caption: "One brief, one person, from first insight to final handover." },
     // `filter` maps to a work-page category, keep it valid.
     rows: [
       { title: "Shape the strategy", text: "Mixed-methods research, insight, and planning that enable decision-making", filter: "Strategy & Research", proof: "MAGGI, TRESemmé, Scienceporium, Việt Á and Pakistan studies" },
@@ -60,9 +51,9 @@ export const home = {
   interestCallout: {
     eyebrow: "Focus areas",
     title: "The Impact-maker",
-    
     text: "Work across sustainable development, ESG, CSR and social-enterprise support, mixed-methods research, and systematic-thinking, alongside Vietnamese culture, media, and social advocacy.",
     cta: "Explore the focus areas",
+    image: { src: "/images/Home/Home_The Impact-maker.jpg", alt: "Felix Phan driving social impact", caption: "Where the work points: measurable impact." },
   },
 
   closing: {

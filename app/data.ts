@@ -478,11 +478,11 @@ export const projects: Project[] =
   },
   {
     "id": "P26",
-    "title": "RMIT Innovation & Entrepreneurship Club Workshops and Fundraiser",
+    "title": "RMIT IEC Bootcamp & Fundraiser",
     "slug": "rmit-iec",
     "year": "Sep 2023-Jun 2024",
     "publicType": "Event & experience",
-    "role": "Assistant to Vice President (Unicorn Start-up 101 bootcamp); Marketing Lead (Petals of Love).",
+    "role": "Assistant to Vice President; Head Operation (Unicorn Start-up 101 bootcamp); Marketing Leader (Petals of Love).",
     "tension": "Deliver workshops/panel talks and a short charity fundraiser with large student teams.",
     "approach": "Led a 42-person operations team and a 12-person marketing team.",
     "output": "Portfolio records report workshops and panels with about 200 attendees and five speakers, and a fundraiser that sold 97 products and reportedly raised VND 20 million in two weeks.",
@@ -596,7 +596,7 @@ export const projects: Project[] =
     "slug": "vietnam-media-viet-a",
     "year": "2023",
     "publicType": "Academic media research",
-    "role": "Team researcher / analyst.",
+    "role": "Researcher and Analyst.",
     "tension": "How transparent is the Vietnamese media in reporting corruption from 2021 to 2023?",
     "approach": "The team reviewed prior research, defined observable transparency criteria, assembled a cross-platform sample across online news, social media and television/video, and analysed both information sources and publisher transparency, using the Soviet Communist Theory of the Press as the assignment's framing lens.",
     "output": "A research deck recording a final 39-item sample (26 online newspaper, 8 social-media news, 5 television/video) and analysis of 131 citations across 68 primary information sources.",
@@ -616,11 +616,11 @@ export const projects: Project[] =
   },
   {
     "id": "P34",
-    "title": "Cybersecurity Capacity Development & SME Access to Bank Loans in Pakistan",
+    "title": "Cybersecurity & SME Bank-Loan Access in Pakistan",
     "slug": "cybersecurity-sme-loans-pakistan",
     "year": "2023",
     "publicType": "Applied PR research",
-    "role": "Researcher: individual literature and problem framing; four-person mixed-methods team research.",
+    "role": "Project leader, Researcher and Analyst.",
     "tension": "Turn a broad, cross-domain problem, cybersecurity capacity development and SME access to bank loans in Pakistan, into researchable questions with a method matched to each.",
     "approach": "Began with an individual literature review and problem-framing study, then developed a four-person mixed-methods design: a 22-country secondary quantitative analysis, social listening via Google Trends, BuzzSumo and NVivo, and YouTube social-network analysis in NodeXL.",
     "output": "An annotated bibliography and investigation proposal (individual), plus a team presentation triangulating quantitative, social-listening and network evidence. The quantitative dataset reported p = 0.02 with a weak positive correlation (Multiple R = 0.48); a 30-article sample supported sentiment and theme analysis; the network stage examined 1,749 users across 83 videos.",
@@ -641,4 +641,4 @@ export const projects: Project[] =
 
 export const projectBySlug = Object.fromEntries(projects.map((project) => [project.slug, project]));
 export const featureProjects = projects.filter((project) => project.feature);
-export const filters = ["All", "Creative Content", "Strategy & Research", "Event & Production", "Project Management", "Sustainability & Advocacy", "Culture & Editorial"];
+export const filters = ["All", "Strategy & Research", "Event & Production", "Project Management", "Creative Content", "Sustainability & Advocacy", "Culture & Editorial"];

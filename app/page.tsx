@@ -76,23 +76,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="method section-shell" aria-labelledby="method-title">
-          <div className="section-intro">
-            <p className="eyebrow">{home.method.eyebrow}</p>
-            <h2 id="method-title">{home.method.title}</h2>
-          </div>
-          <ol className="method-list">
-            {home.method.steps.map((step, index) => (
-              <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>
-            ))}
-          </ol>
-        </section>
-
         <section className="routes section-shell" aria-labelledby="routes-title">
           <div className="section-intro">
+            <div className="routes-cta"><Link className="button button-quiet" href="/about">{home.routes.aboutCta}</Link></div>
             <p className="routes-lead">{home.routes.eyebrow}</p>
             <h2 id="routes-title">{home.routes.title}</h2>
           </div>
+          <figure className="home-figure">
+            <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" />
+            <figcaption>{home.routes.image.caption}</figcaption>
+          </figure>
           <div className="route-list">
             {home.routes.rows.map((row, index) => (
               <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
@@ -111,6 +104,10 @@ export default function Home() {
           <h2 id="interest-title">{home.interestCallout.title}</h2>
           <p>{home.interestCallout.text}</p>
           <Link className="button button-primary" href="/interests">{home.interestCallout.cta}</Link>
+          <figure className="home-figure">
+            <img src={asset(home.interestCallout.image.src)} alt={home.interestCallout.image.alt} loading="lazy" />
+            <figcaption>{home.interestCallout.image.caption}</figcaption>
+          </figure>
         </section>
 
         <section className="closing section-shell">

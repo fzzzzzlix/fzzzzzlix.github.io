@@ -24,7 +24,11 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
         descriptor={c.hero.descriptor}
+        image={c.hero.image}
+        imageFit="cover"
         strip={c.hero.strip}
+        hideYear
+        hideType
       />
 
       <CaseTension>{project.tension}</CaseTension>
@@ -60,33 +64,25 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
           src={c.contribution.embed.src}
           fallbackUrl={c.contribution.embed.fallbackUrl}
           fallbackLabel={c.contribution.embed.fallbackLabel}
-          portrait
+          aspect="4 / 3"
         />
       </CaseSection>
 
-      <CaseSection eyebrow={c.responseArc.eyebrow} title={c.responseArc.title}>
-        {c.responseArc.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <Card tag={c.responseArc.card.tag} title={c.responseArc.card.title}>
-          <ul>{c.responseArc.card.items.map((li, i) => <li key={i}>{inline(li)}</li>)}</ul>
-        </Card>
-        {c.responseArc.bodyAfter.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.preparedness.eyebrow} title={c.preparedness.title}>
-        {c.preparedness.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <Cards>
-          <Card tag={c.preparedness.componentsCard.tag} title={c.preparedness.componentsCard.title}>
-            <ul>{c.preparedness.componentsCard.items.map((li, i) => <li key={i}>{inline(li)}</li>)}</ul>
-          </Card>
-          <Card tag={c.preparedness.ownershipCard.tag} title={c.preparedness.ownershipCard.title}>
-            <ul>{c.preparedness.ownershipCard.items.map((li, i) => <li key={i}>{inline(li)}</li>)}</ul>
-          </Card>
-        </Cards>
-      </CaseSection>
-
-      <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
-        {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidencePanel links={c.demonstrates.links}>
+      <CaseSection eyebrow={c.close.eyebrow} title={c.close.title}>
+        {c.close.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <EvidenceFigure
+          src={c.close.figure.src}
+          alt={c.close.figure.alt}
+          caption={c.close.figure.caption}
+          tag={c.close.figure.tag}
+        />
+        <ResponsiveEmbed
+          title={c.close.embed.title}
+          src={c.close.embed.src}
+          fallbackUrl={c.close.embed.fallbackUrl}
+          fallbackLabel={c.close.embed.fallbackLabel}
+        />
+        <EvidencePanel links={c.close.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>

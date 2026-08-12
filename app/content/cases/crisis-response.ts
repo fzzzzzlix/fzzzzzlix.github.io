@@ -8,6 +8,7 @@ import { asset } from "../../base-path";
 
 const PRESS_RELEASE_EMBED = "https://www.canva.com/design/DAHRwrlA2dU/GSf4MGzwwDCEWEIN42EnXQ/view?embed";
 const PRESS_RELEASE_LINK = "https://www.canva.com/design/DAHRwrlA2dU/GSf4MGzwwDCEWEIN42EnXQ/view";
+const TEAM_PLAN_EMBED = "https://www.canva.com/design/DAGknih3bqQ/0O8yT2ornhGD_OLQlX88DA/view?embed";
 const TEAM_PLAN_LINK = "https://www.canva.com/design/DAGknih3bqQ/0O8yT2ornhGD_OLQlX88DA/view";
 const VTV = "https://vtv.vn/xa-hoi/dai-hoc-bach-khoa-ha-noi-dung-hop-dong-voi-don-vi-cung-cap-suat-an-sau-phan-anh-cua-vtv-20241008070959807.htm";
 
@@ -16,9 +17,9 @@ export const crisisResponse = {
     eyebrow: "Specialist case",
     title: "HUST Food-Safety Crisis Response",
     descriptor: "PR & Crisis Communication",
+    image: asset("/images/cases/p32/Press conference hero.png"),
     strip: [
       { value: "2024", label: "real incident (context only)" },
-      { value: "2025", label: "academic simulation" },
       { value: "Press release", label: "Felix-authored artefact" },
       { value: "Team", label: "wider media-kit context" },
     ],
@@ -81,60 +82,25 @@ export const crisisResponse = {
       fallbackLabel: "Open the press release (Canva)",
     },
   },
-  responseArc: {
-    eyebrow: "The response arc",
-    title: "Crisis communication is an information system",
+  close: {
+    eyebrow: "The response, and its boundary",
+    title: "A statement built to survive the next question",
     body: [
-      "A crisis statement works only inside a wider preparedness system. The release was designed to move through a deliberate arc rather than simply express regret.",
+      "The press release was written to work as a system, not a single apology. It moves through a deliberate arc: acknowledging the seriousness of the incident, establishing the verified facts, putting affected students first, explaining concrete corrective action, and closing by rebuilding confidence, so a reader reaches the end knowing what happened and what the institution will do next.",
+      "Around it, the wider team assembled the rest of a media-preparedness package, a backgrounder, fact sheet, FAQ, media contacts and press-conference plan, because a statement fails the moment a spokesperson cannot answer the follow-up. My own contribution is the release itself; the craft the case shows is writing that stays clear, defensible and usable under scrutiny while keeping verified history, simulation and individual authorship cleanly separated.",
     ],
-    card: {
-      tag: "Response arc",
-      title: "From acknowledgement to rebuilt confidence",
-      items: [
-        "Acknowledge the seriousness of the situation.",
-        "Establish the verified facts.",
-        "Prioritise affected students.",
-        "Explain concrete corrective action.",
-        "Prepare for media and stakeholder scrutiny.",
-        "Rebuild institutional confidence.",
-      ],
+    figure: {
+      src: asset("/images/cases/p32/Press conference map.png"),
+      alt: "Press-conference room map for the HUST food-safety crisis simulation, marking the seating and speaking positions of the university spokespeople.",
+      caption: "The team's press-conference room plan, mapping where each spokesperson sits and speaks, part of the preparedness package the release had to work within.",
+      tag: "Team simulation, press-conference plan",
     },
-    bodyAfter: [
-      "The wider team package included a backgrounder, fact sheet, FAQ, media contacts and press-conference planning. These are shown only as **team context**, the environment the press release had to work within, and are not attributed to Felix.",
-    ],
-  },
-  preparedness: {
-    eyebrow: "Preparedness, not just a statement",
-    title: "A statement is not enough if the next question can’t be answered",
-    body: [
-      "The team FAQ and media-kit structure illustrate a core communications principle: a crisis statement fails if spokespeople cannot answer the follow-up. The scale of the team package, not any single graphic, is the point.",
-    ],
-    componentsCard: {
-      tag: "Team simulation material",
-      title: "Media-kit components",
-      items: [
-        "Backgrounder and fact sheet",
-        "Frequently asked questions",
-        "Media contacts",
-        "Press-conference planning",
-      ],
+    embed: {
+      title: "Team crisis communication plan",
+      src: TEAM_PLAN_EMBED,
+      fallbackUrl: TEAM_PLAN_LINK,
+      fallbackLabel: "Open the crisis communication plan (Canva)",
     },
-    ownershipCard: {
-      tag: "Ownership boundary",
-      title: "Attributed carefully",
-      items: [
-        "Felix-authored: the press release only.",
-        "Team context: every other component above.",
-        "Some team artefacts use a fictional “Dr. Felix Phan” label, not a real credential, and not shown here.",
-      ],
-    },
-  },
-  demonstrates: {
-    eyebrow: "What this demonstrates",
-    title: "Professional crisis writing under accountability constraints",
-    body: [
-      "The case adds a distinct PR capability to the portfolio: translating an issue into institutional language that must be clear, defensible and usable under media scrutiny, while maintaining strict boundaries between verified history, simulation and individual ownership.",
-    ],
     links: [
       { label: "Real 2024 incident context (VTV)", url: VTV },
       { label: "Felix-authored press release (Canva)", url: PRESS_RELEASE_LINK },

@@ -104,24 +104,27 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
           <p className="case-role">{project.role}</p>
           <div className="case-meta">
             <span>{project.id}</span>
-            <span>{project.year}</span>
-            <span>{project.publicType}</span>
-            {ext?.context ? <span>{ext.context}</span> : null}
+            {ext?.hideYear || !project.year ? null : <span>{project.year}</span>}
+            {ext?.hideType || !project.publicType ? null : <span>{project.publicType}</span>}
+            {ext?.context && !ext?.hideContext ? <span>{ext.context}</span> : null}
             {project.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
         </div>
         {image ? (
-          <a
-            className="p31-hero-media"
-            href={heroHref}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={ext?.heroHref ? `${project.title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}
-          >
-            <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
-          </a>
+          <>
+            <a
+              className="p31-hero-media"
+              href={heroHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={ext?.heroHref ? `${project.title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}
+            >
+              <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
+            </a>
+            {ext?.heroCaption ? <p className="p31-hero-caption">{inline(ext.heroCaption)}</p> : null}
+          </>
         ) : (
           <div style={{ marginTop: 46 }}>
             <MediaPlaceholder projectId={project.id} discipline={project.publicType} />
@@ -184,9 +187,18 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
           </CaseSection>
         ) : (
           <CaseSection key={block.title} eyebrow={block.eyebrow} title={block.title}>
-            {block.body.map((paragraph, i) => (
-              <Lede key={i}>{inline(paragraph)}</Lede>
-            ))}
+            {block.splitFigure ? (
+              <MediaPair>
+                <div>
+                  {block.body.map((paragraph, i) => (
+                    <Lede key={i}>{inline(paragraph)}</Lede>
+                  ))}
+                </div>
+                {renderFigure(block.splitFigure)}
+              </MediaPair>
+            ) : (
+              block.body.map((paragraph, i) => <Lede key={i}>{inline(paragraph)}</Lede>)
+            )}
             {block.figure ? renderFigure(block.figure) : null}
             {block.figures?.length
               ? block.pairFigures

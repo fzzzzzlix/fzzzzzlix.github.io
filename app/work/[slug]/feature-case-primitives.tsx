@@ -31,6 +31,7 @@ export function CaseHero({
   imagePosition,
   strip,
   hideType = false,
+  hideYear = false,
 }: {
   project: Project;
   eyebrow?: string;
@@ -42,6 +43,7 @@ export function CaseHero({
   imagePosition?: string;
   strip?: StripItem[];
   hideType?: boolean;
+  hideYear?: boolean;
 }) {
   return (
     <header className="p31-hero section-shell">
@@ -51,8 +53,8 @@ export function CaseHero({
         <p className="case-role">{project.role}</p>
         <div className="case-meta">
           <span>{project.id}</span>
-          <span>{project.year}</span>
-          {hideType ? null : <span>{project.publicType}</span>}
+          {hideYear || !project.year ? null : <span>{project.year}</span>}
+          {hideType || !project.publicType ? null : <span>{project.publicType}</span>}
           {descriptor ? <span>{descriptor}</span> : null}
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>

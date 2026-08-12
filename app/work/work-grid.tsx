@@ -101,7 +101,7 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
         </div>
       </div>
       <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
-      <div className="all-projects-grid">
+      <div className={`all-projects-grid${active === "All" ? " dense" : ""}`}>
         {visible.map((project, index) => (
           <Link href={`/work/${project.slug}`} className={`work-card${project.feature ? " feature" : ""}`} key={project.id}>
             {REAL_IMAGES[project.id] ? (

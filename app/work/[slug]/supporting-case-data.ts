@@ -52,6 +52,8 @@ export type CaseSectionBlock = {
   figures?: CaseFigure[];
   /** Render the body text and the embed side by side in two columns (stacks on mobile). */
   split?: boolean;
+  /** Render the body text and this figure side by side in two columns (stacks on mobile). Extra figure/figures/embed still render below. */
+  splitFigure?: CaseFigure;
   /** Render `figures` two-up in MediaPairs instead of stacked full-width. */
   pairFigures?: boolean;
 };
@@ -67,6 +69,12 @@ export type SupportingCaseExtension = {
   hideApproach?: boolean;
   hideOutput?: boolean;
   hideSignificance?: boolean;
+  /** Per-page suppression of hero meta chips (value kept intact for grid/label logic). */
+  hideYear?: boolean;
+  hideType?: boolean;
+  hideContext?: boolean;
+  /** Optional caption rendered under the hero image (supports inline emphasis). */
+  heroCaption?: string;
   /** One-line opening deck. */
   deck: string;
   /** Strongest capability takeaway. */
@@ -414,6 +422,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
           caption: "A behind-the-scenes still from the shoot, part of the BTS workstream Felix planned and captured on set.",
           tag: "On-set evidence",
           fit: "cover",
+          href: "https://drive.google.com/drive/folders/1VThOulfFODyUX-lEd-i1VUWdOgysqLAh",
         },
         figures: [
           {
@@ -421,7 +430,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
             alt: "Felix on set during a VinFast production shoot.",
             caption: "Felix on set, running the behind-the-scenes capture.",
             tag: "On set",
-            fit: "contain",
+            fit: "cover",
           },
         ],
         embed: {
@@ -478,7 +487,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
           alt: "Felix on set during a VinFast production shoot.",
           caption: "On set during the VinFast production.",
           tag: "On set",
-          fit: "contain",
+          fit: "cover",
         },
         embed: {
           title: "VF7 photoshoot and video, ForArt proposal",
@@ -836,7 +845,10 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideApproach: true,
     hideOutput: true,
     hideSignificance: true,
-    deck: "Two initiatives from one year at RMIT's Innovation & Entrepreneurship Club: leading operations for the Unicorn Start-up 101 bootcamp, and marketing the Petals of Love charity fundraiser.",
+    hideYear: true,
+    heroCaption:
+      "The IEC leaders board, from left to right: Mr. Phong Kieu (CFO), Mr. Hung Nguyen (Vice-President), Mr. Luong Ngo (President), Mx. Felix Phan (Vice-President Assistant), Ms. Ha Do (R&D Executive), Ms. Thai Mai (HR Executive), and Ms. Anh Vu (Marketing Executive).",
+    deck: "Two initiatives at RMIT's Innovation & Entrepreneurship Club: leading operations for the **Unicorn Start-up 101 bootcamp**, and marketing the **Petals of Love Charity Fundraiser**.",
     capability:
       "Across both, I learned to run the unglamorous middle of an event, the coordination, the quality checks, the handoffs, that decides whether a good idea actually reaches people. Marketing a charity also taught me to move people toward a cause without cheapening it.",
     evidenceStatus:
@@ -887,13 +899,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
             fit: "contain",
           },
         ],
-        embed: {
-          title: "Unicorn Start-up 101 recap (Facebook)",
-          src: p26IecPost.embed,
-          fallbackUrl: p26IecPost.view,
-          fallbackLabel: "View the recap post (Facebook)",
-          aspect: "3 / 4",
-        },
       },
       {
         eyebrow: "",
@@ -932,14 +937,11 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
             fit: "contain",
           },
         ],
-        embed: {
-          title: "Petals of Love recap (Facebook)",
-          src: p26PetalsPost.embed,
-          fallbackUrl: p26PetalsPost.view,
-          fallbackLabel: "View the recap post (Facebook)",
-          aspect: "3 / 4",
-        },
       },
+    ],
+    proofLinks: [
+      { label: "View the Unicorn Start-up 101 recap (Facebook)", url: p26IecPost.view },
+      { label: "View the Petals of Love recap (Facebook)", url: p26PetalsPost.view },
     ],
   },
 
@@ -1002,71 +1004,52 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   P33: {
     density: "D1",
     context: "COMM2892",
-    deck: "A four-person academic study that turned media transparency from an abstract debate into a bounded analysis across online news, social media and television/video coverage.",
-    capability: "Framing a researchable question, operationalising a concept, constructing a sample and keeping interpretation bounded by the study.",
+    hideYear: true,
+    hideType: true,
+    hideContext: true,
+    hideApproach: true,
+    hideOutput: true,
+    hideSignificance: true,
+    deck: "An academic study that turned Vietnamese media transparency from an abstract debate into a bounded analysis across online news, social media and television/video coverage.",
+    capability:
+      "This project taught me to make a fuzzy idea like transparency measurable before arguing about it, by turning it into criteria I could actually read a sample against. Working across online, social and broadcast sources also made me more careful about where a claim's evidence really comes from, and honest about how much a bounded sample can and cannot say.",
     ownership:
       "Felix's role: team researcher and analyst. Team context: a four-person academic team; the artifact proves membership, not individual task allocation.",
     evidenceStatus:
       "A four-person academic team study for COMM2892. The figures (39 items, 131 citations, 68 sources) are as stated in the team deck. Solo research and representative measurement of all Vietnamese media are not claimed.",
     evidenceNeeds: "A statement of Felix's individual task allocation within the team.",
     tensionLabel: "The research question",
-    approachEyebrow: "Method",
-    approachTitle: "How the study was designed",
-    outputEyebrow: "Sample and data",
-    outputTitle: "What was collected and analysed",
-    significanceEyebrow: "Findings",
-    significanceTitle: "What the study reported",
-    figures: [
-      {
-        src: asset("/images/cases/p33/p33-research-question.jpg"),
-        alt: "Research-question slide from the COMM2892 team deck: 'How transparent is the Vietnamese media in reporting corruption from 2021 to 2023?', shown against prior studies and the identified knowledge gap.",
-        caption: "The study's research question and knowledge gap, framing media transparency as the object of analysis. From the four-person COMM2892 team deck.",
-        tag: "Research question",
-        fit: "contain",
-      },
-      {
-        src: asset("/images/cases/p33/p33-data-collection.jpg"),
-        alt: "Data-collection slide: three transparency criteria (Tsetsura and Kruckeberg 2009), a July 2021 to July 2023 timeframe, and the final 39-item sample of 26 online newspaper, 8 social-media and 5 television/video items refined from 50 collected items.",
-        caption: "The operationalised criteria and the final 39-item cross-platform sample (26 online, 8 social-media news, 5 television/video), refined down from 50 collected items.",
-        tag: "Sample and method",
-        fit: "contain",
-      },
-      {
-        src: asset("/images/cases/p33/p33-analysis-method.jpg"),
-        alt: "Data-analysis slide splitting the quantitative work into Information Source Analysis and News Publisher Analysis, each with its own analysis focus.",
-        caption: "The two analytical axes the team ran in parallel: information-source diversity and credibility, and news-publisher accessibility and ownership.",
-        tag: "Analysis framework",
-        fit: "contain",
-      },
-    ],
     sections: [
       {
-        eyebrow: "Operationalisation",
-        title: "Turning transparency into observable criteria",
+        eyebrow: "",
+        title: "One question, made measurable across three platforms",
         body: [
-          "Rather than debate transparency in the abstract, the team defined it as a set of observable criteria, then read the corpus against them: how many distinct information sources a report drew on, how credible and diverse those sources were, and how openly each publisher disclosed its own ownership and stance.",
-          "The Soviet Communist Theory of the Press supplied the framing lens the assignment required, used to interpret the pattern rather than to pre-judge it.",
+          "With a four-person team, I helped turn a slippery question, how transparent Vietnamese media is in reporting corruption, into something measurable. We defined transparency as a set of observable criteria, then read a cross-platform sample of 39 items across online newspapers, social-media news and television/video against them, weighing 131 citations from 68 primary sources for how diverse and credible they were, and how openly each publisher disclosed its ownership and stance. The Soviet Communist Theory of the Press supplied the interpretive lens the brief required.",
+          "The full method, sample and findings live in the team deck below; the slides here show the research question, the operationalised sample, and the two analytical axes we ran in parallel.",
         ],
-      },
-      {
-        eyebrow: "Analytical framework",
-        title: "Two axes: source diversity and publisher transparency",
-        body: [
-          "Analysis ran on two axes in parallel. The first assessed the 131 citations across 68 primary information sources for diversity and credibility. The second assessed publisher transparency across the 39-item cross-platform sample of online news, social-media news and television/video.",
-        ],
-      },
-      {
-        eyebrow: "Limitations",
-        title: "What the study does and does not claim",
-        body: [
-          "The 39-item sample is a bounded academic dataset, not a representative measurement of all Vietnamese media, and the analysis stops short of causal claims. The artifact proves team membership and the study's stated method and sample, not individual task allocation.",
-        ],
-      },
-      {
-        eyebrow: "The full deck",
-        title: "The complete research presentation",
-        body: [
-          "The full COMM2892 team deck follows, covering the Vietnamese media context, the Soviet Communist Theory of the Press lens, and the finding and discussion sections in the team's own words.",
+        pairFigures: true,
+        figures: [
+          {
+            src: asset("/images/cases/p33/p33-research-question.jpg"),
+            alt: "Research-question slide from the COMM2892 team deck: 'How transparent is the Vietnamese media in reporting corruption from 2021 to 2023?', shown against prior studies and the identified knowledge gap.",
+            caption: "The study's research question and knowledge gap, framing media transparency as the object of analysis.",
+            tag: "Research question",
+            fit: "contain",
+          },
+          {
+            src: asset("/images/cases/p33/p33-data-collection.jpg"),
+            alt: "Data-collection slide: three transparency criteria (Tsetsura and Kruckeberg 2009), a July 2021 to July 2023 timeframe, and the final 39-item sample of 26 online newspaper, 8 social-media and 5 television/video items refined from 50 collected items.",
+            caption: "The operationalised criteria and the final 39-item cross-platform sample (26 online, 8 social-media news, 5 television/video), refined from 50 collected items.",
+            tag: "Sample and method",
+            fit: "contain",
+          },
+          {
+            src: asset("/images/cases/p33/p33-analysis-method.jpg"),
+            alt: "Data-analysis slide splitting the quantitative work into Information Source Analysis and News Publisher Analysis, each with its own analysis focus.",
+            caption: "The two analytical axes run in parallel: information-source diversity and credibility, and news-publisher accessibility and ownership.",
+            tag: "Analysis framework",
+            fit: "contain",
+          },
         ],
         embed: {
           title: "Vietnam media transparency research deck",
@@ -1081,8 +1064,12 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
   P34: {
     density: "D1",
     context: "MKTG1459",
-    deck: "A research project that began as an individual literature and problem-framing study and grew into a four-person mixed-methods investigation combining quantitative analysis, social listening and social-network analysis.",
-    capability: "Decomposing a difficult problem into research questions, choosing a method for each, triangulating evidence and communicating limitations.",
+    hideYear: true,
+    hideType: true,
+    hideContext: true,
+    deck: "A research project that began as an individual literature and problem-framing study, then grew into a four-person mixed-methods investigation combining quantitative analysis, social listening and social-network analysis.",
+    capability:
+      "This project taught me to break a sprawling, cross-domain problem into questions I could actually answer, and to match a different method to each rather than force one tool to do everything. Reading three evidence streams against each other, instead of leaning on a single number, is where I learned to trust triangulation, and to say plainly when a result is only an association.",
     ownership:
       "Felix's role: sole author of the individual literature review and problem framing; a member of the four-person team for the mixed-methods stages, where method ownership is shared.",
     evidenceStatus:
@@ -1120,40 +1107,26 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     ],
     sections: [
       {
-        eyebrow: "Individual ownership",
-        title: "A solo start before the team stage",
-        body: [
-          "Assignment 1, the annotated bibliography, literature review and problem framing, was submitted solely by Felix. The mixed-methods stages that followed were a four-person team.",
-        ],
-        figure: {
-          src: asset("/images/cases/p34/p34-assignment1-cover.png"),
-          alt: "RMIT assignment cover page for MKTG1459 Assignment 1, Annotated Bibliography and Literature Review, listing a single student, Nguyen Phan Thuc Huong (S3978588), submitted 27 August 2023.",
-          caption: "Assignment 1 was submitted solely by Felix (Nguyen Phan Thuc Huong, S3978588): the individual literature-review and problem-framing foundation before the team stage.",
-          tag: "Individual ownership",
-          fit: "contain",
-        },
-      },
-      {
-        eyebrow: "Method architecture",
+        eyebrow: "",
         title: "One problem, three matched methods, triangulated",
         body: [
           "The team stage decomposed the problem into three research questions and matched a method to each: a 22-country secondary quantitative analysis for the macro relationship, social listening (Google Trends, BuzzSumo, NVivo) for public discourse, and YouTube social-network analysis in NodeXL for how the conversation propagated (1,749 users across 83 videos).",
-          "The value is in the architecture: choosing distinct methods for distinct questions and reading the three evidence streams against each other rather than leaning on any single number.",
+          "The value is in the architecture: choosing distinct methods for distinct questions and reading the three evidence streams against each other rather than leaning on any single number. The full presentation below carries the background, the three method stages and the recommendations in the team's own words.",
         ],
-      },
-      {
-        eyebrow: "Limitations",
-        title: "Weak correlation, no causal claim",
-        body: [
-          "The 22-country quantitative analysis returned a weak positive correlation (Multiple R = 0.48, p = 0.02). It is reported as an association, not proof of causation, and the listening and network samples are bounded academic datasets.",
-        ],
-      },
-      {
-        eyebrow: "The full presentation",
-        title: "The complete mixed-methods presentation",
-        body: [
-          "The full MKTG1459 team presentation follows, carrying the background, the three method stages and the recommendations in the team's own words.",
-        ],
+        splitFigure: {
+          src: asset("/images/cases/p34/p34-prre-infographic.png"),
+          alt: "PRRE research infographic summarising the Pakistan cybersecurity and SME bank-loan study across its three methods.",
+          caption: "The one-page research infographic, summarising the problem and the three matched methods at a glance.",
+          tag: "Research infographic",
+          fit: "contain",
+        },
+        figure: {
+          src: asset("/images/cases/p34/PRRE ROs & RQs.jpg"),
+          alt: "Slide listing the study's three research objectives and matching research questions across the quantitative, social-listening and social-network stages.",
+          caption: "The three research questions and objectives, one per method, that the mixed-methods design was built to answer.",
+          tag: "Research questions and objectives",
+          fit: "contain",
+        },
         embed: {
           title: "Pakistan cybersecurity and SME-loans research presentation",
           src: p34Deck.embed,

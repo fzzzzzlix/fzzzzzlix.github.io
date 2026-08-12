@@ -1,6 +1,6 @@
 /*
  * Focus Areas / Interests page copy (app/interests/page.tsx).
- * `filter` maps each card to a work-page category, keep it valid.
+ * `projects` holds the project ids embedded under each area, keep them valid.
  */
 export const interests = {
   meta: {
@@ -10,18 +10,19 @@ export const interests = {
   hero: {
     eyebrow: "Focus Areas",
     title: "The subjects Felix keeps returning to",
-    deck: "Focus areas become credible when they shape completed work, not when they sit alone in a biography.",
   },
   cards: [
-    { title: "Sustainable Development", text: "Sustainable development, ESG, CSR and social-enterprise support, from EMPACTS to the education-inequality white paper.", filter: "Sustainability & Advocacy" },
-    { title: "Culture & Media", text: "Vietnamese heritage, contemporary culture, identity, collective memory and how media represents them.", filter: "Culture & Editorial" },
-    { title: "Research & Systems", text: "Mixed-methods research, operationalisation, social listening, network analysis and systems thinking, from Scienceporium to the Việt Á and Pakistan studies.", filter: "Strategy & Research" },
-    { title: "Social Advocacy", text: "Inclusion, diversity, student rights and wellbeing, delivered through events and student-leadership roles.", filter: "Event & Production" },
+    { title: "Sustainable Development", text: "Sustainable development, ESG, CSR and social-enterprise support, from EMPACTS to the education-inequality white paper.", projects: ["P25", "P17", "P04"], images: [
+      { src: "/images/Focus area/Focus_Sustainable Development 1_Ha Giang trip.jpg", alt: "Felix Phan on a Hà Giang field trip", caption: "Hà Giang field trip" },
+      { src: "/images/Focus area/Focus_Sustainable Development 2_Pitch.jpg", alt: "Felix Phan pitching a sustainability venture", caption: "Pitching the venture" },
+    ] },
+    { title: "Culture & Media", text: "Vietnamese heritage, contemporary culture, identity, collective memory and how media represents them.", projects: ["P11", "P16", "P33"], images: [
+      { src: "/images/Focus area/Focus_Culture & Media 1_Felix is a videographer.jpg", alt: "Felix Phan working as a videographer", caption: "On camera as videographer" },
+      { src: "/images/Focus area/Focus_Culture & Media_Felix at a cutural branding concert.jpg", alt: "Felix Phan at a cultural branding concert", caption: "At a cultural branding concert" },
+    ] },
+    { title: "Social Advocacy", text: "Inclusion, diversity, student rights and wellbeing, delivered through events and student-leadership roles.", projects: ["P22", "P30", "P14"], images: [
+      { src: "/images/Focus area/Focus_Social advocacy 2_Pride week host.jpg", alt: "Felix Phan hosting Pride Week", caption: "Hosting Pride Week" },
+      { src: "/images/Focus area/Focus_Social advocacy 2_Petals of love charity fundraising.jpeg", alt: "Felix Phan at the Petals of Love charity fundraiser", caption: "Petals of Love charity fundraiser" },
+    ] },
   ],
-  thesis: {
-    eyebrow: "The principle",
-    // Rendered as two lines separated by a break.
-    titleLines: ["Respect the context", "Make the idea usable"],
-    text: "Culture should not become decoration. Advocacy should not become a slogan. Sustainability should not become a claim without a system behind it.",
-  },
 };

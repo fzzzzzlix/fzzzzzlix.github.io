@@ -1,37 +1,16 @@
 /*
  * About page copy (app/about/page.tsx).
+ * Reading flow: identity + facts, then the narrative (lead, quotes, story,
+ * approach) with the five /images/About photos interleaved 1-5, then capability.
+ * Emphasis: **bold** / *italic* is rendered by render-inline. No em dashes.
  */
 export const about = {
   meta: {
     title: "About",
     description: "Meet Felix Phan and the method connecting research, story, production and impact.",
   },
-  hero: {
-    eyebrow: "About Felix",
-    title: "Curious enough to ask why, Practical enough to make it work",
-    deck: "Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world.",
-  },
-  pullQuote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",
-  longCopy: [
-    "Suffering from being too adaptive, exceeding resourceful, and have insanely ownership attitude - therefore, whenever a brief landed on my hand, I would likely to heartfully fight to deliver it from start to finish with everything I have and in highest quality I approve. My portfolio showcase many projects from too many fields, this might cause confusion on what actually does Felix specialize? Well, **my expertise is to get the job done**, whatever the job is. If you also have a job need to be done, feel free to reach out.",
-    "Felix works across strategy, story, and delivery - in order for an idea to keep its intent from the first insight to the final handover. That means fewer gaps between the people who plan, make, and ship the work: one person can diagnose the problem, frame it, design the response, align the team, and stay accountable for the result.",
-    "Felix moves meaningful ideas from insight - to story - to impact.",
-    "Their work begins with evidence, but it does not end with a spreadsheet. Research is translated into a **human tension**. The tension becomes a **structure**. The structure becomes a **script, treatment, plan, event** or **operating system**.",
-    "That combination suits roles where communication must be **culturally aware**, **operationally realistic**, and **accountable to an outcome**.",
-  ],
-  capability: {
-    eyebrow: "Capability",
-    // [tier, title, text]
-    items: [
-      ["Shape the strategy", "Research & planning", "Consumer insight, social listening, thematic and sentiment coding, interviews, media planning and channel strategy."],
-      ["Shape the strategy", "Research methods", "Academic research experience includes research-question framing, literature review, qualitative and mixed-methods design, secondary quantitative analysis (correlation and regression), NVivo, social-network analysis (NodeXL), operationalisation, triangulation, systems mapping and research-to-editorial translation."],
-      ["Build the story", "Creative development", "Concepts, treatments, story structure, cast functions, sponsor integration and short-form systems."],
-      ["Build the story", "Writing & editorial", "TVC scripts, short films, podcasts, proposals, copy, scenes and editorial direction."],
-      ["Lead the delivery", "Production & operations", "On-set support, source tracking, event logistics, vendor coordination, budgets, SOPs and quality control."],
-      ["Lead the delivery", "Leadership", "Cross-functional teams, organisation design, fundraising, stakeholders, handover and performance review."],
-    ] as [string, string, string][],
-  },
   identity: {
+    eyebrow: "About Felix",
     heading: "Creative Strategist & Storyteller",
     facts: [
       { term: "Professional name", detail: "Felix Phan" },
@@ -41,6 +20,42 @@ export const about = {
       { term: "Availability", detail: "Full-time" },
       { term: "Base", detail: "Ho Chi Minh City & Hanoi" },
     ],
+  },
+  intro: {
+    eyebrow: "About Felix",
+    lead: "Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world.",
+    quote: "“Curious enough to ask why, practical enough to make it work”",
+  },
+  story: [
+    "Suffering from being too **adaptive**, exceedingly **resourceful**, and having an insanely strong **ownership attitude**, so whenever a brief lands in my hands I will heartfully fight to deliver it from start to finish, with everything I have and at the highest quality I approve.",
+    "My portfolio showcases many projects from too many fields; this might cause confusion on *what does Felix actually specialize in?* Well, **my expertise is to get the job done**, whatever the job is! If you also have a job that needs doing, feel free to reach out ^^",
+  ],
+  quote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",
+  approach: [
+    "Felix works across **strategy**, **story**, and **delivery**, so an idea can keep its intent **from the first insight to the final handover**. That means fewer gaps between the people who plan, make, and ship the work.",
+    "Felix moves meaningful ideas from **insight**, to **story**, to **impact**. The work begins with evidence, but it does not end with a spreadsheet: research is translated into a human tension, the tension becomes a structure, and the structure becomes a script, a treatment, a plan, an event or an operating system.",
+  ],
+  approachClose:
+    "That combination suits roles where communication must be **culturally aware**, **operationally realistic**, and **accountable to an outcome**.",
+  // Interleaved through the narrative in order. Paths carry literal spaces (browsers encode them).
+  images: [
+    { src: "/images/About/About_1 Felix portrait.jpg", alt: "Portrait of Felix Phan", caption: "Felix Phan" },
+    { src: "/images/About/About_2 Felix is a Challenger.jpg", alt: "Felix Phan taking on a challenge", caption: "A challenger by default" },
+    { src: "/images/About/About_3 Felix portrait.jpg", alt: "Portrait of Felix Phan", caption: "Felix Phan" },
+    { src: "/images/About/About_4 Felix on stage.jpg", alt: "Felix Phan on stage", caption: "On stage" },
+    { src: "/images/About/About_5 Journalism club founder.jpg", alt: "Felix Phan as a journalism club founder", caption: "Journalism club founder" },
+  ],
+  capability: {
+    eyebrow: "Capability",
+    // [tier, title, text]
+    items: [
+      ["Shape the strategy", "Research design", "Academic research experience includes research-question framing, literature review, qualitative and mixed-methods design, secondary quantitative analysis (correlation and regression), NVivo, social-network analysis (NodeXL), operationalisation, triangulation, systems mapping and research-to-editorial translation."],
+      ["Shape the strategy", "Strategic planning", "Consumer insight, social listening, thematic and sentiment coding, interviews, media planning and channel strategy."],
+      ["Build the story", "Creative development", "Concepts, treatments, story structure, cast functions, sponsor integration and short-form systems."],
+      ["Build the story", "Writing & editorial", "TVC scripts, short films, podcasts, proposals, copy, scenes and editorial direction."],
+      ["Lead the delivery", "Operational excellence", "On-set support, source tracking, event logistics, vendor coordination, budgets, SOPs and quality control."],
+      ["Lead the delivery", "Leadership", "Cross-functional teams, organisation design, fundraising, stakeholders, handover and performance review."],
+    ] as [string, string, string][],
   },
   cta: {
     eyebrow: "See the method in motion",
