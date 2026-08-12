@@ -7,12 +7,23 @@ import { inline } from "../content/render-inline";
 
 export const metadata: Metadata = { title: about.meta.title, description: about.meta.description, alternates: { canonical: "/about" } };
 
-function AboutFigure({ image }: { image: { src: string; alt: string; caption: string } }) {
+type AboutImage = { src: string; alt: string; caption: string };
+
+function AboutFigure({ image }: { image: AboutImage }) {
   return (
     <figure className="about-figure">
       <img src={asset(image.src)} alt={image.alt} loading="lazy" />
       {image.caption ? <figcaption>{image.caption}</figcaption> : null}
     </figure>
+  );
+}
+
+function AboutFigurePair({ a, b }: { a: AboutImage; b: AboutImage }) {
+  return (
+    <div className="about-figure-pair">
+      <AboutFigure image={a} />
+      <AboutFigure image={b} />
+    </div>
   );
 }
 
@@ -44,19 +55,15 @@ export default function AboutPage() {
 
           {about.story.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <AboutFigure image={img[1]} />
+          <AboutFigurePair a={img[1]} b={img[2]} />
 
           <blockquote className="about-quote">{about.quote}</blockquote>
 
-          <AboutFigure image={img[2]} />
-
           {about.approach.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <AboutFigure image={img[3]} />
+          <AboutFigurePair a={img[3]} b={img[4]} />
 
           <p className="about-takeaway">→ {inline(about.approachClose)}</p>
-
-          <AboutFigure image={img[4]} />
         </section>
 
         <section className="capability-section section-shell">

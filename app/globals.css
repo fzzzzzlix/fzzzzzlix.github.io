@@ -208,12 +208,17 @@ h3 { margin: 0; font-size: 31px; letter-spacing: -.02em; }
 .about-figure { margin: 44px 0; }
 /* Preserve each photo's native aspect ratio (no crop); cap height so it fits ~3/4 of the viewport. */
 .about-figure img { display: block; width: auto; height: auto; max-width: 100%; max-height: 72vh; object-fit: contain; border: 1px solid var(--line-strong); background: var(--bg-soft); }
+/* Two photos side by side to save vertical space. */
+.about-figure-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 44px 0; align-items: start; }
+.about-figure-pair .about-figure { margin: 0; }
+.about-figure-pair .about-figure img { max-height: 56vh; }
+@media (max-width: 640px) { .about-figure-pair { grid-template-columns: 1fr; } }
 .about-figure figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; }
 @media (max-width: 860px) { .about-hero { grid-template-columns: 1fr; } .about-hero-media { max-width: 320px; } }
 
 /* Home section imagery + About shortcut button. */
 .routes-cta { margin-bottom: 22px; }
-.home-figure { margin: 40px 0 0; }
+.home-figure { margin: 40px 0 30px; }
 .home-figure img { width: 100%; max-height: 520px; object-fit: cover; display: block; border: 1px solid var(--line-strong); background: var(--bg-soft); }
 .home-figure figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; }
 
