@@ -16,10 +16,10 @@ export const home = {
   },
 
   proofBand: [
-    { value: "25", label: "selected projects" },
-    { value: "54", label: "member org built" },
-    { value: "34,588", label: "organic reach in 3 days" },
     { value: "2", label: "bachelor degrees, completed simultaneously" },
+    { value: "4", label: "initiatives founded" },
+    { value: "25", label: "selected projects" },
+    { value: "54", label: "member-org managed" },
   ],
 
   featuredEyebrow: "Featured works",
@@ -37,7 +37,10 @@ export const home = {
 
   routes: {
     aboutCta: "More about Felix",
-    eyebrow: "Range is my strength. I'm adaptive, resourceful, and have insanely ownership attitude - therefore, whenever a brief landed on my hand, I would likely to heartfully fight to deliver it from start to finish with everything I have and in highest quality I approve. My portfolio showcase many projects from too many fields, this might cause confusion on what actually does Felix specialize? Well, my expertise is to get the job done, whatever the job is. If you also have a job need to be done, feel free to reach out.",
+    lead: [
+      "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
+      "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
+    ],
     title: "A one-man army",
     image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end" },
     // `filter` maps to a work-page category, keep it valid.

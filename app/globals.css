@@ -220,6 +220,11 @@ h3 { margin: 0; font-size: 31px; letter-spacing: -.02em; }
 /* Home section imagery + About shortcut button. */
 .routes-cta { margin-bottom: 22px; }
 .home-figure { margin: 40px 0 30px; }
+/* Routes intro: centered and full-width instead of a cramped left column. */
+.routes-intro { max-width: none; text-align: center; }
+.routes-intro .routes-cta { display: flex; justify-content: center; }
+.routes-intro .routes-lead { max-width: none; margin-inline: auto; }
+.routes-intro .home-figure { max-width: 900px; margin: 40px auto 30px; }
 .home-figure img { width: 100%; max-height: 520px; object-fit: cover; display: block; border: 1px solid var(--line-strong); background: var(--bg-soft); }
 .home-figure figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; }
 

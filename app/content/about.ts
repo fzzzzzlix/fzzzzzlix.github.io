@@ -27,8 +27,8 @@ export const about = {
     quote: "“Curious enough to ask why, practical enough to make it work”",
   },
   story: [
-    "Suffering from being too **adaptive**, exceedingly **resourceful**, and having an insanely strong **ownership attitude**, so whenever a brief lands in my hands I will heartfully fight to deliver it from start to finish, with everything I have and at the highest quality I approve.",
-    "My portfolio showcases many projects from too many fields; this might cause confusion on *what does Felix actually specialize in?* Well, **my expertise is to get the job done**, whatever the job is! If you also have a job that needs doing, feel free to reach out ^^",
+    "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
+    "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
   ],
   quote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",
   approach: [

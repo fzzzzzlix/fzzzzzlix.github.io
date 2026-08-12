@@ -4,6 +4,7 @@ import { projects } from "./data";
 import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
 import { home } from "./content/home";
+import { inline } from "./content/render-inline";
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
@@ -44,6 +45,27 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="routes section-shell" aria-labelledby="routes-title">
+          <div className="section-intro routes-intro">
+            <div className="routes-cta"><Link className="button button-quiet" href="/about">{home.routes.aboutCta}</Link></div>
+            {home.routes.lead.map((para, i) => <p className="routes-lead" key={i}>{inline(para)}</p>)}
+            <figure className="home-figure">
+              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" />
+            </figure>
+            <h2 id="routes-title">{home.routes.title}</h2>
+          </div>
+          <div className="route-list">
+            {home.routes.rows.map((row, index) => (
+              <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
+                <span className="route-index">0{index + 1}</span>
+                <span><strong>{row.title}</strong><small>{row.text}</small></span>
+                <span className="route-proof">{row.proof}</span>
+                <span className="route-arrow">↗</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="work-preview section-shell" aria-label="Featured works">
           <div className="section-intro">
             <p className="eyebrow">{home.featuredEyebrow}</p>
@@ -73,27 +95,6 @@ export default function Home() {
           </div>
           <div className="work-preview-more">
             <Link className="text-link" href="/work">{home.featuredLink} <span>↗</span></Link>
-          </div>
-        </section>
-
-        <section className="routes section-shell" aria-labelledby="routes-title">
-          <div className="section-intro">
-            <div className="routes-cta"><Link className="button button-quiet" href="/about">{home.routes.aboutCta}</Link></div>
-            <p className="routes-lead">{home.routes.eyebrow}</p>
-            <figure className="home-figure">
-              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" />
-            </figure>
-            <h2 id="routes-title">{home.routes.title}</h2>
-          </div>
-          <div className="route-list">
-            {home.routes.rows.map((row, index) => (
-              <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
-                <span className="route-index">0{index + 1}</span>
-                <span><strong>{row.title}</strong><small>{row.text}</small></span>
-                <span className="route-proof">{row.proof}</span>
-                <span className="route-arrow">↗</span>
-              </Link>
-            ))}
           </div>
         </section>
 

@@ -23,8 +23,9 @@ export function SiteHeader() {
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Felix Phan home"><StarMark size={24} /><span>Felix Phan</span></Link>
         <nav aria-label="Primary navigation">
-          <Link href="/work">Work</Link>
+          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
+          <Link href="/work">Work</Link>
           <Link href="/experience">Experience</Link>
           <Link href="/interests">Focus Areas</Link>
           <Link href="/contact">Contact</Link>
@@ -32,8 +33,9 @@ export function SiteHeader() {
         <details className="mobile-menu">
           <summary>Menu</summary>
           <div>
-            <Link href="/work">Work</Link>
+            <Link href="/">Home</Link>
             <Link href="/about">About</Link>
+            <Link href="/work">Work</Link>
             <Link href="/experience">Experience</Link>
             <Link href="/interests">Focus Areas</Link>
             <Link href="/contact">Contact</Link>
