@@ -59,7 +59,7 @@ export function CoverImage({ src, fit, alt, poster, loading = "lazy" }: { src: s
 
 export function PageHero({ eyebrow, title, deck, aside }: { eyebrow: string; title?: string; deck?: string; aside?: React.ReactNode }) {
   return (
-    <section className="page-hero section-shell">
+    <section className={`page-hero section-shell${title ? "" : " page-hero-compact"}`}>
       <div>
         <p className="eyebrow"><StarMark size={18} /> {eyebrow}</p>
         {title ? <h1>{title}</h1> : null}

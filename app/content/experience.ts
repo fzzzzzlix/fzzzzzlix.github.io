@@ -9,11 +9,6 @@ export const experience = {
     title: "Experience",
     description: "Felix Phan's progression through content, production, events, leadership and organisation design.",
   },
-  hero: {
-    eyebrow: "Experience",
-    title: "Work, leadership, and delivery",
-    deck: "Felix moved from making content, to planning it, to directing teams, organising SOPs, and building systems that other people could use.",
-  },
   timeline: [
     { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", role: "Assistant to Director, Internship", scope: [
       "Streamlined executive operations for the Director across 4 events, reducing meeting prep time by 60% and enabling same-day action item resolution across all stakeholder follow-ups.",

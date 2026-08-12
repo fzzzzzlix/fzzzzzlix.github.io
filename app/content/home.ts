@@ -39,7 +39,7 @@ export const home = {
     aboutCta: "More about Felix",
     eyebrow: "Range is my strength. I'm adaptive, resourceful, and have insanely ownership attitude - therefore, whenever a brief landed on my hand, I would likely to heartfully fight to deliver it from start to finish with everything I have and in highest quality I approve. My portfolio showcase many projects from too many fields, this might cause confusion on what actually does Felix specialize? Well, my expertise is to get the job done, whatever the job is. If you also have a job need to be done, feel free to reach out.",
     title: "A one-man army",
-    image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end", caption: "One brief, one person, from first insight to final handover." },
+    image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end" },
     // `filter` maps to a work-page category, keep it valid.
     rows: [
       { title: "Shape the strategy", text: "Mixed-methods research, insight, and planning that enable decision-making", filter: "Strategy & Research", proof: "MAGGI, TRESemmé, Scienceporium, Việt Á and Pakistan studies" },
@@ -53,7 +53,7 @@ export const home = {
     title: "The Impact-maker",
     text: "Work across sustainable development, ESG, CSR and social-enterprise support, mixed-methods research, and systematic-thinking, alongside Vietnamese culture, media, and social advocacy.",
     cta: "Explore the focus areas",
-    image: { src: "/images/Home/Home_The Impact-maker.jpg", alt: "Felix Phan driving social impact", caption: "Where the work points: measurable impact." },
+    image: { src: "/images/Home/Home_The Impact-maker.jpg", alt: "Felix Phan driving social impact" },
   },
 
   closing: {

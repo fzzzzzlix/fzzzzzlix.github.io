@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
+import { SiteFooter, SiteHeader } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -12,7 +12,9 @@ export default function ExperiencePage() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <PageHero eyebrow={experience.hero.eyebrow} title={experience.hero.title} deck={experience.hero.deck} />
+        <section className="experience-top section-shell">
+          <Link className="button button-primary" href="/contact#cv">View CV</Link>
+        </section>
         <section className="timeline section-shell">
           {experience.timeline.map((item, index) => (
             <article key={item.org}>
