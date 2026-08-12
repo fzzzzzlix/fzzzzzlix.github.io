@@ -64,13 +64,6 @@ export const crisisResponse = {
     body: [
       "Felix’s directly attributable artefact is the press release, written in the assigned simulation role of Communication Manager. It attempts several functions at once: acknowledge seriousness, communicate corrective action, establish a sequence of institutional response, and give journalists a usable official-style statement. The evidence here is the actual writing, not a dramatic crisis graphic.",
     ],
-    figure: {
-      src: asset("/images/cases/p32/p32-press-release-p1.png"),
-      alt: "First page of the simulation press release authored by Felix Phan for the 2025 HUST food-safety crisis-communication capstone.",
-      caption: "2025 academic simulation artefact, the Felix-authored press release, shown uncropped. Not a real HUST communication.",
-      tag: "Team simulation · Felix-authored",
-      href: PRESS_RELEASE_LINK,
-    },
     note: {
       label: "What this is, and is not",
       body: "This is a 2025 academic simulation document authored by Felix in an assigned role. It is not a genuine HUST press release, and Felix was never employed by or an official spokesperson for HUST.",

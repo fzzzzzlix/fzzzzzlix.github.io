@@ -585,7 +585,7 @@ export const projects: Project[] =
     "tags": [
       "Strategy & Research"
     ],
-    "assetFilename": "p32-press-release-p1.png",
+    "assetFilename": "Press conference hero.png",
     "assetRatio": "Evidence portrait: fit/contain; never crop document text.",
     "assetRule": "Evidence exception: contain inside frame. Do not crop text, names, dates or labels. Never stretch.",
     "alt": "Felix Phan-authored press release for a 2025 HUST food-safety crisis communication simulation"

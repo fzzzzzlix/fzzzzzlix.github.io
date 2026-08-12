@@ -215,6 +215,7 @@ export function ResponsiveEmbed({
   portrait = false,
   inPair = false,
   extraLinks = [],
+  maxHeight,
 }: {
   title: string;
   src: string;
@@ -224,11 +225,12 @@ export function ResponsiveEmbed({
   portrait?: boolean;
   inPair?: boolean;
   extraLinks?: { label: string; url: string }[];
+  maxHeight?: string;
 }) {
   const aspectRatio = aspect ?? (portrait ? "3 / 4" : "16 / 9");
   const body = (
     <>
-      <div className="p31-embed-frame" style={{ aspectRatio }}>
+      <div className="p31-embed-frame" style={{ aspectRatio, ...(maxHeight ? { maxHeight } : {}) }}>
         <iframe title={title} src={src} allow="fullscreen" allowFullScreen loading="lazy" />
       </div>
       <div className="proof-links" aria-label={`${title} link`}>

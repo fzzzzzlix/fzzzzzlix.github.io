@@ -51,13 +51,6 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
 
       <CaseSection eyebrow={c.contribution.eyebrow} title={c.contribution.title}>
         {c.contribution.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidenceFigure
-          src={c.contribution.figure.src}
-          alt={c.contribution.figure.alt}
-          caption={c.contribution.figure.caption}
-          tag={c.contribution.figure.tag}
-          href={c.contribution.figure.href}
-        />
         <OwnershipNote label={c.contribution.note.label}>{inline(c.contribution.note.body)}</OwnershipNote>
         <ResponsiveEmbed
           title={c.contribution.embed.title}
@@ -65,6 +58,7 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
           fallbackUrl={c.contribution.embed.fallbackUrl}
           fallbackLabel={c.contribution.embed.fallbackLabel}
           aspect="4 / 3"
+          maxHeight="75vh"
         />
       </CaseSection>
 
