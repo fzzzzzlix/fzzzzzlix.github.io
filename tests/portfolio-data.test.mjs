@@ -132,10 +132,11 @@ test("P33 and P34 carry native evidence figures, not only Canva embeds", () => {
     "/images/cases/p33/p33-research-question.jpg",
     "/images/cases/p33/p33-data-collection.jpg",
     "/images/cases/p33/p33-analysis-method.jpg",
-    "/images/cases/p34/p34-assignment1-cover.png",
     "/images/cases/p34/p34-regression.jpg",
     "/images/cases/p34/p34-nvivo-themes.jpg",
     "/images/cases/p34/p34-nodexl-network.jpg",
+    "/images/cases/p34/p34-prre-infographic.png",
+    "/images/cases/p34/PRRE ROs & RQs.jpg",
   ]) {
     assert.ok(scSrc.includes(f), `${f} should be referenced`);
     assert.ok(existsSync(join(ROOT, "public", f)), `${f} should exist on disk`);
