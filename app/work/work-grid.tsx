@@ -91,7 +91,17 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
     window.dispatchEvent(new Event("workfilterchange"));
   }
 
-  const visible = useMemo(() => active === "All" ? projects : projects.filter((project) => project.tags.includes(active)), [active]);
+  // Sort most-recent-first using the latest 4-digit year found in each project's
+  // `year` field (handles ranges like "Sep 2023-Jun 2024"). Stable for ties.
+  const sorted = useMemo(() => {
+    const recency = (p: (typeof projects)[number]) => {
+      const years = (p.year ?? "").match(/\d{4}/g);
+      return years ? Math.max(...years.map(Number)) : 0;
+    };
+    return [...projects].sort((a, b) => recency(b) - recency(a));
+  }, []);
+
+  const visible = useMemo(() => active === "All" ? sorted : sorted.filter((project) => project.tags.includes(active)), [active, sorted]);
 
   return (
     <>
