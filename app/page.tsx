@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteFooter, SiteHeader, StarMark, MediaPlaceholder, CoverImage } from "./site-shell";
+import { SiteFooter, SiteHeader, StarMark, MediaPlaceholder, CoverImage, CV_URL } from "./site-shell";
 import { projects } from "./data";
 import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
@@ -22,7 +22,7 @@ export default function Home() {
             </ul>
             <div className="hero-actions">
               <Link className="button button-primary" href="/work">{home.hero.primaryCta}</Link>
-              <Link className="button button-quiet" href="/contact#cv">{home.hero.quietCta}</Link>
+              <a className="button button-quiet" href={CV_URL} target="_blank" rel="noreferrer">{home.hero.quietCta}</a>
             </div>
             <ul className="hero-facts" aria-label="Availability">
               {home.hero.facts.map((fact) => <li key={fact}>{fact}</li>)}

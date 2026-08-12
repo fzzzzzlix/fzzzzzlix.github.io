@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+// Public CV link (Google Drive). Every "CV" action across the site points here.
+export const CV_URL = "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link";
+
 // Decorative by default (aria-hidden) so the repeated brand mark is not
 // announced on every eyebrow/section. Pass `label` only for a meaningful,
 // standalone identity use to expose it as an image to assistive tech.
@@ -16,28 +19,30 @@ export function StarMark({ size = 28, label }: { size?: number; label?: string }
 
 export function SiteHeader() {
   return (
-    <header className="site-header">
-      <Link className="brand" href="/" aria-label="Felix Phan home"><StarMark size={24} /><span>Felix Phan</span></Link>
-      <nav aria-label="Primary navigation">
-        <Link href="/work">Work</Link>
-        <Link href="/about">About</Link>
-        <Link href="/experience">Experience</Link>
-        <Link href="/interests">Focus Areas</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
-      <details className="mobile-menu">
-        <summary>Menu</summary>
-        <div>
+    <div className="site-header-bar">
+      <header className="site-header">
+        <Link className="brand" href="/" aria-label="Felix Phan home"><StarMark size={24} /><span>Felix Phan</span></Link>
+        <nav aria-label="Primary navigation">
           <Link href="/work">Work</Link>
           <Link href="/about">About</Link>
           <Link href="/experience">Experience</Link>
           <Link href="/interests">Focus Areas</Link>
           <Link href="/contact">Contact</Link>
-          <Link className="mobile-menu-cv" href="/contact#cv">Request CV ↗</Link>
-        </div>
-      </details>
-      <Link className="nav-cv" href="/contact#cv">Request CV <span>↗</span></Link>
-    </header>
+        </nav>
+        <details className="mobile-menu">
+          <summary>Menu</summary>
+          <div>
+            <Link href="/work">Work</Link>
+            <Link href="/about">About</Link>
+            <Link href="/experience">Experience</Link>
+            <Link href="/interests">Focus Areas</Link>
+            <Link href="/contact">Contact</Link>
+            <a className="mobile-menu-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV ↗</a>
+          </div>
+        </details>
+        <a className="nav-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV <span>↗</span></a>
+      </header>
+    </div>
   );
 }
 

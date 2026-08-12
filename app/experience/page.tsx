@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../site-shell";
+import { SiteFooter, SiteHeader, CV_URL } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -13,7 +13,7 @@ export default function ExperiencePage() {
       <SiteHeader />
       <main id="main-content">
         <section className="experience-top section-shell">
-          <Link className="button button-primary" href="/contact#cv">View CV</Link>
+          <a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>
         </section>
         <section className="timeline section-shell">
           {experience.timeline.map((item, index) => (

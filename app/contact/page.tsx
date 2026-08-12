@@ -14,7 +14,7 @@ export default function ContactPage() {
           {contact.channels.map((channel) => (
             <a key={channel.kind} href={channel.href}><span>{channel.kind}</span><strong>{channel.value}</strong><b>↗</b></a>
           ))}
-          <a id="cv" className="cv-placeholder" href={contact.cv.href}><StarMark size={70} /><span>{contact.cv.label}</span><strong>{contact.cv.title}</strong><p>{contact.cv.text}</p></a>
+          <a id="cv" className="cv-placeholder" href={contact.cv.href} target="_blank" rel="noreferrer"><StarMark size={70} /><span>{contact.cv.label}</span><strong>{contact.cv.title}</strong><p>{contact.cv.text}</p></a>
         </section>
       </main>
       <SiteFooter />

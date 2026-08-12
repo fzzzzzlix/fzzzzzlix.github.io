@@ -16,10 +16,10 @@ export const home = {
   },
 
   proofBand: [
-    { value: "99", label: "xxx" },
-    { value: "99", label: "xxx" },
-    { value: "99", label: "xxx" },
-    { value: "99", label: "xxx" },
+    { value: "25", label: "selected projects" },
+    { value: "54", label: "member org built" },
+    { value: "34,588", label: "organic reach in 3 days" },
+    { value: "2", label: "bachelor degrees, completed simultaneously" },
   ],
 
   featuredEyebrow: "Featured works",

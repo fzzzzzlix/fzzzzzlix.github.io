@@ -22,6 +22,6 @@ export const contact = {
     label: "Curriculum Vitae",
     title: "View CV",
     text: "",
-    href: "xxx",
+    href: "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link",
   },
 };
