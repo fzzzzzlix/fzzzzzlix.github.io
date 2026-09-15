@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { maggi as c } from "../../content/cases/maggi";
+import { getMaggi } from "../../content/cases/maggi";
 import {
   CaseArticle,
   CaseHero,
@@ -16,10 +17,12 @@ import {
   StatGrid,
 } from "./feature-case-primitives";
 
-export function MaggiCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function MaggiCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getMaggi(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         title={c.hero.title}
         descriptor={c.hero.descriptor}
@@ -29,7 +32,7 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
         strip={c.hero.strip}
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.researchQuestion.eyebrow} title={c.researchQuestion.title}>
         {c.researchQuestion.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -101,12 +104,12 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
 
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
         {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidencePanel links={c.demonstrates.links}>
+        <EvidencePanel locale={locale} links={c.demonstrates.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { DEFAULT_LOCALE, localePath, type Locale } from "./i18n";
+import { getUi } from "./content/ui";
+import { LocaleToggle } from "./locale-toggle";
 
 // Public CV link (Google Drive). Every "CV" action across the site points here.
 export const CV_URL = "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link";
@@ -17,34 +20,40 @@ export function StarMark({ size = 28, label }: { size?: number; label?: string }
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const ui = getUi(locale);
+  const path = (to: string) => localePath(locale, to);
+  const links = (
+    <>
+      <Link href={path("/")}>{ui.nav.home}</Link>
+      <Link href={path("/about")}>{ui.nav.about}</Link>
+      <Link href={path("/work")}>{ui.nav.work}</Link>
+      <Link href={path("/experience")}>{ui.nav.experience}</Link>
+      <Link href={path("/interests")}>{ui.nav.interests}</Link>
+      <Link href={path("/contact")}>{ui.nav.contact}</Link>
+    </>
+  );
   return (
-    <div className="site-header-bar">
+    <>
+      <a className="skip-link" href="#main-content">{ui.skipToContent}</a>
+      <div className="site-header-bar">
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="Felix Phan home"><StarMark size={24} /><span>Felix Phan</span></Link>
-        <nav aria-label="Primary navigation">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/work">Work</Link>
-          <Link href="/experience">Experience</Link>
-          <Link href="/interests">Focus Areas</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
+        <Link className="brand" href={path("/")} aria-label={ui.brandHomeAria}><StarMark size={24} /><span>Felix Phan</span></Link>
+        <nav aria-label={ui.navAria}>{links}</nav>
         <details className="mobile-menu">
-          <summary>Menu</summary>
+          <summary>{ui.menu}</summary>
           <div>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/work">Work</Link>
-            <Link href="/experience">Experience</Link>
-            <Link href="/interests">Focus Areas</Link>
-            <Link href="/contact">Contact</Link>
-            <a className="mobile-menu-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV ↗</a>
+            {links}
+            <a className="mobile-menu-cv" href={CV_URL} target="_blank" rel="noreferrer">{ui.viewCv} ↗</a>
           </div>
         </details>
-        <a className="nav-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV <span>↗</span></a>
+        <div className="nav-actions">
+          <LocaleToggle locale={locale} ariaLabel={ui.languageAria} />
+          <a className="nav-cv" href={CV_URL} target="_blank" rel="noreferrer">{ui.viewCv} <span>↗</span></a>
+        </div>
       </header>
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -77,10 +86,11 @@ export function PageHero({ eyebrow, title, deck, aside }: { eyebrow: string; tit
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const ui = getUi(locale);
   return (
     <footer className="site-footer section-shell">
-      <div className="footer-brand"><StarMark size={26} /><span>Follow the North Star</span></div>
+      <div className="footer-brand"><StarMark size={26} /><span>{ui.footerTagline}</span></div>
       <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
     </footer>
   );
@@ -90,15 +100,16 @@ export function SiteFooter() {
 // primary visual. It intentionally exposes only the project identity and
 // discipline plus a neutral status line: no filenames, dimensions, crop rules
 // or production notes ever reach public HTML.
-export function MediaPlaceholder({ projectId, discipline, label = "Primary visual not published", portrait = false, index }: { projectId?: string; discipline?: string; label?: string; portrait?: boolean; index?: number }) {
+export function MediaPlaceholder({ projectId, discipline, label, portrait = false, index, locale = DEFAULT_LOCALE }: { projectId?: string; discipline?: string; label?: string; portrait?: boolean; index?: number; locale?: Locale }) {
+  const text = label ?? getUi(locale).placeholderLabel;
   return (
-    <div className={`media-placeholder${portrait ? " media-placeholder-portrait" : ""}`} role="img" aria-label={`${projectId ? projectId + ", " : ""}${discipline ? discipline + ". " : ""}${label}`}>
+    <div className={`media-placeholder${portrait ? " media-placeholder-portrait" : ""}`} role="img" aria-label={`${projectId ? projectId + ", " : ""}${discipline ? discipline + ". " : ""}${text}`}>
       <div className="placeholder-star" aria-hidden="true"><StarMark size={portrait ? 96 : 54} /></div>
       {typeof index === "number" ? <span className="placeholder-index" aria-hidden="true">{String(index).padStart(2, "0")}</span> : null}
       <div className="placeholder-copy">
         {projectId ? <strong>{projectId}</strong> : null}
         {discipline ? <span>{discipline}</span> : null}
-        <small>{label}</small>
+        <small>{text}</small>
       </div>
     </div>
   );

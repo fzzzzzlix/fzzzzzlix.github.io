@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
-import { PageHero, SiteFooter, SiteHeader, StarMark } from "../site-shell";
-import { contact } from "../content/contact";
+import { ContactView } from "../views/contact-view";
+import { getContact } from "../content/contact";
+import { localeAlternates } from "../i18n";
 
-export const metadata: Metadata = { title: contact.meta.title, description: contact.meta.description, alternates: { canonical: "/contact" } };
+const copy = getContact("en");
 
-export default function ContactPage() {
-  return (
-    <div className="site-frame">
-      <SiteHeader />
-      <main id="main-content">
-        <PageHero eyebrow={contact.hero.eyebrow} title={contact.hero.title} deck={contact.hero.deck} />
-        <section className="contact-grid section-shell">
-          {contact.channels.map((channel) => (
-            <a key={channel.kind} href={channel.href}><span>{channel.kind}</span><strong>{channel.value}</strong><b>↗</b></a>
-          ))}
-          <a id="cv" className="cv-placeholder" href={contact.cv.href} target="_blank" rel="noreferrer"><StarMark size={70} /><span>{contact.cv.label}</span><strong>{contact.cv.title}</strong><p>{contact.cv.text}</p></a>
-        </section>
-      </main>
-      <SiteFooter />
-    </div>
-  );
+export const metadata: Metadata = {
+  title: copy.meta.title,
+  description: copy.meta.description,
+  alternates: localeAlternates("en", "/contact"),
+};
+
+export default function Page() {
+  return <ContactView locale="en" />;
 }

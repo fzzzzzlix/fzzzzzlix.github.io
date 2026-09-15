@@ -5,6 +5,9 @@ import { useMemo, useSyncExternalStore } from "react";
 import { filters, projects } from "../data";
 import { CoverImage, MediaPlaceholder } from "../site-shell";
 import { REAL_IMAGES } from "../project-images";
+import { getProjectCopy } from "../content/projects";
+import { getUi, fill } from "../content/ui";
+import { DEFAULT_LOCALE, localePath, type Locale } from "../i18n";
 
 const roleToFilter: Record<string, string> = {
   // Homepage proposition routes
@@ -74,7 +77,8 @@ function subscribe(cb: () => void) {
   };
 }
 
-export default function WorkGrid({ initialRole }: { initialRole?: string }) {
+export default function WorkGrid({ initialRole, locale = DEFAULT_LOCALE }: { initialRole?: string; locale?: Locale }) {
+  const ui = getUi(locale);
   const search = useSyncExternalStore(
     subscribe,
     () => window.location.search,
@@ -106,20 +110,22 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
   return (
     <>
       <div className="filter-bar-wrap">
-        <div className="filter-bar" aria-label="Filter projects by capability">
+        <div className="filter-bar" aria-label={ui.filterBarAria}>
           {filters.map((filter) => <button key={filter} className={active === filter ? "active" : ""} onClick={() => selectFilter(filter)} aria-pressed={active === filter}>{filter}</button>)}
         </div>
       </div>
-      <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
+      <p className="result-count" aria-live="polite">{fill(ui.resultCount, { shown: visible.length, total: projects.length })}</p>
       <div className={`all-projects-grid${active === "All" ? " dense" : ""}`}>
-        {visible.map((project, index) => (
-          <Link href={`/work/${project.slug}`} className={`work-card${project.feature ? " feature" : ""}`} key={project.id}>
+        {visible.map((base, index) => {
+          const project = getProjectCopy(locale, base);
+          return (
+          <Link href={localePath(locale, `/work/${project.slug}`)} className={`work-card${project.feature ? " feature" : ""}`} key={project.id}>
             {REAL_IMAGES[project.id] ? (
               <div className="project-img-wrap">
                 <CoverImage src={REAL_IMAGES[project.id].src} fit={REAL_IMAGES[project.id].fit} poster={REAL_IMAGES[project.id].poster} alt={project.alt} />
               </div>
             ) : (
-              <MediaPlaceholder projectId={project.id} discipline={project.publicType} index={index + 1} />
+              <MediaPlaceholder locale={locale} projectId={project.id} discipline={project.publicType} index={index + 1} />
             )}
             <div className="work-card-copy">
               <p className="project-meta"><span>{project.year}</span><span className="meta-last">{project.publicType}</span></p>
@@ -128,7 +134,8 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
               <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </>
   );

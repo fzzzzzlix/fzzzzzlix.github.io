@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Project } from "../../data";
 import { StarMark } from "../../site-shell";
+import { getUi, fill } from "../../content/ui";
+import { DEFAULT_LOCALE, localePath, type Locale } from "../../i18n";
 
 /*
  * Shared feature-case primitives.
@@ -22,7 +24,8 @@ type StripItem = { value: ReactNode; unit?: string; label: string };
 /** Hero: eyebrow, title, role, meta chips, optional cover image and fast-evidence strip. */
 export function CaseHero({
   project,
-  eyebrow = "Feature case",
+  locale = DEFAULT_LOCALE,
+  eyebrow,
   title,
   descriptor,
   image,
@@ -34,6 +37,7 @@ export function CaseHero({
   hideYear = false,
 }: {
   project: Project;
+  locale?: Locale;
   eyebrow?: string;
   title: string;
   descriptor?: string;
@@ -45,10 +49,11 @@ export function CaseHero({
   hideType?: boolean;
   hideYear?: boolean;
 }) {
+  const ui = getUi(locale);
   return (
     <header className="p31-hero section-shell">
       <div className="p31-hero-head">
-        <p className="eyebrow"><StarMark size={18} /> {eyebrow}</p>
+        <p className="eyebrow"><StarMark size={18} /> {eyebrow ?? ui.caseLabelFeature}</p>
         <h1>{title}</h1>
         <p className="case-role">{project.role}</p>
         <div className="case-meta">
@@ -60,12 +65,12 @@ export function CaseHero({
         </div>
       </div>
       {image ? (
-        <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
+        <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? fill(ui.opensInNewTab, { title }) : fill(ui.opensFullSize, { title: project.alt })}>
           <img src={image} alt={project.alt} style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
         </a>
       ) : null}
       {strip?.length ? (
-        <ul className="p31-strip" aria-label="Fast evidence">
+        <ul className="p31-strip" aria-label={ui.caseFastEvidenceAria}>
           {strip.map((item, i) => (
             <li key={i}><strong>{item.value}{item.unit ? <small>{item.unit}</small> : null}</strong><span>{item.label}</span></li>
           ))}
@@ -76,10 +81,10 @@ export function CaseHero({
 }
 
 /** One-sentence tension block. */
-export function CaseTension({ children }: { children: ReactNode }) {
+export function CaseTension({ children, locale = DEFAULT_LOCALE }: { children: ReactNode; locale?: Locale }) {
   return (
     <section className="case-tension section-shell">
-      <p className="eyebrow">The tension</p>
+      <p className="eyebrow">{getUi(locale).caseTensionEyebrow}</p>
       <h2>{children}</h2>
     </section>
   );
@@ -248,9 +253,9 @@ export function ResponsiveEmbed({
 type ProofLink = { label: string; url: string; download?: boolean };
 
 /** Row of external / download proof links. */
-export function ProofLinks({ links, label = "Sources and proof" }: { links: ProofLink[]; label?: string }) {
+export function ProofLinks({ links, label, locale = DEFAULT_LOCALE }: { links: ProofLink[]; label?: string; locale?: Locale }) {
   return (
-    <div className="proof-links" aria-label={label}>
+    <div className="proof-links" aria-label={label ?? getUi(locale).caseLinksLabel}>
       {links.map((link) =>
         link.download ? (
           <a key={link.url} href={link.url} download>{link.label}</a>
@@ -277,22 +282,23 @@ export function OwnershipNote(_props: { label?: string; children: ReactNode }) {
  * (per portfolio owner). Any positive artifact links it carried are still
  * surfaced under a neutral "Links" heading.
  */
-export function EvidencePanel({ links }: { children?: ReactNode; links?: ProofLink[] }) {
+export function EvidencePanel({ links, locale = DEFAULT_LOCALE }: { children?: ReactNode; links?: ProofLink[]; locale?: Locale }) {
   if (!links?.length) return null;
   return (
     <section className="evidence-panel" style={{ marginTop: 40 }}>
-      <ProofLinks links={links} label="Links" />
+      <ProofLinks links={links} label={getUi(locale).caseLinksLabel} locale={locale} />
     </section>
   );
 }
 
 /** Previous / all-work / next navigation, matching the site pattern. */
-export function CaseNav({ previous, next }: { previous: Project; next: Project }) {
+export function CaseNav({ previous, next, locale = DEFAULT_LOCALE }: { previous: Project; next: Project; locale?: Locale }) {
+  const ui = getUi(locale);
   return (
-    <nav className="case-nav section-shell" aria-label="Project navigation">
-      <Link href={`/work/${previous.slug}`}><span>Previous project</span><strong>{previous.title}</strong></Link>
-      <Link href="/work"><span>Return to</span><strong>All work</strong></Link>
-      <Link href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong></Link>
+    <nav className="case-nav section-shell" aria-label={ui.caseNavAria}>
+      <Link href={localePath(locale, `/work/${previous.slug}`)}><span>{ui.casePrevious}</span><strong>{previous.title}</strong></Link>
+      <Link href={localePath(locale, "/work")}><span>{ui.caseReturnTo}</span><strong>{ui.caseAllWork}</strong></Link>
+      <Link href={localePath(locale, `/work/${next.slug}`)}><span>{ui.caseNext}</span><strong>{next.title}</strong></Link>
     </nav>
   );
 }

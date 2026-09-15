@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { empacts as c } from "../../content/cases/empacts";
+import { getEmpacts } from "../../content/cases/empacts";
 import {
   CaseArticle,
   CaseHero,
@@ -16,10 +17,12 @@ import {
   StatGrid,
 } from "./feature-case-primitives";
 
-export function EmpactsCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function EmpactsCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getEmpacts(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         title={c.hero.title}
         descriptor={c.hero.descriptor}
@@ -28,7 +31,7 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
         strip={c.hero.strip}
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.verifiedRole.eyebrow} title={c.verifiedRole.title}>
         {c.verifiedRole.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -139,12 +142,12 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
         {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
         <StatGrid label={c.demonstrates.stat.label} items={c.demonstrates.stat.items} />
-        <EvidencePanel links={c.demonstrates.links}>
+        <EvidencePanel locale={locale} links={c.demonstrates.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { muaHa as c } from "../../content/cases/mua-ha";
+import { getMuaHa } from "../../content/cases/mua-ha";
 import {
   CaseArticle,
   CaseHero,
@@ -14,10 +15,12 @@ import {
   ResponsiveEmbed,
 } from "./feature-case-primitives";
 
-export function MuaHaCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function MuaHaCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getMuaHa(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         title={c.hero.title}
         image={c.hero.image}
@@ -27,7 +30,7 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         hideType
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.film.eyebrow} title={c.film.title}>
         {c.film.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -82,12 +85,12 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
 
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
         {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidencePanel links={c.demonstrates.links}>
+        <EvidencePanel locale={locale} links={c.demonstrates.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

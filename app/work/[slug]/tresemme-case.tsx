@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { tresemme as c } from "../../content/cases/tresemme";
+import { getTresemme } from "../../content/cases/tresemme";
 import {
   CaseArticle,
   CaseHero,
@@ -16,10 +17,12 @@ import {
   StatGrid,
 } from "./feature-case-primitives";
 
-export function TresemmeCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function TresemmeCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getTresemme(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         title={c.hero.title}
         image={c.hero.image}
@@ -28,7 +31,7 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
         strip={c.hero.strip}
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.diagnosis.eyebrow} title={c.diagnosis.title}>
         {c.diagnosis.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -105,12 +108,12 @@ export function TresemmeCase({ project, previous, next }: { project: Project; pr
 
       <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
         {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidencePanel links={c.demonstrates.links}>
+        <EvidencePanel locale={locale} links={c.demonstrates.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

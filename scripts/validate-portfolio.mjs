@@ -101,10 +101,36 @@ for (const doc of ["content-master/PROJECT_INDEX.md", "content-master/ASSET_INDE
     if (!text.includes(id)) fail(`${doc} does not document ${id}.`);
 }
 
+
+// ---- Translations keep the same structural values -------------------------
+// Every page has an English content file and a Vietnamese one. The words differ,
+// but anything structural (image paths, route paths, external URLs, mailto/tel
+// links) must be identical, otherwise one language quietly points at a missing
+// image or a dead link. Case files inherit these by spreading the English
+// object, so only the hand-written page files are compared here.
+const TRANSLATED_PAGES = ["home", "about", "contact", "experience", "interests"];
+const structuralStrings = (src) =>
+  [...src.matchAll(/"((?:\/|https?:\/\/|mailto:|tel:)[^"]*)"/g)].map((m) => m[1]).sort();
+
+for (const page of TRANSLATED_PAGES) {
+  const enPath = `app/content/${page}.en.ts`;
+  const viPath = `app/content/${page}.vi.ts`;
+  if (!existsSync(join(ROOT, viPath))) {
+    fail(`${viPath} is missing: every page needs a Vietnamese content file.`);
+    continue;
+  }
+  const en = structuralStrings(read(enPath));
+  const vi = structuralStrings(read(viPath));
+  const missing = en.filter((v) => !vi.includes(v));
+  const extra = vi.filter((v) => !en.includes(v));
+  for (const v of missing) fail(`${viPath} is missing the path/URL "${v}" from ${enPath}.`);
+  for (const v of extra) fail(`${viPath} has the path/URL "${v}", which is not in ${enPath}.`);
+}
+
 // ---------------------------------------------------------------------------
 if (errors.length) {
   console.error(`✗ Portfolio validation failed (${errors.length}):`);
   for (const e of errors) console.error(`  - ${e}`);
   process.exit(1);
 }
-console.log(`✓ Portfolio validation passed: ${projects.length} active projects, featured [${EXPECTED.featured.join(", ")}], docs and assets consistent.`);
+console.log(`✓ Portfolio validation passed: ${projects.length} active projects, featured [${EXPECTED.featured.join(", ")}], docs, assets and en/vi content consistent.`);

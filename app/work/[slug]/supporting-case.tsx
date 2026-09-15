@@ -1,4 +1,6 @@
 import type { Project } from "../../data";
+import { getUi, fill } from "../../content/ui";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
 import { CoverImage, MediaPlaceholder, StarMark } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
@@ -14,7 +16,7 @@ import {
 } from "./feature-case-primitives";
 import { SUPPORTING_CASES, type CaseEmbed, type CaseFigure } from "./supporting-case-data";
 
-type CaseProps = { project: Project; previous: Project; next: Project };
+type CaseProps = { project: Project; previous: Project; next: Project; locale: Locale };
 
 /*
  * Shared supporting-case renderer for every non-flagship project (P01, P03–P07,
@@ -36,19 +38,20 @@ type CaseProps = { project: Project; previous: Project; next: Project };
 // implementation detail and must not leak; this maps it to a meaningful,
 // presentation-forward label so enhanced/research cases never read as generic
 // "supporting" work.
-function caseLabel(project: Project, density: string): string {
+function caseLabel(project: Project, density: string, locale: Locale): string {
+  const ui = getUi(locale);
   const type = project.publicType.toLowerCase();
   const isResearch = /research/.test(type);
   const isSelfInitiated = /self-initiated|concept/.test(type);
   const isProfessional = /professional/.test(type);
   if (density === "D1") {
-    if (isResearch) return "Research case";
-    if (isSelfInitiated) return "Concept development case";
-    if (isProfessional) return "Enhanced professional case";
-    return "Enhanced case";
+    if (isResearch) return ui.caseLabelResearch;
+    if (isSelfInitiated) return ui.caseLabelConcept;
+    if (isProfessional) return ui.caseLabelEnhancedProfessional;
+    return ui.caseLabelEnhanced;
   }
-  if (density === "D2") return isResearch ? "Research case" : "Evidence case";
-  return "Supporting case";
+  if (density === "D2") return isResearch ? ui.caseLabelResearch : ui.caseLabelEvidence;
+  return ui.caseLabelSupporting;
 }
 
 function renderEmbeds(embeds: CaseEmbed[]) {
@@ -77,7 +80,8 @@ function renderFigure(figure: CaseFigure) {
   );
 }
 
-export function SupportingCase({ project, previous, next }: CaseProps) {
+export function SupportingCase({ project, previous, next, locale }: CaseProps) {
+  const ui = getUi(locale);
   const ext = SUPPORTING_CASES[project.id];
   const image = REAL_IMAGES[project.id];
   const density = ext?.density ?? "D3";
@@ -98,7 +102,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
       <header className="p31-hero section-shell">
         <div className="p31-hero-head">
           <p className="eyebrow">
-            <StarMark size={18} /> {caseLabel(project, density)}
+            <StarMark size={18} /> {caseLabel(project, density, locale)}
           </p>
           <h1>{project.title}</h1>
           <p className="case-role">{project.role}</p>
@@ -119,7 +123,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
               href={heroHref}
               target="_blank"
               rel="noreferrer"
-              aria-label={ext?.heroHref ? `${project.title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}
+              aria-label={ext?.heroHref ? fill(ui.opensInNewTab, { title: project.title }) : fill(ui.opensFullSize, { title: project.alt })}
             >
               <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
             </a>
@@ -127,7 +131,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
           </>
         ) : (
           <div style={{ marginTop: 46 }}>
-            <MediaPlaceholder projectId={project.id} discipline={project.publicType} />
+            <MediaPlaceholder locale={locale} projectId={project.id} discipline={project.publicType} />
           </div>
         )}
       </header>
@@ -140,19 +144,19 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
 
       {showTension ? (
         <section className="case-tension section-shell">
-          <p className="eyebrow">{ext?.tensionLabel ?? "The tension"}</p>
+          <p className="eyebrow">{ext?.tensionLabel ?? ui.caseTensionEyebrow}</p>
           <h2>{project.tension}</h2>
         </section>
       ) : null}
 
       {showApproach ? (
-        <CaseSection eyebrow={ext?.approachEyebrow ?? "The approach"} title={ext?.approachTitle ?? "Turn the problem into a structure"}>
+        <CaseSection eyebrow={ext?.approachEyebrow ?? ui.caseApproachEyebrow} title={ext?.approachTitle ?? ui.caseApproachTitle}>
           <Lede>{project.approach}</Lede>
         </CaseSection>
       ) : null}
 
       {showOutput ? (
-        <CaseSection eyebrow={ext?.outputEyebrow ?? "The output"} title={ext?.outputTitle ?? "Make the idea concrete"}>
+        <CaseSection eyebrow={ext?.outputEyebrow ?? ui.caseOutputEyebrow} title={ext?.outputTitle ?? ui.caseOutputTitle}>
           <Lede>{project.output}</Lede>
           {renderEmbeds(embeds)}
           {figures.map(renderFigure)}
@@ -166,8 +170,8 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
 
       {showSignificance ? (
         <CaseSection
-          eyebrow={ext?.significanceEyebrow ?? "The significance"}
-          title={ext?.significanceTitle ?? "What the work can prove"}
+          eyebrow={ext?.significanceEyebrow ?? ui.caseSignificanceEyebrow}
+          title={ext?.significanceTitle ?? ui.caseSignificanceTitle}
         >
           <Lede>{project.significance}</Lede>
         </CaseSection>
@@ -214,18 +218,18 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
       )}
 
       {ext?.capability ? (
-        <CaseSection eyebrow="What this demonstrates" title="The capability this proves">
+        <CaseSection eyebrow={ui.caseDemonstratesEyebrow} title={ui.caseCapabilityTitle}>
           <Lede>{inline(ext.capability)}</Lede>
         </CaseSection>
       ) : null}
 
       {proofLinks.length ? (
         <section className="p31-section section-shell">
-          <ProofLinks links={proofLinks} label="Links" />
+          <ProofLinks links={proofLinks} label={ui.caseLinksLabel} locale={locale} />
         </section>
       ) : null}
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

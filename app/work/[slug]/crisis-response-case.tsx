@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { crisisResponse as c } from "../../content/cases/crisis-response";
+import { getCrisisResponse } from "../../content/cases/crisis-response";
 import {
   Card,
   Cards,
@@ -16,10 +17,12 @@ import {
   ResponsiveEmbed,
 } from "./feature-case-primitives";
 
-export function CrisisResponseCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function CrisisResponseCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getCrisisResponse(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
@@ -31,7 +34,7 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         hideType
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.framing.eyebrow} title={c.framing.title}>
         {c.framing.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -76,12 +79,12 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
           fallbackUrl={c.close.embed.fallbackUrl}
           fallbackLabel={c.close.embed.fallbackLabel}
         />
-        <EvidencePanel links={c.close.links}>
+        <EvidencePanel locale={locale} links={c.close.links}>
           {project.evidence}
         </EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

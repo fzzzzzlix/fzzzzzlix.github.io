@@ -1,6 +1,7 @@
 import type { Project } from "../../data";
+import type { Locale } from "../../i18n";
 import { inline } from "../../content/render-inline";
-import { littleMe as c } from "../../content/cases/little-me";
+import { getLittleMe } from "../../content/cases/little-me";
 import {
   CaseArticle,
   CaseHero,
@@ -16,10 +17,12 @@ import {
   StatGrid,
 } from "./feature-case-primitives";
 
-export function LittleMeCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+export function LittleMeCase({ project, previous, next, locale }: { project: Project; previous: Project; next: Project; locale: Locale }) {
+  const c = getLittleMe(locale);
   return (
     <CaseArticle>
       <CaseHero
+        locale={locale}
         project={project}
         title={c.hero.title}
         descriptor={c.hero.descriptor}
@@ -29,7 +32,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
         strip={c.hero.strip}
       />
 
-      <CaseTension>{project.tension}</CaseTension>
+      <CaseTension locale={locale}>{project.tension}</CaseTension>
 
       <CaseSection eyebrow={c.participation.eyebrow} title={c.participation.title}>
         {c.participation.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
@@ -166,7 +169,7 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
         <EvidencePanel>{project.evidence}</EvidencePanel>
       </CaseSection>
 
-      <CaseNav previous={previous} next={next} />
+      <CaseNav previous={previous} next={next} locale={locale} />
     </CaseArticle>
   );
 }

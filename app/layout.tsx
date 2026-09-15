@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   icons: { icon: asset("/favicon.svg"), shortcut: asset("/favicon.svg") },
 };
 
+// The root <html lang> is English because that is the default tree. Each page
+// frame carries its own lang (see the views), so the /vi tree is correctly
+// marked as Vietnamese for assistive tech and browser translation.
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -45,7 +48,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
         <script
           type="application/ld+json"
