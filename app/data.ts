@@ -24,6 +24,31 @@ export type Project = {
 export const projects: Project[] = 
 [
   {
+    "id": "P35",
+    "title": "StarX",
+    "slug": "starx",
+    "year": "2026",
+    "publicType": "Early-stage entertainment venture",
+    "role": "Creative Lead and Format Developer, co-founder. Formats, game design, scripts, production plans, content marketing and brand identity.",
+    "tension": "Founded an entertainment venture's creative side: three original formats, one live League event, one filmed episode, and the brand that held it together.",
+    "approach": "Designed every format around one question, which is what rule makes a group of people worth watching. Built the StarX League on locked three-person roles and a written scoring economy, recced the Hồ Tràm venue before designing a single game, then surveyed the players afterwards and wrote the weakest result, rule clarity, into the next format as a 75-second constraint.",
+    "output": "One delivered two-day live event (13 players, 4 teams, 16 games, 8 venue zones) with game plan, comms plan, player survey and recap video; a filmed but unedited episode with script and an eleven-sheet format workbook; two pre-production format documents; and a complete brand identity with a 23-page guidelines document.",
+    "significance": "Shows format design carried from concept to live delivery and back into revision: the mechanics, the run of show, the post-event evidence and the honest account of what the event did not prove.",
+    "evidence": "Felix's own account of a three-person venture he co-founded. The concepts, rules, scripts and brand identity are his; live delivery was shared across the three founders. Survey figures are aggregated from 10 of 13 players and respondents are anonymised. Map 02, Đêm Tiệc Mặt Nạ and the Sunday We Vibe edit never ran, and are labelled pre-production or unedited rather than delivered. No planned-versus-delivered change log exists for Map 01, which is stated on the page.",
+    "source": "P35 StarX case handoff pack; Map 01 game plan and player survey (30 June 2026); Sunday We Vibe EP01 script and format workbook; Tái Hoang Dã and Đêm Tiệc Mặt Nạ design documents; StarX brand guidelines",
+    "priority": "A: Flagship candidate",
+    "feature": true,
+    "tags": [
+      "Project Management",
+      "Creative Content",
+      "Strategy & Research"
+    ],
+    "assetFilename": "felix-p35-starx-cover-16x9-v01.jpg",
+    "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
+    "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
+    "alt": "Players mid-game at the StarX League Map 01 live event in Hồ Tràm"
+  },
+  {
     "id": "P01",
     "title": "Bếp Nhà Haha Gặp Bếp Cung Đình",
     "slug": "bep-nha-haha-gap-bep-cung-dinh",

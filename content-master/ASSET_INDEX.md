@@ -65,6 +65,7 @@ Curated evidence/photography for the bespoke feature cases (added 2026-08-09 fro
 | P13 | cases/p13/p13-comment-themes.png, p13-sentiment-volume.png, p13-campaign-framework.png, p13-big-idea.png, p13-storyboard.png | contain | Research method, insight, proposed direction, proposed Tết creative |
 | P20 | cases/p20/p20-platform-analysis.png, p20-platform-table.png, p20-kol-diagnosis.png, p20-interactive-dooh.png, p20-plan-pulsing.png | contain | Platform diagnosis, creator-role design, DOOH concept, pulsing plan |
 | P22 | cases/p22/p22-key-visual.jpg (hero), p22-floor-plan.png, p22-zone-1.jpg, p22-calm-jar.jpg, p22-buddy-pickup.jpg | cover (photos) / contain (plan) | Hero, participant-journey floor plan, activity photos |
+| P35 | cases/p35/: all 11 manifest slots pending; page renders labelled placeholders until files land | cover (photos) / contain (docs) | Do not substitute generic stock; cut a slot instead. No participant names, phone numbers or unpermitted faces |
 | P25 | cases/p25/p25-key-visual.jpg (hero), p25-business-model-canvas.png, p25-event.jpg, p25-onepager-1.png, p25-onepager-2.png, p25-felix.jpg | cover (photos) / contain (docs) | Public-safe organisation/system evidence only |
 | P32 | cases/p32/p32-press-release-p1.png | contain | Felix-authored simulation press release (primary individual proof) |
 
