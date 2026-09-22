@@ -11,6 +11,7 @@ import { TresemmeCase } from "./tresemme-case";
 import { LittleMeCase } from "./little-me-case";
 import { EmpactsCase } from "./empacts-case";
 import { CrisisResponseCase } from "./crisis-response-case";
+import { StarXCase } from "./starx-case";
 import { SupportingCase } from "./supporting-case";
 
 type CaseProps = { project: Project; previous: Project; next: Project };
@@ -25,6 +26,7 @@ const BESPOKE_CASES: Record<string, ComponentType<CaseProps>> = {
   P25: EmpactsCase,
   P31: BeLocalCase,
   P32: CrisisResponseCase,
+  P35: StarXCase,
 };
 
 export function generateStaticParams() {

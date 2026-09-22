@@ -24,8 +24,8 @@ const densityOf = (id) => {
 };
 
 // ---- Project integrity ----------------------------------------------------
-test("exactly 25 active projects", () => {
-  assert.equal(projects.length, 25);
+test("exactly 26 active projects", () => {
+  assert.equal(projects.length, 26);
 });
 
 test("retired ids are absent", () => {
@@ -45,9 +45,29 @@ test("all ids and slugs are unique", () => {
   assert.equal(new Set(slugs).size, slugs.length);
 });
 
-test("featured set is exactly the locked six", () => {
+test("featured set is exactly the locked seven", () => {
   const featured = projects.filter((p) => p.feature).map((p) => p.id).sort();
-  assert.deepEqual(featured, ["P02", "P13", "P20", "P22", "P25", "P31"]);
+  assert.deepEqual(featured, ["P02", "P13", "P20", "P22", "P25", "P31", "P35"]);
+});
+
+test("P35 StarX leads the work index and is a bespoke feature case", () => {
+  assert.equal(projects[0].id, "P35", "StarX must sit first in the projects array");
+  assert.equal(byId.P35.slug, "starx");
+  assert.equal(byId.P35.feature, true);
+  assert.match(read("app/work/[slug]/page.tsx"), /P35:\s*StarXCase/);
+});
+
+test("StarX claims each format only at the stage it actually reached", () => {
+  const copy = read("app/content/cases/starx.ts");
+  // The League event was delivered live; the episode was filmed but never cut,
+  // and two further formats never ran. Those boundaries must stay on the page.
+  assert.match(copy, /Filmed · never edited/);
+  assert.match(copy, /Original format · pre-production/);
+  assert.match(copy, /never ran, because there was only ever one season/);
+  assert.match(copy, /Post-production never started/);
+  // Survey evidence stays aggregated and anonymised.
+  assert.match(copy, /10 of 13 players responded/);
+  assert.match(copy, /Aggregated, anonymised/);
 });
 
 // ---- Status corrections ---------------------------------------------------
