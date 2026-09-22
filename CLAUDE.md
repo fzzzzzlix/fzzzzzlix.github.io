@@ -75,6 +75,9 @@ via `app/work/work-grid.tsx` — there is no separate content file for the grid.
   invents one, fails `npx tsc --noEmit`. It cannot go half-translated by accident.
 - **Adding a language** means adding it to `LOCALES` in `app/i18n.ts`, adding a
   content file per page, and copying the `app/vi/` route folder.
+- **Proofreading.** `npm run extract:translations` prints every English/Vietnamese
+  pair as JSON, for building a side-by-side review page. Dev helper, not part of
+  the build.
 
 ## How to edit copy
 
