@@ -26,7 +26,7 @@ export const about = {
     lead: "I'm a creative strategist and storyteller. I find the tension inside a brief, give it a structure, and stay with it until the idea works in the real world.",
   },
   story: [
-    "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
+    "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude**: whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
     "My portfolio spans several fields, which might make you ask *what Felix actually specialises in*. Well: **my expertise is getting the job done**. I build things that need to work: projects, teams, systems, campaigns, events and research frameworks. I'm at my best when the objective matters and the problem is too complex for a template. So if you have a job that needs doing, reach out ^^",
   ],
   quote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",

@@ -17,7 +17,7 @@ export const home = {
 
   proofBand: [
     { value: "2", label: "bachelor degrees, completed simultaneously" },
-    { value: "4", label: "initiatives founded" },
+    { value: "5", label: "initiatives founded & co-founded" },
     { value: "26", label: "selected projects" },
     { value: "54", label: "member-org managed" },
   ],
@@ -30,7 +30,7 @@ export const home = {
     { id: "P35", title: "StarX", lane: "Format & Entertainment", role: "Co-founder, Creative Lead & Format Developer", proof: "The creative side of an entertainment venture: three original formats, one live League event delivered to 13 players over two days, one filmed episode, and the brand that held it together.", route: "/work/starx" },
     { id: "P22", title: "Little Me Interactive Exhibition", lane: "Events & Advocacy", role: "Founder, Head Organiser", proof: "An interactive exhibition under the mental-wellness theme that achieved 316 visits, 34,588 organic reach, and 14M VND funding.", route: "/work/little-me" },
     { id: "P25", title: "EMPACTS: Startup Ecosystem for SDGs", lane: "Organisation Design", role: "Founder, Vice-President", proof: "Built a non-profit organisation from scratch, with 40+ SOPs and a full leadership handover.", route: "/work/empacts" },
-    { id: "P31", title: "Be Local", lane: "Project Management", role: "Founder, Project Manager", proof: "A community-based tourism venture planned as a real project. Output: 12 deliverables, including WBS in MPP for five phases from scope to launch - all delegated ownership under weekly review.", route: "/work/be-local" },
+    { id: "P31", title: "Be Local", lane: "Project Management", role: "Founder, Project Manager", proof: "A community-based tourism venture planned as a real project. Output: 12 deliverables, including WBS in MPP for five phases from scope to launch, all delegated ownership under weekly review.", route: "/work/be-local" },
     { id: "P13", title: "MAGGI Recipe Solution: Research to Execution", lane: "Research & Planning", role: "Researcher and Strategic Planner", proof: "An inclusive project using social listening analysis of 74 posts and 755 coded comments to propose an IMC Tet campaign for MAGGI new product line.", route: "/work/maggi-recipe-solution" },
     { id: "P20", title: "TRESemmé Vietnam Insights Report and Media Plan", lane: "Research & Planning", role: "Researcher and Strategic Planner", proof: "Cross-platform TikTok/Facebook/Instagram/YouTube diagnosis and a VND 7.3B media plan proposal.", route: "/work/tresemme-insights-media-plan" },
     { id: "P02", title: "Mùa Hạ Của Chúng Tôi", lane: "Scriptwriting & Production", role: "Director, Writer, and Co-editor", proof: "A coming-of-age short film that won First Prize in the graduation showcase.", route: "/work/mua-ha-cua-chung-toi" },
@@ -39,8 +39,8 @@ export const home = {
   routes: {
     aboutCta: "More about Felix",
     lead: [
-      "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
-      "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
+      "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude**: whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
+      "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template, so if you also have a job that needs to be done, feel free to reach out ^^",
     ],
     title: "Serial organisation-builder",
     image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end" },
@@ -55,7 +55,7 @@ export const home = {
   interestCallout: {
     eyebrow: "Focus areas",
     title: "Sustainability, culture, and advocacy",
-    text: "From EMPACTS - built for SDG start-ups, to a Hà Giang tourism plan and a mental-wellness exhibition: sustainability, modern Vietnamese culture, and social advocacy keep coming back in my work.",
+    text: "From EMPACTS, built for SDG start-ups, to a Hà Giang tourism plan and a mental-wellness exhibition: sustainability, modern Vietnamese culture, and social advocacy keep coming back in my work.",
     cta: "Explore the focus areas",
     image: { src: "/images/Home/Home_The Impact-maker.jpg", alt: "Felix Phan driving social impact" },
   },

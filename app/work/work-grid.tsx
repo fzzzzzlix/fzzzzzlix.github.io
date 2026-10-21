@@ -21,6 +21,8 @@ const roleToFilter: Record<string, string> = {
 
 // Short, shareable slugs for the URL (e.g. /work?filter=research).
 const FILTER_SLUGS: Record<string, string> = {
+  Featured: "featured",
+  All: "all",
   "Creative Content": "creative",
   "Strategy & Research": "research",
   "Event & Production": "production",
@@ -37,11 +39,14 @@ const SLUG_TO_FILTER: Record<string, string> = {
   events: "Event & Production",
 };
 
+// The page opens on the feature cases; "All" is the last tab.
+const DEFAULT_FILTER = "Featured";
+
 function resolveRole(initialRole?: string): string {
-  if (!initialRole) return "All";
+  if (!initialRole) return DEFAULT_FILTER;
   if (roleToFilter[initialRole]) return roleToFilter[initialRole];
   if (filters.includes(initialRole)) return initialRole;
-  return "All";
+  return DEFAULT_FILTER;
 }
 
 // Resolve the active filter from the URL. `filter` (slug) is the canonical,
@@ -51,7 +56,6 @@ function filterFromSearch(search: string, fallback: string): string {
   const params = new URLSearchParams(search);
   const slug = params.get("filter");
   if (slug) {
-    if (slug === "all") return "All";
     if (SLUG_TO_FILTER[slug]) return SLUG_TO_FILTER[slug];
     return fallback;
   }
@@ -85,7 +89,7 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
   function selectFilter(filter: string) {
     const url = new URL(window.location.href);
     url.searchParams.delete("role");
-    if (filter === "All") url.searchParams.delete("filter");
+    if (filter === DEFAULT_FILTER) url.searchParams.delete("filter");
     else url.searchParams.set("filter", FILTER_SLUGS[filter] ?? filter);
     window.history.pushState({}, "", url);
     window.dispatchEvent(new Event("workfilterchange"));
@@ -101,7 +105,11 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
     return [...projects].sort((a, b) => recency(b) - recency(a));
   }, []);
 
-  const visible = useMemo(() => active === "All" ? sorted : sorted.filter((project) => project.tags.includes(active)), [active, sorted]);
+  const visible = useMemo(() => {
+    if (active === "All") return sorted;
+    if (active === "Featured") return sorted.filter((project) => project.feature);
+    return sorted.filter((project) => project.tags.includes(active));
+  }, [active, sorted]);
 
   // Desktop preview follows the row under the pointer or keyboard focus; it is
   // an enhancement only, every row already carries what is needed to choose.

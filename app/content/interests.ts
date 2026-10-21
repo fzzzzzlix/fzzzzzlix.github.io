@@ -18,7 +18,7 @@ export const interests = {
     ] },
     { title: "Culture & Media", text: "Vietnamese heritage, contemporary culture, identity, collective memory and how media represents them.", projects: ["P11", "P16", "P33"], images: [
       { src: "/images/Focus area/Focus_Culture & Media 1_Felix is a videographer.jpg", alt: "Felix Phan working as a videographer", caption: "On camera as videographer" },
-      { src: "/images/Focus area/Focus_Culture & Media_Felix at a cutural branding concert.jpg", alt: "Felix Phan at a cultural branding concert", caption: "At a cultural branding concert" },
+      { src: "/images/Focus area/Focus_Culture & Media_Felix at a cutural branding concert.jpg", alt: "Felix Phan at a cultural branding concert", caption: "Received over 2 million views at my fancam site for concerts and music shows" },
     ] },
     { title: "Social Advocacy", text: "Inclusion, diversity, student rights and wellbeing, delivered through events and student-leadership roles.", projects: ["P22", "P30", "P14"], images: [
       { src: "/images/Focus area/Focus_Social advocacy 2_Pride week host.jpg", alt: "Felix Phan hosting Pride Week", caption: "Hosting Pride Week" },
