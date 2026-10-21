@@ -42,7 +42,7 @@ export const home = {
       "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
       "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
     ],
-    title: "Serial organization-builder",
+    title: "Serial organisation-builder",
     image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end" },
     // `filter` maps to a work-page category, keep it valid.
     rows: [
