@@ -9,10 +9,10 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
   const { role } = await searchParams;
   return (
     <div className="site-frame">
-      <SiteHeader />
+      <SiteHeader current="/work" />
       <main id="main-content">
         <PageHero eyebrow="The work" deck={`Start with the ${featureProjects.length} feature cases or filter by the capability you need.`} aside={<div className="page-aside-stat"><strong>{projects.length}</strong><span>selected projects</span></div>} />
-        <section className="work-index section-shell" aria-label="Project index"><WorkGrid initialRole={role} /></section>
+        <section className="work-index" aria-label="Project index"><WorkGrid initialRole={role} /></section>
       </main>
       <SiteFooter />
     </div>
