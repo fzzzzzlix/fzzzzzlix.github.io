@@ -145,21 +145,8 @@ export const empacts = {
       tag: "The team",
     },
   },
+  // Links shown at the end of the case.
   demonstrates: {
-    eyebrow: "What this demonstrates",
-    title: "Organisation design and communication infrastructure",
-    body: [
-      "EMPACTS shows Felix building beyond a single campaign: defining how a multi-department youth organisation coordinates work, documents standards, presents itself consistently and hands responsibility forward.",
-    ],
-    stat: {
-      label: "Organisation scale",
-      items: [
-        { value: "54", label: "members" },
-        { value: "6", label: "departments" },
-        { value: "21", label: "roles" },
-        { value: "40+", label: "SOPs" },
-      ],
-    },
     links: [
       { label: "EMPACTS on Facebook", url: FB },
       { label: "EMPACTS on LinkedIn", url: LINKEDIN },

@@ -164,11 +164,4 @@ export const littleMe = {
       body: "Attendance and reach figures come from the event’s own reporting. The 300+ visit KPI was reached by the close of the three-day event, not on Day 2, after two days the total was 212. Any fundraising total is omitted here because the supplied event report does not evidence it. The Inclusion Award recognised the RMIT Hanoi Student Council, the organising body, not Felix individually.",
     },
   },
-  demonstrates: {
-    eyebrow: "What this demonstrates",
-    title: "Experience design plus operational leadership",
-    body: [
-      "Little Me shows how Felix can turn a sensitive communication objective into a participatory format, coordinate a large student team, and evaluate delivery against explicit attendance and communication KPIs, stating the result and the limitation with equal precision.",
-    ],
-  },
 };

@@ -8,10 +8,9 @@ import { inline } from "./content/render-inline";
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
-// Editorial rhythm for the featured sequence, assigned by position. A project
-// without a published image always becomes a typographic plate instead, so the
-// layout never fakes a visual it does not have.
-const FEATURE_LAYOUTS = ["lead", "right", "wide", "pair", "pair", "close"] as const;
+// Home shows a short selection, one per capability route; the full set lives
+// on /work. Change the ids here to change the selection (order follows home.ts).
+const HOME_FEATURED_IDS = ["P35", "P22", "P13", "P02"];
 
 // "Felix Phan" is set as two lines: roman given name, italic family name.
 function HeroName({ name }: { name: string }) {
@@ -25,11 +24,12 @@ function HeroName({ name }: { name: string }) {
 }
 
 export default function Home() {
+  const featured = home.featured.filter((p) => HOME_FEATURED_IDS.includes(p.id));
   return (
     <div className="site-frame">
       <SiteHeader current="/" />
       <main id="main-content">
-        {/* Poster: the cover */}
+        {/* Cover */}
         <section className="hero surface-wine" aria-labelledby="hero-title">
           <div className="hero-star-wrap" aria-hidden="true">
             <NorthStar mode="glow" id="hero-star" className="hero-star" />
@@ -54,7 +54,7 @@ export default function Home() {
           <p className="hero-orbit" aria-hidden="true">{home.hero.orbitNote}</p>
         </section>
 
-        {/* Transition to the reading surface: portrait and the four proof figures */}
+        {/* Proof, in one line */}
         <section className="profile-band section-shell" aria-label="Selected evidence">
           <figure className="profile-portrait">
             <img src={asset("/images/hero-portrait.jpg")} alt={home.hero.portraitAlt} width={800} height={1000} />
@@ -66,16 +66,52 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Work, early */}
+        <section className="featured section-shell" aria-labelledby="featured-title">
+          <div className="featured-head">
+            <h2 id="featured-title" className="featured-title">{home.featuredEyebrow}</h2>
+            <Link className="text-link" href="/work">{home.featuredLink} <span aria-hidden="true">↗</span></Link>
+          </div>
+          <ol className="featured-list">
+            {featured.map((project, index) => {
+              const imgInfo = REAL_IMAGES[project.id];
+              const pAlt = projectsById[project.id]?.alt ?? project.title;
+              const folio = String(index + 1).padStart(2, "0");
+              // No image: a typographic plate. First imaged project leads; the rest are compact rows.
+              const firstImaged = featured.findIndex((p) => REAL_IMAGES[p.id]);
+              const layout = !imgInfo ? "plate" : index === firstImaged ? "lead" : "row";
+              return (
+                <li key={project.id} className={`feature-item layout-${layout}`}>
+                  <Link className="feature-link" href={project.route}>
+                    {imgInfo ? (
+                      <span className="feature-media">
+                        <CoverImage src={imgInfo.src} fit={imgInfo.fit} poster={imgInfo.poster} alt={pAlt} />
+                      </span>
+                    ) : null}
+                    <div className="feature-copy">
+                      <p className="feature-meta"><span className="feature-folio">{folio}</span><span>{project.lane}</span></p>
+                      <h3 className="feature-name">{project.title}</h3>
+                      <p className="feature-proof">{project.proof}</p>
+                      <p className="feature-role">Role: {project.role}</p>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+
+        {/* The person and the three routes */}
         <section className="routes section-shell" aria-labelledby="routes-title">
-          <h2 id="routes-title" className="routes-title">{home.routes.title}</h2>
           <div className="routes-intro">
-            <figure className="routes-figure">
-              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" width={2560} height={1706} />
-            </figure>
             <div className="routes-copy">
+              <h2 id="routes-title" className="routes-title">{home.routes.title}</h2>
               {home.routes.lead.map((para, i) => <p className="routes-lead" key={i}>{inline(para)}</p>)}
               <Link className="text-link" href="/about">{home.routes.aboutCta} <span aria-hidden="true">→</span></Link>
             </div>
+            <figure className="routes-figure">
+              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" width={2560} height={1706} />
+            </figure>
           </div>
           <div className="route-list">
             {home.routes.rows.map((row, index) => (
@@ -89,43 +125,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="featured section-shell" aria-labelledby="featured-title">
-          <h2 id="featured-title" className="featured-title">{home.featuredEyebrow}</h2>
-          <div className="featured-list">
-            {home.featured.map((project, index) => {
-              const imgInfo = REAL_IMAGES[project.id];
-              const pAlt = projectsById[project.id]?.alt ?? project.title;
-              // Rhythm counts only projects with an image, so a plate never shifts the pattern.
-              const imaged = home.featured.slice(0, index).filter((p) => REAL_IMAGES[p.id]).length;
-              const layout = imgInfo ? FEATURE_LAYOUTS[imaged % FEATURE_LAYOUTS.length] : "plate";
-              const folio = String(index + 1).padStart(2, "0");
-              return (
-                <Link className={`feature-item layout-${layout}`} href={project.route} key={project.id}>
-                  {layout === "plate" ? (
-                    <span className="feature-plate surface-wine" aria-hidden="true"><NorthStar className="feature-plate-star" /></span>
-                  ) : (
-                    <span className="feature-media">
-                      <CoverImage src={imgInfo.src} fit={imgInfo.fit} poster={imgInfo.poster} alt={pAlt} />
-                    </span>
-                  )}
-                  <div className="feature-copy">
-                    <p className="feature-meta"><span className="feature-folio">{folio}</span><span>{project.lane}</span></p>
-                    <h3 className="feature-name">{project.title}</h3>
-                    <p className="feature-proof">{project.proof}</p>
-                    <p className="feature-role">Role: {project.role}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="featured-more">
-            <Link className="text-link text-link-large" href="/work">{home.featuredLink} <span aria-hidden="true">↗</span></Link>
-          </div>
-        </section>
-
-        {/* Poster punctuation */}
         <section className="interest-callout surface-wine" aria-labelledby="interest-title">
-          <NorthStar className="interest-star" />
           <div className="interest-inner section-shell">
             <div className="interest-copy">
               <p className="eyebrow">{home.interestCallout.eyebrow}</p>

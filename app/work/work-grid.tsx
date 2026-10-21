@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { filters, projects } from "../data";
-import { CoverImage } from "../site-shell";
+import { CoverImage, StarMark } from "../site-shell";
 import { REAL_IMAGES } from "../project-images";
 
 const roleToFilter: Record<string, string> = {
@@ -103,6 +103,12 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
 
   const visible = useMemo(() => active === "All" ? sorted : sorted.filter((project) => project.tags.includes(active)), [active, sorted]);
 
+  // Desktop preview follows the row under the pointer or keyboard focus; it is
+  // an enhancement only, every row already carries what is needed to choose.
+  const [previewId, setPreviewId] = useState<string | null>(null);
+  const preview = visible.find((p) => p.id === previewId) ?? visible[0];
+  const previewImg = preview ? REAL_IMAGES[preview.id] : undefined;
+
   return (
     <>
       <div className="filter-bar-wrap">
@@ -110,37 +116,56 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
           {filters.map((filter) => <button key={filter} type="button" className={active === filter ? "active" : ""} onClick={() => selectFilter(filter)} aria-pressed={active === filter}>{filter}</button>)}
         </div>
       </div>
-      <div className="section-shell work-list-shell">
-        <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
-        <ol className="work-list">
-          {visible.map((project, index) => {
-            const img = REAL_IMAGES[project.id];
-            // Scale comes from the data: feature cases get a large spread, the rest
-            // a contents-page row. Rows with no published image stay typographic.
-            const featureCount = visible.slice(0, index).filter((p) => p.feature).length;
-            const cls = ["work-row", project.feature ? "is-feature" : "", project.feature && featureCount % 2 ? "is-flip" : "", img ? "" : "no-media"].filter(Boolean).join(" ");
-            return (
-              <li key={project.id}>
-                <Link href={`/work/${project.slug}`} className={cls}>
-                  <span className="work-row-num">{String(index + 1).padStart(2, "0")}</span>
-                  <div className="work-row-head">
-                    <p className="project-meta"><span>{project.year}</span><span className="meta-last">{project.publicType}</span></p>
-                    <h2>{project.title}</h2>
-                  </div>
-                  <div className="work-row-body">
-                    <p>{project.tension}</p>
-                    <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  </div>
-                  {img ? (
-                    <div className="work-row-media">
-                      <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt={project.alt} />
+      <div className="section-shell work-layout">
+        <div className="work-list-col">
+          <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
+          <ol className="work-list">
+            {visible.map((project, index) => {
+              const img = REAL_IMAGES[project.id];
+              return (
+                <li key={project.id}>
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className={`work-row${project.id === preview?.id ? " is-previewed" : ""}`}
+                    onMouseEnter={() => setPreviewId(project.id)}
+                    onFocus={() => setPreviewId(project.id)}
+                  >
+                    <span className="work-row-num">{String(index + 1).padStart(2, "0")}</span>
+                    <div className="work-row-main">
+                      <h2>{project.title}</h2>
+                      <p className="work-row-premise">{project.tension}</p>
+                      <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     </div>
-                  ) : null}
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
+                    <p className="work-row-role">{project.role}</p>
+                    <div className="work-row-meta">
+                      <p className="project-meta"><span>{project.year}</span><span className="meta-last">{project.publicType}</span></p>
+                    </div>
+                    {img ? (
+                      <span className="work-row-thumb">
+                        <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt={project.alt} />
+                      </span>
+                    ) : null}
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+        {preview ? (
+          <aside className="work-preview" aria-hidden="true">
+            <div className="work-preview-inner">
+              {previewImg ? (
+                <span className="work-preview-media" key={preview.id}>
+                  <CoverImage src={previewImg.src} fit={previewImg.fit} poster={previewImg.poster} alt="" />
+                </span>
+              ) : (
+                <span className="work-preview-plate" key={preview.id}><StarMark size={40} /></span>
+              )}
+              <p className="work-preview-title">{preview.title}</p>
+              <p className="project-meta"><span>{preview.year}</span><span className="meta-last">{preview.publicType}</span></p>
+            </div>
+          </aside>
+        ) : null}
       </div>
     </>
   );

@@ -72,7 +72,7 @@ export const experience = {
       { span: "2022 - April 2027", title: "Bachelor of Professional Communication", text: "RMIT University" },
       { span: "2022 - April 2027", title: "Bachelor of Business Administration in English", text: "National Economics University" },
     ],
-    note: "Available for full-time opportunities since I have completed all courses and will receive my degrees at the graduation ceremonies in April 2027.",
+    note: "All coursework complete (degrees conferred at the April 2027 graduation ceremonies). Available for full-time work now.",
   },
   credentials: {
     eyebrow: "Selected credentials",

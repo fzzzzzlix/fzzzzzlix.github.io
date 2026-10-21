@@ -85,7 +85,7 @@ export const muaHa = {
     } as null | { src: string; alt: string; caption: string; tag: string },
   },
   demonstrates: {
-    eyebrow: "What this demonstrates",
+    eyebrow: "What I learnt from it",
     title: "Narrative authorship that survives collaboration",
     body: [
       "Making this film taught me that a script only half exists on the page: the rest is decided in performance, coverage and the edit. Carrying my own writing through direction and editing, next to a team, showed me how much a story shifts on the way to the screen, and how to protect its intention without clinging to authorship of every frame.",

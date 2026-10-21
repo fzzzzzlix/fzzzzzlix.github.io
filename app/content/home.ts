@@ -42,7 +42,7 @@ export const home = {
       "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
       "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
     ],
-    title: "A one-man army",
+    title: "Serial organisation-builder",
     image: { src: "/images/Home/Home_A one-man army.jpg", alt: "Felix Phan working across a project end to end" },
     // `filter` maps to a work-page category, keep it valid.
     rows: [
@@ -54,8 +54,8 @@ export const home = {
 
   interestCallout: {
     eyebrow: "Focus areas",
-    title: "The Impact-maker",
-    text: "Work across sustainable development, ESG, CSR and social-enterprise support, mixed-methods research, and systematic-thinking, alongside Vietnamese culture, media, and social advocacy.",
+    title: "Sustainability, culture, and advocacy",
+    text: "From EMPACTS - built for SDG start-ups, to a Hà Giang tourism plan and a mental-wellness exhibition: sustainability, modern Vietnamese culture, and social advocacy keep coming back in my work.",
     cta: "Explore the focus areas",
     image: { src: "/images/Home/Home_The Impact-maker.jpg", alt: "Felix Phan driving social impact" },
   },
