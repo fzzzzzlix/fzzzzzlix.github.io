@@ -42,9 +42,9 @@ export const experience = {
       "/images/p10-onset-2.jpg",
     ] },
     { dates: "Sep 2023 - Jun 2024", org: "RMIT Innovation & Entrepreneurship Club Hanoi", role: "Assistant to Vice President, Operations and Marketing Lead", scope: [
-      "Led a 42-person operations team to deliver a series of workshops and panel talks across Hanoi – achieved ~200 attendees, 5 industry speakers, and 30,000+ engagements on social media per cycle.",
+      "Led a 42-person operations team to deliver a series of workshops and panel talks across Hanoi: achieved ~200 attendees, 5 industry speakers, and 30,000+ engagements on social media per cycle.",
       "Supervised HR and Media departments, managing cross-functional coordination and ensuring output quality across both teams.",
-      "Directed a 12-person team for a charity fundraiser supporting pediatric cancer patients at Hanoi's K Hospital – conceptualized, produced, and sold a handmade product line that raised 20,000,000 VND and generated 20,000+ engagements on social media within 2 weeks.",
+      "Directed a 12-person team for a charity fundraiser supporting pediatric cancer patients at Hanoi's K Hospital: conceptualized, produced, and sold a handmade product line that raised 20,000,000 VND and generated 20,000+ engagements on social media within 2 weeks.",
     ], links: [
       { label: "Facebook", url: "https://www.facebook.com/ieclub.hn/" },
     ], images: [
@@ -53,8 +53,8 @@ export const experience = {
       "/images/cases/p26/p26-petals-recap.jpg",
     ] },
     { dates: "Oct 2022 - Jun 2024", org: "RMIT Vietnam Student Council Hanoi", role: "Content Creator → Media Planner → Director of Content → Student Rights & Welfare Officer", scope: [
-      "Led a 27-person team in producing a full-scale interactive exhibition on mental wellness – achieved 316 visits, a 6.96% return rate, and 34,500+ engagements on social media within 3 days.",
-      "Led a 25-person team in organizing the Student Council's annual Christmas event – delivered 225 booth visits, 101 workshop attendees, and 15,000+ engagements on social media across 5 days.",
+      "Led a 27-person team in producing a full-scale interactive exhibition on mental wellness: achieved 316 visits, a 6.96% return rate, and 34,500+ engagements on social media within 3 days.",
+      "Led a 25-person team in organizing the Student Council's annual Christmas event: delivered 225 booth visits, 101 workshop attendees, and 15,000+ engagements on social media across 5 days.",
       "Collaborated with 5 RMIT University departments to identify student welfare gaps and advocate for policy changes, resulting in cross-institutional action.",
     ], links: [
       { label: "Read more (RMIT)", url: "https://www.rmit.edu.vn/students/student-news-and-events/student-news/student-council-empowering-voices-rmit-vietnam" },

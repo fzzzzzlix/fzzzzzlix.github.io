@@ -67,7 +67,8 @@ export default function Home() {
         </section>
 
         {/* Work, early */}
-        <section className="featured section-shell" aria-labelledby="featured-title">
+        <section className="featured surface-wine" aria-labelledby="featured-title">
+          <div className="section-shell">
           <div className="featured-head">
             <h2 id="featured-title" className="featured-title">{home.featuredEyebrow}</h2>
             <Link className="text-link" href="/work">{home.featuredLink} <span aria-hidden="true">↗</span></Link>
@@ -99,6 +100,7 @@ export default function Home() {
               );
             })}
           </ol>
+          </div>
         </section>
 
         {/* The person and the three routes */}

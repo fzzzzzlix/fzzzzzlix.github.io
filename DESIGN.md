@@ -24,7 +24,7 @@ the colophon.
 
 | Mode | Surface | Used for | Character |
 |---|---|---|---|
-| **Poster** | `surface-wine` | Home cover, Contact, the Focus Areas band on Home, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
+| **Poster** | `surface-wine` | Home cover, Contact, the Featured works and Focus Areas bands on Home, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
 | **Editorial** | bone (default body) | Everything people read or scan, including interior page openers (`PageHero` is a compact bone header) | Measured columns, hairline rules, no decoration |
 | Colophon | `surface-plum` | Site footer only | Quiet close |
 
@@ -72,8 +72,14 @@ Self-hosted woff2 subsets (Latin, Latin Extended, Vietnamese) in `public/fonts`.
 - Body is 18px (17px on phones), line-height ~1.55, measure `--measure` (40em).
 - Mono metadata is 12–13px, **sentence case**, almost no tracking. The only
   spaced capitals are the hero role line under the name.
-- The `.eyebrow` is a mono label with a short hairline lead-in. Use it as a
-  margin note, not as a caption above every heading.
+- The `.eyebrow` is a mono label led by a tiny North Star (`--star-mask`). Use
+  it as a margin note, not as a caption above every heading.
+- **No dash shapes.** Nothing on the page may read as an em dash, typed or drawn.
+  Separate list items with commas (case meta, status tags) or the tiny star (the
+  hero capability list); mark sub-headings with an arrow; in copy, use a colon or
+  comma. Number and date ranges keep their plain hyphen or en dash.
+- **No middle dots (·) or vertical bars (|)** as separators, in copy or in page
+  titles. Use a colon or comma. Page titles read "Felix Phan: Work".
 - Numerals: old-style in running text, lining in figures/stats.
 - No generic script font. The italic Garamond is the signature.
 
@@ -86,6 +92,7 @@ horizontal, equal length, slim waist (`STAR_POINTS`, viewBox 200).
 |---|---|---|---|
 | Signature | `StarMark` | 12–44px | Flat `currentColor`. Header brand, footer, favicon |
 | Folio | `StarMark` | 12px | Beside the project id in case openers; the Work preview plate |
+| Marker | `--star-mask` | 9–10px | Lead-in on eyebrow labels, separator in the hero capability list |
 | Hero | `NorthStar mode="glow"` | 35–65% of the composition | Translucent wings, bright core, thin horizontal flare. **Only** the home hero and Contact. No other page uses a large star |
 | Structural | none yet | | Diagonals may guide a crop or rule. Do not draw stars behind components |
 
@@ -183,4 +190,4 @@ small thumbnail. Filters and their URLs are unchanged.
 - No decorative animation without purpose; no scroll-jacking, parallax, custom
   cursors or 3D.
 - No new copy. Layout may move and resize existing words, never rewrite them.
-- No em dashes in copy or comments (project convention).
+- No em dashes in copy or comments, and no drawn short lines that read as one (project convention).

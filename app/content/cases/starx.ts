@@ -80,17 +80,17 @@ export const starx = {
     ],
     cards: [
       {
-        tag: "Delivered · one live event",
+        tag: "Delivered: one live event",
         title: "StarX League",
         text: "Location-based competition. Teams of three with locked roles, a fifty-title game library, and a points economy designed to persist across seasons.",
       },
       {
-        tag: "Filmed · never edited",
+        tag: "Filmed, never edited",
         title: "Sunday We Vibe",
         text: "The recurring weekly episode. A hidden-number mechanic that turns watching into playing. Episode one was shot. Post-production never started.",
       },
       {
-        tag: "Original format · pre-production",
+        tag: "Original format, pre-production",
         title: "Đêm Tiệc Mặt Nạ",
         text: "A social-deduction dinner format. Four families, one corporate collapse in 2006, and five graded tiers of responsibility.",
       },
@@ -162,7 +162,7 @@ export const starx = {
   map01: {
     eyebrow: "Delivered live",
     title: "Map 01: Hồ Tràm",
-    chips: ["Delivered · live event", "27 to 28 June 2026"],
+    chips: ["Delivered: live event", "27 to 28 June 2026"],
     img04: {
       ref: "IMG-04",
       src: "",
@@ -220,7 +220,7 @@ export const starx = {
   survey: {
     eyebrow: "Survey evidence",
     title: "What the players said",
-    chips: ["Survey · 10 of 13 players responded", "Run 30 June 2026", "Aggregated, anonymised"],
+    chips: ["Survey: 10 of 13 players responded", "Run 30 June 2026", "Aggregated, anonymised"],
     headline: [
       { value: "8.5", label: "mean overall experience, out of 10 (range 8 to 10)" },
       { value: "8.8", label: "mean likelihood of recommending, out of 10" },
@@ -286,7 +286,7 @@ export const starx = {
   vibeMechanic: {
     eyebrow: "The recurring format",
     title: "Sunday We Vibe: the mechanic",
-    chips: ["Filmed · never edited", "EP01", "July 2026"],
+    chips: ["Filmed, never edited", "EP01", "July 2026"],
     img07: {
       ref: "IMG-07",
       src: "",
@@ -351,7 +351,7 @@ export const starx = {
   maskedNight: {
     eyebrow: "Original format",
     title: "Đêm Tiệc Mặt Nạ: Vụ Sụp Đổ 2006",
-    chips: ["Original format · pre-production", "Đà Lạt"],
+    chips: ["Original format, pre-production", "Đà Lạt"],
     img09: {
       ref: "IMG-09",
       src: "",
@@ -386,7 +386,7 @@ export const starx = {
   brand: {
     eyebrow: "Identity design",
     title: "The brand",
-    chips: ["Completed · design"],
+    chips: ["Completed: design"],
     img10: {
       ref: "IMG-10",
       src: "",

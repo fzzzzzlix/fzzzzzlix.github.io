@@ -8,8 +8,8 @@ const OG_IMAGE = asset("/images/hero-portrait.jpg");
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Felix Phan | Creative Strategist & Storyteller",
-    template: "%s | Felix Phan",
+    default: "Felix Phan: Creative Strategist & Storyteller",
+    template: "Felix Phan: %s",
   },
   description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
   alternates: { canonical: "/" },
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Felix Phan",
-    title: "Felix Phan | Creative Strategist & Storyteller",
+    title: "Felix Phan: Creative Strategist & Storyteller",
     description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
     images: [{ url: OG_IMAGE, alt: "Felix Phan" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Felix Phan | Creative Strategist & Storyteller",
+    title: "Felix Phan: Creative Strategist & Storyteller",
     description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
     images: [OG_IMAGE],
   },
