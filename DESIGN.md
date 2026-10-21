@@ -78,6 +78,8 @@ Self-hosted woff2 subsets (Latin, Latin Extended, Vietnamese) in `public/fonts`.
   Separate list items with commas (case meta, status tags) or the tiny star (the
   hero capability list); mark sub-headings with an arrow; in copy, use a colon or
   comma. Number and date ranges keep their plain hyphen or en dash.
+- **No middle dots (·) or vertical bars (|)** as separators, in copy or in page
+  titles. Use a colon or comma. Page titles read "Felix Phan: Work".
 - Numerals: old-style in running text, lining in figures/stats.
 - No generic script font. The italic Garamond is the signature.
 

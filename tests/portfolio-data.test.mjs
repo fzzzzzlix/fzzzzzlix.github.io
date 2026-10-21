@@ -61,8 +61,8 @@ test("StarX claims each format only at the stage it actually reached", () => {
   const copy = read("app/content/cases/starx.ts");
   // The League event was delivered live; the episode was filmed but never cut,
   // and two further formats never ran. Those boundaries must stay on the page.
-  assert.match(copy, /Filmed · never edited/);
-  assert.match(copy, /Original format · pre-production/);
+  assert.match(copy, /Filmed, never edited/);
+  assert.match(copy, /Original format, pre-production/);
   assert.match(copy, /never ran, because there was only ever one season/);
   assert.match(copy, /Post-production never started/);
   // Survey evidence stays aggregated and anonymised.
