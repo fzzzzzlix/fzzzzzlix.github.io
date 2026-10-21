@@ -19,7 +19,7 @@ export default function PhotoshootsSeriesMoved() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <section className="page-hero surface-wine">
+        <section className="page-hero">
           <div className="page-hero-inner section-shell"><div className="page-hero-copy">
             <p className="eyebrow">Project moved</p>
             <h1>Photoshoots Series is now part of Equal in Ao Dai</h1>

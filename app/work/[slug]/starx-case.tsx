@@ -56,20 +56,6 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
         </Cards>
       </CaseSection>
 
-      <CaseSection eyebrow={c.league.eyebrow} title={c.league.title}>
-        <CaseSlot slot={c.league.img02} />
-
-        <SubHead>{c.league.rule.title}</SubHead>
-        {c.league.rule.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-
-        <SubHead>{c.league.scoring.title}</SubHead>
-        <CaseList items={c.league.scoring.items.map((item) => inline(item))} />
-        <p className="p31-note">{inline(c.league.scoring.note)}</p>
-
-        <SubHead>{c.league.library.title}</SubHead>
-        {c.league.library.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
       <CaseSection eyebrow={c.mapping.eyebrow} title={c.mapping.title}>
         <ChipRow items={c.mapping.chips} label="Game 02 delivery context" />
         <CaseSlot slot={c.mapping.img03} />
@@ -110,62 +96,6 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
         {c.survey.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
       </CaseSection>
 
-      <CaseSection eyebrow={c.map02.eyebrow} title={c.map02.title}>
-        <ChipRow items={c.map02.chips} label="Map 02 status" />
-        <CaseSlot slot={c.map02.img06} />
-        {c.map02.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <CaseList ordered items={c.map02.questions.map((q) => inline(q))} />
-        {c.map02.afterQuestions.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-
-        <SubHead>{c.map02.alternative.title}</SubHead>
-        {c.map02.alternative.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.vibeMechanic.eyebrow} title={c.vibeMechanic.title}>
-        <ChipRow items={c.vibeMechanic.chips} label="Sunday We Vibe status" />
-        <CaseSlot slot={c.vibeMechanic.img07} />
-        <CaseQuote>{c.vibeMechanic.quote}</CaseQuote>
-
-        <SubHead>{c.vibeMechanic.stepsTitle}</SubHead>
-        <CaseList ordered items={c.vibeMechanic.steps.map((step) => inline(step))} />
-
-        {c.vibeMechanic.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.vibeScript.eyebrow} title={c.vibeScript.title}>
-        <CaseSlot slot={c.vibeScript.img08} />
-        {c.vibeScript.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <CaseTable
-          caption={c.vibeScript.tableCaption}
-          label={c.vibeScript.tableLabel}
-          head={c.vibeScript.tableHead}
-          rows={c.vibeScript.tableRows}
-        />
-        {c.vibeScript.quotes.map((quote) => (
-          <CaseQuote key={quote.cite} cite={quote.cite}>{quote.text}</CaseQuote>
-        ))}
-        {c.vibeScript.closing.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.maskedNight.eyebrow} title={c.maskedNight.title}>
-        <ChipRow items={c.maskedNight.chips} label="Đêm Tiệc Mặt Nạ status" />
-        <CaseSlot slot={c.maskedNight.img09} />
-        {c.maskedNight.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-
-        <SubHead>{c.maskedNight.lawsTitle}</SubHead>
-        <CaseList ordered items={c.maskedNight.laws.map((law) => inline(law))} />
-
-        <CaseQuote cite={c.maskedNight.quote.cite}>{c.maskedNight.quote.text}</CaseQuote>
-        {c.maskedNight.closing.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.brand.eyebrow} title={c.brand.title}>
-        <ChipRow items={c.brand.chips} label="Brand status" />
-        <CaseSlot slot={c.brand.img10} />
-        {c.brand.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <CaseSlot slot={c.brand.img11} />
-      </CaseSection>
-
       <CaseSection eyebrow={c.status.eyebrow} title={c.status.title}>
         <CaseTable
           label={c.status.tableLabel}
@@ -180,6 +110,76 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
 
       <CaseSection eyebrow={c.differently.eyebrow} title={c.differently.title}>
         {c.differently.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.league.eyebrow} title={c.league.title}>
+        <CaseSlot slot={c.league.img02} />
+
+        <SubHead>{c.league.rule.title}</SubHead>
+        {c.league.rule.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+
+        <SubHead>{c.league.scoring.title}</SubHead>
+        <CaseList items={c.league.scoring.items.map((item) => inline(item))} />
+        <p className="p31-note">{inline(c.league.scoring.note)}</p>
+
+        <SubHead>{c.league.library.title}</SubHead>
+        {c.league.library.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.map02.eyebrow} title={c.map02.title}>
+        <ChipRow items={c.map02.chips} label="Map 02 status" />
+        <CaseSlot slot={c.map02.img06} />
+        {c.map02.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <CaseList ordered items={c.map02.questions.map((q) => inline(q))} />
+        {c.map02.afterQuestions.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+
+        <SubHead>{c.map02.alternative.title}</SubHead>
+        {c.map02.alternative.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.vibeMechanic.eyebrow} title={c.vibeMechanic.title}>
+        <ChipRow items={c.vibeMechanic.chips} label="Sunday We Vibe status" />
+        <CaseSlot slot={c.vibeMechanic.img07} />
+        <CaseQuote>{c.vibeMechanic.quote}</CaseQuote>
+
+        <SubHead>{c.vibeMechanic.stepsTitle}</SubHead>
+        <CaseList ordered items={c.vibeMechanic.steps.map((step) => inline(step))} />
+
+        {c.vibeMechanic.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.vibeScript.eyebrow} title={c.vibeScript.title}>
+        <CaseSlot slot={c.vibeScript.img08} />
+        {c.vibeScript.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <CaseTable
+          caption={c.vibeScript.tableCaption}
+          label={c.vibeScript.tableLabel}
+          head={c.vibeScript.tableHead}
+          rows={c.vibeScript.tableRows}
+        />
+        {c.vibeScript.quotes.map((quote) => (
+          <CaseQuote key={quote.cite} cite={quote.cite}>{quote.text}</CaseQuote>
+        ))}
+        {c.vibeScript.closing.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.maskedNight.eyebrow} title={c.maskedNight.title}>
+        <ChipRow items={c.maskedNight.chips} label="Đêm Tiệc Mặt Nạ status" />
+        <CaseSlot slot={c.maskedNight.img09} />
+        {c.maskedNight.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+
+        <SubHead>{c.maskedNight.lawsTitle}</SubHead>
+        <CaseList ordered items={c.maskedNight.laws.map((law) => inline(law))} />
+
+        <CaseQuote cite={c.maskedNight.quote.cite}>{c.maskedNight.quote.text}</CaseQuote>
+        {c.maskedNight.closing.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+      </CaseSection>
+
+      <CaseSection collapsed eyebrow={c.brand.eyebrow} title={c.brand.title}>
+        <ChipRow items={c.brand.chips} label="Brand status" />
+        <CaseSlot slot={c.brand.img10} />
+        {c.brand.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <CaseSlot slot={c.brand.img11} />
       </CaseSection>
 
       <CaseNav previous={previous} next={next} />

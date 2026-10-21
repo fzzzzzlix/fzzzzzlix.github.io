@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { NorthStar, SiteFooter, SiteHeader } from "../site-shell";
+import { SiteFooter, SiteHeader } from "../site-shell";
 import { asset } from "../base-path";
 import { about } from "../content/about";
 import { inline } from "../content/render-inline";
@@ -67,8 +67,7 @@ export default function AboutPage() {
           <p className="about-takeaway">→ {inline(about.approachClose)}</p>
         </section>
 
-        <section className="capability-section surface-wine">
-          <NorthStar className="capability-star" />
+        <section className="capability-section">
           <div className="section-shell">
             <p className="eyebrow">{about.capability.eyebrow}</p>
             <div className="capability-list">

@@ -122,13 +122,13 @@ export function CoverImage({ src, fit, alt, poster, loading = "lazy" }: { src: s
 }
 
 /**
- * Poster-mode page opener (wine surface, cropped flat star). When there is no
- * `title`, the eyebrow is promoted to the page's h1 so every page keeps one.
+ * Compact editorial page opener on bone. Interior pages open on information,
+ * not a poster. When there is no `title`, the eyebrow is promoted to the
+ * page's h1 so every page keeps one.
  */
 export function PageHero({ eyebrow, title, deck, aside }: { eyebrow: string; title?: string; deck?: string; aside?: React.ReactNode }) {
   return (
-    <section className={`page-hero surface-wine${title ? "" : " page-hero-compact"}`}>
-      <NorthStar className="page-hero-star" />
+    <section className={`page-hero${title ? "" : " page-hero-compact"}`}>
       <div className="page-hero-inner section-shell">
         <div className="page-hero-copy">
           {title ? <p className="eyebrow">{eyebrow}</p> : <h1 className="page-hero-word">{eyebrow}</h1>}

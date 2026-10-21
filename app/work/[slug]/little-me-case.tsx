@@ -12,6 +12,7 @@ import {
   EvidencePanel,
   Lede,
   MediaPair,
+  MoreEvidence,
   OwnershipNote,
   StatGrid,
 } from "./feature-case-primitives";
@@ -64,47 +65,49 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
             href={c.imagesFolder}
           />
         </MediaPair>
-        <MediaPair>
+        <MoreEvidence label="More evidence" count={5}>
+          <MediaPair>
+            <EvidenceFigure
+              src={c.experienceDesign.artworkFigure.src}
+              alt={c.experienceDesign.artworkFigure.alt}
+              caption={c.experienceDesign.artworkFigure.caption}
+              tag={c.experienceDesign.artworkFigure.tag}
+              variant={c.experienceDesign.artworkFigure.variant}
+              ratio={c.experienceDesign.artworkFigure.ratio}
+              href={c.imagesFolder}
+            />
+            <EvidenceFigure
+              src={c.experienceDesign.bookletFigure.src}
+              alt={c.experienceDesign.bookletFigure.alt}
+              caption={c.experienceDesign.bookletFigure.caption}
+              tag={c.experienceDesign.bookletFigure.tag}
+              variant={c.experienceDesign.bookletFigure.variant}
+              ratio={c.experienceDesign.bookletFigure.ratio}
+              href={c.imagesFolder}
+            />
+          </MediaPair>
           <EvidenceFigure
-            src={c.experienceDesign.artworkFigure.src}
-            alt={c.experienceDesign.artworkFigure.alt}
-            caption={c.experienceDesign.artworkFigure.caption}
-            tag={c.experienceDesign.artworkFigure.tag}
-            variant={c.experienceDesign.artworkFigure.variant}
-            ratio={c.experienceDesign.artworkFigure.ratio}
+            src={c.experienceDesign.buddyFigure.src}
+            alt={c.experienceDesign.buddyFigure.alt}
+            caption={c.experienceDesign.buddyFigure.caption}
+            tag={c.experienceDesign.buddyFigure.tag}
+            variant={c.experienceDesign.buddyFigure.variant}
+            ratio={c.experienceDesign.buddyFigure.ratio}
             href={c.imagesFolder}
           />
-          <EvidenceFigure
-            src={c.experienceDesign.bookletFigure.src}
-            alt={c.experienceDesign.bookletFigure.alt}
-            caption={c.experienceDesign.bookletFigure.caption}
-            tag={c.experienceDesign.bookletFigure.tag}
-            variant={c.experienceDesign.bookletFigure.variant}
-            ratio={c.experienceDesign.bookletFigure.ratio}
-            href={c.imagesFolder}
-          />
-        </MediaPair>
-        <EvidenceFigure
-          src={c.experienceDesign.buddyFigure.src}
-          alt={c.experienceDesign.buddyFigure.alt}
-          caption={c.experienceDesign.buddyFigure.caption}
-          tag={c.experienceDesign.buddyFigure.tag}
-          variant={c.experienceDesign.buddyFigure.variant}
-          ratio={c.experienceDesign.buddyFigure.ratio}
-          href={c.imagesFolder}
-        />
-        <MediaPair>
-          <CaseVideo
-            src={c.experienceDesign.jarVideo.src}
-            caption={c.experienceDesign.jarVideo.caption}
-            tag={c.experienceDesign.jarVideo.tag}
-          />
-          <CaseVideo
-            src={c.experienceDesign.setupVideo.src}
-            caption={c.experienceDesign.setupVideo.caption}
-            tag={c.experienceDesign.setupVideo.tag}
-          />
-        </MediaPair>
+          <MediaPair>
+            <CaseVideo
+              src={c.experienceDesign.jarVideo.src}
+              caption={c.experienceDesign.jarVideo.caption}
+              tag={c.experienceDesign.jarVideo.tag}
+            />
+            <CaseVideo
+              src={c.experienceDesign.setupVideo.src}
+              caption={c.experienceDesign.setupVideo.caption}
+              tag={c.experienceDesign.setupVideo.tag}
+            />
+          </MediaPair>
+        </MoreEvidence>
       </CaseSection>
 
       <CaseSection eyebrow={c.leadership.eyebrow} title={c.leadership.title}>

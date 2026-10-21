@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Project } from "../../data";
-import { CaseHeroFrame, EvidenceStrip } from "./feature-case-primitives";
+import { CaseHeroFrame, CaseSection, EvidenceStrip } from "./feature-case-primitives";
 import { CanvaEmbed } from "./canva-embed";
 import { beLocal as c } from "../../content/cases/be-local";
 
@@ -87,9 +87,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
       </section>
 
       {/* Risk */}
-      <section className="p31-section section-shell">
-        <p className="eyebrow">{c.risk.eyebrow}</p>
-        <h2>{c.risk.title}</h2>
+      <CaseSection collapsed eyebrow={c.risk.eyebrow} title={c.risk.title}>
         <p className="p31-lede">{c.risk.body}</p>
         <ul className="p31-stats" aria-label="Risk by status">
           {c.risk.byStatus.map((item) => <li key={item.label}><strong>{item.value}</strong><span>{item.label}</span></li>)}
@@ -102,7 +100,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
           {c.risk.categories.map((item) => <li key={item.label}><strong>{item.value}<small>{item.unit}</small></strong><span>{item.label}</span></li>)}
         </ul>
         <p className="p31-note"><strong>{c.risk.note.strong}</strong> {c.risk.note.text}</p>
-      </section>
+      </CaseSection>
 
       {/* What the project taught (challenges + lessons merged) */}
       <section className="p31-section section-shell">
@@ -142,9 +140,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
       </section>
 
       {/* Peer evaluation (moved to last) */}
-      <section className="p31-section section-shell">
-        <p className="eyebrow">{c.peer.eyebrow}</p>
-        <h2>{c.peer.title}</h2>
+      <CaseSection collapsed eyebrow={c.peer.eyebrow} title={c.peer.title}>
         <div className="p31-peer">
           <div className="p31-peer-head">
             <strong>{c.peer.average.value}<small>{c.peer.average.unit}</small></strong>
@@ -163,7 +159,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
           </div>
         </div>
         <p className="p31-note"><strong>{c.peer.note.strong}</strong> {c.peer.note.text}</p>
-      </section>
+      </CaseSection>
 
       {/* Nav */}
       <nav className="case-nav section-shell" aria-label="Project navigation">

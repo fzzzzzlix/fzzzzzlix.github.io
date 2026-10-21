@@ -5,8 +5,14 @@ styles. Words live in `app/content/*` and `app/data.ts` (see `CLAUDE.md`); this
 file governs how they look.
 
 **Brand values:** classic resilience, bold spark, efficient simplicity.
-**Balance:** about 75% disciplined editorial restraint, 25% theatrical gesture.
-**Rule of thumb:** heroes may perform; body content must work.
+**Balance:** about 90% efficient editorial, 10% theatrical gesture. The gesture is
+stronger because it is rare.
+**Rule of thumb:** heroes may perform; body content must work; nothing gets more
+ceremony than its content earns. Respecting the reader's time is part of the brand.
+
+**Length budget (desktop screenfuls at 1440×900):** Home ≤5, Work ≤5, About ≤4,
+Experience ≤4, Focus Areas ≤3, supporting cases ≤5, feature cases ≤7 open,
+StarX ≤8 open. Measure after any layout change.
 
 Mental model (never printed on the site): the home page is the cover, Work is the
 contents, case studies are the feature spreads, About is the profile, Contact is
@@ -18,13 +24,14 @@ the colophon.
 
 | Mode | Surface | Used for | Character |
 |---|---|---|---|
-| **Poster** | `surface-wine` | Home hero, page openers, case openers, one punctuation band per page, case navigation, Contact | Scale, asymmetry, the North Star, sparse type |
-| **Editorial** | bone (default body) | Everything people read: case bodies, lists, CV information, project index | Measured columns, hairline rules, no decoration |
+| **Poster** | `surface-wine` | Home cover, Contact, the Focus Areas band on Home, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
+| **Editorial** | bone (default body) | Everything people read or scan, including interior page openers (`PageHero` is a compact bone header) | Measured columns, hairline rules, no decoration |
 | Colophon | `surface-plum` | Site footer only | Quiet close |
 
 Rhythm: **dramatic → quiet → visual → informational → quiet → dramatic
 punctuation.** Never two poster bands back to back except the case navigation
-into the footer. Section padding varies on purpose; do not normalise it.
+into the footer. Spacing uses three steps (`--space-s`, `--space-m`,
+`--space-l`); pick the smallest that separates the ideas.
 
 The seam between modes is a signature move: a hero image or portrait sits
 across the wine/bone edge (`.p31-hero-body`, `.profile-portrait`).
@@ -59,8 +66,10 @@ Self-hosted woff2 subsets (Latin, Latin Extended, Vietnamese) in `public/fonts`.
 | Utility | Roboto Mono 400–500 | Navigation, metadata, dates, folios, labels, buttons, links out |
 | Signature | EB Garamond *italic* | Only: "Phan" in the home hero, the "The work"/"Experience" page words, the footer line, pull quotes |
 
-- Headings are weight 400 with tight tracking; hierarchy comes from **scale**.
-- Body is 19px (18px on phones), line-height ~1.55, measure `--measure` (38em).
+- Headings are weight 400 with tight tracking; hierarchy comes from **scale**,
+  and large scale is reserved: the home name (≤148px), Contact headline (≤90px),
+  the StarX plate. Page titles ≤80px, case titles ≤72px, section heads ≤34px.
+- Body is 18px (17px on phones), line-height ~1.55, measure `--measure` (40em).
 - Mono metadata is 12–13px, **sentence case**, almost no tracking. The only
   spaced capitals are the hero role line under the name.
 - The `.eyebrow` is a mono label with a short hairline lead-in. Use it as a
@@ -76,8 +85,8 @@ horizontal, equal length, slim waist (`STAR_POINTS`, viewBox 200).
 | Mode | Component | Size | Treatment |
 |---|---|---|---|
 | Signature | `StarMark` | 12–44px | Flat `currentColor`. Header brand, footer, favicon |
-| Editorial | `NorthStar mode="flat"` | Large, cropped | Flat silver at 8–22% opacity on wine. Page/case openers, punctuation bands, StarX plate |
-| Hero | `NorthStar mode="glow"` | 35–65% of the composition | Translucent wings, bright core, thin horizontal flare. **Only** the home hero and Contact |
+| Folio | `StarMark` | 12px | Beside the project id in case openers; the Work preview plate |
+| Hero | `NorthStar mode="glow"` | 35–65% of the composition | Translucent wings, bright core, thin horizontal flare. **Only** the home hero and Contact. No other page uses a large star |
 | Structural | none yet | | Diagonals may guide a crop or rule. Do not draw stars behind components |
 
 No twinkling, spinning, pulsing, particles or lens-flare excess. The only star
@@ -89,16 +98,40 @@ brand mark on hover.
 - 12-column grid inside `.section-shell` (max 1320px, gutter `--gutter`).
 - Case and About bodies use a named grid: margin label column (3fr), text column
   (7fr), breathing column (2fr). Figures, pairs, embeds and tables break out to
-  the right edge; stats sit in the text column.
+  the right edge, and so do stat rows.
 - Asymmetry must create hierarchy or direction. Media pairs step the second item
-  down; About photo pairs are unequal; home features vary by position
-  (`FEATURE_LAYOUTS` in `app/page.tsx`).
+  down; About photo pairs are unequal. Home features: a wine plate for a project
+  without an image, one lead with a large image, then compact rows
+  (`HOME_FEATURED_IDS` in `app/page.tsx` picks the four).
 - Bleeds use negative `--gutter` margins; `.site-frame` clips overflow-x.
 
-## 6. Images
+## 6. Progressive disclosure
 
-- Show images at their **own proportions** (`height: auto`). Do not force a
-  shared aspect ratio. The Work index thumbnails are the only cropped set.
+Two layers. **Layer 1** (always open) is the recruiter scan: title, role,
+status, strongest facts, problem, what Felix did, outcome, one or two visuals.
+**Layer 2** (closed, native `<details>`) is deep evidence.
+
+- `CaseSection collapsed`: an archive section whose eyebrow and heading are the
+  toggle (StarX format archive, Be Local risk register and peer scores).
+- `MoreEvidence`: secondary images inside an open section, Experience photos,
+  certificates.
+- Embedded documents (Canva, Drive, Sheets) start closed behind their title and
+  only load when opened. Video embeds stay open.
+- Never collapse the core story, a role, a status or an outcome. Never put
+  content only on hover: hover is for discovery (the Work preview panel).
+
+## 7. Work index
+
+One dense row per project, all comparable: number, title, one-line premise,
+categories, **role**, year and type. On desktop ≥1181px a sticky preview panel
+shows the image of the hovered or focused row; below that, each row carries a
+small thumbnail. Filters and their URLs are unchanged.
+
+## 8. Images
+
+- Show images at their **own proportions** (`height: auto`), capped at 60vh in
+  cases so no single image owns a screen. Frames hug the image. Thumbnails
+  (Work rows, Home rows, Focus Areas project links) are the only cropped set.
 - Documents, decks and charts are shown as documents with a hairline edge.
 - No borders, no rounded corners, no drop shadows except the two seam images.
 - **Media honesty:** never add, duplicate or generate imagery. A project without
@@ -106,14 +139,14 @@ brand mark on hover.
   `no-media` case hero. Pending image slots render as a dashed ruled line with
   their reference, never a fake picture.
 
-## 7. Surfaces, borders, radius
+## 9. Surfaces, borders, radius
 
 - Hairline rules (`--rule`, `--rule-strong`) do the structuring. Wine rules mark
   a card or table top.
 - Cards are ruled columns, not boxes. Stats are typographic figures, not tiles.
 - Border radius is 0 everywhere (the round play button is the exception).
 
-## 8. Interaction and motion
+## 10. Interaction and motion
 
 - Links: mono with an underline that contracts on hover. Buttons: square, solid
   `--btn-bg`, colour change on hover, no lift.
@@ -123,9 +156,10 @@ brand mark on hover.
 - `prefers-reduced-motion` disables all animation and smooth scrolling.
 - Focus: 2px `--focus` outline (wine on bone, bone on wine) on every control.
 
-## 9. Responsive
+## 11. Responsive
 
-- ≤1366: hero star shifts left. ≤1180: tighter grids.
+- ≤1366: hero star shifts left. ≤1180: tighter grids; Work drops the preview
+  panel and shows row thumbnails.
 - ≤980: mobile menu (native `<details>`), case/About margin labels move above
   headings, multi-column blocks reflow.
 - **Stacked cover** (≤760, and portrait tablets ≤1180): star above the name, name
@@ -133,7 +167,7 @@ brand mark on hover.
 - ≤760: figures go edge to edge, the Work filter scrolls horizontally, stats are
   two-up. Test 320, 390, 1024 portrait, 1280, 1440, 1920; no horizontal overflow.
 
-## 10. Forbidden patterns
+## 12. Forbidden patterns
 
 - No generic card grids by default.
 - No glassmorphism, no backdrop blur.
@@ -141,7 +175,9 @@ brand mark on hover.
 - No AI-generated decorative blobs or abstract SVGs unrelated to the star.
 - No repeated pill UI (chips are mono text with spacing).
 - No fake archive assets: no faux Polaroids, tape, handwriting or stock images.
-- No star spam: one large star per screen at most, glow only in two places.
+- No star spam: large stars on two pages only (Home cover, Contact).
+- No poster openers on information pages; no giant type for ordinary headings.
+- No more than four projects featured on Home; the full set lives on Work.
 - No equal section rhythm.
 - No excessive micro-labels.
 - No decorative animation without purpose; no scroll-jacking, parallax, custom

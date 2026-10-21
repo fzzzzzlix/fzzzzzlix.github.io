@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { HTMLAttributeReferrerPolicy, ReactNode } from "react";
 import type { Project } from "../../data";
-import { MediaPlaceholder, NorthStar } from "../../site-shell";
+import { MediaPlaceholder, StarMark } from "../../site-shell";
 
 /*
  * Shared feature-case primitives.
@@ -46,9 +46,8 @@ export function CaseHeroFrame({
   return (
     <header className={`p31-hero${media ? " has-media" : " no-media"}`}>
       <div className="p31-hero-poster surface-wine">
-        <NorthStar className="p31-hero-star" />
         <div className="p31-hero-head section-shell">
-          <div className="case-kicker"><span className="case-folio">{folio}</span><p className="eyebrow">{eyebrow}</p></div>
+          <div className="case-kicker"><span className="case-folio"><StarMark size={12} />{folio}</span><p className="eyebrow">{eyebrow}</p></div>
           <h1>{title}</h1>
           <p className="case-role">{role}</p>
           {meta.length ? <p className="case-meta">{meta.map((item) => <span key={item}>{item}</span>)}</p> : null}
@@ -133,14 +132,42 @@ export function CaseTension({ children }: { children: ReactNode }) {
   );
 }
 
-/** A titled content section. */
-export function CaseSection({ eyebrow, title, children }: { eyebrow?: string; title: string; children: ReactNode }) {
+/**
+ * A titled content section. `collapsed` turns it into deep evidence: the
+ * eyebrow and heading stay visible as the toggle, the body opens on demand.
+ * Use it for archive material, never for a case's core story.
+ */
+export function CaseSection({ eyebrow, title, children, collapsed = false }: { eyebrow?: string; title: string; children: ReactNode; collapsed?: boolean }) {
+  if (collapsed) {
+    return (
+      <section className="p31-section is-collapsible section-shell">
+        <details>
+          <summary>
+            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+            <h2>{title}</h2>
+            <span className="disclosure-mark" aria-hidden="true" />
+          </summary>
+          <div className="p31-section-body">{children}</div>
+        </details>
+      </section>
+    );
+  }
   return (
     <section className="p31-section section-shell">
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       <h2>{title}</h2>
       {children}
     </section>
+  );
+}
+
+/** Secondary evidence inside an open section: a labelled toggle, closed by default. */
+export function MoreEvidence({ label, count, children }: { label: string; count?: number; children: ReactNode }) {
+  return (
+    <details className="more-evidence">
+      <summary><span>{label}{typeof count === "number" ? ` (${count})` : ""}</span><span className="disclosure-mark" aria-hidden="true" /></summary>
+      <div className="more-evidence-body">{children}</div>
+    </details>
   );
 }
 
@@ -182,6 +209,7 @@ export function EvidenceFigure({
         target="_blank"
         rel="noreferrer"
         aria-label={`${alt}. Opens in a new tab.`}
+        className={isPhoto ? "is-photo" : undefined}
         style={isPhoto ? { aspectRatio: ratio ?? "16 / 9" } : undefined}
       >
         <img
@@ -396,6 +424,7 @@ export function ResponsiveEmbed({
   maxHeight,
   allow = "fullscreen",
   referrerPolicy,
+  open,
 }: {
   title: string;
   src: string;
@@ -409,6 +438,8 @@ export function ResponsiveEmbed({
   /** iframe permissions. Video hosts need more than the "fullscreen" default. */
   allow?: string;
   referrerPolicy?: HTMLAttributeReferrerPolicy;
+  /** Force open (true) or closed (false); by default only video embeds start open. */
+  open?: boolean;
 }) {
   const aspectRatio = aspect ?? (portrait ? "3 / 4" : "16 / 9");
   const body = (
@@ -424,9 +455,22 @@ export function ResponsiveEmbed({
       </div>
     </>
   );
+  // Documents (decks, sheets, PDFs) start closed behind their title so they
+  // neither lengthen the page nor load until asked for; video stays open.
+  const isVideo = open ?? VIDEO_HOST.test(src);
+  if (!isVideo) {
+    return (
+      <details className={`p31-embed p31-embed-doc${inPair ? " in-pair" : ""}`}>
+        <summary><span>{title}</span><span className="disclosure-mark" aria-hidden="true" /></summary>
+        {body}
+      </details>
+    );
+  }
   // Inside a MediaPair the grid gap handles spacing, so skip the top-margin wrapper.
   return inPair ? <div>{body}</div> : <div className="p31-embed">{body}</div>;
 }
+
+const VIDEO_HOST = /youtube|youtu\.be|vimeo|facebook\.com\/plugins\/video/i;
 
 type ProofLink = { label: string; url: string; download?: boolean };
 

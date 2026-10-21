@@ -30,6 +30,8 @@ export default function ExperiencePage() {
                   </div>
                 ) : null}
                 {item.images.length ? (
+                  <details className="more-evidence">
+                  <summary><span>Photos ({item.images.length})</span><span className="disclosure-mark" aria-hidden="true" /></summary>
                   <div className="timeline-gallery">
                     {item.images.map((src) => (
                       <a key={src} href={asset(src)} target="_blank" rel="noreferrer">
@@ -37,6 +39,7 @@ export default function ExperiencePage() {
                       </a>
                     ))}
                   </div>
+                  </details>
                 ) : null}
               </div>
             </article>
@@ -50,7 +53,12 @@ export default function ExperiencePage() {
         <section className="education section-shell">
           <div className="section-intro"><p className="eyebrow">{experience.credentials.eyebrow}</p><h2>{experience.credentials.title}</h2></div>
           <ul className="credentials-list">{experience.credentials.list.map((item, i) => <li key={i}>{item}</li>)}</ul>
-          <AchievementsSlideshow images={experience.credentials.slideshow} />
+          {experience.credentials.slideshow.length ? (
+            <details className="more-evidence">
+              <summary><span>Certificates ({experience.credentials.slideshow.length})</span><span className="disclosure-mark" aria-hidden="true" /></summary>
+              <AchievementsSlideshow images={experience.credentials.slideshow} />
+            </details>
+          ) : null}
           <p className="source-note">{experience.credentials.note}</p>
         </section>
         <section className="page-cta section-shell"><p className="eyebrow">{experience.cta.eyebrow}</p><h2>{experience.cta.title}</h2><Link className="button button-primary" href="/work">{experience.cta.button}</Link></section>
