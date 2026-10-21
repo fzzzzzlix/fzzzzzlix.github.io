@@ -88,7 +88,7 @@ export const tresemme = {
     eyebrow: "",
     title: "The budget",
     body: [
-      "The detailed budget totals **VND 7,333,618,824 inclusive of GST**. This is useful planning proof: it shows the strategy was translated into line items and timing. It is a modelled media-plan budget, not money Felix managed and not a campaign that was executed.",
+      "The detailed budget totals **VND 7,333,618,824 inclusive of GST**, broken into line items and timing (this is a capstone project, not a campaign that ran).",
     ],
     stat: {
       label: "Modelled media-plan budget",
@@ -121,10 +121,10 @@ export const tresemme = {
     },
   },
   demonstrates: {
-    eyebrow: "What this demonstrates",
+    eyebrow: "What I learnt from it",
     title: "Strategic media planning from evidence to allocation",
     body: [
-      "Looking back, this is the project that taught me to think in systems rather than posts: to start from what the data actually says and follow it all the way through to who does what, when, and for how much. It also taught me a kind of honesty, that a budget worked out to the last đồng is proof of planning, not of spend, and saying that plainly matters more than sounding impressive.",
+      "This project taught me to start from what the data actually says and follow it through to who does what, when, and for how much. And that a budget worked out to the last đồng is proof of planning, not of spend.",
     ],
     links: [
       { label: "View the insights report", url: INSIGHTS_REPORT },

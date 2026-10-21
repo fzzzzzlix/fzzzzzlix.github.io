@@ -52,7 +52,6 @@ export default function AboutPage() {
         <section className="about-narrative section-shell">
           <p className="eyebrow">{about.intro.eyebrow}</p>
           <p className="about-lead">{about.intro.lead}</p>
-          <blockquote className="about-quote">{about.intro.quote}</blockquote>
 
           {about.story.map((para, i) => <p key={i}>{inline(para)}</p>)}
 

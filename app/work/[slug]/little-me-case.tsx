@@ -9,7 +9,6 @@ import {
   CaseTension,
   CaseVideo,
   EvidenceFigure,
-  EvidencePanel,
   Lede,
   MediaPair,
   MoreEvidence,
@@ -162,11 +161,6 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
           href={c.imagesFolder}
         />
         <OwnershipNote label={c.results.note.label}>{inline(c.results.note.body)}</OwnershipNote>
-      </CaseSection>
-
-      <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
-        {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <EvidencePanel>{project.evidence}</EvidencePanel>
       </CaseSection>
 
       <CaseNav previous={previous} next={next} />

@@ -80,7 +80,7 @@ export const maggi = {
     eyebrow: "Creative translation",
     title: "Turning strategy into a Tết idea",
     body: [
-      "The second phase translated the direction into a proposed Tết 2026 campaign. Felix’s role moved from research and strategy into script writing and storyboard creation. The proposal and illustrated storyboard are evidence of continuity: the insight did not end as a slide; it shaped how a seasonal story could be structured.",
+      "The second phase turned the direction into a proposed Tết 2026 campaign, and my role moved from research and strategy to script writing and storyboarding. The insight didn't end as a slide: it shaped how the seasonal story was structured.",
     ],
     bigIdeaFigure: {
       src: asset("/images/cases/p13/p13-big-idea.png"),
@@ -112,10 +112,10 @@ export const maggi = {
     },
   },
   demonstrates: {
-    eyebrow: "What this demonstrates",
+    eyebrow: "What I learnt from it",
     title: "Research that points to a creative decision",
     body: [
-      "What stayed with me from this one is how satisfying it is when research actually earns a creative decision, instead of sitting in a deck no one reopens. Carrying my own analysis from 755 coded comments all the way to a storyboard taught me to keep asking, at every step, so what does this change? I also learned to be honest about where the work stops: a strong proposed concept, not a launched campaign.",
+      "What stayed with me is how satisfying it is when research actually earns a creative decision instead of sitting in a deck no one reopens. Carrying my own analysis from 755 coded comments to a storyboard taught me to keep asking, at every step: so what does this change?",
     ],
     links: [{ label: "View the research report", url: RESEARCH_REPORT }],
   },

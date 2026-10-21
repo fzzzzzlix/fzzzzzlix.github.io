@@ -139,13 +139,13 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
       ) : null}
 
       {showApproach ? (
-        <CaseSection eyebrow={ext?.approachEyebrow ?? "The approach"} title={ext?.approachTitle ?? "Turn the problem into a structure"}>
+        <CaseSection eyebrow={ext?.approachEyebrow} title={ext?.approachTitle ?? "Approach"}>
           <Lede>{project.approach}</Lede>
         </CaseSection>
       ) : null}
 
       {showOutput ? (
-        <CaseSection eyebrow={ext?.outputEyebrow ?? "The output"} title={ext?.outputTitle ?? "Make the idea concrete"}>
+        <CaseSection eyebrow={ext?.outputEyebrow} title={ext?.outputTitle ?? "Output"}>
           <Lede>{project.output}</Lede>
           {renderEmbeds(embeds)}
           {figures.map(renderFigure)}
@@ -207,7 +207,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
       )}
 
       {ext?.capability ? (
-        <CaseSection eyebrow="What this demonstrates" title="The capability this proves">
+        <CaseSection title="Takeaway">
           <Lede>{inline(ext.capability)}</Lede>
         </CaseSection>
       ) : null}

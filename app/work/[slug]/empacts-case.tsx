@@ -13,7 +13,6 @@ import {
   MediaPair,
   OwnershipNote,
   ResponsiveEmbed,
-  StatGrid,
 } from "./feature-case-primitives";
 
 export function EmpactsCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
@@ -134,15 +133,9 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
             tag={c.visibility.teamFigure.tag}
           />
         </MediaPair>
+        <EvidencePanel links={c.demonstrates.links} />
       </CaseSection>
 
-      <CaseSection eyebrow={c.demonstrates.eyebrow} title={c.demonstrates.title}>
-        {c.demonstrates.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <StatGrid label={c.demonstrates.stat.label} items={c.demonstrates.stat.items} />
-        <EvidencePanel links={c.demonstrates.links}>
-          {project.evidence}
-        </EvidencePanel>
-      </CaseSection>
 
       <CaseNav previous={previous} next={next} />
     </CaseArticle>

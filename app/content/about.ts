@@ -23,17 +23,16 @@ export const about = {
   },
   intro: {
     eyebrow: "About Felix",
-    lead: "Felix Phan is a creative strategist and storyteller who finds the tension inside a brief, gives it structure and stays involved until the idea can operate in the real world.",
-    quote: "“Curious enough to ask why, practical enough to make it work”",
+    lead: "I'm a creative strategist and storyteller. I find the tension inside a brief, give it a structure, and stay with it until the idea works in the real world.",
   },
   story: [
     "Suffering from being too **adaptable**, exceedingly **resourceful**, and having an insanely **strong ownership attitude** – whenever a brief lands in my hands, I fight heartfully to deliver it from start to finish, with everything I have, and to a standard I am proud to own.",
-    "My portfolio spans several fields; this might cause confusion about *what Felix actually specializes in?* – Well, **my expertise is to get the job done**. I build things that need to work: projects, teams, systems, campaigns, events, and research frameworks. I am most effective when there is a meaningful objective and enough complexity that execution cannot simply follow a template – So if you also have a job that needs to be done, feel free to reach out ^^",
+    "My portfolio spans several fields, which might make you ask *what Felix actually specialises in*. Well: **my expertise is getting the job done**. I build things that need to work: projects, teams, systems, campaigns, events and research frameworks. I'm at my best when the objective matters and the problem is too complex for a template. So if you have a job that needs doing, reach out ^^",
   ],
   quote: "“I am most useful when the brief is exciting, slightly inconvenient and too human for a tidy answer”",
   approach: [
-    "Felix works across **strategy**, **story**, and **delivery**, so an idea can keep its intent **from the first insight to the final handover**. That means fewer gaps between the people who plan, make, and ship the work.",
-    "Felix moves meaningful ideas from **insight**, to **story**, to **impact**. The work begins with evidence, but it does not end with a spreadsheet: research is translated into a human tension, the tension becomes a structure, and the structure becomes a script, a treatment, a plan, an event or an operating system.",
+    "I work across **strategy**, **story**, and **delivery**, so an idea keeps its intent from the first insight to the final handover, with fewer gaps between the people who plan, make, and ship it.",
+    "My work starts with evidence but doesn't end with a spreadsheet: research becomes a human tension, the tension becomes a structure, and the structure becomes a script, a treatment, a plan, an event, or an operating system.",
   ],
   approachClose:
     "That combination suits roles where communication must be **culturally aware**, **operationally realistic**, and **accountable to an outcome**.",
@@ -49,7 +48,7 @@ export const about = {
     eyebrow: "Capability",
     // [tier, title, text]
     items: [
-      ["Shape the strategy", "Research design", "Academic research experience includes research-question framing, literature review, qualitative and mixed-methods design, secondary quantitative analysis (correlation and regression), NVivo, social-network analysis (NodeXL), operationalisation, triangulation, systems mapping and research-to-editorial translation."],
+      ["Shape the strategy", "Research design", "Research questions, qualitative and mixed-methods design, correlation and regression, NVivo coding, social-network analysis (NodeXL), and systems mapping."],
       ["Shape the strategy", "Strategic planning", "Consumer insight, social listening, thematic and sentiment coding, interviews, media planning and channel strategy."],
       ["Build the story", "Creative development", "Concepts, treatments, story structure, cast functions, sponsor integration and short-form systems."],
       ["Build the story", "Writing & editorial", "TVC scripts, short films, podcasts, proposals, copy, scenes and editorial direction."],

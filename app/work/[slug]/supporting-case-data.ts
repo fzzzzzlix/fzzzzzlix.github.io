@@ -167,8 +167,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideSignificance: true,
     deck:
       "A self-initiated episode treatment for the entertainment show Quán Nhà Haha, built around a ceremonial night on the Perfume River where Huế court music sets the rules and a modern cast has to learn to host it. Research becomes structure: a three-act engine, a designed scene for each cast member, and a bank sponsor that enters the story only after the cast earns it, never as an interruption. The full production-ready case, from cultural guardrails to six short-form cutdowns, is embedded below.",
-    capability:
-      "Building this taught me to treat cultural material as a discipline with its own timing, not a backdrop to decorate. I came away better at reading research into a workable structure, and at writing an episode where story, cast and sponsor all pull in the same direction under real production constraints.",
+    capability: "",
     ownership:
       "Self-initiated portfolio work by Felix. The cast (Jun Phạm, Rhymastic, Bùi Công Nam, Ngọc Thanh Tâm, Duy Khánh) and VCB DigiBank are named speculatively; none is attached to this concept.",
     evidenceStatus:
@@ -190,8 +189,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A four-person academic pitch team's capstone response to a PNJ brand brief. Felix's contribution was scriptwriting: making branded wedding storytelling feel human before it feels promotional. The script exists; client approval and any produced film are not claimed.",
-    capability:
-      "Writing to a jewellery brief taught me how much restraint branded storytelling needs: the product lands harder when a real human decision is allowed to breathe first. It sharpened my sense of where a brand should enter a scene, and where it should stay out of the way.",
+    capability: "Writing to a jewellery brief taught me how much restraint branded storytelling needs: the product lands harder when a real human decision is allowed to breathe first.",
     ownership: "Four-person academic pitch team. Felix's direct contribution: scriptwriting.",
     evidenceStatus: "Academic capstone work by a four-person pitch team. The final script exists; client approval is not documented and is not claimed.",
     evidenceNeeds: "The tutor or client feedback would upgrade this from concept to verified delivery.",
@@ -216,8 +214,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     heroHref: "https://drive.google.com/drive/folders/12VriM4x-aIlAnSOmtRzbgZVB6KAApTqZ?usp=drive_link",
     hideOutput: true,
     deck: "A long-form audio project focused on keeping sustainable-energy discussion structured when there is no visual layer to carry attention.",
-    capability:
-      "This project grew my long-form audio storytelling: with no visuals to lean on, I had to hold attention through structure and pacing alone. It also deepened a genuine interest in sustainability advocacy, and in making a dense energy topic feel worth staying with.",
+    capability: "",
     ownership: "Felix's role: researcher and scriptwriter. Team context: a group academic podcast.",
     evidenceStatus: "A team academic podcast, with the audio and script embedded below. Felix is credited as researcher and scriptwriter.",
     evidenceNeeds: "The episode list, exact runtime and full team credits.",
@@ -245,8 +242,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A professional proposal showing how a technical university programme can be translated from admission brief into a human, pitchable TVC story.",
-    capability:
-      "This was the first brief I carried the whole way, from decoding it to a pitch-ready script, and it taught me how much of creative work is really translation: turning an institution's goals into something a person can actually feel. I came away more comfortable owning an idea end to end and standing behind it in the room.",
+    capability: "The first brief I carried the whole way, from decoding it to a pitch-ready script, and it left me comfortable standing behind an idea in the room.",
     evidenceStatus:
       "A professional proposal from Felix's ForArt internship, with representative slides shown below and the full proposal embedded. The lead-creative role is confirmed; the production status is not verified.",
     evidenceNeeds: "The final production status or a public output link, and supervisor or team credit.",
@@ -300,8 +296,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideApproach: true,
     hideOutput: true,
     deck: "Collaborative commercial writing: developing a leader-owned pharmaceutical direction into a clearer script and client-ready proposal.",
-    capability:
-      "Writing under someone else's direction taught me to add value without taking it over, to expand and sharpen an idea while keeping its author's intent intact. It is a different discipline from owning a concept outright, and it made me a more useful person to have on a team.",
+    capability: "Writing under someone else's direction taught me to add value without taking it over.",
     ownership: "Felix's role: creative support, writing from an approved lead direction. Team context: a ForArt creative team.",
     evidenceStatus: "A professional proposal from Felix's ForArt internship, embedded below, developing an approved internal direction.",
     evidenceNeeds: "The production or approval status, and team credits.",
@@ -329,8 +324,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideApproach: true,
     hideOutput: true,
     deck: "A TVC proposal for the Tết 2025 campaign of a boardgame brand, built around finding a specific behavioural moment instead of defaulting to the season's most familiar storytelling tropes.",
-    capability:
-      "This one pushed me to earn a Tết idea rather than default to the obvious one, and to build it around how the product actually behaves instead of bolting a brand onto a generic story. Steering it toward production also reminded me that a written beat means nothing until it becomes a shot.",
+    capability: "Steering a Tết idea toward production reminded me that a written beat means nothing until it becomes a shot.",
     ownership:
       "Felix's formal team-page credit is Production Director. Felix has additionally clarified script and storyboard contribution. Team context: a student campaign team.",
     evidenceStatus:
@@ -403,8 +397,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "Three talent-led VinFast campaigns from one ForArt internship stretch, each asking for something different. Taken one at a time below: Kim Yoo-jung, then VF5, then VF7.",
-    capability:
-      "Working three campaigns at once taught me to be genuinely useful at whatever stage needed me, writing to someone else's direction on VF5 and VF7, then owning the behind-the-scenes plan end to end on Kim Yoo-jung. It is where I learned how a shoot really runs, and how much of good content is decided in the planning, before the camera turns on.",
+    capability: "This is where I learned how a shoot really runs, and how much of good content is decided before the camera turns on.",
     ownership: "Felix's role: creative and production support across the three campaigns, and BTS content lead on the Kim Yoo-jung production. Team context: ForArt productions led by others.",
     evidenceStatus:
       "Professional production support from Felix's ForArt internship across script, proposal, on-set assistance and BTS content for three VinFast productions.",
@@ -507,8 +500,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A solo media-and-communications case study asking a bigger question than it first looks: whether a prime-time entertainment programme can criticise and reflect real social issues inside a mass medium, not just entertain. It contributes to the conversation about how media reflects and shapes societal concerns in Vietnam, and points to entertainment as a new avenue for social reflection.",
-    capability:
-      "Doing this taught me to treat entertainment as a text worth reading seriously, to slow down and ask what a costume or a repeated word is actually saying, and who gets to say it. It is where I grew comfortable moving between close analysis and the bigger question of how media reflects the society around it.",
+    capability: "",
     evidenceStatus: "An academic media analysis, solo-authored.",
     evidenceNeeds: "The full report, course code and bibliography.",
     sections: [
@@ -539,8 +531,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A cultural-research study asking what actually happens when V-Pop dresses Vietnamese folk in Western pop, built on Phương Mỹ Chi's Vũ Trụ Có Anh as its case.",
-    capability:
-      "This project trained me to look past the surface of something I enjoy and ask what it is doing culturally, and to hold two ideas at once: that fusion can preserve and celebrate, and that it can quietly flatten. It made me a more careful reader of the culture I work in.",
+    capability: "",
     ownership: "Felix's role: co-researcher. Team context: a two-person research team.",
     evidenceStatus: "Academic cultural research completed with a co-researcher.",
     evidenceNeeds: "The full report or slides, and a clear statement of Felix's individual contribution.",
@@ -595,8 +586,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "An editorial magazine that **challenges social norms around gender equality**, backed by thorough research and a photo series shot to fill it.",
-    capability:
-      "This is where I learned that art direction is really about setting rules other people can create inside, and that a strong, playful topic can protect a sensitive one, letting an audience laugh and think at once. Being lead photographer also showed me how much meaning is decided in framing and styling, before a single word is read.",
+    capability: "Art direction is really about setting rules other people can create inside.",
     ownership: "Felix's role: Creative Director and lead photographer, owning the concept, creative direction and the photo series. The written articles were produced by teammates.",
     evidenceStatus:
       "An academic editorial project. The flipbook embedded below is the final magazine; commercial publication or distribution is not claimed.",
@@ -653,8 +643,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A media-research white paper asking whether patriotic rap could become this generation's Red Music.",
-    capability:
-      "This project taught me to take a genre people dismiss as just entertainment and ask what it is actually carrying, and to build a cultural argument carefully enough that it holds up. It also grew my interest in how national values get renewed, or quietly lost, from one generation to the next.",
+    capability: "",
     evidenceStatus: "A complete academic research white paper for COMM2497, embedded in full below. The wider genre-level claim is proposed and argued through one case study, not measured across an executed audience study.",
     evidenceNeeds: "Instructor feedback, and audience-level evidence to move from argument to measured effect.",
     sections: [
@@ -737,8 +726,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A capstone art-direction proposal translating the A50 national commemoration into a culturally grounded homepage-visual concept for Google Vietnam.",
-    capability:
-      "This taught me the discipline of the single idea, that art direction is mostly subtraction, killing good symbols until the one that carries everything is left. It also pushed me to justify every visual choice for a Vietnamese and an international viewer at once, which made me a clearer and more defensible designer.",
+    capability: "Art direction is mostly subtraction: killing good symbols until the one that carries everything is left.",
     evidenceStatus: "An academic art-direction concept. It is not an official Google Doodle and was not published by Google.",
     evidenceNeeds: "The full deck and tutor feedback.",
     sections: [
@@ -849,8 +837,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     heroCaption:
       "The IEC leaders board, from left to right: Mr. Phong Kieu (CFO), Mr. Hung Nguyen (Vice-President), Mr. Luong Ngo (President), Mx. Felix Phan (Vice-President Assistant), Ms. Ha Do (R&D Executive), Ms. Thai Mai (HR Executive), and Ms. Anh Vu (Marketing Executive).",
     deck: "Two initiatives at RMIT's Innovation & Entrepreneurship Club: leading operations for the **Unicorn Start-up 101 bootcamp**, and marketing the **Petals of Love Charity Fundraiser**.",
-    capability:
-      "Across both, I learned to run the unglamorous middle of an event, the coordination, the quality checks, the handoffs, that decides whether a good idea actually reaches people. Marketing a charity also taught me to move people toward a cause without cheapening it.",
+    capability: "",
     evidenceStatus:
       "Student-organisation work. The quantitative outcomes come from the club's own records, so they are treated as reported, not independently verified.",
     evidenceNeeds: "Official role confirmation, event reports, fundraising records and analytics.",
@@ -953,8 +940,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "A systems-thinking case that maps cybersecurity resilience for Vietnamese SMEs through structures, stakeholders, feedback loops and leverage points.",
-    capability:
-      "This is where systems thinking clicked for me: the instinct to map a problem's structure and feedback loops before proposing anything, and to aim interventions at leverage points rather than symptoms. It also grounded my interest in cybersecurity and resilience as a social-impact problem, not only a technical one.",
+    capability: "",
     ownership: "Felix's role: researcher and analyst. Team context: a five-person team.",
     evidenceStatus:
       "Partially supported. Team membership and outputs are supported by the submission files, and a public announcement confirms Top 15 recognition. No national or global stage is claimed.",
@@ -1011,8 +997,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideOutput: true,
     hideSignificance: true,
     deck: "An academic study that turned Vietnamese media transparency from an abstract debate into a bounded analysis across online news, social media and television/video coverage.",
-    capability:
-      "This project taught me to make a fuzzy idea like transparency measurable before arguing about it, by turning it into criteria I could actually read a sample against. Working across online, social and broadcast sources also made me more careful about where a claim's evidence really comes from, and honest about how much a bounded sample can and cannot say.",
+    capability: "Make a fuzzy idea like transparency measurable before arguing about it.",
     ownership:
       "Felix's role: team researcher and analyst. Team context: a four-person academic team; the artifact proves membership, not individual task allocation.",
     evidenceStatus:
@@ -1068,8 +1053,7 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
     hideType: true,
     hideContext: true,
     deck: "A research project that began as an individual literature and problem-framing study, then grew into a four-person mixed-methods investigation combining quantitative analysis, social listening and social-network analysis.",
-    capability:
-      "This project taught me to break a sprawling, cross-domain problem into questions I could actually answer, and to match a different method to each rather than force one tool to do everything. Reading three evidence streams against each other, instead of leaning on a single number, is where I learned to trust triangulation, and to say plainly when a result is only an association.",
+    capability: "",
     ownership:
       "Felix's role: sole author of the individual literature review and problem framing; a member of the four-person team for the mixed-methods stages, where method ownership is shared.",
     evidenceStatus:

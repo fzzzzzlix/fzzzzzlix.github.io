@@ -28,7 +28,7 @@ export const crisisResponse = {
     eyebrow: "Framing",
     title: "Communicate accountability when trust is already under pressure",
     body: [
-      "This academic capstone for Issues, Risk & Crisis Communication used a real 2024 food-safety controversy involving Hanoi University of Science and Technology as the trigger for a crisis-response simulation. It is not HUST client work, and Felix did not represent the university.",
+      "This academic capstone for Issues, Risk & Crisis Communication used a real 2024 food-safety controversy at Hanoi University of Science and Technology as the trigger for a crisis-response simulation.",
       "The professional problem was still realistic: when student safety, institutional accountability and media scrutiny collide, what can an organisation say credibly, and what must it be prepared to answer next?",
     ],
   },
