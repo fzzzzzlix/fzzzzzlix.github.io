@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader, CV_URL } from "../site-shell";
+import { PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -10,17 +10,17 @@ export const metadata: Metadata = { title: experience.meta.title, description: e
 export default function ExperiencePage() {
   return (
     <div className="site-frame">
-      <SiteHeader />
+      <SiteHeader current="/experience" />
       <main id="main-content">
-        <section className="experience-top section-shell">
-          <a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>
-        </section>
+        <PageHero eyebrow={experience.meta.title} aside={<a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>} />
         <section className="timeline section-shell">
           {experience.timeline.map((item, index) => (
             <article key={item.org}>
-              <span className="timeline-index">{String(index + 1).padStart(2, "0")}</span>
-              <div>
+              <div className="timeline-folio">
+                <span className="timeline-index">{String(index + 1).padStart(2, "0")}</span>
                 <p className="timeline-date">{item.dates}</p>
+              </div>
+              <div className="timeline-entry">
                 <h2>{item.org}</h2>
                 <h3>{item.role}</h3>
                 <ul className="timeline-scope">{item.scope.map((line, i) => <li key={i}>{line}</li>)}</ul>

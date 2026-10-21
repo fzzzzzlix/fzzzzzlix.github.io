@@ -61,6 +61,12 @@ the copy they belong to — but they are structural. Editing a URL or an image p
 changes what loads, so change those deliberately. Page routes, category `filter`
 values and project `id`s must stay valid.
 
+## Visual design
+
+Colours, type, the North Star, layout and motion rules live in `DESIGN.md`.
+Styles are in `app/globals.css`, organised by page; components read semantic
+surface tokens (`surface-wine`, `surface-plum`, default bone) instead of raw colours.
+
 ## Verify a change
 ```bash
 npx tsc --noEmit

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { HTMLAttributeReferrerPolicy, ReactNode } from "react";
 import type { Project } from "../../data";
-import { MediaPlaceholder, StarMark } from "../../site-shell";
+import { MediaPlaceholder, NorthStar } from "../../site-shell";
 
 /*
  * Shared feature-case primitives.
@@ -19,7 +19,63 @@ export function CaseArticle({ children }: { children: ReactNode }) {
 
 type StripItem = { value: ReactNode; unit?: string; label: string };
 
-/** Hero: eyebrow, title, role, meta chips, optional cover image and fast-evidence strip. */
+/**
+ * Shared poster opening for every case (feature, Be Local and supporting).
+ * The wine poster carries the folio (project id), eyebrow, title, role and
+ * meta line; `media` then sits across the seam into the bone reading surface,
+ * followed by `children` (caption, fast-evidence strip). With no media the
+ * poster simply closes, so a media-light case opens typographically.
+ */
+export function CaseHeroFrame({
+  folio,
+  eyebrow,
+  title,
+  role,
+  meta,
+  media,
+  children,
+}: {
+  folio: string;
+  eyebrow: ReactNode;
+  title: ReactNode;
+  role: ReactNode;
+  meta: string[];
+  media?: ReactNode;
+  children?: ReactNode;
+}) {
+  return (
+    <header className={`p31-hero${media ? " has-media" : " no-media"}`}>
+      <div className="p31-hero-poster surface-wine">
+        <NorthStar className="p31-hero-star" />
+        <div className="p31-hero-head section-shell">
+          <div className="case-kicker"><span className="case-folio">{folio}</span><p className="eyebrow">{eyebrow}</p></div>
+          <h1>{title}</h1>
+          <p className="case-role">{role}</p>
+          {meta.length ? <p className="case-meta">{meta.map((item) => <span key={item}>{item}</span>)}</p> : null}
+        </div>
+      </div>
+      {media || children ? (
+        <div className="p31-hero-body section-shell">
+          {media}
+          {children}
+        </div>
+      ) : null}
+    </header>
+  );
+}
+
+/** Fast-evidence strip: typographic figures, no boxes. */
+export function EvidenceStrip({ items }: { items: StripItem[] }) {
+  return (
+    <ul className="p31-strip" aria-label="Fast evidence">
+      {items.map((item, i) => (
+        <li key={i}><strong>{item.value}{item.unit ? <small>{item.unit}</small> : null}</strong><span>{item.label}</span></li>
+      ))}
+    </ul>
+  );
+}
+
+/** Hero: eyebrow, title, role, meta, optional cover image and fast-evidence strip. */
 export function CaseHero({
   project,
   eyebrow = "Feature case",
@@ -48,34 +104,22 @@ export function CaseHero({
   hideType?: boolean;
   hideYear?: boolean;
 }) {
+  const meta = [
+    ...(hideYear || !project.year ? [] : [project.year]),
+    ...(hideType || !project.publicType ? [] : [project.publicType]),
+    ...(descriptor ? [descriptor] : []),
+    ...(extraMeta ?? []),
+    ...project.tags,
+  ];
+  const media = image ? (
+    <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
+      <img src={image} alt={project.alt} style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
+    </a>
+  ) : undefined;
   return (
-    <header className="p31-hero section-shell">
-      <div className="p31-hero-head">
-        <p className="eyebrow"><StarMark size={18} /> {eyebrow}</p>
-        <h1>{title}</h1>
-        <p className="case-role">{project.role}</p>
-        <div className="case-meta">
-          <span>{project.id}</span>
-          {hideYear || !project.year ? null : <span>{project.year}</span>}
-          {hideType || !project.publicType ? null : <span>{project.publicType}</span>}
-          {descriptor ? <span>{descriptor}</span> : null}
-          {extraMeta?.map((item) => <span key={item}>{item}</span>)}
-          {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-        </div>
-      </div>
-      {image ? (
-        <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
-          <img src={image} alt={project.alt} style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
-        </a>
-      ) : null}
-      {strip?.length ? (
-        <ul className="p31-strip" aria-label="Fast evidence">
-          {strip.map((item, i) => (
-            <li key={i}><strong>{item.value}{item.unit ? <small>{item.unit}</small> : null}</strong><span>{item.label}</span></li>
-          ))}
-        </ul>
-      ) : null}
-    </header>
+    <CaseHeroFrame folio={project.id} eyebrow={eyebrow} title={title} role={project.role} meta={meta} media={media}>
+      {strip?.length ? <EvidenceStrip items={strip} /> : null}
+    </CaseHeroFrame>
   );
 }
 

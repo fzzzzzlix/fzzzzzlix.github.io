@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Project } from "../../data";
-import { StarMark } from "../../site-shell";
+import { CaseHeroFrame, EvidenceStrip } from "./feature-case-primitives";
 import { CanvaEmbed } from "./canva-embed";
 import { beLocal as c } from "../../content/cases/be-local";
 
@@ -19,25 +19,20 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
   return (
     <article className="case-page feature-case p31-case">
       {/* Hero */}
-      <header className="p31-hero section-shell">
-        <div className="p31-hero-head">
-          <p className="eyebrow"><StarMark size={18} /> {c.hero.eyebrow}</p>
-          <h1>{c.hero.title}</h1>
-          <p className="case-role">{project.role}</p>
-          <div className="case-meta">
-            <span>{project.id}</span>
-            <span>{project.year}</span>
-            <span>{project.publicType}</span>
-            {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-          </div>
-        </div>
-        <a className="p31-hero-media" href={c.images.hero} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
-          <img src={c.images.hero} alt={project.alt} />
-        </a>
-        <ul className="p31-strip" aria-label="Fast evidence">
-          {c.hero.strip.map((item) => <li key={item.label}><strong>{item.value}{item.unit ? <small>{item.unit}</small> : null}</strong><span>{item.label}</span></li>)}
-        </ul>
-      </header>
+      <CaseHeroFrame
+        folio={project.id}
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        role={project.role}
+        meta={[project.year, project.publicType, ...project.tags]}
+        media={
+          <a className="p31-hero-media" href={c.images.hero} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
+            <img src={c.images.hero} alt={project.alt} />
+          </a>
+        }
+      >
+        <EvidenceStrip items={c.hero.strip} />
+      </CaseHeroFrame>
 
       {/* Tension */}
       <section className="case-tension section-shell">

@@ -19,8 +19,8 @@ export default function PhotoshootsSeriesMoved() {
     <div className="site-frame">
       <SiteHeader />
       <main id="main-content">
-        <section className="page-hero section-shell">
-          <div>
+        <section className="page-hero surface-wine">
+          <div className="page-hero-inner section-shell"><div className="page-hero-copy">
             <p className="eyebrow">Project moved</p>
             <h1>Photoshoots Series is now part of Equal in Ao Dai</h1>
             <p className="page-deck">
@@ -29,7 +29,7 @@ export default function PhotoshootsSeriesMoved() {
             <p style={{ marginTop: 24 }}>
               <a className="button button-primary" href={TARGET}>Open Equal in Ao Dai / Gender Equality Magazine</a>
             </p>
-          </div>
+          </div></div>
         </section>
         <PhotoshootsRedirect target={TARGET} />
       </main>

@@ -1,9 +1,10 @@
 import type { Project } from "../../data";
 import { inline } from "../../content/render-inline";
-import { CoverImage, MediaPlaceholder, StarMark } from "../../site-shell";
+import { CoverImage, MediaPlaceholder } from "../../site-shell";
 import { REAL_IMAGES } from "../../project-images";
 import {
   CaseArticle,
+  CaseHeroFrame,
   CaseNav,
   CaseSection,
   EvidenceFigure,
@@ -95,25 +96,19 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
 
   return (
     <CaseArticle>
-      <header className="p31-hero section-shell">
-        <div className="p31-hero-head">
-          <p className="eyebrow">
-            <StarMark size={18} /> {caseLabel(project, density)}
-          </p>
-          <h1>{project.title}</h1>
-          <p className="case-role">{project.role}</p>
-          <div className="case-meta">
-            <span>{project.id}</span>
-            {ext?.hideYear || !project.year ? null : <span>{project.year}</span>}
-            {ext?.hideType || !project.publicType ? null : <span>{project.publicType}</span>}
-            {ext?.context && !ext?.hideContext ? <span>{ext.context}</span> : null}
-            {project.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
-        </div>
-        {image ? (
-          <>
+      <CaseHeroFrame
+        folio={project.id}
+        eyebrow={caseLabel(project, density)}
+        title={project.title}
+        role={project.role}
+        meta={[
+          ...(ext?.hideYear || !project.year ? [] : [project.year]),
+          ...(ext?.hideType || !project.publicType ? [] : [project.publicType]),
+          ...(ext?.context && !ext?.hideContext ? [ext.context] : []),
+          ...project.tags,
+        ]}
+        media={
+          image ? (
             <a
               className="p31-hero-media"
               href={heroHref}
@@ -123,14 +118,12 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
             >
               <CoverImage src={image.src} fit={image.fit} poster={image.poster} alt={project.alt} loading="eager" />
             </a>
-            {ext?.heroCaption ? <p className="p31-hero-caption">{inline(ext.heroCaption)}</p> : null}
-          </>
-        ) : (
-          <div style={{ marginTop: 46 }}>
-            <MediaPlaceholder projectId={project.id} discipline={project.publicType} />
-          </div>
-        )}
-      </header>
+          ) : undefined
+        }
+      >
+        {image && ext?.heroCaption ? <p className="p31-hero-caption">{inline(ext.heroCaption)}</p> : null}
+        {image ? null : <MediaPlaceholder projectId={project.id} discipline={project.publicType} />}
+      </CaseHeroFrame>
 
       {ext?.deck ? (
         <section className="p31-section section-shell">
