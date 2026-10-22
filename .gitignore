@@ -43,6 +43,12 @@ tsconfig.tsbuildinfo
 /work/
 
 # tooling / session artifacts
-.claude/
+# .claude/ stays local except the shared agent skills and settings
+.claude/*
+!.claude/skills/
+!.claude/settings.json
+!.claude/playwright-cli.cloud.json
+.taste-skill/
+.playwright-cli/
 .openai/
 Dfelix-phan-portfolio-wip.claude/

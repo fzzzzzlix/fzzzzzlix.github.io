@@ -67,6 +67,23 @@ Colours, type, the North Star, layout and motion rules live in `DESIGN.md`.
 Styles are in `app/globals.css`, organised by page; components read semantic
 surface tokens (`surface-wine`, `surface-plum`, default bone) instead of raw colours.
 
+## Agent skills (`.claude/skills/`)
+
+Vendored copies; permissions for their commands are in `.claude/settings.json`.
+| Skill | Use it for |
+|---|---|
+| `web-design-guidelines` (Vercel) | Audit UI code for accessibility, focus, motion, image and form rules |
+| `design-taste-frontend` (Taste Skill) | Browser inspection + screenshots at 1440/768/390: `node .claude/skills/design-taste-frontend/scripts/inspect.mjs http://localhost:5199/<page> --out .taste-skill/<page>` |
+| `playwright-cli` | Click through and screenshot the running site. Install with `npm install -g @playwright/cli@latest`; in cloud sessions open with `playwright-cli open <url> --config=.claude/playwright-cli.cloud.json` |
+| `frontend-ui-engineering` (Addy Osmani) | Component and UI engineering practice |
+
+**`DESIGN.md` wins over every skill.** Taste Skill's house rules (no monospace, no
+hairline rules, no index numbers, no eyebrow labels, no cream ground) contradict
+this site's deliberate design; treat those findings as noise. Act on its layout,
+overflow, contrast and covered-text findings after confirming them in a screenshot.
+The "edge-text" finding for the nav links at 768/390 is a false positive from the
+closed mobile `<details>` menu.
+
 ## Verify a change
 ```bash
 npx tsc --noEmit

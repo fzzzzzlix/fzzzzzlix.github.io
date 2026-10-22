@@ -27,7 +27,7 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
         meta={[project.year, project.publicType, ...project.tags]}
         media={
           <a className="p31-hero-media" href={c.images.hero} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
-            <img src={c.images.hero} alt={project.alt} />
+            <img src={c.images.hero} alt={project.alt} fetchPriority="high" />
           </a>
         }
       >

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { asset } from "./base-path";
 
@@ -28,6 +28,12 @@ export const metadata: Metadata = {
     images: [OG_IMAGE],
   },
   icons: { icon: asset("/favicon.svg"), shortcut: asset("/favicon.svg") },
+};
+
+// Mobile browser chrome matches the bone page background (--bone in globals.css).
+export const viewport: Viewport = {
+  themeColor: "#F2EEE8",
+  colorScheme: "light",
 };
 
 const personJsonLd = {
