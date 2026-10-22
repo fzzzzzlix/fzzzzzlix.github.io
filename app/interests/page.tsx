@@ -20,7 +20,6 @@ export default function InterestsPage() {
           {interests.cards.map((item, index) => (
             <article className={`interest-area${index % 2 ? " is-flip" : ""}`} key={item.title}>
               <div className="interest-area-head">
-                <span className="interest-area-index">0{index + 1}</span>
                 <h2>{item.title}</h2>
                 <p>{item.text}</p>
               </div>

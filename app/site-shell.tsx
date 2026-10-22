@@ -158,11 +158,10 @@ export function SiteFooter() {
 // discipline plus a neutral status line: no filenames, dimensions, crop rules
 // or production notes ever reach public HTML. Styled as a typographic plate,
 // never as an imitation photo.
-export function MediaPlaceholder({ projectId, discipline, label = "Primary visual not published", portrait = false, index }: { projectId?: string; discipline?: string; label?: string; portrait?: boolean; index?: number }) {
+export function MediaPlaceholder({ projectId, discipline, label = "Primary visual not published", portrait = false }: { projectId?: string; discipline?: string; label?: string; portrait?: boolean }) {
   return (
     <div className={`media-placeholder${portrait ? " media-placeholder-portrait" : ""}`} role="img" aria-label={`${projectId ? projectId + ", " : ""}${discipline ? discipline + ". " : ""}${label}`}>
       <div className="placeholder-star" aria-hidden="true"><StarMark size={portrait ? 96 : 54} /></div>
-      {typeof index === "number" ? <span className="placeholder-index" aria-hidden="true">{String(index).padStart(2, "0")}</span> : null}
       <div className="placeholder-copy">
         {projectId ? <strong>{projectId}</strong> : null}
         {discipline ? <span>{discipline}</span> : null}

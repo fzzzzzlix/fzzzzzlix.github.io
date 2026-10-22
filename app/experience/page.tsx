@@ -14,10 +14,9 @@ export default function ExperiencePage() {
       <main id="main-content">
         <PageHero eyebrow={experience.meta.title} aside={<a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>} />
         <section className="timeline section-shell">
-          {experience.timeline.map((item, index) => (
+          {experience.timeline.map((item) => (
             <article key={item.org}>
               <div className="timeline-folio">
-                <span className="timeline-index">{String(index + 1).padStart(2, "0")}</span>
                 <p className="timeline-date">{item.dates}</p>
               </div>
               <div className="timeline-entry">

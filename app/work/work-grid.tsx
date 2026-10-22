@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { filters, projects } from "../data";
 import { CoverImage, StarMark } from "../site-shell";
 import { REAL_IMAGES } from "../project-images";
@@ -111,11 +111,20 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
     return sorted.filter((project) => project.tags.includes(active));
   }, [active, sorted]);
 
-  // Desktop preview follows the row under the pointer or keyboard focus; it is
-  // an enhancement only, every row already carries what is needed to choose.
-  const [previewId, setPreviewId] = useState<string | null>(null);
-  const preview = visible.find((p) => p.id === previewId) ?? visible[0];
-  const previewImg = preview ? REAL_IMAGES[preview.id] : undefined;
+  // Featured is a 12-column grid, three tiles a row on desktop and two on
+  // tablets. Widen the closing tiles so the last row is never one tile alone:
+  // a leftover pair goes half-width, a leftover single turns the last four
+  // into a row of four. On tablets an odd count opens on one full-width tile.
+  const featured = active === "Featured";
+  const tileSpan = (i: number) => {
+    if (!featured) return undefined;
+    const n = visible.length;
+    const classes = [];
+    if (n % 3 === 1 && n >= 4 && i >= n - 4) classes.push("d-span-3");
+    if (n % 3 === 2 && i >= n - 2) classes.push("d-span-6");
+    if (n % 2 === 1 && i === 0) classes.push("t-span-12");
+    return classes.join(" ") || undefined;
+  };
 
   // On phones the filter row scrolls sideways. Mark which end still hides
   // filters (CSS fades that edge and shows the arrow) and nudge the row once
@@ -156,56 +165,26 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
           {filters.map((filter) => <button key={filter} type="button" className={active === filter ? "active" : ""} onClick={() => selectFilter(filter)} aria-pressed={active === filter}>{filter}</button>)}
         </div>
       </div>
-      <div className="section-shell work-layout">
-        <div className="work-list-col">
-          <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
-          <ol className="work-list">
-            {visible.map((project, index) => {
-              const img = REAL_IMAGES[project.id];
-              return (
-                <li key={project.id}>
-                  <Link
-                    href={`/work/${project.slug}`}
-                    className={`work-row${project.id === preview?.id ? " is-previewed" : ""}`}
-                    onMouseEnter={() => setPreviewId(project.id)}
-                    onFocus={() => setPreviewId(project.id)}
-                  >
-                    <span className="work-row-num">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="work-row-main">
-                      <h2>{project.title}</h2>
-                      <p className="work-row-premise">{project.tension}</p>
-                      <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                    </div>
-                    <p className="work-row-role">{project.role}</p>
-                    <div className="work-row-meta">
-                      <p className="project-meta"><span>{project.year}</span><span className="meta-last">{project.publicType}</span></p>
-                    </div>
-                    {img ? (
-                      <span className="work-row-thumb">
-                        <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt={project.alt} />
-                      </span>
-                    ) : null}
-                  </Link>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-        {preview ? (
-          <aside className="work-preview" aria-hidden="true">
-            <div className="work-preview-inner">
-              {previewImg ? (
-                <span className="work-preview-media" key={preview.id}>
-                  <CoverImage src={previewImg.src} fit={previewImg.fit} poster={previewImg.poster} alt="" />
-                </span>
-              ) : (
-                <span className="work-preview-plate" key={preview.id}><StarMark size={40} /></span>
-              )}
-              <p className="work-preview-title">{preview.title}</p>
-              <p className="project-meta"><span>{preview.year}</span><span className="meta-last">{preview.publicType}</span></p>
-            </div>
-          </aside>
-        ) : null}
+      <div className="section-shell">
+        <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
+        <ul className={`work-grid${featured ? " is-featured" : ""}`}>
+          {visible.map((project, index) => {
+            const img = REAL_IMAGES[project.id];
+            return (
+              <li key={project.id} className={tileSpan(index)}>
+                <Link href={`/work/${project.slug}`} className={`work-tile${img ? "" : " no-media"}`}>
+                  <span className="work-tile-media">
+                    {img ? <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt="" /> : <StarMark size={featured ? 44 : 32} />}
+                  </span>
+                  <span className="work-tile-caption">
+                    <span className="work-tile-title">{project.title}</span>
+                    <span className="work-tile-role">{project.role}</span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </>
   );
