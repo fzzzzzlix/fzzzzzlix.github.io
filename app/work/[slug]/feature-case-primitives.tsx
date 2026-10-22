@@ -112,7 +112,7 @@ export function CaseHero({
   ];
   const media = image ? (
     <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
-      <img src={image} alt={project.alt} style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
+      <img src={image} alt={project.alt} fetchPriority="high" style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
     </a>
   ) : undefined;
   return (
