@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { filters, projects } from "../data";
 import { CoverImage, StarMark } from "../site-shell";
 import { REAL_IMAGES } from "../project-images";
@@ -117,10 +117,42 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
   const preview = visible.find((p) => p.id === previewId) ?? visible[0];
   const previewImg = preview ? REAL_IMAGES[preview.id] : undefined;
 
+  // On phones the filter row scrolls sideways. Mark which end still hides
+  // filters (CSS fades that edge and shows the arrow) and nudge the row once
+  // on load so it reads as swipeable. No nudge under reduced motion.
+  const barRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const bar = barRef.current;
+    const wrap = bar?.parentElement;
+    if (!bar || !wrap) return;
+    const update = () => {
+      const max = bar.scrollWidth - bar.clientWidth;
+      wrap.dataset.edge = max <= 4 ? "none" : bar.scrollLeft <= 4 ? "start" : bar.scrollLeft >= max - 4 ? "end" : "middle";
+    };
+    update();
+    let back: number | undefined;
+    const cancel = () => window.clearTimeout(back);
+    const nudge = window.setTimeout(() => {
+      if (wrap.dataset.edge !== "start" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      bar.scrollTo({ left: 56, behavior: "smooth" });
+      back = window.setTimeout(() => bar.scrollTo({ left: 0, behavior: "smooth" }), 650);
+    }, 900);
+    bar.addEventListener("scroll", update, { passive: true });
+    bar.addEventListener("pointerdown", cancel);
+    window.addEventListener("resize", update);
+    return () => {
+      window.clearTimeout(nudge);
+      cancel();
+      bar.removeEventListener("scroll", update);
+      bar.removeEventListener("pointerdown", cancel);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   return (
     <>
       <div className="filter-bar-wrap">
-        <div className="filter-bar section-shell" aria-label="Filter projects by capability">
+        <div ref={barRef} className="filter-bar section-shell" aria-label="Filter projects by capability">
           {filters.map((filter) => <button key={filter} type="button" className={active === filter ? "active" : ""} onClick={() => selectFilter(filter)} aria-pressed={active === filter}>{filter}</button>)}
         </div>
       </div>

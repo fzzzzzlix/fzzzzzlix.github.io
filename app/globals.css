@@ -777,6 +777,13 @@ ol.p31-list { list-style: decimal; }
   .filter-bar { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-inline: var(--gutter); scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
   .filter-bar::-webkit-scrollbar { display: none; }
   .filter-bar button { flex: 0 0 auto; }
+  /* Swipe hint: work-grid.tsx sets data-edge to the end(s) still hiding filters. */
+  .filter-bar-wrap[data-edge="none"] .filter-bar { -webkit-mask-image: none; mask-image: none; }
+  .filter-bar-wrap[data-edge="start"] .filter-bar { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 76px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 76px), transparent); }
+  .filter-bar-wrap[data-edge="middle"] .filter-bar { -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 76px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 76px), transparent); }
+  .filter-bar-wrap[data-edge="end"] .filter-bar { -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px); mask-image: linear-gradient(90deg, transparent, #000 40px); }
+  .filter-bar-wrap::after { content: "→"; position: absolute; top: 0; bottom: 1px; right: 0; display: flex; align-items: center; padding: 0 var(--gutter) 0 36px; background: linear-gradient(90deg, transparent, var(--bone) 30px); color: var(--wine); font: 400 15px/1 var(--mono); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+  .filter-bar-wrap[data-edge="start"]::after, .filter-bar-wrap[data-edge="middle"]::after { opacity: 1; }
   .work-row { grid-template-columns: 24px minmax(0, 1fr) 76px; grid-template-areas: "num main thumb" "num role thumb" "num meta thumb"; column-gap: 12px; row-gap: 6px; padding: 14px 0; }
   .work-row h2 { font-size: 19px; }
   .work-row-premise { font-size: 15px; }
