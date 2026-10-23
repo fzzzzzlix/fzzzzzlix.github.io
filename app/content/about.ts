@@ -11,6 +11,7 @@ export const about = {
   },
   identity: {
     eyebrow: "About Felix",
+    title: "Hello, I’m a…",
     heading: "Creative Strategist & Storyteller",
     facts: [
       { term: "Professional name", detail: "Felix Phan" },

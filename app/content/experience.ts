@@ -65,12 +65,16 @@ export const experience = {
       "/images/cases/student council cert.jpg",
     ] },
   ],
+  // Wide opening photo for the page. null shows a pending-image plate; to add
+  // one, set { src: "/images/...", alt: "..." }.
+  cover: null as null | { src: string; alt: string },
+  timelineTitle: "Work experience",
   education: {
     eyebrow: "Education",
     title: "Education",
     items: [
-      { span: "2022 - April 2027", title: "Bachelor of Professional Communication", text: "RMIT University" },
-      { span: "2022 - April 2027", title: "Bachelor of Business Administration in English", text: "National Economics University" },
+      { span: "2022 - April 2027", title: "Bachelor of\nProfessional Communication", text: "RMIT University" },
+      { span: "2022 - April 2027", title: "Bachelor of Business Administration\nin English", text: "National Economics University" },
     ],
     note: "All coursework complete (degrees conferred at the April 2027 graduation ceremonies). Available for full-time work now.",
   },

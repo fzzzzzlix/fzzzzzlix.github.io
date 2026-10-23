@@ -15,8 +15,8 @@ export const home = {
   },
 
   proofBand: [
-    { value: "2", label: "bachelor degrees, completed simultaneously" },
-    { value: "5", label: "initiatives founded & co-founded" },
+    { value: "2", label: "bachelor degrees,\ncompleted simultaneously" },
+    { value: "5", label: "initiatives founded\n& co-founded" },
     { value: "26", label: "selected projects" },
     { value: "54", label: "member-org managed" },
   ],

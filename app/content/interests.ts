@@ -1,6 +1,6 @@
 /*
  * Focus Areas / Interests page copy (app/interests/page.tsx).
- * `id` is the area's jump-link anchor; `projects` holds the project ids shown
+ * `id` is the area's anchor; `projects` holds the project ids shown
  * under each area: keep both valid. Photos carry their pixel size (w, h) so a
  * pair can sit side by side at one shared height without cropping.
  */
@@ -10,9 +10,7 @@ export const interests = {
     description: "Felix Phan's work across sustainable development, ESG, CSR, culture and social advocacy.",
   },
   hero: {
-    eyebrow: "Focus Areas",
-    title: "Three interests that run through every project",
-    deck: "Sustainable development, culture and media, and social advocacy shape the briefs Felix takes on and how Felix spends an ordinary day, from Hà Giang field trips to concert fancams and Pride Week.",
+    title: "Interests that shape my work",
   },
   projectsLabel: "Projects in this area",
   cards: [

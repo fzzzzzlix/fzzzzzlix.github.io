@@ -64,7 +64,7 @@ Self-hosted woff2 subsets (Latin, Latin Extended, Vietnamese) in `public/fonts`.
 | Voice | Face | Use |
 |---|---|---|
 | Everything | EB Garamond 400–600 (roman and italic) | Headings, body copy, captions, figures, and the utility voice: navigation, metadata, dates, labels, buttons, links out |
-| Signature | EB Garamond *italic* | Only: "Phan" in the home hero, the "The work"/"Experience" page words, the footer line, pull quotes |
+| Signature | EB Garamond *italic* | Only: "Phan" in the home hero, the page titles ("Work", "Experience", "Interests that shape my work", "Hello, I’m a…" with its "Creative Strategist & Storyteller" subheading), the footer line, pull quotes |
 
 One face. There is no monospace on the site.
 
@@ -166,16 +166,26 @@ team, status, category tags) anywhere on the site; those values stay in
 
 ### Focus Areas
 
-A one-sentence headline and deck, then a jump list to the three areas. Every
-area has the same shape, in the same order: heading and text (left), an
-equal-height photo pair (right), then its projects as 16:9 picture tiles with
-title and type. No alternating sides.
+The page title, then three wine bars, one per area, closed at load: the bars
+are the page's navigation and set the areas apart. Each bar is a toggle (title
+left, Show/Hide and the boxed mark right). An open area keeps the same shape
+every time, inside its wine panel: text (left), an equal-height photo pair
+(right), then "Projects in this area" (lead size, star marker) over compact
+rows, a small 4:3 thumbnail with title and type beside it.
 
 ### Photo pairs
 
-Photos that sit side by side share one height and keep their whole frame:
-`PhotoRow` (`app/site-shell.tsx`) sizes each figure by its own aspect ratio
-(content files carry each photo's `w` and `h`). Used on About and Focus Areas.
+Photos that sit side by side share one height. `PhotoRow`
+(`app/site-shell.tsx`) by default sizes each figure by its own aspect ratio, so
+every photo keeps its whole frame (content files carry each `w` and `h`); Focus
+Areas uses this. With `ratio` it splits the row evenly and crops every photo to
+that frame: About's pairs use 4:5 at the text measure, so both pairs line up
+with the paragraphs and with each other.
+
+### Experience
+
+Title, a wide 21:9 opening photo (`experience.cover`; a pending-image plate
+until one is set), then Education, Work experience, Other achievements.
 
 ## 8. Images
 

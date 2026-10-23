@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
+import { MediaPlaceholder, PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -13,7 +13,20 @@ export default function ExperiencePage() {
       <SiteHeader current="/experience" />
       <main id="main-content">
         <PageHero eyebrow={experience.meta.title} aside={<a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>} />
+        <figure className="experience-cover section-shell">
+          {experience.cover ? (
+            <img src={asset(experience.cover.src)} alt={experience.cover.alt} fetchPriority="high" />
+          ) : (
+            <MediaPlaceholder discipline="Experience" label="Header image pending" />
+          )}
+        </figure>
+        <section className="education section-shell">
+          <div className="section-intro"><p className="eyebrow">{experience.education.eyebrow}</p><h2>{experience.education.title}</h2></div>
+          <div className="education-grid">{experience.education.items.map((item) => <article key={item.title}><span>{item.span}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+          <p className="source-note">{experience.education.note}</p>
+        </section>
         <section className="timeline section-shell">
+          <div className="section-intro"><h2>{experience.timelineTitle}</h2></div>
           {experience.timeline.map((item) => (
             <article key={item.org}>
               <div className="timeline-folio">
@@ -43,11 +56,6 @@ export default function ExperiencePage() {
               </div>
             </article>
           ))}
-        </section>
-        <section className="education section-shell">
-          <div className="section-intro"><p className="eyebrow">{experience.education.eyebrow}</p><h2>{experience.education.title}</h2></div>
-          <div className="education-grid">{experience.education.items.map((item) => <article key={item.title}><span>{item.span}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
-          <p className="source-note">{experience.education.note}</p>
         </section>
         <section className="education section-shell">
           <div className="section-intro"><p className="eyebrow">{experience.credentials.eyebrow}</p><h2>{experience.credentials.title}</h2></div>

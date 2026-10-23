@@ -81,7 +81,7 @@ Vendored copies; permissions for their commands are in `.claude/settings.json`.
 rules in Oct 2026 and adopted most of them (one serif face, no divider lines, no
 index numbers, no eyebrows, stone ground, no rest shadows, a seven-step type
 scale, scroll rise-ins); DESIGN.md records the result. Labels are now 14px.
-Still declined: the italic "Phan", About capability tiers, the "The work" title,
+Still declined: the italic "Phan", About capability tiers, the italic page titles,
 and stock or archive imagery (media honesty). Treat findings on those as noise. Act on
 layout, overflow, contrast and covered-text findings after confirming them in a
 screenshot. The "edge-text" finding for the nav links at 768/390 is a false

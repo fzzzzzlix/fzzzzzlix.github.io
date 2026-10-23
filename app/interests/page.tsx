@@ -9,50 +9,50 @@ export const metadata: Metadata = { title: interests.meta.title, description: in
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
-// Every area is laid out the same way, in the same order: heading and text,
-// an equal-height photo pair, then its projects as picture tiles. A jump list
-// under the opener reaches each area directly.
+// The page opens on three wine bars, one per area. Each bar is a toggle; the
+// area opens in place with the same shape every time: text and an
+// equal-height photo pair, then its projects as compact thumbnail rows.
 export default function InterestsPage() {
   return (
     <div className="site-frame">
       <SiteHeader current="/interests" />
       <main id="main-content">
-        <PageHero eyebrow={interests.hero.eyebrow} title={interests.hero.title} deck={interests.hero.deck} />
-        <nav className="interest-index section-shell" aria-label="Focus areas on this page">
-          {interests.cards.map((item) => (
-            <a key={item.id} href={`#${item.id}`}>{item.title}<span aria-hidden="true">↓</span></a>
-          ))}
-        </nav>
+        <PageHero eyebrow={interests.hero.title} />
         <div className="interest-areas section-shell">
           {interests.cards.map((item) => (
-            <section className="interest-area" id={item.id} key={item.id} aria-labelledby={`${item.id}-title`}>
-              <div className="interest-area-head">
-                <h2 id={`${item.id}-title`}>{item.title}</h2>
-                <p>{item.text}</p>
+            <details className="interest-area surface-wine" id={item.id} key={item.id}>
+              <summary>
+                <h2>{item.title}</h2>
+                <span className="disclosure-mark" aria-hidden="true" />
+              </summary>
+              <div className="interest-area-body">
+                <p className="interest-area-text">{item.text}</p>
+                <PhotoRow className="interest-photos" photos={item.images} />
+                <div className="interest-projects-block">
+                  <h3>{interests.projectsLabel}</h3>
+                  <ul className="interest-projects">
+                    {item.projects.map((id) => {
+                      const p = projectsById[id];
+                      if (!p) return null;
+                      const img = REAL_IMAGES[id];
+                      return (
+                        <li key={id}>
+                          <Link className="interest-project" href={`/work/${p.slug}`}>
+                            <span className={`interest-project-media${img ? "" : " no-media"}`}>
+                              {img ? <CoverImage src={img.src} fit="cover" poster={img.poster} alt="" /> : <StarMark size={24} />}
+                            </span>
+                            <span className="interest-project-copy">
+                              <span className="interest-project-title">{p.title}</span>
+                              <span className="project-meta">{p.publicType}</span>
+                            </span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-              <PhotoRow className="interest-photos" photos={item.images} />
-              <div className="interest-projects-block">
-                <h3>{interests.projectsLabel}</h3>
-                <ul className="interest-projects">
-                  {item.projects.map((id) => {
-                    const p = projectsById[id];
-                    if (!p) return null;
-                    const img = REAL_IMAGES[id];
-                    return (
-                      <li key={id}>
-                        <Link className="interest-project" href={`/work/${p.slug}`}>
-                          <span className={`interest-project-media${img ? "" : " no-media"}`}>
-                            {img ? <CoverImage src={img.src} fit="cover" poster={img.poster} alt="" /> : <StarMark size={32} />}
-                          </span>
-                          <span className="interest-project-title">{p.title}</span>
-                          <span className="project-meta">{p.publicType}</span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </section>
+            </details>
           ))}
         </div>
       </main>

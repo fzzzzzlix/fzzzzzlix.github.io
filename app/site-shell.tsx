@@ -124,14 +124,16 @@ export function CoverImage({ src, fit, alt, poster, loading = "lazy" }: { src: s
 
 export type RowPhoto = { src: string; w: number; h: number; alt: string; caption?: string };
 
-// Photos side by side at one shared height. Each figure grows in proportion to
-// its own aspect ratio, so every picture keeps its whole frame, uncropped.
-export function PhotoRow({ photos, className }: { photos: RowPhoto[]; className?: string }) {
+// Photos side by side at one shared height. By default each figure grows in
+// proportion to its own aspect ratio, so every picture keeps its whole frame.
+// With `ratio` (e.g. "4 / 5") the figures split the row evenly and every photo
+// is cropped to that one frame, so rows line up exactly across a page.
+export function PhotoRow({ photos, className, ratio }: { photos: RowPhoto[]; className?: string; ratio?: string }) {
   return (
     <div className={`photo-row${className ? ` ${className}` : ""}`}>
       {photos.map((photo) => (
-        <figure key={photo.src} style={{ flex: `${photo.w / photo.h} 1 0` }}>
-          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" />
+        <figure key={photo.src} style={{ flex: ratio ? "1 1 0" : `${photo.w / photo.h} 1 0` }}>
+          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" style={ratio ? { aspectRatio: ratio, objectFit: "cover" } : undefined} />
           {photo.caption ? <figcaption>{photo.caption}</figcaption> : null}
         </figure>
       ))}

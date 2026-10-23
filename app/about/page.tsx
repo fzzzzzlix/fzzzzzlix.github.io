@@ -16,7 +16,8 @@ export default function AboutPage() {
         <section className="about-hero surface-wine">
           <div className="section-shell">
             <p className="eyebrow">{about.identity.eyebrow}</p>
-            <h1>{about.identity.heading}</h1>
+            <h1 className="page-hero-word">{about.identity.title}</h1>
+            <p className="about-hero-role">{about.identity.heading}</p>
             <div className="about-hero-grid">
               <figure className="about-hero-media">
                 <img src={asset(img[0].src)} alt={img[0].alt} loading="eager" width={img[0].w} height={img[0].h} />
@@ -36,13 +37,13 @@ export default function AboutPage() {
 
           {about.story.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <PhotoRow className="about-photos" photos={[img[1], img[2]]} />
+          <PhotoRow className="about-photos" photos={[img[1], img[2]]} ratio="4 / 5" />
 
           <blockquote className="about-quote about-quote-alt">{about.quote}</blockquote>
 
           {about.approach.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <PhotoRow className="about-photos" photos={[img[3], img[4]]} />
+          <PhotoRow className="about-photos" photos={[img[3], img[4]]} ratio="4 / 5" />
 
           <p className="about-takeaway">→ {inline(about.approachClose)}</p>
         </section>
