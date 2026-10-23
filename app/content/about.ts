@@ -15,7 +15,7 @@ export const about = {
     heading: "Creative Strategist & Storyteller",
     facts: [
       { term: "Professional name", detail: "Felix Phan" },
-      { term: "Legal name", detail: "Nguyen Phan Thuc Huong" },
+      { term: "Legal name", detail: "Nguyễn Phan Thục Hương" },
       { term: "Pronouns", detail: "they/them" },
       { term: "Graduation", detail: "April 2027" },
       { term: "Availability", detail: "Full-time" },

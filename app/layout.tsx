@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: "Felix Phan", url: SITE_URL }],
   creator: "Felix Phan",
-  keywords: ["Felix Phan", "Felix Phan portfolio", "Nguyen Phan Thuc Huong", "creative strategist", "storyteller", "Ho Chi Minh City", "Hanoi"],
+  keywords: ["Felix Phan", "Felix Phan portfolio", "Nguyen Phan Thuc Huong", "Nguyễn Phan Thục Hương", "creative strategist", "storyteller", "Ho Chi Minh City", "Hanoi"],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {

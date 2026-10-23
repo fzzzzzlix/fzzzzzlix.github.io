@@ -101,7 +101,8 @@ but not displayed; see DESIGN.md §3.
 | `robots.txt` and the AI-readable summary `llms.txt` | `public/` |
 | `sitemap.xml`, written from the exported HTML after every build | `scripts/write-sitemap.mjs` (part of `npm run build:pages`) |
 
-Keep both names, **Felix Phan** and the legal name **Nguyen Phan Thuc Huong**,
+Keep both names, **Felix Phan** and the legal name **Nguyen Phan Thuc Huong**
+(with diacritics: **Nguyễn Phan Thục Hương**, shown on About and in the JSON-LD),
 in page descriptions where they read naturally; the footer carries both on
 every page. Interior pages use `pageMetadata()` so each gets its own title,
 canonical URL and share card. Update `public/llms.txt` when facts change.
