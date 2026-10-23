@@ -10,7 +10,7 @@ export const experience = {
     description: "Felix Phan's progression through content, production, events, leadership and organisation design.",
   },
   timeline: [
-    { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", role: "Assistant to Director, Internship", scope: [
+    { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", role: "Creative Planner Intern", scope: [
       "Streamlined executive operations for the Director across 4 events, reducing meeting prep time by 60% and enabling same-day action item resolution across all stakeholder follow-ups.",
       "Delivered end-to-end logistics for 7 corporate events (50-400 attendees), managing timelines, vendor coordination, and construction supervision.",
       "Coordinated a 270-guest client touring day in Hanoi, delivering on-time across 6 logistical workstreams.",

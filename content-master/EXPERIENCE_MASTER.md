@@ -10,7 +10,7 @@
 | Field | Value |
 |-------|-------|
 | Dates | February – May 2026 |
-| Role | Assistant to Director, Internship |
+| Role | Creative Planner Intern |
 | Scope | Supported seven corporate events and a 270-person touring day through preparation, logistics, vendor and construction coordination, plus SOP and checklist systems. |
 | Related projects | P24 |
 | Claims to verify | 60% reduction in meeting-preparation time; confirm measurement method and supervisor verification |

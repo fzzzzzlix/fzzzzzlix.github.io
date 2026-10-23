@@ -22,7 +22,6 @@ export function LittleMeCase({ project, previous, next }: { project: Project; pr
       <CaseHero
         project={project}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
         imageHref={c.hero.imageHref}
         imageFit="cover"

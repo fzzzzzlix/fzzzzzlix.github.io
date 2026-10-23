@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { HTMLAttributeReferrerPolicy, ReactNode } from "react";
 import type { Project } from "../../data";
-import { MediaPlaceholder, StarMark } from "../../site-shell";
+import { MediaPlaceholder } from "../../site-shell";
 
 /*
  * Shared feature-case primitives.
@@ -21,25 +21,21 @@ type StripItem = { value: ReactNode; unit?: string; label: string };
 
 /**
  * Shared poster opening for every case (feature, Be Local and supporting).
- * The wine poster carries the folio (project id), eyebrow, title, role and
- * meta line; `media` then sits across the seam into the bone reading surface,
+ * The wine poster carries the eyebrow, title and role; `media` then sits
+ * across the seam into the bone reading surface,
  * followed by `children` (caption, fast-evidence strip). With no media the
  * poster simply closes, so a media-light case opens typographically.
  */
 export function CaseHeroFrame({
-  folio,
   eyebrow,
   title,
   role,
-  meta,
   media,
   children,
 }: {
-  folio: string;
   eyebrow: ReactNode;
   title: ReactNode;
   role: ReactNode;
-  meta: string[];
   media?: ReactNode;
   children?: ReactNode;
 }) {
@@ -47,10 +43,9 @@ export function CaseHeroFrame({
     <header className={`p31-hero${media ? " has-media" : " no-media"}`}>
       <div className="p31-hero-poster surface-wine">
         <div className="p31-hero-head section-shell">
-          <div className="case-kicker"><span className="case-folio"><StarMark size={12} />{folio}</span><p className="eyebrow">{eyebrow}</p></div>
+          <p className="eyebrow">{eyebrow}</p>
           <h1>{title}</h1>
           <p className="case-role">{role}</p>
-          {meta.length ? <p className="case-meta">{meta.map((item) => <span key={item}>{item}</span>)}</p> : null}
         </div>
       </div>
       {media || children ? (
@@ -74,49 +69,33 @@ export function EvidenceStrip({ items }: { items: StripItem[] }) {
   );
 }
 
-/** Hero: eyebrow, title, role, meta, optional cover image and fast-evidence strip. */
+/** Hero: eyebrow, title, role, optional cover image and fast-evidence strip. */
 export function CaseHero({
   project,
   eyebrow = "Feature case",
   title,
-  descriptor,
   image,
   imageHref,
   imageFit = "cover",
   imagePosition,
   strip,
-  extraMeta,
-  hideType = false,
-  hideYear = false,
 }: {
   project: Project;
   eyebrow?: string;
   title: string;
-  descriptor?: string;
   image?: string;
   imageHref?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   strip?: StripItem[];
-  /** Extra meta chips rendered after `descriptor` (e.g. a status such as "No longer active"). */
-  extraMeta?: string[];
-  hideType?: boolean;
-  hideYear?: boolean;
 }) {
-  const meta = [
-    ...(hideYear || !project.year ? [] : [project.year]),
-    ...(hideType || !project.publicType ? [] : [project.publicType]),
-    ...(descriptor ? [descriptor] : []),
-    ...(extraMeta ?? []),
-    ...project.tags,
-  ];
   const media = image ? (
     <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
       <img src={image} alt={project.alt} fetchPriority="high" style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
     </a>
   ) : undefined;
   return (
-    <CaseHeroFrame folio={project.id} eyebrow={eyebrow} title={title} role={project.role} meta={meta} media={media}>
+    <CaseHeroFrame eyebrow={eyebrow} title={title} role={project.role} media={media}>
       {strip?.length ? <EvidenceStrip items={strip} /> : null}
     </CaseHeroFrame>
   );

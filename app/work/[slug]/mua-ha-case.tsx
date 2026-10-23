@@ -24,7 +24,6 @@ export function MuaHaCase({ project, previous, next }: { project: Project; previ
         imageHref={c.hero.imageHref}
         imageFit="cover"
         strip={c.hero.strip}
-        hideType
       />
 
       <CaseTension>{project.tension}</CaseTension>

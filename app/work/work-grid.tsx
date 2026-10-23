@@ -167,7 +167,7 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
       </div>
       <div className="section-shell">
         <p className="result-count" aria-live="polite">Showing {visible.length} of {projects.length} projects</p>
-        <ul className={`work-grid${featured ? " is-featured" : ""}`}>
+        <ul className={`work-grid${featured ? " is-featured" : active === "All" ? " is-all" : ""}`}>
           {visible.map((project, index) => {
             const img = REAL_IMAGES[project.id];
             return (

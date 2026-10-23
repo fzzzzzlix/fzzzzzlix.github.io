@@ -16,7 +16,6 @@ export const crisisResponse = {
   hero: {
     eyebrow: "Specialist case",
     title: "HUST Food-Safety Crisis Response",
-    descriptor: "PR & Crisis Communication",
     image: asset("/images/cases/p32/Press conference hero.png"),
     strip: [
       { value: "2024", label: "real incident (context only)" },

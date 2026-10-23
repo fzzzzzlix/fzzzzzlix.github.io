@@ -14,7 +14,6 @@ export const littleMe = {
     image: asset("/images/cases/p22/p22-key-visual.jpg"),
     imageHref: IMAGES_FOLDER,
     title: "Little Me",
-    descriptor: "RMIT Hanoi, 3–5 April 2024",
     strip: [
       { value: "316", label: "visits across three days" },
       { value: "34,588", label: "organic reach" },

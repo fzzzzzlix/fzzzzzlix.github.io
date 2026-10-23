@@ -53,7 +53,7 @@ export default function ExperiencePage() {
           <div className="section-intro"><p className="eyebrow">{experience.credentials.eyebrow}</p><h2>{experience.credentials.title}</h2></div>
           <ul className="credentials-list">{experience.credentials.list.map((item, i) => <li key={i}>{item}</li>)}</ul>
           {experience.credentials.slideshow.length ? (
-            <details className="more-evidence">
+            <details className="more-evidence" open>
               <summary><span>Certificates ({experience.credentials.slideshow.length})</span><span className="disclosure-mark" aria-hidden="true" /></summary>
               <AchievementsSlideshow images={experience.credentials.slideshow} />
             </details>

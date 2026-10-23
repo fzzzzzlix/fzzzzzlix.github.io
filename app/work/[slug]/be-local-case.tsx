@@ -20,11 +20,9 @@ export function BeLocalCase({ project, previous, next }: { project: Project; pre
     <article className="case-page feature-case p31-case">
       {/* Hero */}
       <CaseHeroFrame
-        folio={project.id}
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
         role={project.role}
-        meta={[project.year, project.publicType, ...project.tags]}
         media={
           <a className="p31-hero-media" href={c.images.hero} target="_blank" rel="noreferrer" aria-label={`${project.alt}. Opens full size in a new tab.`}>
             <img src={c.images.hero} alt={project.alt} fetchPriority="high" />

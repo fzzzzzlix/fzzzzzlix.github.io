@@ -84,7 +84,7 @@ export function AchievementsSlideshow({ images, pxPerTick = 1, tickMs = 24 }: { 
             key={i}
             src={asset(src)}
             alt={i < images.length ? "Achievement" : ""}
-            loading="lazy"
+            loading="eager"
             draggable={false}
             aria-hidden={i >= images.length ? true : undefined}
           />

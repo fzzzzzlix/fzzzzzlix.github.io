@@ -22,7 +22,6 @@ export function MaggiCase({ project, previous, next }: { project: Project; previ
       <CaseHero
         project={project}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
         imageHref={c.hero.imageHref}
         imageFit="cover"

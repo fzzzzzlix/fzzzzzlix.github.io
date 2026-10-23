@@ -21,7 +21,6 @@ export function EmpactsCase({ project, previous, next }: { project: Project; pre
       <CaseHero
         project={project}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
         imageFit="cover"
         strip={c.hero.strip}

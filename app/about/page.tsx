@@ -1,32 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../site-shell";
+import { PhotoRow, SiteFooter, SiteHeader } from "../site-shell";
 import { asset } from "../base-path";
 import { about } from "../content/about";
 import { inline } from "../content/render-inline";
 
 export const metadata: Metadata = { title: about.meta.title, description: about.meta.description, alternates: { canonical: "/about" } };
-
-type AboutImage = { src: string; alt: string; caption: string };
-
-function AboutFigure({ image }: { image: AboutImage }) {
-  return (
-    <figure className="about-figure">
-      <img src={asset(image.src)} alt={image.alt} loading="lazy" />
-      {image.caption ? <figcaption>{image.caption}</figcaption> : null}
-    </figure>
-  );
-}
-
-// Two photos, deliberately unequal: one leads, the other answers lower down.
-function AboutFigurePair({ a, b, flip = false }: { a: AboutImage; b: AboutImage; flip?: boolean }) {
-  return (
-    <div className={`about-figure-pair${flip ? " is-flip" : ""}`}>
-      <AboutFigure image={a} />
-      <AboutFigure image={b} />
-    </div>
-  );
-}
 
 export default function AboutPage() {
   const img = about.images;
@@ -34,18 +13,20 @@ export default function AboutPage() {
     <div className="site-frame">
       <SiteHeader current="/about" />
       <main id="main-content">
-        <section className="about-hero section-shell">
-          <p className="eyebrow">{about.identity.eyebrow}</p>
-          <h1>{about.identity.heading}</h1>
-          <div className="about-hero-grid">
-            <figure className="about-hero-media">
-              <img src={asset(img[0].src)} alt={img[0].alt} loading="eager" width={2560} height={1720} />
-            </figure>
-            <dl className="about-facts">
-              {about.identity.facts.map((fact) => (
-                <div key={fact.term}><dt>{fact.term}</dt><dd>{fact.detail}</dd></div>
-              ))}
-            </dl>
+        <section className="about-hero surface-wine">
+          <div className="section-shell">
+            <p className="eyebrow">{about.identity.eyebrow}</p>
+            <h1>{about.identity.heading}</h1>
+            <div className="about-hero-grid">
+              <figure className="about-hero-media">
+                <img src={asset(img[0].src)} alt={img[0].alt} loading="eager" width={img[0].w} height={img[0].h} />
+              </figure>
+              <dl className="about-facts">
+                {about.identity.facts.map((fact) => (
+                  <div key={fact.term}><dt>{fact.term}</dt><dd>{fact.detail}</dd></div>
+                ))}
+              </dl>
+            </div>
           </div>
         </section>
 
@@ -55,18 +36,18 @@ export default function AboutPage() {
 
           {about.story.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <AboutFigurePair a={img[1]} b={img[2]} />
+          <PhotoRow className="about-photos" photos={[img[1], img[2]]} />
 
           <blockquote className="about-quote about-quote-alt">{about.quote}</blockquote>
 
           {about.approach.map((para, i) => <p key={i}>{inline(para)}</p>)}
 
-          <AboutFigurePair a={img[3]} b={img[4]} flip />
+          <PhotoRow className="about-photos" photos={[img[3], img[4]]} />
 
           <p className="about-takeaway">→ {inline(about.approachClose)}</p>
         </section>
 
-        <section className="capability-section">
+        <section className="capability-section surface-wine">
           <div className="section-shell">
             <p className="eyebrow">{about.capability.eyebrow}</p>
             <div className="capability-list">

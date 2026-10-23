@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "./base-path";
 
 // Public CV link (Google Drive). Every "CV" action across the site points here.
 export const CV_URL = "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link";
@@ -118,6 +119,23 @@ export function CoverImage({ src, fit, alt, poster, loading = "lazy" }: { src: s
       <source media="(prefers-reduced-motion: reduce)" srcSet={poster} />
       {img}
     </picture>
+  );
+}
+
+export type RowPhoto = { src: string; w: number; h: number; alt: string; caption?: string };
+
+// Photos side by side at one shared height. Each figure grows in proportion to
+// its own aspect ratio, so every picture keeps its whole frame, uncropped.
+export function PhotoRow({ photos, className }: { photos: RowPhoto[]; className?: string }) {
+  return (
+    <div className={`photo-row${className ? ` ${className}` : ""}`}>
+      {photos.map((photo) => (
+        <figure key={photo.src} style={{ flex: `${photo.w / photo.h} 1 0` }}>
+          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" />
+          {photo.caption ? <figcaption>{photo.caption}</figcaption> : null}
+        </figure>
+      ))}
+    </div>
   );
 }
 
