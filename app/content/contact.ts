@@ -6,7 +6,7 @@
 export const contact = {
   meta: {
     title: "Contact",
-    description: "Contact Felix Phan for creative, strategy, communication, sustainability, project, event and content roles.",
+    description: "Contact Felix Phan (Nguyen Phan Thuc Huong) for creative, strategy, communication, sustainability, project, event and content roles. Available for full-time work.",
   },
   hero: {
     eyebrow: "Contact",

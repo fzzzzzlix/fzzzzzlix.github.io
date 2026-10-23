@@ -7,14 +7,15 @@
 export const about = {
   meta: {
     title: "About",
-    description: "Meet Felix Phan and the method connecting research, story, production and impact.",
+    description: "About Felix Phan (legal name Nguyen Phan Thuc Huong, they/them), a creative strategist and storyteller from RMIT University and National Economics University, based in Ho Chi Minh City and Hanoi.",
   },
   identity: {
     eyebrow: "About Felix",
+    title: "Hello, I’m a…",
     heading: "Creative Strategist & Storyteller",
     facts: [
       { term: "Professional name", detail: "Felix Phan" },
-      { term: "Legal name", detail: "Nguyen Phan Thuc Huong" },
+      { term: "Legal name", detail: "Nguyễn Phan Thục Hương" },
       { term: "Pronouns", detail: "they/them" },
       { term: "Graduation", detail: "April 2027" },
       { term: "Availability", detail: "Full-time" },
@@ -36,13 +37,14 @@ export const about = {
   ],
   approachClose:
     "That combination suits roles where communication must be **culturally aware**, **operationally realistic**, and **accountable to an outcome**.",
-  // Interleaved through the narrative in order. Paths carry literal spaces (browsers encode them).
+  // Interleaved through the narrative in order. Paths carry literal spaces (browsers encode them);
+  // w and h are the pixel size, so photo pairs can share one height uncropped.
   images: [
-    { src: "/images/About/About_1 Felix portrait.jpg", alt: "Portrait of Felix Phan", caption: "Felix Phan" },
-    { src: "/images/About/About_2 Felix is a Challenger.jpg", alt: "Felix Phan taking on a challenge", caption: "A challenger by default" },
-    { src: "/images/About/About_3 Felix portrait.jpg", alt: "Portrait of Felix Phan", caption: "Felix Phan" },
-    { src: "/images/About/About_4 Felix on stage.jpg", alt: "Felix Phan on stage", caption: "On stage" },
-    { src: "/images/About/About_5 Journalism club founder.jpg", alt: "Felix Phan as a journalism club founder", caption: "Journalism club founder" },
+    { src: "/images/About/About_1 Felix portrait.jpg", w: 2560, h: 1720, alt: "Portrait of Felix Phan", caption: "Felix Phan" },
+    { src: "/images/About/About_2 Felix is a Challenger.jpg", w: 816, h: 1020, alt: "Felix Phan taking on a challenge", caption: "A challenger by default" },
+    { src: "/images/About/About_3 Felix portrait.jpg", w: 1920, h: 2560, alt: "Portrait of Felix Phan", caption: "Felix Phan" },
+    { src: "/images/About/About_4 Felix on stage.jpg", w: 1440, h: 1440, alt: "Felix Phan on stage", caption: "On stage" },
+    { src: "/images/About/About_5 Journalism club founder.jpg", w: 1920, h: 2560, alt: "Felix Phan as a journalism club founder", caption: "Journalism club founder" },
   ],
   capability: {
     eyebrow: "Capability",

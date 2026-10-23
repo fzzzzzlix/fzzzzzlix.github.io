@@ -1,31 +1,37 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { asset } from "./base-path";
-
-const SITE_URL = "https://fzzzzzlix.github.io";
-const OG_IMAGE = asset("/images/hero-portrait.jpg");
+import { DEFAULT_DESCRIPTION, OG_IMAGE, SITE_NAME, SITE_URL, jsonLd, siteJsonLd } from "./seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Felix Phan: Creative Strategist & Storyteller",
-    template: "Felix Phan: %s",
+    default: SITE_NAME,
+    template: "Felix Phan, %s",
   },
-  description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Felix Phan", url: SITE_URL }],
+  creator: "Felix Phan",
+  keywords: ["Felix Phan", "Felix Phan portfolio", "Nguyen Phan Thuc Huong", "Nguyễn Phan Thục Hương", "creative strategist", "storyteller", "Ho Chi Minh City", "Hanoi"],
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
-    type: "website",
+    type: "profile",
     url: SITE_URL,
-    siteName: "Felix Phan",
-    title: "Felix Phan: Creative Strategist & Storyteller",
-    description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
-    images: [{ url: OG_IMAGE, alt: "Felix Phan" }],
+    siteName: SITE_NAME,
+    locale: "en_US",
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    firstName: "Felix",
+    lastName: "Phan",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Felix Phan: Creative Strategist & Storyteller",
-    description: "Felix Phan moves meaningful ideas from insight, to story, to impact.",
-    images: [OG_IMAGE],
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
   icons: { icon: asset("/favicon.svg"), shortcut: asset("/favicon.svg") },
 };
@@ -36,27 +42,13 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Felix Phan",
-  alternateName: "Nguyen Phan Thuc Huong",
-  jobTitle: "Creative Strategist & Storyteller",
-  url: SITE_URL,
-  address: { "@type": "PostalAddress", addressLocality: "Ho Chi Minh City", addressCountry: "VN" },
-  sameAs: ["https://www.linkedin.com/in/felixphan/"],
-};
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
         <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(siteJsonLd)} />
       </body>
     </html>
   );

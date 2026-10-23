@@ -23,12 +23,9 @@ export function CrisisResponseCase({ project, previous, next }: { project: Proje
         project={project}
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
         image={c.hero.image}
         imageFit="cover"
         strip={c.hero.strip}
-        hideYear
-        hideType
       />
 
       <CaseTension>{project.tension}</CaseTension>

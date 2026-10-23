@@ -80,9 +80,9 @@ Vendored copies; permissions for their commands are in `.claude/settings.json`.
 **`DESIGN.md` wins over every skill.** The owner reviewed Taste Skill's house
 rules in Oct 2026 and adopted most of them (one serif face, no divider lines, no
 index numbers, no eyebrows, stone ground, no rest shadows, a seven-step type
-scale, scroll rise-ins); DESIGN.md records the result. Still declined: the italic
-"Phan", sub-13px labels, About capability tiers, the "The work" title, and stock
-or archive imagery (media honesty). Treat findings on those as noise. Act on
+scale, scroll rise-ins); DESIGN.md records the result. Labels are now 14px.
+Still declined: the italic "Phan", About capability tiers, the italic page titles,
+and stock or archive imagery (media honesty). Treat findings on those as noise. Act on
 layout, overflow, contrast and covered-text findings after confirming them in a
 screenshot. The "edge-text" finding for the nav links at 768/390 is a false
 positive from the closed mobile `<details>` menu, and full-page screenshots show
@@ -91,6 +91,21 @@ and take viewport shots instead.
 
 **Eyebrow strings** (`eyebrow:` fields in content files and case data) are kept
 but not displayed; see DESIGN.md §3.
+
+## Search (SEO, AEO, GEO)
+
+| What | Where |
+|---|---|
+| Names, profile facts, page metadata helper, JSON-LD (WebSite, Person, ProfilePage, CreativeWork) | `app/seo.ts` |
+| Site defaults: title "Felix Phan, PORTFOLIO", template "Felix Phan, %s" | `app/layout.tsx` |
+| `robots.txt` and the AI-readable summary `llms.txt` | `public/` |
+| `sitemap.xml`, written from the exported HTML after every build | `scripts/write-sitemap.mjs` (part of `npm run build:pages`) |
+
+Keep both names, **Felix Phan** and the legal name **Nguyen Phan Thuc Huong**
+(with diacritics: **Nguyễn Phan Thục Hương**, shown on About and in the JSON-LD),
+in page descriptions where they read naturally; the footer carries both on
+every page. Interior pages use `pageMetadata()` so each gets its own title,
+canonical URL and share card. Update `public/llms.txt` when facts change.
 
 ## Verify a change
 ```bash

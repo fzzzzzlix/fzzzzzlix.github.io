@@ -60,8 +60,6 @@ export type CaseSectionBlock = {
 
 export type SupportingCaseExtension = {
   density: SupportingDensity;
-  /** Extra context chip after the public type, e.g. "ForArt internship". */
-  context?: string;
   /** Optional hero-image link override (e.g. open the live case study or a Drive folder) instead of the full-size image. */
   heroHref?: string;
   /** Per-page suppression of the stock sections, so a page can run deck + embeds + lesson only. Opt-in; other pages unaffected. */
@@ -69,10 +67,6 @@ export type SupportingCaseExtension = {
   hideApproach?: boolean;
   hideOutput?: boolean;
   hideSignificance?: boolean;
-  /** Per-page suppression of hero meta chips (value kept intact for grid/label logic). */
-  hideYear?: boolean;
-  hideType?: boolean;
-  hideContext?: boolean;
   /** Optional caption rendered under the hero image (supports inline emphasis). */
   heroCaption?: string;
   /** One-line opening deck. */
@@ -236,7 +230,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P05: {
     density: "D1",
-    context: "ForArt internship",
     heroHref: "https://drive.google.com/drive/folders/16Ztq8YRrKhiLU_CgmkwwyTGuRpdMkndF?usp=drive_link",
     hideApproach: true,
     hideOutput: true,
@@ -291,7 +284,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P06: {
     density: "D3",
-    context: "ForArt internship",
     heroHref: "https://drive.google.com/drive/folders/1-6vp9rLS4MkdFyVgQ3_5Z0_l33Qj1EAN?usp=drive_link",
     hideApproach: true,
     hideOutput: true,
@@ -391,7 +383,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P10: {
     density: "D2",
-    context: "ForArt internship",
     heroHref: "https://drive.google.com/drive/folders/1VThOulfFODyUX-lEd-i1VUWdOgysqLAh?usp=drive_link",
     hideApproach: true,
     hideOutput: true,
@@ -636,7 +627,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P16: {
     density: "D2",
-    context: "COMM2497",
     heroHref: p16Report.view,
     hideTension: true,
     hideApproach: true,
@@ -828,12 +818,10 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P26: {
     density: "D2",
-    context: "RMIT club",
     hideTension: true,
     hideApproach: true,
     hideOutput: true,
     hideSignificance: true,
-    hideYear: true,
     heroCaption:
       "The IEC leaders board, from left to right: Mr. Phong Kieu (CFO), Mr. Hung Nguyen (Vice-President), Mr. Luong Ngo (President), Mx. Felix Phan (Vice-President Assistant), Ms. Ha Do (R&D Executive), Ms. Thai Mai (HR Executive), and Ms. Anh Vu (Marketing Executive).",
     deck: "Two initiatives at RMIT's Innovation & Entrepreneurship Club: leading operations for the **Unicorn Start-up 101 bootcamp**, and marketing the **Petals of Love Charity Fundraiser**.",
@@ -934,7 +922,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P30: {
     density: "D1",
-    context: "Map the System 2023",
     hideTension: true,
     hideApproach: true,
     hideOutput: true,
@@ -989,10 +976,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P33: {
     density: "D1",
-    context: "COMM2892",
-    hideYear: true,
-    hideType: true,
-    hideContext: true,
     hideApproach: true,
     hideOutput: true,
     hideSignificance: true,
@@ -1048,10 +1031,6 @@ export const SUPPORTING_CASES: Record<string, SupportingCaseExtension> = {
 
   P34: {
     density: "D1",
-    context: "MKTG1459",
-    hideYear: true,
-    hideType: true,
-    hideContext: true,
     deck: "A research project that began as an individual literature and problem-framing study, then grew into a four-person mixed-methods investigation combining quantitative analysis, social listening and social-network analysis.",
     capability: "",
     ownership:

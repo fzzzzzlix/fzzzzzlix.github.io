@@ -18,7 +18,6 @@ export const maggi = {
     image: asset("/images/p13-maggi.jpg"),
     imageHref: IMAGES_FOLDER,
     title: "MAGGI Recipe Solution",
-    descriptor: "Research to execution",
     strip: [
       { value: "74", label: "Facebook posts analysed" },
       { value: "755", label: "comments coded in NVivo" },

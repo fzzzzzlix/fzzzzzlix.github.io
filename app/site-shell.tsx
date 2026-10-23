@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "./base-path";
 
 // Public CV link (Google Drive). Every "CV" action across the site points here.
 export const CV_URL = "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link";
@@ -121,6 +122,25 @@ export function CoverImage({ src, fit, alt, poster, loading = "lazy" }: { src: s
   );
 }
 
+export type RowPhoto = { src: string; w: number; h: number; alt: string; caption?: string };
+
+// Photos side by side at one shared height. By default each figure grows in
+// proportion to its own aspect ratio, so every picture keeps its whole frame.
+// With `ratio` (e.g. "4 / 5") the figures split the row evenly and every photo
+// is cropped to that one frame, so rows line up exactly across a page.
+export function PhotoRow({ photos, className, ratio }: { photos: RowPhoto[]; className?: string; ratio?: string }) {
+  return (
+    <div className={`photo-row${className ? ` ${className}` : ""}`}>
+      {photos.map((photo) => (
+        <figure key={photo.src} style={{ flex: ratio ? "1 1 0" : `${photo.w / photo.h} 1 0` }}>
+          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" style={ratio ? { aspectRatio: ratio, objectFit: "cover" } : undefined} />
+          {photo.caption ? <figcaption>{photo.caption}</figcaption> : null}
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 /**
  * Compact editorial page opener on bone. Interior pages open on information,
  * not a poster. When there is no `title`, the eyebrow is promoted to the
@@ -147,7 +167,9 @@ export function SiteFooter() {
     <footer className="site-footer surface-plum">
       <div className="site-footer-inner section-shell">
         <div className="footer-brand"><StarMark size={44} /><span>Follow the North Star</span></div>
-        <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
+        <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/" rel="me">LinkedIn</a></div>
+        {/* Both names on every page, so searches for either find this site. */}
+        <p className="footer-name">© {new Date().getFullYear()} Felix Phan (Nguyen Phan Thuc Huong)</p>
       </div>
     </footer>
   );

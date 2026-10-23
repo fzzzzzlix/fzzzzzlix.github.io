@@ -1,61 +1,61 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CoverImage, PageHero, SiteFooter, SiteHeader } from "../site-shell";
-import { asset } from "../base-path";
+import { pageMetadata } from "../seo";
+import { CoverImage, PageHero, PhotoRow, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 import { projects } from "../data";
 import { REAL_IMAGES } from "../project-images";
 import { interests } from "../content/interests";
 
-export const metadata: Metadata = { title: interests.meta.title, description: interests.meta.description, alternates: { canonical: "/interests" } };
+export const metadata: Metadata = pageMetadata({ title: interests.meta.title, description: interests.meta.description, path: "/interests" });
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
+// The page opens on three folds, one per area: wine bars that open in place.
+// An open area always has the same shape: text and an equal-height photo
+// pair, then its projects as compact thumbnail rows.
 export default function InterestsPage() {
   return (
     <div className="site-frame">
       <SiteHeader current="/interests" />
       <main id="main-content">
-        <PageHero eyebrow={interests.hero.eyebrow} title={interests.hero.title} />
-        <section className="interest-areas section-shell">
-          {interests.cards.map((item, index) => (
-            <article className={`interest-area${index % 2 ? " is-flip" : ""}`} key={item.title}>
-              <div className="interest-area-head">
+        <PageHero eyebrow={interests.hero.title} />
+        <div className="folds section-shell">
+          {interests.cards.map((item) => (
+            <details className="fold" id={item.id} key={item.id}>
+              <summary className="surface-wine">
                 <h2>{item.title}</h2>
-                <p>{item.text}</p>
+                <span className="disclosure-mark" aria-hidden="true" />
+              </summary>
+              <div className="fold-body interest-area-body">
+                <p className="interest-area-text">{item.text}</p>
+                <PhotoRow className="interest-photos" photos={item.images} />
+                <div className="interest-projects-block">
+                  <h3>{interests.projectsLabel}</h3>
+                  <ul className="interest-projects">
+                    {item.projects.map((id) => {
+                      const p = projectsById[id];
+                      if (!p) return null;
+                      const img = REAL_IMAGES[id];
+                      return (
+                        <li key={id}>
+                          <Link className="interest-project" href={`/work/${p.slug}`}>
+                            <span className={`interest-project-media${img ? "" : " no-media"}`}>
+                              {img ? <CoverImage src={img.src} fit="cover" poster={img.poster} alt="" /> : <StarMark size={24} />}
+                            </span>
+                            <span className="interest-project-copy">
+                              <span className="interest-project-title">{p.title}</span>
+                              <span className="project-meta">{p.publicType}</span>
+                            </span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-              <div className="interest-photos">
-                {item.images.map((photo) => (
-                  <figure key={photo.src}>
-                    <img src={asset(photo.src)} alt={photo.alt} loading="lazy" />
-                    <figcaption>{photo.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-              <ul className="interest-projects" aria-label={`${item.title} projects`}>
-                {item.projects.map((id) => {
-                  const p = projectsById[id];
-                  if (!p) return null;
-                  const img = REAL_IMAGES[id];
-                  return (
-                    <li key={id}>
-                      <Link className="interest-project" href={`/work/${p.slug}`}>
-                        {img ? (
-                          <span className="interest-project-media">
-                            <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt={p.alt} />
-                          </span>
-                        ) : null}
-                        <span className="interest-project-copy">
-                          <span className="project-meta">{p.publicType}</span>
-                          <span className="interest-project-title">{p.title}</span>
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </article>
+            </details>
           ))}
-        </section>
+        </div>
       </main>
       <SiteFooter />
     </div>

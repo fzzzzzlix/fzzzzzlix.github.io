@@ -28,8 +28,6 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
         project={project}
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
-        descriptor={c.hero.descriptor}
-        extraMeta={c.hero.extraMeta}
         strip={c.hero.strip}
       />
 

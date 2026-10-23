@@ -12,12 +12,11 @@ export const home = {
     quietCta: "View CV",
     facts: ["Available for full-time role", "Ho Chi Minh City & Hanoi"],
     portraitAlt: "Portrait of Felix Phan",
-    orbitNote: "insight → story → impact",
   },
 
   proofBand: [
-    { value: "2", label: "bachelor degrees, completed simultaneously" },
-    { value: "5", label: "initiatives founded & co-founded" },
+    { value: "2", label: "bachelor degrees,\ncompleted simultaneously" },
+    { value: "5", label: "initiatives founded\n& co-founded" },
     { value: "26", label: "selected projects" },
     { value: "54", label: "member-org managed" },
   ],
@@ -27,7 +26,7 @@ export const home = {
   // Each card pulls its image + alt from the project record; the copy below is
   // the editable overlay. `route` and `id` are structural, keep them in sync.
   featured: [
-    { id: "P35", title: "StarX", lane: "Format & Entertainment", role: "Co-founder, Creative Lead & Format Developer", proof: "The creative side of an entertainment venture: three original formats, one live League event delivered to 13 players over two days, one filmed episode, and the brand that held it together.", route: "/work/starx" },
+    { id: "P35", title: "StarX", lane: "Format & Entertainment", role: "Creative Lead and Format Developer", proof: "The creative side of an entertainment venture: three original formats, one live League event delivered to 13 players over two days, one filmed episode, and the brand that held it together.", route: "/work/starx" },
     { id: "P22", title: "Little Me Interactive Exhibition", lane: "Events & Advocacy", role: "Founder, Head Organiser", proof: "An interactive exhibition under the mental-wellness theme that achieved 316 visits, 34,588 organic reach, and 14M VND funding.", route: "/work/little-me" },
     { id: "P25", title: "EMPACTS: Startup Ecosystem for SDGs", lane: "Organisation Design", role: "Founder, Vice-President", proof: "Built a non-profit organisation from scratch, with 40+ SOPs and a full leadership handover.", route: "/work/empacts" },
     { id: "P31", title: "Be Local", lane: "Project Management", role: "Founder, Project Manager", proof: "A community-based tourism venture planned as a real project. Output: 12 deliverables, including WBS in MPP for five phases from scope to launch, all delegated ownership under weekly review.", route: "/work/be-local" },

@@ -23,8 +23,6 @@ export const starx = {
   hero: {
     eyebrow: "Feature case",
     title: "StarX",
-    descriptor: "Three-person founding team",
-    extraMeta: ["No longer active"],
     strip: [
       { value: "13", label: "players at the live League event" },
       { value: "16", label: "games delivered across two days" },

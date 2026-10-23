@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { projectBySlug, projects, type Project } from "../../data";
 import { REAL_IMAGES } from "../../project-images";
 import { SiteFooter, SiteHeader } from "../../site-shell";
+import { jsonLd, projectJsonLd } from "../../seo";
 import { BeLocalCase } from "./be-local-case";
 import { MuaHaCase } from "./mua-ha-case";
 import { MaggiCase } from "./maggi-case";
@@ -44,8 +45,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: project.title,
     description: project.tension,
     alternates: { canonical: url },
-    openGraph: { type: "article", title: project.title, description: project.tension, url, images },
-    twitter: { card: "summary_large_image", title: project.title, description: project.tension, images: image ? [image] : undefined },
+    openGraph: { type: "article", title: `Felix Phan, ${project.title}`, description: project.tension, url, images, authors: ["Felix Phan"] },
+    twitter: { card: "summary_large_image", title: `Felix Phan, ${project.title}`, description: project.tension, images: image ? [image] : undefined },
   };
 }
 
@@ -59,19 +60,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   const BespokeCase = BESPOKE_CASES[project.id] ?? SupportingCase;
 
-  // Conservative CreativeWork schema. Deliberately not Article/NewsArticle:
-  // these are Felix's own academic and professional artifacts, not published
-  // news, so nothing implies third-party publication.
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    abstract: project.tension,
-    creator: { "@type": "Person", name: "Felix Phan" },
-    dateCreated: project.year,
-    genre: project.publicType,
-    ...(REAL_IMAGES[project.id]?.src ? { image: REAL_IMAGES[project.id].src } : {}),
-  };
+  // Conservative CreativeWork schema, linked to the site's Person entity.
+  // Deliberately not Article/NewsArticle: these are Felix's own academic and
+  // professional artifacts, not published news.
+  const schema = { ...projectJsonLd(project, REAL_IMAGES[project.id]?.src), genre: project.publicType };
 
   return (
     <div className="site-frame">
@@ -80,7 +72,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <BespokeCase project={project} previous={previous} next={next} />
       </main>
       <SiteFooter />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(schema)} />
     </div>
   );
 }

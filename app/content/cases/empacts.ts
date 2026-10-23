@@ -25,7 +25,6 @@ export const empacts = {
   hero: {
     image: asset("/images/cases/p25/p25-key-visual.jpg"),
     title: "EMPACTS",
-    descriptor: "May–December 2024",
     strip: [
       { value: "54", label: "members" },
       { value: "6", label: "departments" },

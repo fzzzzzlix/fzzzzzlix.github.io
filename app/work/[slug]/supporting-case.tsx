@@ -97,16 +97,9 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
   return (
     <CaseArticle>
       <CaseHeroFrame
-        folio={project.id}
         eyebrow={caseLabel(project, density)}
         title={project.title}
         role={project.role}
-        meta={[
-          ...(ext?.hideYear || !project.year ? [] : [project.year]),
-          ...(ext?.hideType || !project.publicType ? [] : [project.publicType]),
-          ...(ext?.context && !ext?.hideContext ? [ext.context] : []),
-          ...project.tags,
-        ]}
         media={
           image ? (
             <a
@@ -122,7 +115,7 @@ export function SupportingCase({ project, previous, next }: CaseProps) {
         }
       >
         {image && ext?.heroCaption ? <p className="p31-hero-caption">{inline(ext.heroCaption)}</p> : null}
-        {image ? null : <MediaPlaceholder projectId={project.id} discipline={project.publicType} />}
+        {image ? null : <MediaPlaceholder discipline={project.publicType} />}
       </CaseHeroFrame>
 
       {ext?.deck ? (

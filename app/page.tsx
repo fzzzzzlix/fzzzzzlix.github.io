@@ -51,7 +51,6 @@ export default function Home() {
               {home.hero.facts.map((fact) => <li key={fact}>{fact}</li>)}
             </ul>
           </div>
-          <p className="hero-orbit" aria-hidden="true">{home.hero.orbitNote}</p>
         </section>
 
         {/* Proof, in one line */}
