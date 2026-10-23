@@ -89,6 +89,10 @@ One face. There is no monospace on the site.
   Separate list items with commas (case meta, status tags) or the tiny star (the
   hero capability list); mark sub-headings with an arrow; in copy, use a colon or
   comma. Number and date ranges keep their plain hyphen or en dash.
+- **Arrows are text, never emoji.** The "opens elsewhere" arrow is always
+  `OUT_ARROW` from `app/site-shell.tsx` (↗ plus the text-style selector U+FE0E;
+  in CSS `"\2197\FE0E"`). A bare ↗ turns into a coloured emoji on phones.
+  → and ↓ have no emoji form and are typed as is.
 - **No middle dots (·) or vertical bars (|)** as separators, in copy or in page
   titles. Use a colon or comma. Browser titles read "Felix Phan, Work"; the home
   page is "Felix Phan, PORTFOLIO".
@@ -232,6 +236,9 @@ open, so their slideshow images still load with the page.
   scroll timelines, and anything already on screen, show the finished state.
   Everything is fully visible without JavaScript.
 - `prefers-reduced-motion` disables all animation and smooth scrolling.
+- No scroll-jacking: a scroll never snaps or jumps to the next section. The
+  home hero stays short instead (at most about three quarters of a screen,
+  no availability lines) so one or two scrolls reach the evidence band.
 - Focus: 2px `--focus` outline (wine on bone, bone on wine) on every control.
 
 ## 11. Responsive
