@@ -77,7 +77,6 @@ export default function Home() {
             {featured.map((project, index) => {
               const imgInfo = REAL_IMAGES[project.id];
               const pAlt = projectsById[project.id]?.alt ?? project.title;
-              const folio = String(index + 1).padStart(2, "0");
               // No image: a typographic plate. First imaged project leads; the rest are compact rows.
               const firstImaged = featured.findIndex((p) => REAL_IMAGES[p.id]);
               const layout = !imgInfo ? "plate" : index === firstImaged ? "lead" : "row";
@@ -90,7 +89,7 @@ export default function Home() {
                       </span>
                     ) : null}
                     <div className="feature-copy">
-                      <p className="feature-meta"><span className="feature-folio">{folio}</span><span>{project.lane}</span></p>
+                      <p className="feature-meta"><span>{project.lane}</span></p>
                       <h3 className="feature-name">{project.title}</h3>
                       <p className="feature-proof">{project.proof}</p>
                       <p className="feature-role">Role: {project.role}</p>
@@ -116,9 +115,8 @@ export default function Home() {
             </figure>
           </div>
           <div className="route-list">
-            {home.routes.rows.map((row, index) => (
+            {home.routes.rows.map((row) => (
               <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
-                <span className="route-index">0{index + 1}</span>
                 <span className="route-main"><strong>{row.title}</strong><small>{row.text}</small></span>
                 <span className="route-proof">{row.proof}</span>
                 <span className="route-arrow" aria-hidden="true">↗</span>

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 // Mobile browser chrome matches the bone page background (--bone in globals.css).
 export const viewport: Viewport = {
-  themeColor: "#F2EEE8",
+  themeColor: "#EFEEEC",
   colorScheme: "light",
 };
 
