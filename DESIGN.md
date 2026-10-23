@@ -24,7 +24,7 @@ the colophon.
 
 | Mode | Surface | Used for | Character |
 |---|---|---|---|
-| **Poster** | `surface-wine` | Home cover, Contact, the Featured works and Focus Areas bands on Home, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
+| **Poster** | `surface-wine` | Home cover, Contact, the Featured works and Focus Areas bands on Home, the About opener and capability band, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
 | **Editorial** | stone (default body, `--bone`) | Everything people read or scan, including interior page openers (`PageHero` is a compact header) | Measured columns, separated by space, no decoration |
 | Colophon | `surface-plum` | Site footer only | Quiet close |
 
@@ -64,18 +64,22 @@ Self-hosted woff2 subsets (Latin, Latin Extended, Vietnamese) in `public/fonts`.
 | Voice | Face | Use |
 |---|---|---|
 | Everything | EB Garamond 400–600 (roman and italic) | Headings, body copy, captions, figures, and the utility voice: navigation, metadata, dates, labels, buttons, links out |
-| Signature | EB Garamond *italic* | Only: "Phan" in the home hero, the "The work"/"Experience" page words, the footer line, pull quotes, the hero orbit note |
+| Signature | EB Garamond *italic* | Only: "Phan" in the home hero, the "The work"/"Experience" page words, the footer line, pull quotes |
 
 One face. There is no monospace on the site.
 
-- **Type scale.** Every size from 14px up is one of seven steps in `:root`:
-  `--fs-note` 16, `--fs-body` 18 (17 on phones), `--fs-lead` 20–22,
+- **Type scale.** Every text size is one of eight steps in `:root`:
+  `--fs-label` 14, `--fs-note` 16, `--fs-body` 18 (17 on phones), `--fs-lead` 20–22,
   `--fs-h3` 22–28, `--fs-h2` 28–40, `--fs-h1` 40–72, `--fs-display` 64–148 (the
   home name only). Do not add a size between steps; pick the nearest.
 - Headings are weight 400 with tight tracking; hierarchy comes from scale.
 - Body line-height ~1.55, measure `--measure` (40em).
-- Labels (metadata, dates, buttons, nav) stay 11–13px, **sentence case**, no
-  tracking. No spaced capitals anywhere; the hero role line is sentence case at
+- **Long running text is justified** (case ledes and lists, About narrative and
+  capability text, Experience bullets, home feature text) with `hyphens: auto`.
+  Leads, headings, captions and two-line intros stay ranged left: justified
+  short lines open ugly gaps.
+- Labels (metadata, dates, buttons, nav) are 14px (`--fs-label`), **sentence
+  case**, no tracking. No spaced capitals anywhere; the hero role line is sentence case at
   body size.
 - **No eyebrows.** Labels above or beside headings are not shown (`.eyebrow {
   display: none }`); the heading carries the meaning. Their strings stay in the
@@ -98,7 +102,7 @@ horizontal, equal length, slim waist (`STAR_POINTS`, viewBox 200).
 | Mode | Component | Size | Treatment |
 |---|---|---|---|
 | Signature | `StarMark` | 12–44px | Flat `currentColor`. Header brand, footer, favicon |
-| Folio | `StarMark` | 12–44px | Beside the project id in case openers; the Work plate for a project without media |
+| Plate | `StarMark` | 32–44px | Work and Focus Areas tiles for a project without media |
 | Marker | `--star-mask` | 9–10px | Separator in the hero capability list |
 | Hero | `NorthStar mode="glow"` | 35–65% of the composition | Translucent wings, bright core, thin horizontal flare. **Only** the home hero and Contact. No other page uses a large star |
 | Structural | none yet | | Diagonals may guide a crop or rule. Do not draw stars behind components |
@@ -126,8 +130,13 @@ status, strongest facts, problem, what Felix did, outcome, one or two visuals.
 **Layer 2** (closed, native `<details>`) is deep evidence.
 
 - `CaseSection collapsed`: an archive section whose heading is the toggle (StarX format archive, Be Local risk register and peer scores).
-- `MoreEvidence`: secondary images inside an open section, Experience photos,
-  certificates.
+- `MoreEvidence`: secondary images inside an open section, Experience photos.
+  The Experience certificates start **open**, so their slideshow loads with the
+  page (its images are stored at display size, 480px tall).
+- **Every toggle reads as a button.** A boxed +/− mark comes first, then the
+  label, then the action word (Show/Hide; Open for documents), inside a wine
+  outline that fills on hover. A collapsed case section keeps its heading, with
+  the word and boxed mark on the right.
 - Embedded documents (Canva, Drive, Sheets) start closed behind their title and
   only load when opened. Video embeds stay open.
 - Never collapse the core story, a role, a status or an outcome. Hover is for
@@ -143,10 +152,30 @@ screens both sit under the picture. The detail lives in the case.
 - **Featured** is the first filter and the default view. Its tiles are larger:
   three to a row on desktop (closing tiles widen so the last row is never one
   tile alone), two on tablets with an odd count opening on a full-width tile,
-  one on phones. Other filters run four, three, two.
+  one on phones. Category filters run four, three, two. **All** runs smaller
+  tiles, five to a row (four on tablets, two on phones).
 - A project without media is a wine plate with the star and its title always
   showing.
 - Filters and their URLs are unchanged.
+
+### Case openers
+
+Title and role only. No project ids (P01…P35) and no meta line (year, type,
+team, status, category tags) anywhere on the site; those values stay in
+`app/data.ts` for filtering.
+
+### Focus Areas
+
+A one-sentence headline and deck, then a jump list to the three areas. Every
+area has the same shape, in the same order: heading and text (left), an
+equal-height photo pair (right), then its projects as 16:9 picture tiles with
+title and type. No alternating sides.
+
+### Photo pairs
+
+Photos that sit side by side share one height and keep their whole frame:
+`PhotoRow` (`app/site-shell.tsx`) sizes each figure by its own aspect ratio
+(content files carry each photo's `w` and `h`). Used on About and Focus Areas.
 
 ## 8. Images
 
@@ -192,9 +221,10 @@ screens both sit under the picture. The detail lives in the case.
 - ≤980: mobile menu (native `<details>`), case/About bodies drop the margin
   column, multi-column blocks reflow.
 - **Stacked cover** (≤760, and portrait tablets ≤1180): star above the name, name
-  set two lines, orbit note becomes a footnote line.
+  set two lines.
 - ≤760: figures go edge to edge, the Work filter scrolls horizontally (fades and
-  an arrow show what is hidden), Work tiles two to a row (Featured one), stats
+  an arrow show what is hidden), Work tiles two to a row (Featured one), Focus
+  Areas projects become compact rows, stats
   are two-up. Test 320, 390, 1024 portrait, 1280, 1440, 1920; no horizontal overflow.
 
 ## 12. Forbidden patterns
