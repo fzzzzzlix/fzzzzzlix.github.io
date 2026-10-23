@@ -24,9 +24,9 @@ the colophon.
 
 | Mode | Surface | Used for | Character |
 |---|---|---|---|
-| **Poster** | `surface-wine` | Home cover, Contact, the Featured works and Focus Areas bands on Home, the About opener and capability band, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
+| **Poster** | `surface-wine` | Home cover, Contact, the Featured works band on Home, the About opener and capability band, compact case openers, case navigation | Scale, asymmetry, the North Star, sparse type |
 | **Editorial** | stone (default body, `--bone`) | Everything people read or scan, including interior page openers (`PageHero` is a compact header) | Measured columns, separated by space, no decoration |
-| Colophon | `surface-plum` | Site footer only | Quiet close |
+| Colophon | `surface-plum` | Site footer, and the Focus Areas band on Home (it follows Featured works, so it takes plum to stay apart) | Quiet close |
 
 Rhythm: **dramatic → quiet → visual → informational → quiet → dramatic
 punctuation.** Never two poster bands back to back except the case navigation

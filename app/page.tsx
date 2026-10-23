@@ -65,7 +65,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Work, early */}
+        {/* The person and the three routes */}
+        <section className="routes section-shell" aria-labelledby="routes-title">
+          <div className="routes-intro">
+            <div className="routes-copy">
+              <h2 id="routes-title" className="routes-title">{home.routes.title}</h2>
+              {home.routes.lead.map((para, i) => <p className="routes-lead" key={i}>{inline(para)}</p>)}
+              <Link className="text-link" href="/about">{home.routes.aboutCta} <span aria-hidden="true">→</span></Link>
+            </div>
+            <figure className="routes-figure">
+              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" width={2560} height={1706} />
+            </figure>
+          </div>
+          <div className="route-list">
+            {home.routes.rows.map((row) => (
+              <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
+                <span className="route-main"><strong>{row.title}</strong><small>{row.text}</small></span>
+                <span className="route-proof">{row.proof}</span>
+                <span className="route-arrow" aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* The work, after the person */}
         <section className="featured surface-wine" aria-labelledby="featured-title">
           <div className="section-shell">
           <div className="featured-head">
@@ -101,30 +124,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The person and the three routes */}
-        <section className="routes section-shell" aria-labelledby="routes-title">
-          <div className="routes-intro">
-            <div className="routes-copy">
-              <h2 id="routes-title" className="routes-title">{home.routes.title}</h2>
-              {home.routes.lead.map((para, i) => <p className="routes-lead" key={i}>{inline(para)}</p>)}
-              <Link className="text-link" href="/about">{home.routes.aboutCta} <span aria-hidden="true">→</span></Link>
-            </div>
-            <figure className="routes-figure">
-              <img src={asset(home.routes.image.src)} alt={home.routes.image.alt} loading="lazy" width={2560} height={1706} />
-            </figure>
-          </div>
-          <div className="route-list">
-            {home.routes.rows.map((row) => (
-              <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
-                <span className="route-main"><strong>{row.title}</strong><small>{row.text}</small></span>
-                <span className="route-proof">{row.proof}</span>
-                <span className="route-arrow" aria-hidden="true">↗</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="interest-callout surface-wine" aria-labelledby="interest-title">
+        <section className="interest-callout surface-plum" aria-labelledby="interest-title">
           <div className="interest-inner section-shell">
             <div className="interest-copy">
               <p className="eyebrow">{home.interestCallout.eyebrow}</p>

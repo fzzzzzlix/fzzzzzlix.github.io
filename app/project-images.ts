@@ -1,6 +1,9 @@
 import { asset } from "./base-path";
 
 type ImageInfo = { src: string; fit: "cover" | "contain"; poster?: string };
+// `thumb` is an 800px-wide copy for tiles and thumbnail rows (scripts/make-thumbs.mjs);
+// animated GIFs keep their full file.
+type ImageWithThumb = ImageInfo & { thumb: string };
 
 const RAW_IMAGES: Record<string, ImageInfo> = {
   P01: { src: "/images/p01-qnh.jpg", fit: "cover" },
@@ -32,10 +35,15 @@ const RAW_IMAGES: Record<string, ImageInfo> = {
 
 // Prefix every image src with the deploy base path so plain <img> tags resolve
 // correctly on GitHub Pages. BASE_PATH is empty for the root user-site.
-export const REAL_IMAGES: Record<string, ImageInfo> =
+export const REAL_IMAGES: Record<string, ImageWithThumb> =
   Object.fromEntries(
     Object.entries(RAW_IMAGES).map(([id, info]) => [
       id,
-      { ...info, src: asset(info.src), ...(info.poster ? { poster: asset(info.poster) } : {}) },
+      {
+        ...info,
+        src: asset(info.src),
+        thumb: asset(info.src.endsWith(".gif") ? info.src : `/images/thumbs/${info.src.split("/").pop()}`),
+        ...(info.poster ? { poster: asset(info.poster) } : {}),
+      },
     ]),
   );

@@ -128,12 +128,14 @@ export type RowPhoto = { src: string; w: number; h: number; alt: string; caption
 // proportion to its own aspect ratio, so every picture keeps its whole frame.
 // With `ratio` (e.g. "4 / 5") the figures split the row evenly and every photo
 // is cropped to that one frame, so rows line up exactly across a page.
-export function PhotoRow({ photos, className, ratio }: { photos: RowPhoto[]; className?: string; ratio?: string }) {
+// `eager` loads photos with the page (for rows inside closed folds, so they are
+// ready the moment a fold opens).
+export function PhotoRow({ photos, className, ratio, eager = false }: { photos: RowPhoto[]; className?: string; ratio?: string; eager?: boolean }) {
   return (
     <div className={`photo-row${className ? ` ${className}` : ""}`}>
       {photos.map((photo) => (
         <figure key={photo.src} style={{ flex: ratio ? "1 1 0" : `${photo.w / photo.h} 1 0` }}>
-          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading="lazy" style={ratio ? { aspectRatio: ratio, objectFit: "cover" } : undefined} />
+          <img src={asset(photo.src)} alt={photo.alt} width={photo.w} height={photo.h} loading={eager ? "eager" : "lazy"} style={ratio ? { aspectRatio: ratio, objectFit: "cover" } : undefined} />
           {photo.caption ? <figcaption>{photo.caption}</figcaption> : null}
         </figure>
       ))}
@@ -167,9 +169,12 @@ export function SiteFooter() {
     <footer className="site-footer surface-plum">
       <div className="site-footer-inner section-shell">
         <div className="footer-brand"><StarMark size={44} /><span>Follow the North Star</span></div>
-        <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/" rel="me">LinkedIn</a></div>
-        {/* Both names on every page, so searches for either find this site. */}
-        <p className="footer-name">© {new Date().getFullYear()} Felix Phan (Nguyen Phan Thuc Huong)</p>
+        <div className="footer-links">
+          <a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a>
+          <a href="https://www.linkedin.com/in/felixphan/" rel="me">LinkedIn</a>
+          {/* Both names on every page, so searches for either find this site. */}
+          <span className="footer-name">© {new Date().getFullYear()} Felix Phan (Nguyen Phan Thuc Huong)</span>
+        </div>
       </div>
     </footer>
   );
