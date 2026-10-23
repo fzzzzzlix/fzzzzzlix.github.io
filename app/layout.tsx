@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     images: [OG_IMAGE.url],
   },
   icons: { icon: asset("/favicon.svg"), shortcut: asset("/favicon.svg") },
+  // Search Console ownership check for https://fzzzzzlix.github.io
+  verification: { google: "dDAe22nQZqT9dU7PgUHTZzfPBX8m0d95f7jc39fFtvg" },
 };
 
 // Mobile browser chrome matches the bone page background (--bone in globals.css).
