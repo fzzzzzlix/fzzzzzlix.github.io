@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "../seo";
-import { NorthStar, SiteFooter, SiteHeader } from "../site-shell";
+import { NorthStar, OUT_ARROW, SiteFooter, SiteHeader } from "../site-shell";
 import { contact } from "../content/contact";
 
 export const metadata: Metadata = pageMetadata({ title: contact.meta.title, description: contact.meta.description, path: "/contact" });
@@ -21,11 +21,11 @@ export default function ContactPage() {
           <ul className="contact-channels">
             {contact.channels.map((channel) => (
               <li key={channel.kind}>
-                <a href={channel.href}><span>{channel.kind}</span><strong>{channel.value}</strong><b aria-hidden="true">↗</b></a>
+                <a href={channel.href}><span>{channel.kind}</span><strong>{channel.value}</strong><b aria-hidden="true">{OUT_ARROW}</b></a>
               </li>
             ))}
             <li>
-              <a id="cv" className="cv-placeholder" href={contact.cv.href} target="_blank" rel="noreferrer"><span>{contact.cv.label}</span><strong>{contact.cv.title}</strong>{contact.cv.text ? <p>{contact.cv.text}</p> : null}<b aria-hidden="true">↗</b></a>
+              <a id="cv" className="cv-placeholder" href={contact.cv.href} target="_blank" rel="noreferrer"><span>{contact.cv.label}</span><strong>{contact.cv.title}</strong>{contact.cv.text ? <p>{contact.cv.text}</p> : null}<b aria-hidden="true">{OUT_ARROW}</b></a>
             </li>
           </ul>
         </div>

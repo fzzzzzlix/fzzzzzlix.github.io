@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { asset } from "./base-path";
 
+// The "opens elsewhere" arrow. U+FE0E asks for the plain text glyph: without
+// it, phones (iOS above all) swap ↗ for a coloured emoji.
+export const OUT_ARROW = "\u2197\uFE0E";
+
 // Public CV link (Google Drive). Every "CV" action across the site points here.
 export const CV_URL = "https://drive.google.com/file/d/1Ea5Il96N4fVSFY9UZ8J2QdiIwhhIoTtA/view?usp=drive_link";
 
@@ -93,12 +97,12 @@ export function SiteHeader({ current }: { current?: string }) {
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Felix Phan home"><StarMark size={18} /><span>Felix Phan</span></Link>
         <nav aria-label="Primary navigation">{navLinks}</nav>
-        <a className="nav-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV <span aria-hidden="true">↗</span></a>
+        <a className="nav-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV <span aria-hidden="true">{OUT_ARROW}</span></a>
         <details className="mobile-menu">
           <summary>Menu</summary>
           <div>
             {navLinks}
-            <a className="mobile-menu-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV ↗</a>
+            <a className="mobile-menu-cv" href={CV_URL} target="_blank" rel="noreferrer">View CV {OUT_ARROW}</a>
           </div>
         </details>
       </header>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteFooter, SiteHeader, NorthStar, CoverImage, CV_URL } from "./site-shell";
+import { SiteFooter, SiteHeader, NorthStar, CoverImage, CV_URL, OUT_ARROW } from "./site-shell";
 import { projects } from "./data";
 import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
@@ -44,12 +44,9 @@ export default function Home() {
               </ul>
               <div className="hero-actions">
                 <Link className="button button-primary" href="/work">{home.hero.primaryCta}</Link>
-                <a className="text-link" href={CV_URL} target="_blank" rel="noreferrer">{home.hero.quietCta} <span aria-hidden="true">↗</span></a>
+                <a className="text-link" href={CV_URL} target="_blank" rel="noreferrer">{home.hero.quietCta} <span aria-hidden="true">{OUT_ARROW}</span></a>
               </div>
             </div>
-            <ul className="hero-facts" aria-label="Availability">
-              {home.hero.facts.map((fact) => <li key={fact}>{fact}</li>)}
-            </ul>
           </div>
         </section>
 
@@ -82,7 +79,7 @@ export default function Home() {
               <Link href={`/work?role=${encodeURIComponent(row.filter)}`} key={row.title} className="route-row">
                 <span className="route-main"><strong>{row.title}</strong><small>{row.text}</small></span>
                 <span className="route-proof">{row.proof}</span>
-                <span className="route-arrow" aria-hidden="true">↗</span>
+                <span className="route-arrow" aria-hidden="true">{OUT_ARROW}</span>
               </Link>
             ))}
           </div>
@@ -93,7 +90,7 @@ export default function Home() {
           <div className="section-shell">
           <div className="featured-head">
             <h2 id="featured-title" className="featured-title">{home.featuredEyebrow}</h2>
-            <Link className="text-link" href="/work">{home.featuredLink} <span aria-hidden="true">↗</span></Link>
+            <Link className="text-link" href="/work">{home.featuredLink} <span aria-hidden="true">{OUT_ARROW}</span></Link>
           </div>
           <ol className="featured-list">
             {featured.map((project, index) => {

@@ -10,7 +10,6 @@ export const home = {
     chips: ["Strategy", "Storytelling", "Project delivery"],
     primaryCta: "Explore selected work",
     quietCta: "View CV",
-    facts: ["Available for full-time role", "Ho Chi Minh City & Hanoi"],
     portraitAlt: "Portrait of Felix Phan",
   },
 

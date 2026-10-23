@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMetadata } from "../seo";
-import { MediaPlaceholder, PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
+import { MediaPlaceholder, OUT_ARROW, PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -45,7 +45,7 @@ export default function ExperiencePage() {
                     <ul className="timeline-scope">{item.scope.map((line, i) => <li key={i}>{line}</li>)}</ul>
                     {item.links.length ? (
                       <div className="timeline-links">
-                        {item.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
+                        {item.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label} {OUT_ARROW}</a>)}
                       </div>
                     ) : null}
                     {item.images.length ? (
