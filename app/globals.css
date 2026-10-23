@@ -178,6 +178,7 @@ details[open] > summary .disclosure-mark::after { transform: rotate(0deg); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 8px 26px; font: 400 var(--fs-label)/1.4 var(--serif); }
 .footer-links a { color: var(--bone-muted); background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; padding-bottom: 3px; transition: background-size .3s var(--ease), color .2s ease; }
 .footer-links a:hover, .footer-links a:focus-visible { color: var(--bone); background-size: 100% 1px; }
+.footer-name { grid-column: 1 / -1; color: var(--bone-muted); font: 400 var(--fs-label)/1.4 var(--serif); }
 
 /* ==========================================================================
    HOME: cover, proof, work, person, focus, contact
@@ -552,14 +553,13 @@ ol.p31-list { list-style: decimal; }
 /* Wide opening photo; a pending-image plate until one is chosen */
 .experience-cover { margin: 0 auto var(--space-s); }
 .experience-cover img, .experience-cover .media-placeholder { width: 100%; aspect-ratio: 21 / 9; min-height: 0; object-fit: cover; }
-.timeline { padding-block: var(--space-m); }
-.timeline .section-intro { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 24px; }
-.timeline .section-intro h2 { grid-column: 2; }
 .timeline article { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 24px; padding: 28px 0; }
+.timeline article:first-child { padding-top: 0; }
+.timeline article:last-child { padding-bottom: 0; }
 .timeline-folio { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
 .timeline-date { font: 400 var(--fs-label)/1.4 var(--serif); }
-.timeline-entry h2 { max-width: 22em; font-size: var(--fs-h3); line-height: 1.08; }
-.timeline-entry h3 { max-width: 40em; margin-top: 6px; color: var(--wine); font-size: var(--fs-body); font-style: italic; line-height: 1.35; }
+.timeline-entry h3 { max-width: 22em; font-size: var(--fs-h3); line-height: 1.08; }
+.timeline-role { max-width: 40em; margin-top: 6px; color: var(--wine); font-size: var(--fs-body); font-style: italic; line-height: 1.35; }
 .timeline-scope { margin: 12px 0 0; padding-left: 1.1em; max-width: var(--measure); list-style: disc; font-size: var(--fs-body); line-height: 1.5; }
 .timeline-scope li { margin-top: 6px; }
 .timeline-scope li::marker { color: var(--wine); }
@@ -571,10 +571,6 @@ ol.p31-list { list-style: decimal; }
 .timeline-gallery a { display: block; overflow: hidden; background: var(--bone-deep); }
 .timeline-gallery img { width: auto; height: 160px; max-width: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .timeline-gallery a:hover img, .timeline-gallery a:focus-visible img { transform: scale(1.03); }
-.education { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 24px; padding-block: var(--space-m); }
-.education > * { grid-column: 2; min-width: 0; }
-.education .section-intro { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; margin-bottom: 18px; }
-.education .section-intro h2 { grid-column: 2; grid-row: 1; }
 .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 36px; }
 .education-grid article { padding-top: 0; }
 .education-grid span { color: var(--wine); font: 400 var(--fs-label)/1.4 var(--serif); }
@@ -584,7 +580,7 @@ ol.p31-list { list-style: decimal; }
 .credentials-list { margin: 0; padding-left: 1.1em; max-width: var(--measure); list-style: disc; font-size: var(--fs-body); line-height: 1.5; }
 .credentials-list li { margin-top: 6px; }
 .credentials-list li::marker { color: var(--wine); }
-.education .more-evidence { margin-top: 18px; }
+.credentials-list + .more-evidence { margin-top: 18px; }
 .achievements-marquee { margin-top: 16px; overflow-x: auto; overflow-y: hidden; cursor: grab; scrollbar-width: none; touch-action: pan-x; }
 .achievements-marquee::-webkit-scrollbar { display: none; }
 .achievements-marquee:active { cursor: grabbing; }
@@ -592,24 +588,31 @@ ol.p31-list { list-style: decimal; }
 .achievements-track img { height: 200px; width: auto; margin-right: 14px; object-fit: cover; user-select: none; -webkit-user-drag: none; }
 
 /* ==========================================================================
-   FOCUS AREAS: three wine bars; each opens its area in place
+   FOLDS: a section that opens from a wine bar (Focus Areas, Experience).
+   Closed, it is the bar alone. Open, the bar stays wine and the content sits
+   on the light ground inside a wine border, so it reads as one block.
    ========================================================================== */
-.interest-areas { display: flex; flex-direction: column; gap: 12px; padding-bottom: var(--space-l); }
-.interest-area { scroll-margin-top: calc(var(--header-h) + 16px); }
-.interest-area > summary { display: flex; align-items: center; gap: 16px; padding: clamp(22px, 2.6vw, 34px) clamp(20px, 3vw, 44px); }
-.interest-area > summary h2 { margin-right: auto; color: var(--fg); font-size: var(--fs-h2); line-height: 1; letter-spacing: -.02em; transition: color .2s ease; }
-.interest-area > summary::after { content: "Show"; order: 1; color: var(--fg-muted); font: 400 var(--fs-label)/1 var(--serif); }
-.interest-area[open] > summary::after { content: "Hide"; }
-.interest-area > summary .disclosure-mark { order: 2; width: 32px; height: 32px; }
-.interest-area > summary .disclosure-mark::before, .interest-area > summary .disclosure-mark::after { left: 9px; right: 9px; }
-.interest-area > summary:hover h2, .interest-area > summary:focus-visible h2 { color: var(--silver); }
-.interest-area > summary:hover .disclosure-mark, .interest-area > summary:focus-visible .disclosure-mark { background: var(--bone); color: var(--wine); }
-.interest-area-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: var(--space-s); align-items: start; padding: 0 clamp(20px, 3vw, 44px) clamp(28px, 3.4vw, 48px); }
+.folds { display: flex; flex-direction: column; gap: 12px; padding-bottom: var(--space-l); }
+.fold { border: 2px solid var(--wine); scroll-margin-top: calc(var(--header-h) + 16px); }
+.fold > summary { display: flex; align-items: center; gap: 16px; padding: clamp(22px, 2.6vw, 34px) clamp(20px, 3vw, 44px); }
+.fold > summary h2 { margin-right: auto; color: var(--fg); font-size: var(--fs-h2); line-height: 1; letter-spacing: -.02em; transition: color .2s ease; }
+.fold > summary::after { content: "Show"; order: 1; color: var(--fg-muted); font: 400 var(--fs-label)/1 var(--serif); }
+.fold[open] > summary::after { content: "Hide"; }
+.fold > summary .disclosure-mark { order: 2; width: 32px; height: 32px; }
+.fold > summary .disclosure-mark::before, .fold > summary .disclosure-mark::after { left: 9px; right: 9px; }
+.fold > summary:hover h2, .fold > summary:focus-visible h2 { color: var(--silver); }
+.fold > summary:hover .disclosure-mark, .fold > summary:focus-visible .disclosure-mark { background: var(--bone); color: var(--wine); }
+.fold-body { padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px) clamp(28px, 3.4vw, 48px); }
+
+/* ==========================================================================
+   FOCUS AREAS: three folds, one per area
+   ========================================================================== */
+.interest-area-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: var(--space-s); align-items: start; }
 .interest-area-text { grid-column: 1 / span 4; }
 .interest-photos { grid-column: 5 / -1; }
 .interest-projects-block { grid-column: 1 / -1; }
 .interest-projects-block h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--fg); font-size: var(--fs-lead); }
-.interest-projects-block h3::before { content: ""; width: 12px; height: 12px; background: var(--silver); -webkit-mask: var(--star-mask) center / contain no-repeat; mask: var(--star-mask) center / contain no-repeat; }
+.interest-projects-block h3::before { content: ""; width: 12px; height: 12px; background: var(--wine); -webkit-mask: var(--star-mask) center / contain no-repeat; mask: var(--star-mask) center / contain no-repeat; }
 .interest-projects { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; }
 .interest-project { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; }
 .interest-project-media { display: grid; place-items: center; overflow: hidden; aspect-ratio: 4 / 3; background: var(--plum); }
@@ -619,7 +622,7 @@ ol.p31-list { list-style: decimal; }
 .interest-project-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .interest-project-title { font-size: var(--fs-body); line-height: 1.2; transition: color .2s ease; }
 .interest-project .project-meta { color: var(--fg-muted); }
-.interest-project:hover .interest-project-title, .interest-project:focus-visible .interest-project-title { color: var(--silver); }
+.interest-project:hover .interest-project-title, .interest-project:focus-visible .interest-project-title { color: var(--wine); }
 
 /* Photo rows (PhotoRow): one shared height, each width follows its picture */
 .photo-row { display: flex; align-items: flex-start; gap: 16px; }
@@ -663,7 +666,7 @@ ol.p31-list { list-style: decimal; }
     .featured-list > li, .proof-list > p, .route-row, .routes-figure, .interest-inner > *, .closing,
     .work-grid > li, .p31-section > *, .p31-section-body > *, .p31-strip > li, .case-tension > *,
     .about-hero-grid > *, .about-narrative > *, .capability-list > article, .page-cta,
-    .timeline article, .education-grid article, .interest-area, .contact-channels li {
+    .timeline article, .education-grid article, .fold, .contact-channels li {
       animation: rise-in linear both; animation-timeline: view(); animation-range: entry 0% entry 35%;
     }
   }
@@ -738,11 +741,8 @@ ol.p31-list { list-style: decimal; }
   .about-photos { grid-column: 1 / -1; }
   .capability-list { grid-template-columns: 1fr; }
 
-  .timeline article, .education, .timeline .section-intro { grid-template-columns: 1fr; }
-  .timeline .section-intro h2 { grid-column: 1; }
+  .timeline article { grid-template-columns: 1fr; }
   .experience-cover img, .experience-cover .media-placeholder { aspect-ratio: 16 / 9; }
-  .education > *, .education .section-intro, .education .section-intro h2 { grid-column: 1; }
-  .education .section-intro { display: block; }
   .timeline-folio { flex-direction: row; gap: 14px; padding: 0 0 8px; }
 
   .interest-area-text, .interest-photos { grid-column: 1 / -1; }

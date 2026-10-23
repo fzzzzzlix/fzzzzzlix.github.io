@@ -167,7 +167,9 @@ export function SiteFooter() {
     <footer className="site-footer surface-plum">
       <div className="site-footer-inner section-shell">
         <div className="footer-brand"><StarMark size={44} /><span>Follow the North Star</span></div>
-        <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/">LinkedIn</a></div>
+        <div className="footer-links"><a href="mailto:felixphan.contact@gmail.com">felixphan.contact@gmail.com</a><a href="https://www.linkedin.com/in/felixphan/" rel="me">LinkedIn</a></div>
+        {/* Both names on every page, so searches for either find this site. */}
+        <p className="footer-name">© {new Date().getFullYear()} Felix Phan (Nguyen Phan Thuc Huong)</p>
       </div>
     </footer>
   );

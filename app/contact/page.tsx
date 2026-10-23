@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../seo";
 import { NorthStar, SiteFooter, SiteHeader } from "../site-shell";
 import { contact } from "../content/contact";
 
-export const metadata: Metadata = { title: contact.meta.title, description: contact.meta.description, alternates: { canonical: "/contact" } };
+export const metadata: Metadata = pageMetadata({ title: contact.meta.title, description: contact.meta.description, path: "/contact" });
 
 // The colophon: echoes the portfolio cover (luminous star left, information right).
 export default function ContactPage() {

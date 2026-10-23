@@ -7,7 +7,7 @@
 export const experience = {
   meta: {
     title: "Experience",
-    description: "Felix Phan's progression through content, production, events, leadership and organisation design.",
+    description: "Experience of Felix Phan (Nguyen Phan Thuc Huong): degrees at RMIT University and National Economics University, roles in events, production and student leadership, and achievements.",
   },
   timeline: [
     { dates: "Feb - May 2026", org: "MBE: Mien Bac Event", role: "Creative Planner Intern", scope: [

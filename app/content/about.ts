@@ -7,7 +7,7 @@
 export const about = {
   meta: {
     title: "About",
-    description: "Meet Felix Phan and the method connecting research, story, production and impact.",
+    description: "About Felix Phan (legal name Nguyen Phan Thuc Huong, they/them), a creative strategist and storyteller from RMIT University and National Economics University, based in Ho Chi Minh City and Hanoi.",
   },
   identity: {
     eyebrow: "About Felix",

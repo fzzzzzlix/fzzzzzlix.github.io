@@ -7,7 +7,7 @@
 export const interests = {
   meta: {
     title: "Focus Areas",
-    description: "Felix Phan's work across sustainable development, ESG, CSR, culture and social advocacy.",
+    description: "The interests that shape Felix Phan's work: sustainable development and ESG, culture and media, and social advocacy, with the projects behind each.",
   },
   hero: {
     title: "Interests that shape my work",

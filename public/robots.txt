@@ -1,0 +1,5 @@
+# Open to every crawler, search and AI answer engines alike.
+User-agent: *
+Allow: /
+
+Sitemap: https://fzzzzzlix.github.io/sitemap.xml

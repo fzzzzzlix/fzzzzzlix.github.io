@@ -92,6 +92,20 @@ and take viewport shots instead.
 **Eyebrow strings** (`eyebrow:` fields in content files and case data) are kept
 but not displayed; see DESIGN.md §3.
 
+## Search (SEO, AEO, GEO)
+
+| What | Where |
+|---|---|
+| Names, profile facts, page metadata helper, JSON-LD (WebSite, Person, ProfilePage, CreativeWork) | `app/seo.ts` |
+| Site defaults: title "Felix Phan, PORTFOLIO", template "Felix Phan, %s" | `app/layout.tsx` |
+| `robots.txt` and the AI-readable summary `llms.txt` | `public/` |
+| `sitemap.xml`, written from the exported HTML after every build | `scripts/write-sitemap.mjs` (part of `npm run build:pages`) |
+
+Keep both names, **Felix Phan** and the legal name **Nguyen Phan Thuc Huong**,
+in page descriptions where they read naturally; the footer carries both on
+every page. Interior pages use `pageMetadata()` so each gets its own title,
+canonical URL and share card. Update `public/llms.txt` when facts change.
+
 ## Verify a change
 ```bash
 npx tsc --noEmit

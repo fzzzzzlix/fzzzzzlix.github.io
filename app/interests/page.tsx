@@ -1,31 +1,32 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "../seo";
 import { CoverImage, PageHero, PhotoRow, SiteFooter, SiteHeader, StarMark } from "../site-shell";
 import { projects } from "../data";
 import { REAL_IMAGES } from "../project-images";
 import { interests } from "../content/interests";
 
-export const metadata: Metadata = { title: interests.meta.title, description: interests.meta.description, alternates: { canonical: "/interests" } };
+export const metadata: Metadata = pageMetadata({ title: interests.meta.title, description: interests.meta.description, path: "/interests" });
 
 const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
-// The page opens on three wine bars, one per area. Each bar is a toggle; the
-// area opens in place with the same shape every time: text and an
-// equal-height photo pair, then its projects as compact thumbnail rows.
+// The page opens on three folds, one per area: wine bars that open in place.
+// An open area always has the same shape: text and an equal-height photo
+// pair, then its projects as compact thumbnail rows.
 export default function InterestsPage() {
   return (
     <div className="site-frame">
       <SiteHeader current="/interests" />
       <main id="main-content">
         <PageHero eyebrow={interests.hero.title} />
-        <div className="interest-areas section-shell">
+        <div className="folds section-shell">
           {interests.cards.map((item) => (
-            <details className="interest-area surface-wine" id={item.id} key={item.id}>
-              <summary>
+            <details className="fold" id={item.id} key={item.id}>
+              <summary className="surface-wine">
                 <h2>{item.title}</h2>
                 <span className="disclosure-mark" aria-hidden="true" />
               </summary>
-              <div className="interest-area-body">
+              <div className="fold-body interest-area-body">
                 <p className="interest-area-text">{item.text}</p>
                 <PhotoRow className="interest-photos" photos={item.images} />
                 <div className="interest-projects-block">

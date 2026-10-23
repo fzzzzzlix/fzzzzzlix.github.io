@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLd, pageMetadata, profilePageJsonLd } from "../seo";
 import { PhotoRow, SiteFooter, SiteHeader } from "../site-shell";
 import { asset } from "../base-path";
 import { about } from "../content/about";
 import { inline } from "../content/render-inline";
 
-export const metadata: Metadata = { title: about.meta.title, description: about.meta.description, alternates: { canonical: "/about" } };
+export const metadata: Metadata = pageMetadata({ title: about.meta.title, description: about.meta.description, path: "/about" });
 
 export default function AboutPage() {
   const img = about.images;
@@ -62,6 +63,7 @@ export default function AboutPage() {
         <section className="page-cta section-shell"><p className="eyebrow">{about.cta.eyebrow}</p><h2>{about.cta.title}</h2><Link className="button button-primary" href="/work">{about.cta.button}</Link></section>
       </main>
       <SiteFooter />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(profilePageJsonLd)} />
     </div>
   );
 }

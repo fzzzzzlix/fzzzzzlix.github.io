@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../seo";
 import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
 import { featureProjects, projects } from "../data";
 import WorkGrid from "./work-grid";
 
-export const metadata: Metadata = { title: "Work", description: "Explore Felix Phan's projects across strategy, scriptwriting, production, events, sustainability and content.", alternates: { canonical: "/work" } };
+export const metadata: Metadata = pageMetadata({ title: "Work", description: "Projects by Felix Phan (Nguyen Phan Thuc Huong) across strategy, research, scriptwriting, production, events, sustainability and content.", path: "/work" });
 
 export default async function WorkPage({ searchParams }: { searchParams: Promise<{ role?: string }> }) {
   const { role } = await searchParams;

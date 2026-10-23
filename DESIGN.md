@@ -90,7 +90,8 @@ One face. There is no monospace on the site.
   hero capability list); mark sub-headings with an arrow; in copy, use a colon or
   comma. Number and date ranges keep their plain hyphen or en dash.
 - **No middle dots (·) or vertical bars (|)** as separators, in copy or in page
-  titles. Use a colon or comma. Page titles read "Felix Phan: Work".
+  titles. Use a colon or comma. Browser titles read "Felix Phan, Work"; the home
+  page is "Felix Phan, PORTFOLIO".
 - Numerals: old-style in running text, lining in figures/stats.
 - No generic script font. The italic Garamond is the signature.
 
@@ -101,7 +102,7 @@ horizontal, equal length, slim waist (`STAR_POINTS`, viewBox 200).
 
 | Mode | Component | Size | Treatment |
 |---|---|---|---|
-| Signature | `StarMark` | 12–44px | Flat `currentColor`. Header brand, footer, favicon |
+| Signature | `StarMark` | 12–44px | Flat `currentColor`. Header brand, footer. The favicon is the wine star on a transparent ground |
 | Plate | `StarMark` | 32–44px | Work and Focus Areas tiles for a project without media |
 | Marker | `--star-mask` | 9–10px | Separator in the hero capability list |
 | Hero | `NorthStar mode="glow"` | 35–65% of the composition | Translucent wings, bright core, thin horizontal flare. **Only** the home hero and Contact. No other page uses a large star |
@@ -166,12 +167,19 @@ team, status, category tags) anywhere on the site; those values stay in
 
 ### Focus Areas
 
-The page title, then three wine bars, one per area, closed at load: the bars
-are the page's navigation and set the areas apart. Each bar is a toggle (title
-left, Show/Hide and the boxed mark right). An open area keeps the same shape
-every time, inside its wine panel: text (left), an equal-height photo pair
-(right), then "Projects in this area" (lead size, star marker) over compact
-rows, a small 4:3 thumbnail with title and type beside it.
+The page title, then three folds (below), one per area, closed at load: the
+bars are the page's navigation and set the areas apart. An open area keeps the
+same shape every time: text (left), an equal-height photo pair (right), then
+"Projects in this area" (lead size, wine star marker) over compact rows, a
+small 4:3 thumbnail with title and type beside it.
+
+### Folds
+
+A section that opens from a wine bar: `<details class="fold">` with a
+`surface-wine` summary (title left, Show/Hide and a 32px boxed mark right) and
+a `.fold-body`. Closed, it is the bar alone. Open, only the bar stays wine; the
+content sits on the light ground inside a 2px wine border, so it reads as one
+block. Used on Focus Areas and Experience.
 
 ### Photo pairs
 
@@ -185,7 +193,9 @@ with the paragraphs and with each other.
 ### Experience
 
 Title, a wide 21:9 opening photo (`experience.cover`; a pending-image plate
-until one is set), then Education, Work experience, Other achievements.
+until one is set), then three folds, closed at load: Education, Work
+experience, Other achievements. Certificates inside Other achievements start
+open, so their slideshow images still load with the page.
 
 ## 8. Images
 
