@@ -33,7 +33,7 @@ words; edit the words in the content file.
 |---|---|
 | All 30 project records (title, year, role, tension, approach, significance, evidence, tags, alt text) — drives the Work grid, cards and every non-feature case | `app/data.ts` |
 | Supporting-case long-form layer (decks, extra sections, figures, links for non-feature cases) | `app/work/[slug]/supporting-case-data.ts` |
-| Which image file each project uses | `app/project-images.ts` |
+| Which image file each project uses (plus an 800px `thumb` for tiles; run `node scripts/make-thumbs.mjs` after adding or replacing one) | `app/project-images.ts` |
 
 The Work index page (`/work`) and every card/tension line come from `app/data.ts`
 via `app/work/work-grid.tsx` — there is no separate content file for the grid.

@@ -175,10 +175,10 @@ details[open] > summary .disclosure-mark::after { transform: rotate(0deg); }
 .site-footer-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
 .footer-brand { display: flex; gap: 14px; align-items: center; font: italic 400 var(--fs-h3)/1 var(--serif); }
 .footer-brand .star-mark { color: var(--silver); width: 28px; height: 28px; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 8px 26px; font: 400 var(--fs-label)/1.4 var(--serif); }
+.footer-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 26px; font: 400 var(--fs-label)/1.4 var(--serif); }
 .footer-links a { color: var(--bone-muted); background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; padding-bottom: 3px; transition: background-size .3s var(--ease), color .2s ease; }
 .footer-links a:hover, .footer-links a:focus-visible { color: var(--bone); background-size: 100% 1px; }
-.footer-name { grid-column: 1 / -1; color: var(--bone-muted); font: 400 var(--fs-label)/1.4 var(--serif); }
+.footer-name { color: var(--bone-muted); opacity: .75; }
 
 /* ==========================================================================
    HOME: cover, proof, work, person, focus, contact

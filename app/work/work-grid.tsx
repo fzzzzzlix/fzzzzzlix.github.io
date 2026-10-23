@@ -174,7 +174,7 @@ export default function WorkGrid({ initialRole }: { initialRole?: string }) {
               <li key={project.id} className={tileSpan(index)}>
                 <Link href={`/work/${project.slug}`} className={`work-tile${img ? "" : " no-media"}`}>
                   <span className="work-tile-media">
-                    {img ? <CoverImage src={img.src} fit={img.fit} poster={img.poster} alt="" /> : <StarMark size={featured ? 44 : 32} />}
+                    {img ? <CoverImage src={img.thumb} fit={img.fit} poster={img.poster} alt="" /> : <StarMark size={featured ? 44 : 32} />}
                   </span>
                   <span className="work-tile-caption">
                     <span className="work-tile-title">{project.title}</span>

@@ -28,7 +28,7 @@ export default function InterestsPage() {
               </summary>
               <div className="fold-body interest-area-body">
                 <p className="interest-area-text">{item.text}</p>
-                <PhotoRow className="interest-photos" photos={item.images} />
+                <PhotoRow className="interest-photos" photos={item.images} eager />
                 <div className="interest-projects-block">
                   <h3>{interests.projectsLabel}</h3>
                   <ul className="interest-projects">
@@ -40,7 +40,7 @@ export default function InterestsPage() {
                         <li key={id}>
                           <Link className="interest-project" href={`/work/${p.slug}`}>
                             <span className={`interest-project-media${img ? "" : " no-media"}`}>
-                              {img ? <CoverImage src={img.src} fit="cover" poster={img.poster} alt="" /> : <StarMark size={24} />}
+                              {img ? <CoverImage src={img.thumb} fit="cover" poster={img.poster} alt="" /> : <StarMark size={24} />}
                             </span>
                             <span className="interest-project-copy">
                               <span className="interest-project-title">{p.title}</span>
