@@ -31,11 +31,11 @@ export const projects: Project[] =
     "publicType": "Early-stage entertainment venture",
     "role": "Creative Lead and Format Developer",
     "tension": "Design formats that work twice: as a live experience for the players, and as footage worth watching for everyone who wasn't there.",
-    "approach": "Designed every format around one question, which is what rule makes a group of people worth watching. Built the StarX League on locked three-person roles and a written scoring economy, recced the Hồ Tràm venue before designing a single game, then surveyed the players afterwards and wrote the weakest result, rule clarity, into the next format as a 75-second constraint.",
-    "output": "One delivered two-day live event (13 players, 4 teams, 16 games, 8 venue zones) with game plan, comms plan, player survey and recap video; a filmed but unedited episode with script and an eleven-sheet format workbook; two pre-production format documents; and a complete brand identity with a 23-page guidelines document.",
-    "significance": "Shows format design carried from concept to live delivery and back into revision: the mechanics, the run of show, the post-event evidence and the honest account of what the event did not prove.",
-    "evidence": "Felix's own account of a three-person venture he co-founded. The concepts, rules, scripts and brand identity are his; live delivery was shared across the three founders. Survey figures are aggregated from 10 of 13 players and respondents are anonymised. Map 02, Đêm Tiệc Mặt Nạ and the Sunday We Vibe edit never ran, and are labelled pre-production or unedited rather than delivered. No planned-versus-delivered change log exists for Map 01, which is stated on the page.",
-    "source": "P35 StarX case handoff pack; Map 01 game plan and player survey (30 June 2026); Sunday We Vibe EP01 script and format workbook; Tái Hoang Dã and Đêm Tiệc Mặt Nạ design documents; StarX brand guidelines",
+    "approach": "Designed every format around one question: what rule makes ordinary people worth watching? Built the StarX League on locked three-person roles and a written scoring sheet, delivered Map 01 live, then surveyed the players and turned the weakest result, rule clarity, into a one-page rule card and a fixed 60-second briefing for the next map.",
+    "output": "One delivered two-day live event (15 players, 4 teams, 13 games) with recap video, player survey and post-event report; a filmed but unedited episode with its production pack; a Map 02 proposal and two original-format pitch decks; a release media plan; and a complete brand identity with a 23-page guidelines document.",
+    "significance": "Shows format design carried from concept to live delivery and back into revision: the mechanics, the live event, the player evidence, and the design changes it led to.",
+    "evidence": "Felix's own account of a three-person venture he co-founded. The concepts, rules, scripts and brand identity are his; live delivery was shared across the three founders. Survey figures are aggregated from 10 player responses and anonymised. Map 02, Đêm Tiệc Mặt Nạ, Mật Mã Di Sản and the Sunday We Vibe edit never ran, and are labelled as proposals, pre-production or unedited rather than delivered. The release media plan was written but never executed.",
+    "source": "Map 01 Hồ Tràm post-event report and player survey (30 June 2026); Map 01 media plan deck and workbook; Sunday We Vibe EP01 production pack; Map 02 Tái Hoang Dã proposal and pitch deck; Đêm Tiệc Mặt Nạ and Mật Mã Di Sản pitch decks; StarX brand guidelines and Figma file",
     "priority": "A: Flagship candidate",
     "feature": true,
     "tags": [
@@ -46,7 +46,7 @@ export const projects: Project[] =
     "assetFilename": "felix-p35-starx-cover-16x9-v01.jpg",
     "assetRatio": "Web and PDF landscape: 16:9, 1600 × 900 px minimum. Optional mobile crop: 4:5, 1200 × 1500 px.",
     "assetRule": "Photography and video: Crop to Fill with preserved proportions. Website uses object-fit: cover; default object-position 50% 50%. Never stretch or set independent X/Y scale.",
-    "alt": "Players mid-game at the StarX League Map 01 live event in Hồ Tràm"
+    "alt": "The StarX wordmark and star on an orange-red gradient, above the line Premium Adventure Community"
   },
   {
     "id": "P01",
