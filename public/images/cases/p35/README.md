@@ -10,5 +10,4 @@
 | p35-brand-logo-options.jpg | Logo routes board (route A adopted) |
 
 Never copy anything from the StarX archive folder into this repo: it contains account
-credentials and participant phone numbers. The Zalo message plan is described on the
-page but never embedded, for the same reason.
+credentials and participant phone numbers.

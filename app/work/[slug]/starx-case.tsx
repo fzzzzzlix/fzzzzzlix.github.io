@@ -61,6 +61,7 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
         </MediaPair>
         <ResponsiveEmbed referrerPolicy="strict-origin-when-cross-origin" {...c.map01.recap} />
         <Lede>{inline(c.map01.comms)}</Lede>
+        <Docs docs={[c.map01.commsDoc]} />
       </CaseSection>
 
       <CaseSection eyebrow={c.mapping.eyebrow} title={c.mapping.title}>

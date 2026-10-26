@@ -9,8 +9,7 @@
  * the players said, and what changed because of it. The full documents sit behind
  * collapsible embeds for anyone who wants the detail.
  *
- * Privacy: the scoring-sheet photo has player names blurred. The Zalo message plan
- * is described but never embedded (it carries private phone numbers).
+ * Privacy: the scoring-sheet photo has player names blurred.
  */
 import { asset } from "../../base-path";
 
@@ -23,6 +22,7 @@ const drive = (id: string) => ({
 });
 
 const MEDIA_PLAN_SHEET_ID = "1tG_Zzrqg1HQ6CZ3PjhC2Vfbv-LYqhc_O";
+const ZALO_PLAN_SHEET_ID = "1nKK6SmfhhxEiEh8ot2dBYyhlsi8LCZpN";
 const FIGMA_FILE = "https://www.figma.com/design/7c7cltjv7qK4TrefHHPxcd/STARX-BRANDING?node-id=0-1";
 
 export const starx = {
@@ -85,6 +85,12 @@ export const starx = {
     },
     comms:
       "Players were looked after before they arrived, too. Communication ran on a written Zalo plan timed to the minute: a private group per team for bonding and a sneak peek of Game 1, one main group for logistics only, and a list of messages deliberately *not* sent to the main group, with the reason for each.",
+    commsDoc: {
+      title: "Map 01 Zalo message plan (Google Sheets)",
+      src: `https://docs.google.com/spreadsheets/d/${ZALO_PLAN_SHEET_ID}/preview`,
+      fallbackUrl: `https://docs.google.com/spreadsheets/d/${ZALO_PLAN_SHEET_ID}/edit?gid=2082794867`,
+      fallbackLabel: "Open the Zalo message plan",
+    },
   },
 
   mapping: {
