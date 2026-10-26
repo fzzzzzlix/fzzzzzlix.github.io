@@ -60,13 +60,15 @@ test("P35 StarX leads the work index and is a bespoke feature case", () => {
 test("StarX claims each format only at the stage it actually reached", () => {
   const copy = read("app/content/cases/starx.ts");
   // The League event was delivered live; the episode was filmed but never cut,
-  // and two further formats never ran. Those boundaries must stay on the page.
+  // Map 02 and the original formats never ran, and the media plan never ran.
+  // Those boundaries must stay on the page.
   assert.match(copy, /Filmed, never edited/);
   assert.match(copy, /Original format, pre-production/);
-  assert.match(copy, /never ran, because there was only ever one season/);
+  assert.match(copy, /Proposal, never ran/);
   assert.match(copy, /Post-production never started/);
+  assert.match(copy, /the plan never ran/);
   // Survey evidence stays aggregated and anonymised.
-  assert.match(copy, /10 of 13 players responded/);
+  assert.match(copy, /10 players answered/);
   assert.match(copy, /Aggregated, anonymised/);
 });
 

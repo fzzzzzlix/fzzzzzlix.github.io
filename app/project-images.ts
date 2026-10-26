@@ -31,6 +31,7 @@ const RAW_IMAGES: Record<string, ImageInfo> = {
   P32: { src: "/images/cases/p32/Press conference hero.png", fit: "cover" },
   P33: { src: "/images/cases/p33/p33-media-research.jpg", fit: "cover" },
   P34: { src: "/images/cases/p34/PRRE cover.jpg", fit: "cover" },
+  P35: { src: "/images/cases/p35/p35-cover.jpg", fit: "cover" },
 };
 
 // Prefix every image src with the deploy base path so plain <img> tags resolve
