@@ -69,6 +69,9 @@ test("StarX claims each format only at the stage it actually reached", () => {
   assert.match(copy, /the plan never ran/);
   // Survey evidence stays aggregated and anonymised.
   assert.match(copy, /10 players answered/);
+  // Felix was the creative lead, not a founder.
+  assert.doesNotMatch(copy, /co-?founder|three founders/i);
+  assert.doesNotMatch(byId.P35.evidence, /co-?founded|\bhe\b|\bhis\b/i);
   assert.match(copy, /Aggregated, anonymised/);
 });
 

@@ -256,7 +256,9 @@ open, so their slideshow images still load with the page.
 
 ## 12. Forbidden patterns
 
-- No generic card grids by default. The Work moodboard is the one image grid.
+- No generic card grids by default. The Work moodboard is the one image grid;
+  the StarX document library (cover thumbnails at the end of the case) is the
+  one exception, added at the owner's request in Oct 2026.
 - No glassmorphism, no backdrop blur.
 - No arbitrary gradients.
 - No AI-generated decorative blobs or abstract SVGs unrelated to the star.

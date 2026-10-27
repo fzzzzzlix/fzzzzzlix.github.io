@@ -34,6 +34,11 @@ export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
+// Search terms for cases whose craft differs from the site-wide defaults.
+const CASE_KEYWORDS: Record<string, string[]> = {
+  P35: ["Felix Phan", "format developer", "game design", "gameshow", "creative lead", "StarX League"],
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = projectBySlug[slug];
@@ -45,6 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: project.title,
     description: project.tension,
     alternates: { canonical: url },
+    ...(CASE_KEYWORDS[project.id] ? { keywords: CASE_KEYWORDS[project.id] } : {}),
     openGraph: { type: "article", title: `Felix Phan, ${project.title}`, description: project.tension, url, images, authors: ["Felix Phan"] },
     twitter: { card: "summary_large_image", title: `Felix Phan, ${project.title}`, description: project.tension, images: image ? [image] : undefined },
   };

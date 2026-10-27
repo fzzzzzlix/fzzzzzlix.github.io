@@ -75,6 +75,7 @@ export function CaseHero({
   eyebrow = "Feature case",
   title,
   image,
+  imageAlt,
   imageHref,
   imageFit = "cover",
   imagePosition,
@@ -84,14 +85,16 @@ export function CaseHero({
   eyebrow?: string;
   title: string;
   image?: string;
+  /** Alt text when the hero image differs from the project cover (defaults to the project's alt). */
+  imageAlt?: string;
   imageHref?: string;
   imageFit?: "cover" | "contain";
   imagePosition?: string;
   strip?: StripItem[];
 }) {
   const media = image ? (
-    <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${project.alt}. Opens full size in a new tab.`}>
-      <img src={image} alt={project.alt} fetchPriority="high" style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
+    <a className="p31-hero-media" href={imageHref ?? image} target="_blank" rel="noreferrer" aria-label={imageHref ? `${title}. Opens in a new tab.` : `${imageAlt ?? project.alt}. Opens full size in a new tab.`}>
+      <img src={image} alt={imageAlt ?? project.alt} fetchPriority="high" style={{ objectFit: imageFit, ...(imagePosition ? { objectPosition: imagePosition } : {}) }} />
     </a>
   ) : undefined;
   return (
@@ -242,10 +245,10 @@ export function StatGrid({ items, label }: { items: Stat[]; label: string }) {
 }
 
 /** Bordered card. */
-export function Card({ tag, title, children }: { tag: string; title: string; children: ReactNode }) {
+export function Card({ tag, title, children }: { tag?: string; title: string; children: ReactNode }) {
   return (
     <div className="p31-card">
-      <span className="p31-tag">{tag}</span>
+      {tag ? <span className="p31-tag">{tag}</span> : null}
       <h3>{title}</h3>
       {children}
     </div>
