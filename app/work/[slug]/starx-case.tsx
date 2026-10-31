@@ -2,38 +2,62 @@ import type { Project } from "../../data";
 import { inline } from "../../content/render-inline";
 import { starx as c } from "../../content/cases/starx";
 import {
-  BarList,
   CaseArticle,
+  CaseFold,
+  CaseFolds,
   CaseHero,
   CaseList,
   CaseNav,
   CaseSection,
-  CaseTable,
   CaseTension,
   Card,
   Cards,
   ChipRow,
   EvidenceFigure,
+  FoldPart,
   Lede,
   MediaPair,
   ResponsiveEmbed,
   StatGrid,
 } from "./feature-case-primitives";
 
-type Doc = { title: string; src: string; fallbackUrl: string; fallbackLabel: string };
+type Doc = {
+  title: string;
+  src: string;
+  fallbackUrl: string;
+  fallbackLabel: string;
+  layout: "landscape" | "portrait";
+  open?: boolean;
+};
 
-/** Full documents stay closed behind their titles: the page reads without them. */
+/** A document embed: landscape (16:9) or portrait (3:4), sized to fit one screen. */
+function DocEmbed({ doc }: { doc: Doc }) {
+  const { layout, open, ...rest } = doc;
+  return <ResponsiveEmbed {...rest} portrait={layout === "portrait"} defaultOpen={open} fit />;
+}
+
 function Docs({ docs }: { docs: Doc[] }) {
   return (
     <>
       {docs.map((doc) => (
-        <ResponsiveEmbed key={doc.src} portrait {...doc} />
+        <DocEmbed key={doc.src} doc={doc} />
       ))}
     </>
   );
 }
 
+/** Columns that give each image a share equal to its aspect ratio, so the row has one height. */
+const ratioColumns = (photos: { ratio: string }[]) =>
+  photos
+    .map((p) => {
+      const [w, h] = p.ratio.split("/").map((n) => Number(n.trim()));
+      return `${(w / h).toFixed(3)}fr`;
+    })
+    .join(" ");
+
 export function StarXCase({ project, previous, next }: { project: Project; previous: Project; next: Project }) {
+  const m = c.map01;
+  const f = c.formats;
   return (
     <CaseArticle>
       <CaseHero
@@ -46,69 +70,74 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
 
       <CaseTension>{c.tension}</CaseTension>
 
-      <CaseSection eyebrow={c.venture.eyebrow} title={c.venture.title}>
-        {c.venture.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <ChipRow items={c.venture.owned} label={c.venture.ownedLabel} />
+      <CaseSection eyebrow={c.intro.eyebrow} title={c.intro.title}>
+        {c.intro.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+        <ChipRow items={c.intro.owned} label={c.intro.ownedLabel} />
       </CaseSection>
 
-      <CaseSection eyebrow={c.map01.eyebrow} title={c.map01.title}>
-        <ChipRow items={c.map01.chips} label="Map 01 status" />
-        {c.map01.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <MediaPair>
-          {c.map01.photos.map((photo) => (
-            <EvidenceFigure key={photo.src} variant="photo" {...photo} />
+      <CaseFolds>
+        {/* Fold 1: Map 01, the planning side */}
+        <CaseFold id={m.id} title={m.title} kicker={m.kicker} thumb={m.thumb}>
+          <ChipRow items={m.chips} label="Map 01 status" />
+          <Lede>{inline(m.intro)}</Lede>
+
+          <FoldPart title={m.plan.title}>
+            {m.plan.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+            <StatGrid label="Media plan at a glance" items={m.plan.stats} />
+            <Docs docs={m.plan.docs} />
+          </FoldPart>
+
+          <FoldPart title={m.event.title}>
+            {m.event.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+            <MediaPair aligned>
+              {m.event.photos.map((photo) => (
+                <EvidenceFigure key={photo.src} variant="photo" {...photo} />
+              ))}
+            </MediaPair>
+            <MediaPair aligned columns={ratioColumns(m.event.gamePhotos)}>
+              {m.event.gamePhotos.map((photo) => (
+                <EvidenceFigure key={photo.src} variant="photo" {...photo} />
+              ))}
+            </MediaPair>
+            <ResponsiveEmbed referrerPolicy="strict-origin-when-cross-origin" fit {...m.event.recap} />
+            <Lede>{inline(m.event.comms)}</Lede>
+            <DocEmbed doc={m.event.commsDoc} />
+          </FoldPart>
+
+          <FoldPart title={m.outcome.title}>
+            <ChipRow items={m.outcome.chips} label="Survey method" />
+            <StatGrid label="Player survey headline results" items={m.outcome.stats} />
+            {m.outcome.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+            <DocEmbed doc={m.outcome.report} />
+          </FoldPart>
+        </CaseFold>
+
+        {/* Fold 2: the formats, the creative side */}
+        <CaseFold id={f.id} title={f.title} kicker={f.kicker} thumb={f.thumb}>
+          <Lede>{inline(f.intro)}</Lede>
+          {f.lines.map((line) => (
+            <FoldPart key={line.name} title={line.name}>
+              <Lede>{inline(line.line)}</Lede>
+              <Cards>
+                {line.items.map((item) => (
+                  <Card key={item.title} tag={item.tag} title={item.title}>
+                    <p>{inline(item.text)}</p>
+                  </Card>
+                ))}
+              </Cards>
+              <Docs docs={line.docs} />
+            </FoldPart>
           ))}
-        </MediaPair>
-        <ResponsiveEmbed referrerPolicy="strict-origin-when-cross-origin" {...c.map01.recap} />
-        <Lede>{inline(c.map01.comms)}</Lede>
-        <Docs docs={[c.map01.commsDoc]} />
-      </CaseSection>
-
-      <CaseSection eyebrow={c.mapping.eyebrow} title={c.mapping.title}>
-        {c.mapping.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <MediaPair>
-          <EvidenceFigure {...c.mapping.answerKey} />
-          <EvidenceFigure {...c.mapping.scoringSheet} />
-        </MediaPair>
-      </CaseSection>
-
-      <CaseSection eyebrow={c.survey.eyebrow} title={c.survey.title}>
-        <ChipRow items={c.survey.chips} label="Survey method" />
-        <StatGrid label="Player survey headline results" items={c.survey.stats} />
-        <BarList items={c.survey.bars} max={5} label={c.survey.barsLabel} />
-        {c.survey.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-      </CaseSection>
-
-      <CaseSection eyebrow={c.fix.eyebrow} title={c.fix.title}>
-        <Lede>{inline(c.fix.lede)}</Lede>
-        <CaseTable label={c.fix.tableLabel} head={c.fix.tableHead} rows={c.fix.tableRows} />
-        <Lede>{inline(c.fix.after)}</Lede>
-        <Docs docs={[c.fix.report]} />
-      </CaseSection>
-
-      <CaseSection eyebrow={c.next.eyebrow} title={c.next.title}>
-        <Lede>{inline(c.next.lede)}</Lede>
-        <Cards>
-          {c.next.cards.map((card) => (
-            <Card key={card.title} tag={card.tag} title={card.title}>
-              <p>{inline(card.text)}</p>
-            </Card>
-          ))}
-        </Cards>
-        <Docs docs={c.next.docs} />
-      </CaseSection>
-
-      <CaseSection eyebrow={c.media.eyebrow} title={c.media.title}>
-        <Lede>{inline(c.media.lede)}</Lede>
-        <StatGrid label="Media plan at a glance" items={c.media.stats} />
-        {c.media.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <Docs docs={c.media.docs} />
-      </CaseSection>
+        </CaseFold>
+      </CaseFolds>
 
       <CaseSection eyebrow={c.brand.eyebrow} title={c.brand.title}>
-        <EvidenceFigure {...c.brand.logoBoard} />
-        {c.brand.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-        <Docs docs={c.brand.docs} />
+        <Lede>{inline(c.brand.body)}</Lede>
+        <DocEmbed doc={c.brand.guidelines} />
+        <MediaPair aligned>
+          <EvidenceFigure variant="photo" {...c.brand.logoBoard} />
+          <ResponsiveEmbed {...c.brand.figma} open inPair />
+        </MediaPair>
       </CaseSection>
 
       <CaseSection eyebrow={c.close.eyebrow} title={c.close.title}>

@@ -603,6 +603,28 @@ ol.p31-list { list-style: decimal; }
 .fold > summary:hover .disclosure-mark, .fold > summary:focus-visible .disclosure-mark { background: var(--bone); color: var(--wine); }
 .fold-body { padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px) clamp(28px, 3.4vw, 48px); }
 
+/* Case folds: a case split into big chapters that open in place (StarX).
+   The bar carries a 16:9 thumbnail, the title and a one-line kicker. */
+.case-folds { padding-block: var(--space-m); }
+.case-fold > summary { gap: clamp(14px, 2.4vw, 32px); padding: clamp(12px, 1.4vw, 18px) clamp(20px, 3vw, 44px) clamp(12px, 1.4vw, 18px) clamp(12px, 1.4vw, 18px); }
+.case-fold-thumb { flex: 0 0 auto; width: clamp(104px, 18vw, 240px); aspect-ratio: 16 / 9; overflow: hidden; background: var(--plum); }
+.case-fold-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.case-fold > summary:hover .case-fold-thumb img, .case-fold > summary:focus-visible .case-fold-thumb img { transform: scale(1.03); }
+.case-fold-head { display: flex; flex-direction: column; gap: 10px; min-width: 0; margin-right: auto; }
+.case-fold > summary .case-fold-head h2 { margin: 0; line-height: 1.05; text-wrap: balance; }
+.case-fold-kicker { max-width: 34em; color: var(--fg-muted); font-size: var(--fs-note); line-height: 1.4; }
+.case-fold-body > .p31-lede:first-of-type { font-size: var(--fs-lead); line-height: 1.5; }
+.case-fold-part { margin-top: var(--space-m); }
+.case-fold-part > h3 { margin: 0 0 14px; font-size: var(--fs-h3); line-height: 1.15; letter-spacing: -.01em; }
+.case-fold-body .p31-media-pair + .p31-media-pair { margin-top: 20px; }
+.case-fold-body .p31-cols { margin-top: 20px; }
+
+/* A pair whose tops stay level (no stagger) */
+.p31-media-pair.is-aligned > :nth-child(2) { margin-top: 0; }
+
+/* A document frame scaled to fit one screen: width follows the height cap */
+.p31-embed-frame.is-fit { width: min(100%, calc((100svh - var(--header-h) - 120px) * var(--embed-ar, 1.778))); }
+
 /* ==========================================================================
    FOCUS AREAS: three folds, one per area
    ========================================================================== */
@@ -815,6 +837,12 @@ ol.p31-list { list-style: decimal; }
   .p31-figure figcaption { padding-inline: var(--gutter); }
   .p31-media-pair .p31-figure { margin-inline: 0; }
   .p31-media-pair .p31-embed-doc, .p31-media-pair > div > .proof-links { margin-inline: var(--gutter); }
+  .case-fold-body .p31-figure, .case-fold-body .p31-media-pair { margin-inline: 0; }
+  .case-fold-body .p31-figure figcaption { padding-inline: 0; }
+  .case-fold > summary::after { display: none; }
+  .case-fold > summary .case-fold-head h2 { font-size: var(--fs-h3); }
+  .case-fold > summary { align-items: flex-start; }
+  .case-fold > summary .disclosure-mark { align-self: center; }
   .case-nav { grid-template-columns: 1fr 1fr; padding-inline: var(--gutter); }
   .case-nav a:nth-child(2) { grid-column: 1 / -1; grid-row: 2; align-items: flex-start; text-align: left; padding-top: 12px; }
 

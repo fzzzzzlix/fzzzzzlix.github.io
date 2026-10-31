@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { HTMLAttributeReferrerPolicy, ReactNode } from "react";
+import type { CSSProperties, HTMLAttributeReferrerPolicy, ReactNode } from "react";
 import type { Project } from "../../data";
 import { MediaPlaceholder } from "../../site-shell";
 
@@ -223,9 +223,68 @@ export function CaseVideo({
   );
 }
 
-/** Two figures/embeds side by side. */
-export function MediaPair({ children }: { children: ReactNode }) {
-  return <div className="p31-media-pair">{children}</div>;
+/**
+ * Two figures/embeds side by side. By default the second is dropped a little
+ * for an editorial stagger; `aligned` keeps both tops level. `columns` overrides
+ * the column split, e.g. "3fr 6fr" so a 3:4 and a 3:2 image share one height.
+ */
+export function MediaPair({ children, aligned = false, columns }: { children: ReactNode; aligned?: boolean; columns?: string }) {
+  return (
+    <div className={`p31-media-pair${aligned ? " is-aligned" : ""}`} style={columns ? { gridTemplateColumns: columns } : undefined}>
+      {children}
+    </div>
+  );
+}
+
+/**
+ * A big chapter of a case that opens in place, like the Focus Areas folds:
+ * a wine bar with a thumbnail, title and one-line kicker; closed at load.
+ */
+export function CaseFold({
+  id,
+  title,
+  kicker,
+  thumb,
+  children,
+}: {
+  id: string;
+  title: string;
+  kicker?: string;
+  thumb?: { src: string; alt: string };
+  children: ReactNode;
+}) {
+  return (
+    <details className="fold case-fold" id={id}>
+      <summary className="surface-wine">
+        {thumb ? (
+          <span className="case-fold-thumb">
+            <img src={thumb.src} alt={thumb.alt} loading="lazy" />
+          </span>
+        ) : null}
+        <span className="case-fold-head">
+          <h2>{title}</h2>
+          {kicker ? <span className="case-fold-kicker">{kicker}</span> : null}
+        </span>
+        <span className="disclosure-mark" aria-hidden="true" />
+      </summary>
+      <div className="fold-body case-fold-body">{children}</div>
+    </details>
+  );
+}
+
+/** Group of CaseFolds, stacked with the fold gap. */
+export function CaseFolds({ children }: { children: ReactNode }) {
+  return <div className="folds case-folds section-shell">{children}</div>;
+}
+
+/** A titled part inside a CaseFold (h3, since the fold title is the h2). */
+export function FoldPart({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section className="case-fold-part">
+      <h3>{title}</h3>
+      {children}
+    </section>
+  );
 }
 
 type Stat = { value: ReactNode; label: string };
@@ -404,6 +463,8 @@ export function ResponsiveEmbed({
   allow = "fullscreen",
   referrerPolicy,
   open,
+  defaultOpen = false,
+  fit = false,
 }: {
   title: string;
   src: string;
@@ -419,11 +480,17 @@ export function ResponsiveEmbed({
   referrerPolicy?: HTMLAttributeReferrerPolicy;
   /** Force open (true) or closed (false); by default only video embeds start open. */
   open?: boolean;
+  /** Documents only: keep the Open/Hide toggle but start open. */
+  defaultOpen?: boolean;
+  /** Scale the frame down so the whole frame fits in one screen height. */
+  fit?: boolean;
 }) {
   const aspectRatio = aspect ?? (portrait ? "3 / 4" : "16 / 9");
+  const [w, h] = aspectRatio.split("/").map((n) => Number(n.trim()));
+  const fitStyle = fit && w && h ? ({ "--embed-ar": String(w / h) } as CSSProperties) : {};
   const body = (
     <>
-      <div className="p31-embed-frame" style={{ aspectRatio, ...(maxHeight ? { maxHeight } : {}) }}>
+      <div className={`p31-embed-frame${fit ? " is-fit" : ""}`} style={{ aspectRatio, ...fitStyle, ...(maxHeight ? { maxHeight } : {}) }}>
         <iframe title={title} src={src} allow={allow} referrerPolicy={referrerPolicy} allowFullScreen loading="lazy" />
       </div>
       <div className="proof-links" aria-label={`${title} link`}>
@@ -439,7 +506,7 @@ export function ResponsiveEmbed({
   const isVideo = open ?? VIDEO_HOST.test(src);
   if (!isVideo) {
     return (
-      <details className={`p31-embed p31-embed-doc${inPair ? " in-pair" : ""}`}>
+      <details className={`p31-embed p31-embed-doc${inPair ? " in-pair" : ""}`} open={defaultOpen || undefined}>
         <summary><span>{title}</span><span className="disclosure-mark" aria-hidden="true" /></summary>
         {body}
       </details>
