@@ -76,7 +76,7 @@ export const starx = {
       title: "The research and the plan",
       body: [
         "I treated Map 01 as StarX’s pilot: an event, and also a body of data to learn from. The research came first. Vietnamese audiences are not tired of game shows; they are tired of staged drama and players cast for being loud. So StarX would sell real people under real rules, and one decision rule would sit over every creative call: *does this help an ordinary person become genuinely worth watching?*",
-        "From that diagnosis I wrote the plan for turning Map 01 into two TV episodes, built as an experiment rather than a schedule: post, log the numbers, read the comments, recut the version that worked. The episodes were never edited, so the release itself never ran.",
+        "From that diagnosis I wrote the plan for turning Map 01 into two TV episodes, built as an experiment rather than a schedule: post, log the numbers, read the comments, recut the version that worked. The episodes were never edited, so the plan never ran.",
       ],
       stats: [
         { value: "9", label: "platforms, each given one job" },
@@ -156,7 +156,7 @@ export const starx = {
 
     outcome: {
       title: "What Map 01 gave us",
-      chips: ["Player survey: 10 answered", "Aggregated, anonymised"],
+      chips: ["10 players answered", "Aggregated, anonymised"],
       stats: [
         { value: "8.5", label: "overall experience, out of 10" },
         { value: "8.8", label: "likelihood of recommending, out of 10" },
@@ -213,7 +213,7 @@ export const starx = {
           {
             tag: "Filmed, never edited",
             title: "Sunday We Vibe",
-            text: "A weekly pickleball show. You write your opponent’s running order; they decide who is in it. Episode one was shot; post-production never started. The production pack ends by naming the one rule still open, to settle before playtest.",
+            text: "A weekly pickleball show. You write your opponent’s running order; they decide who is in it. Episode one was shot. Post-production never started. The production pack ends by naming the one rule still open, to settle before playtest.",
           },
         ],
         docs: [
