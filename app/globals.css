@@ -619,6 +619,36 @@ ol.p31-list { list-style: decimal; }
 .case-fold-body .p31-media-pair + .p31-media-pair { margin-top: 20px; }
 .case-fold-body .p31-cols { margin-top: 20px; }
 
+/* Split row: the document left, its words right, read together in one screen.
+   The text column stays in view while a long document scrolls past. */
+.case-split { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px clamp(24px, 3vw, 44px); align-items: start; margin-top: var(--space-s); }
+.case-split-media > .p31-embed:first-child { margin-top: 0; }
+.case-split-text { position: sticky; top: calc(var(--header-h) + 20px); }
+.case-split-text > :first-child { margin-top: 0; }
+.case-split-text .p31-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
+.case-split-text .p31-stats + .p31-lede { margin-top: 24px; }
+.case-split-text .p31-card h3 { font-size: var(--fs-h3); }
+.case-split-text .p31-card p { font-size: var(--fs-body); line-height: 1.6; }
+
+/* Line folds: a product line inside a case fold, opened from a bar in its
+   brand colour (set as --line) with its logo tile. Same shape as a fold. */
+.line-fold { --line: var(--wine); margin-top: 12px; border: 2px solid var(--line); scroll-margin-top: calc(var(--header-h) + 16px); }
+.case-fold-body > .line-fold:first-of-type { margin-top: var(--space-s); }
+.line-fold > summary { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.4vw, 32px) clamp(10px, 1.2vw, 14px) clamp(10px, 1.2vw, 14px); background: var(--line); color: #fff; }
+.line-fold-logo { flex: 0 0 auto; width: clamp(110px, 14vw, 190px); aspect-ratio: 12 / 5; background: #0a0a0a; }
+.line-fold-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.line-fold-head { display: flex; flex-direction: column; gap: 6px; min-width: 0; margin-right: auto; }
+.line-fold-head h3 { margin: 0; color: #fff; font-size: var(--fs-h3); line-height: 1.1; }
+.line-fold-line { color: rgba(255, 255, 255, .88); font-size: var(--fs-note); line-height: 1.4; }
+.line-fold > summary::after { content: "Show"; order: 1; color: rgba(255, 255, 255, .88); font: 400 var(--fs-label)/1 var(--serif); }
+.line-fold[open] > summary::after { content: "Hide"; }
+.line-fold > summary .disclosure-mark { order: 2; width: 32px; height: 32px; color: #fff; }
+.line-fold > summary .disclosure-mark::before, .line-fold > summary .disclosure-mark::after { left: 9px; right: 9px; }
+.line-fold > summary:hover .disclosure-mark, .line-fold > summary:focus-visible .disclosure-mark { background: #fff; color: var(--line); }
+.line-fold-body { padding: 0 clamp(18px, 2.4vw, 32px) clamp(24px, 3vw, 36px); }
+.line-fold-body > .case-split + .case-split { margin-top: var(--space-m); }
+.line-fold .p31-card .p31-tag { color: var(--line); }
+
 /* A pair whose tops stay level (no stagger) */
 .p31-media-pair.is-aligned > :nth-child(2) { margin-top: 0; }
 
@@ -843,6 +873,12 @@ ol.p31-list { list-style: decimal; }
   .case-fold > summary .case-fold-head h2 { font-size: var(--fs-h3); }
   .case-fold > summary { align-items: flex-start; }
   .case-fold > summary .disclosure-mark { align-self: center; }
+  .case-split { grid-template-columns: minmax(0, 1fr); }
+  .case-split-text { position: static; order: -1; }
+  .line-fold > summary { align-items: flex-start; }
+  .line-fold > summary::after { display: none; }
+  .line-fold > summary .disclosure-mark { align-self: center; }
+  .line-fold-head h3 { font-size: var(--fs-lead); }
   .case-nav { grid-template-columns: 1fr 1fr; padding-inline: var(--gutter); }
   .case-nav a:nth-child(2) { grid-column: 1 / -1; grid-row: 2; align-items: flex-start; text-align: left; padding-top: 12px; }
 

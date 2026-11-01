@@ -277,6 +277,59 @@ export function CaseFolds({ children }: { children: ReactNode }) {
   return <div className="folds case-folds section-shell">{children}</div>;
 }
 
+/**
+ * Document beside its words: the embed on the left, the text on the right, so
+ * a reader can page through the file and read the section in one screen. The
+ * text column stays in view while a long file scrolls past. Stacks on phones,
+ * text first.
+ */
+export function SplitRow({ media, children }: { media: ReactNode; children: ReactNode }) {
+  return (
+    <div className="case-split">
+      <div className="case-split-media">{media}</div>
+      <div className="case-split-text">{children}</div>
+    </div>
+  );
+}
+
+/**
+ * A sub-fold inside a CaseFold, opened from a bar in its own colour (e.g. a
+ * product line in its brand colour), with a logo tile, a name and one line.
+ */
+export function LineFold({
+  id,
+  name,
+  line,
+  color,
+  logo,
+  children,
+}: {
+  id: string;
+  name: string;
+  line: string;
+  color: string;
+  logo?: { src: string; alt: string };
+  children: ReactNode;
+}) {
+  return (
+    <details className="line-fold" id={id} style={{ "--line": color } as CSSProperties}>
+      <summary>
+        {logo ? (
+          <span className="line-fold-logo">
+            <img src={logo.src} alt={logo.alt} loading="lazy" />
+          </span>
+        ) : null}
+        <span className="line-fold-head">
+          <h3>{name}</h3>
+          <span className="line-fold-line">{line}</span>
+        </span>
+        <span className="disclosure-mark" aria-hidden="true" />
+      </summary>
+      <div className="line-fold-body">{children}</div>
+    </details>
+  );
+}
+
 /** A titled part inside a CaseFold (h3, since the fold title is the h2). */
 export function FoldPart({ title, children }: { title: string; children: ReactNode }) {
   return (

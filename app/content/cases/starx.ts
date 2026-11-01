@@ -6,8 +6,9 @@
  * In strip/stat items, `unit` becomes the small superscript (e.g. "8.5" + "/10").
  *
  * The page opens on a short intro, then splits into two folds the viewer opens
- * on demand: Map 01 (the planning side: research, plan, live event, outcome)
- * and the formats (the creative side: one per StarX product line). The brand
+ * on demand: Pilot episode, Map 01 (the planning side: research, plan, live
+ * event, outcome) and Format lab (the creative side: one coloured, expandable bar per
+ * StarX product line, each format's document beside its text). The brand
  * sits after them as a short section of its own.
  *
  * Document embeds: `layout: "landscape"` is a 16:9 frame (decks, sheets),
@@ -51,7 +52,7 @@ export const starx = {
     title: "A premium adventure community",
     body: [
       "StarX was a premium adventure community in Hồ Chí Minh City. People sign up for challenges nobody has tried before, test their limits and find their own X factor. Its promise: *anyone can be the best at a game no one has ever played.*",
-      "I joined at the founding stage as Creative Lead and Format Developer. My work splits in two. **Map 01** shows the planning side: the research, the plans and the live event in Hồ Tràm. **The formats** show the creative side: the shows I built for each of StarX’s three product lines. Open either one below.",
+      "I joined at the founding stage as Creative Lead and Format Developer. My work splits in two. **Pilot episode** shows the planning side: Map 01, the live event in Hồ Tràm, from research to results. **Format lab** shows the creative side: the formats I built for each of StarX’s three product lines. Open either one below.",
     ],
     ownedLabel: "What I owned",
     owned: ["Creative direction", "Format development", "Gameplay and rules", "Production planning", "Media strategy", "Brand identity"],
@@ -61,21 +62,21 @@ export const starx = {
   /* Fold 1: Map 01, the planning side                                       */
   /* ---------------------------------------------------------------------- */
   map01: {
-    id: "map-01",
-    title: "Map 01: 48 hours in Hồ Tràm",
-    kicker: "The planning side: research, the plan, the live event and what it gave us.",
+    id: "pilot",
+    title: "Pilot episode",
+    kicker: "The planning side: Map 01, 48 hours in Hồ Tràm. Researched, planned, run live and measured.",
     thumb: {
       src: img("p35-map01-drone.jpg"),
       alt: "Drone view of four StarX League teams in coloured shirts on a tennis court.",
     },
     chips: ["Delivered: live event", "27 to 28 June 2026"],
     intro:
-      "The League’s first map. Fifteen players, drafted into four teams, every team built from three locked roles: a **Leader**, an **Operator** and a **Media Creator**. Thirteen games in two days across a Hồ Tràm resort.",
+      "**Map 01: 48 hours in Hồ Tràm**, the League’s first map and StarX’s pilot. Fifteen players, drafted into four teams, every team built from three locked roles: a **Leader**, an **Operator** and a **Media Creator**. Thirteen games in two days across a Hồ Tràm resort.",
 
     plan: {
       title: "The research and the plan",
       body: [
-        "I treated Map 01 as StarX’s pilot: an event, and also a body of data to learn from. The research came first. Vietnamese audiences are not tired of game shows; they are tired of staged drama and players cast for being loud. So StarX would sell real people under real rules, and one decision rule would sit over every creative call: *does this help an ordinary person become genuinely worth watching?*",
+        "I treated Map 01 as more than an event: it was a body of data to learn from. The research came first. Vietnamese audiences are not tired of game shows; they are tired of staged drama and players cast for being loud. So StarX would sell real people under real rules, and one decision rule would sit over every creative call: *does this help an ordinary person become genuinely worth watching?*",
         "From that diagnosis I wrote the plan for turning Map 01 into two TV episodes, built as an experiment rather than a schedule: post, log the numbers, read the comments, recut the version that worked. The episodes were never edited, so the plan never ran.",
       ],
       stats: [
@@ -181,63 +182,76 @@ export const starx = {
   /* Fold 2: the formats, the creative side                                  */
   /* ---------------------------------------------------------------------- */
   formats: {
-    id: "formats",
-    title: "The formats I built",
-    kicker: "The creative side: a show for each of StarX’s three product lines.",
+    id: "format-lab",
+    title: "Format lab",
+    kicker: "The creative side: the formats I built for StarX’s three product lines.",
     thumb: {
       src: img("p35-map02-deck-cover.jpg"),
       alt: "Cover of the Map 02 Tái Hoang Dã pitch deck: the StarX League logo and a large red X on black.",
     },
     intro:
-      "StarX had three product lines, and I developed the formats for each. Every one starts from the same question: *what rule makes ordinary people worth watching?* None of them aired; each is labelled for the stage it reached.",
+      "StarX had three product lines, and I developed the formats for each. Every one starts from the same question: *what rule makes ordinary people worth watching?* None of them aired; each is labelled for the stage it reached. Open a line to see its formats.",
+    // Each line opens from a bar in its brand colour (StarX brand guidelines, p. 15).
+    // Originals uses Mystic Violet, the guidelines’ colour for a future format.
     lines: [
       {
+        id: "league",
         name: "StarX League",
-        line: "Team tournaments that pair games with cultural travel legs. Map 01 was the first map.",
+        line: "Team tournaments that pair games with cultural travel legs.",
+        color: "#D72638",
+        logo: { src: img("p35-logo-league.png"), alt: "StarX League logo: STARX in white with a red X, LEAGUE spaced out below." },
         items: [
           {
             tag: "Proposal, never ran",
             title: "Map 02: Tái Hoang Dã",
-            text: "A day in Cát Tiên National Park, built on the park’s real rescue-and-release work. Teams build a rescue file for one species, then defend a verdict at a fireside council: release, or keep rehabilitating. The whole day runs on **one briefing** and a sealed Race Book, the fix for Map 01’s weakest score.",
+            text: "The League’s second map: a day in Cát Tiên National Park, built on the park’s real rescue-and-release work. Teams build a rescue file for one species, then defend a verdict at a fireside council: release, or keep rehabilitating. The whole day runs on **one briefing** and a sealed Race Book, the fix for Map 01’s weakest score.",
+            docs: [
+              { title: "Map 02: Tái Hoang Dã pitch deck (PDF)", ...drive("1uAESmKTmvJdpz0AhCDDkHEOXDAK2p-y0"), fallbackLabel: "Open the Map 02 pitch deck", layout: "landscape" as const, open: true },
+              { title: "Map 02: proposal and production bible (PDF)", ...drive("1kz6f7GBWJEl6CUN6O8-SRzuCNYt5F_GM"), fallbackLabel: "Open the Map 02 proposal", layout: "portrait" as const, open: true },
+            ],
           },
-        ],
-        docs: [
-          { title: "Map 02: Tái Hoang Dã pitch deck (PDF)", ...drive("1uAESmKTmvJdpz0AhCDDkHEOXDAK2p-y0"), fallbackLabel: "Open the Map 02 pitch deck", layout: "landscape" as const, open: true },
-          { title: "Map 02: proposal and production bible (PDF)", ...drive("1kz6f7GBWJEl6CUN6O8-SRzuCNYt5F_GM"), fallbackLabel: "Open the Map 02 proposal", layout: "portrait" as const, open: true },
         ],
       },
       {
+        id: "sundaywevibe",
         name: "StarX Sunday We Vibe",
         line: "A weekly community sports event in Hồ Chí Minh City.",
+        color: "#1565C0",
+        logo: { src: img("p35-logo-sundaywevibe.png"), alt: "StarX Sunday We Vibe logo: STARX in white with a blue X, SUNDAYWEVIBE spaced out below." },
         items: [
           {
             tag: "Filmed, never edited",
             title: "Sunday We Vibe",
             text: "A weekly pickleball show. You write your opponent’s running order; they decide who is in it. Episode one was shot. Post-production never started. The production pack ends by naming the one rule still open, to settle before playtest.",
+            docs: [
+              { title: "Sunday We Vibe EP01 production pack (PDF)", ...drive("1rwk1-AKB-A3f4qwJY_NW-nYhTSOIpqXy"), fallbackLabel: "Open the EP01 production pack", layout: "portrait" as const, open: true },
+            ],
           },
-        ],
-        docs: [
-          { title: "Sunday We Vibe EP01 production pack (PDF)", ...drive("1rwk1-AKB-A3f4qwJY_NW-nYhTSOIpqXy"), fallbackLabel: "Open the EP01 production pack", layout: "portrait" as const, open: true },
         ],
       },
       {
+        id: "originals",
         name: "StarX Originals",
         line: "Game-show formats developed in-house.",
+        color: "#9847CF",
+        logo: { src: img("p35-logo-originals.png"), alt: "StarX Originals logo: STARX in white with a violet X, ORIGINALS spaced out below." },
         items: [
           {
             tag: "Original format, pre-production",
             title: "Đêm Tiệc Mặt Nạ",
             text: "A mystery night in a Đà Lạt villa: ten heirs of four families, a corporate collapse in 2006, and a reporter hiding among them. No murder, only degrees of responsibility.",
+            docs: [
+              { title: "Đêm Tiệc Mặt Nạ pitch deck (PDF)", ...drive("1OPP355jABtjUcisrjmySjL7KVvuBD-Dd"), fallbackLabel: "Open the Đêm Tiệc Mặt Nạ deck", layout: "landscape" as const, open: true },
+            ],
           },
           {
             tag: "Original format, pitch",
             title: "Mật Mã Di Sản",
             text: "A heritage race across four provinces. Every team pairs Gen Z with Gen Y, and each leg is a box of local codes that only the two generations together can crack.",
+            docs: [
+              { title: "Mật Mã Di Sản pitch deck (PDF)", ...drive("1w89-MD0oDUCE9eXlHQTUL5SzinIvqzAf"), fallbackLabel: "Open the Mật Mã Di Sản deck", layout: "landscape" as const, open: true },
+            ],
           },
-        ],
-        docs: [
-          { title: "Đêm Tiệc Mặt Nạ pitch deck (PDF)", ...drive("1OPP355jABtjUcisrjmySjL7KVvuBD-Dd"), fallbackLabel: "Open the Đêm Tiệc Mặt Nạ deck", layout: "landscape" as const, open: true },
-          { title: "Mật Mã Di Sản pitch deck (PDF)", ...drive("1w89-MD0oDUCE9eXlHQTUL5SzinIvqzAf"), fallbackLabel: "Open the Mật Mã Di Sản deck", layout: "landscape" as const, open: true },
         ],
       },
     ],
