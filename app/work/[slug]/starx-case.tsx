@@ -11,13 +11,14 @@ import {
   CaseSection,
   CaseTension,
   Card,
-  Cards,
   ChipRow,
   EvidenceFigure,
   FoldPart,
   Lede,
+  LineFold,
   MediaPair,
   ResponsiveEmbed,
+  SplitRow,
   StatGrid,
 } from "./feature-case-primitives";
 
@@ -105,10 +106,11 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
           </FoldPart>
 
           <FoldPart title={m.outcome.title}>
-            <ChipRow items={m.outcome.chips} label="Survey method" />
-            <StatGrid label="Player survey headline results" items={m.outcome.stats} />
-            {m.outcome.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
-            <DocEmbed doc={m.outcome.report} />
+            <SplitRow media={<DocEmbed doc={m.outcome.report} />}>
+              <ChipRow items={m.outcome.chips} label="Survey method" />
+              <StatGrid label="Player survey headline results" items={m.outcome.stats} />
+              {m.outcome.body.map((p, i) => <Lede key={i}>{inline(p)}</Lede>)}
+            </SplitRow>
           </FoldPart>
         </CaseFold>
 
@@ -116,17 +118,15 @@ export function StarXCase({ project, previous, next }: { project: Project; previ
         <CaseFold id={f.id} title={f.title} kicker={f.kicker} thumb={f.thumb}>
           <Lede>{inline(f.intro)}</Lede>
           {f.lines.map((line) => (
-            <FoldPart key={line.name} title={line.name}>
-              <Lede>{inline(line.line)}</Lede>
-              <Cards>
-                {line.items.map((item) => (
-                  <Card key={item.title} tag={item.tag} title={item.title}>
+            <LineFold key={line.id} id={line.id} name={line.name} line={line.line} color={line.color} logo={line.logo}>
+              {line.items.map((item) => (
+                <SplitRow key={item.title} media={<Docs docs={item.docs} />}>
+                  <Card tag={item.tag} title={item.title}>
                     <p>{inline(item.text)}</p>
                   </Card>
-                ))}
-              </Cards>
-              <Docs docs={line.docs} />
-            </FoldPart>
+                </SplitRow>
+              ))}
+            </LineFold>
           ))}
         </CaseFold>
       </CaseFolds>
