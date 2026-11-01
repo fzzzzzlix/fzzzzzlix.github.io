@@ -6,8 +6,8 @@
  * In strip/stat items, `unit` becomes the small superscript (e.g. "8.5" + "/10").
  *
  * The page opens on a short intro, then splits into two folds the viewer opens
- * on demand: the pilot, Map 01 (the planning side: research, plan, live event,
- * outcome) and the slate (the creative side: one coloured, expandable bar per
+ * on demand: Pilot episode, Map 01 (the planning side: research, plan, live
+ * event, outcome) and Format lab (the creative side: one coloured, expandable bar per
  * StarX product line, each format's document beside its text). The brand
  * sits after them as a short section of its own.
  *
@@ -52,7 +52,7 @@ export const starx = {
     title: "A premium adventure community",
     body: [
       "StarX was a premium adventure community in Hồ Chí Minh City. People sign up for challenges nobody has tried before, test their limits and find their own X factor. Its promise: *anyone can be the best at a game no one has ever played.*",
-      "I joined at the founding stage as Creative Lead and Format Developer. My work splits in two. **The pilot** shows the planning side: Map 01, the live event in Hồ Tràm, from research to results. **The slate** shows the creative side: the formats I built for each of StarX’s three product lines. Open either one below.",
+      "I joined at the founding stage as Creative Lead and Format Developer. My work splits in two. **Pilot episode** shows the planning side: Map 01, the live event in Hồ Tràm, from research to results. **Format lab** shows the creative side: the formats I built for each of StarX’s three product lines. Open either one below.",
     ],
     ownedLabel: "What I owned",
     owned: ["Creative direction", "Format development", "Gameplay and rules", "Production planning", "Media strategy", "Brand identity"],
@@ -63,7 +63,7 @@ export const starx = {
   /* ---------------------------------------------------------------------- */
   map01: {
     id: "pilot",
-    title: "The pilot",
+    title: "Pilot episode",
     kicker: "The planning side: Map 01, 48 hours in Hồ Tràm. Researched, planned, run live and measured.",
     thumb: {
       src: img("p35-map01-drone.jpg"),
@@ -182,8 +182,8 @@ export const starx = {
   /* Fold 2: the formats, the creative side                                  */
   /* ---------------------------------------------------------------------- */
   formats: {
-    id: "slate",
-    title: "The slate",
+    id: "format-lab",
+    title: "Format lab",
     kicker: "The creative side: the formats I built for StarX’s three product lines.",
     thumb: {
       src: img("p35-map02-deck-cover.jpg"),
