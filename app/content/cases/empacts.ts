@@ -37,7 +37,7 @@ export const empacts = {
     title: "Build the organisation, not only the idea",
     body: [
       "EMPACTS began with an ambitious premise: create a youth-led ecosystem around SDG-focused social enterprise and entrepreneurship. The portfolio value is not the ambition alone, it is how the organisation was translated into roles, systems, templates, routines and public programming that other people could actually operate.",
-      "The supplied proposal identifies Felix as **Co-founder and Vice-President**. Project records describe a 54-member organisation spanning six departments, 21 roles and 40+ SOPs.",
+      "Felix is the **Founder and Vice-President**. Project records describe a 54-member organisation spanning six departments, 21 roles and 40+ SOPs.",
     ],
     note: {
       label: "Figure basis",
@@ -134,7 +134,7 @@ export const empacts = {
     felixFigure: {
       src: asset("/images/cases/p25/p25-felix.jpg"),
       alt: "Felix at an EMPACTS activity.",
-      caption: "On the ground with EMPACTS as Co-founder and Vice-President.",
+      caption: "On the ground with EMPACTS as Founder and Vice-President.",
       tag: "In the org",
     },
     teamFigure: {
