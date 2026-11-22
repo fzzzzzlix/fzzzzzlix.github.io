@@ -552,6 +552,7 @@ ol.p31-list { list-style: decimal; }
 /* Wide opening photo; a pending-image plate until one is chosen */
 .experience-cover { margin: 0 auto var(--space-s); }
 .experience-cover img, .experience-cover .media-placeholder { width: 100%; aspect-ratio: 21 / 9; min-height: 0; object-fit: cover; }
+.experience-cover img { object-position: 50% 30%; }
 .timeline article { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 24px; padding: 28px 0; }
 .timeline article:first-child { padding-top: 0; }
 .timeline article:last-child { padding-bottom: 0; }

@@ -67,7 +67,7 @@ export const experience = {
   ],
   // Wide opening photo for the page. null shows a pending-image plate; to add
   // one, set { src: "/images/...", alt: "..." }.
-  cover: null as null | { src: string; alt: string },
+  cover: { src: "/images/experience-cover.jpg", alt: "Felix Phan in a flowing white outfit with blue brushstroke marks and a pearl necklace, sitting outdoors among bare trees beside a timber and glass building at dusk." } as null | { src: string; alt: string },
   timelineTitle: "Work experience",
   education: {
     eyebrow: "Education",
