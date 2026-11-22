@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteFooter, SiteHeader, NorthStar, CoverImage, CV_URL, OUT_ARROW } from "./site-shell";
+import { SiteFooter, SiteHeader, NorthStar, CoverImage, cvLinkProps, OUT_ARROW } from "./site-shell";
 import { projects } from "./data";
 import { asset } from "./base-path";
 import { REAL_IMAGES } from "./project-images";
@@ -44,7 +44,7 @@ export default function Home() {
               </ul>
               <div className="hero-actions">
                 <Link className="button button-primary" href="/work">{home.hero.primaryCta}</Link>
-                <a className="text-link" href={CV_URL} target="_blank" rel="noreferrer">{home.hero.quietCta} <span aria-hidden="true">{OUT_ARROW}</span></a>
+                <a className="text-link" {...cvLinkProps()}>{home.hero.quietCta} <span aria-hidden="true">{OUT_ARROW}</span></a>
               </div>
             </div>
           </div>

@@ -136,6 +136,7 @@ em { font-style: italic; }
 
 /* ---- Disclosure (deep evidence, closed by default) ---- */
 details > summary { list-style: none; cursor: pointer; }
+a[aria-disabled="true"] { cursor: default; }
 details > summary::-webkit-details-marker { display: none; }
 /* Expand controls read as buttons, not text: a boxed +/- mark first, then the
    label, then the action word (Show/Hide, Open for documents), and the whole

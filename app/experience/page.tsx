@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMetadata } from "../seo";
-import { MediaPlaceholder, OUT_ARROW, PageHero, SiteFooter, SiteHeader, CV_URL } from "../site-shell";
+import { MediaPlaceholder, OUT_ARROW, PageHero, SiteFooter, SiteHeader, cvLinkProps } from "../site-shell";
 import { asset } from "../base-path";
 import { experience } from "../content/experience";
 import { AchievementsSlideshow } from "./achievements-slideshow";
@@ -13,7 +13,7 @@ export default function ExperiencePage() {
     <div className="site-frame">
       <SiteHeader current="/experience" />
       <main id="main-content">
-        <PageHero eyebrow={experience.meta.title} aside={<a className="button button-primary" href={CV_URL} target="_blank" rel="noreferrer">View CV</a>} />
+        <PageHero eyebrow={experience.meta.title} aside={<a className="button button-primary" {...cvLinkProps()}>View CV</a>} />
         <figure className="experience-cover section-shell">
           {experience.cover ? (
             <img src={asset(experience.cover.src)} alt={experience.cover.alt} fetchPriority="high" />

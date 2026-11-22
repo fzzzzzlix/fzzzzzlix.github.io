@@ -75,6 +75,7 @@ export const experience = {
     items: [
       { span: "2022 - April 2027", title: "Bachelor of\nProfessional Communication", text: "RMIT University" },
       { span: "2022 - April 2027", title: "Bachelor of Business Administration\nin English", text: "National Economics University" },
+      { span: "Aug 2026 - Nov 2026", title: "Cultural Studies\nSupplementary Courses", text: "University of Social Sciences and Humanities" },
     ],
     note: "All coursework complete (degrees conferred at the April 2027 graduation ceremonies). Available for full-time work now.",
   },
@@ -82,6 +83,7 @@ export const experience = {
     eyebrow: "Selected credentials",
     title: "Other achievements",
     list: [
+      "Semi-Finalist of YSEALI Academic Fellowship 2027 (Ongoing).",
       "NEU Academic Encouragement Scholarship Recipient in 2023, 2024, and 2025.",
       "Diversity & Inclusion Award of RMIT University 2023.",
       "Top 15 National of Map the System by Skoll Centre, University of Oxford, in 2023.",
